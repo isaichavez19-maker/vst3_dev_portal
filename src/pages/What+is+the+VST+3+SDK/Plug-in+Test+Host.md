@@ -28,11 +28,37 @@ Check the folder *"bin"* of the SDK!
 
 ![what_if_15](../../resources/what_is_15.jpg)
 
+![what_if_39](../../resources/what_is_39.png)
+
+- **File -> Load Preset...**: Load a VST 3 Preset for the first loaded plug-in (first slot).
+- **File -> Save Preset...**: Save a VST 3 Preset for the first loaded plug-in.
+---
+- **File -> Load MIDI File...**: Load a MIDI file which could be played by using the transport section, all loaded plug-ins will received the MIDI events.
+- **File -> Save MIDI File...**: Save the current MIDI tracks loaded.
+---
+- **File -> Export Audio...**: this allows to choose a folder with MIDI files, loaded each of them and export the audio renderings of the first loaded plug-in.
+- **File -> Export Audio for current loaded MIDI...**: this allows to use the current loaded MIDI file for exporting the audio renderings of the first loaded plug-in.
+---
+- **File -> Convert VST 3 Presets to VST 2 Presets**: this allows to convert **VST 3** Presets to compatible **VST 2** Presets (fxp or fxb).
+- **File -> Overwrite Plug-in Name in VST 3 Presets...**: this allows to rename the plug-in name in a set of **VST 3** Presets.
+---
+- **File -> Rescan blocklisted VST 3 Plug-in**: this allows to force a rescan of plug-ins which were put in the blocklist.
+
+![what_if_40](../../resources/what_is_40.png)
+
+- **Edit -> Key Commands...**: opens the key commands windows.
+- **Edit -> Global Preferences...**: opens the global preferences windows where you could change the ASIO driver, for example.
+- **Edit -> Plug-In Preferences...**: opens the plug-in preferences windows where you could change Inputs/Outputs routing, for example.
+
+![what_if_41](../../resources/what_is_41.png)
 - **View -> Open Plug-in Information Window**: opens a window showing all registered component and controller **VST 3** plug-ins.
 - **View -> Open Plug-in Unit Tests Window**: opens a window where you can test your plug-in with a series of unit tests.
 - **View -> Open Preset Editor**: allows you to open, check and modify **VST 3** presets (adding meta attributes like in Instrument/- Style/Character)
-- **File -> Convert VST 3 Preset to VST 2 preset (fxp or fxb)**: allow to convert **VST 3** Presets to compatible **VST 2** Presets.
-- **File -> Overwrite Plug-in Name in VST 3 Presets**: allow to rename the plug-in name in a set of **VST 3** Presets.
+
+![what_if_42](../../resources/what_is_42.png)
+
+![what_if_43](../../resources/what_is_43.png)
+---
 
 ![what_if_16](../../resources/what_is_16.jpg)
 
@@ -59,6 +85,7 @@ This section simulates note events sent to the plug-in.
 - A pattern could be defined and initialized with randomized, chromatic or manual events. (for Chromatic choose the start note in the pattern and select Chromatic in the pop-up menu).
 - Active check box: enable/disable the playback of this pattern.
 - You can choose different loop stepping for this pattern (1, 1/2, ...1/32)
+- If you have already loaded a MIDI file, choose "No Pattern" to play this MIDI file.
 
 ### VST Rack
 
@@ -134,3 +161,4 @@ In this version of this **Plug-in Test Host**, the tests are limited to the main
 ![what_if_23](../../resources/what_is_23.jpg)
 
 With this editor you can load and modify **VST 3** presets created with the **Store** button of the VST Rack by adding some meta-attributes.
+
