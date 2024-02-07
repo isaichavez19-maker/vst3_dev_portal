@@ -93,7 +93,7 @@ You could start **VST3PluginTestHost** with some options in the command line:
 
 ### Audio Input
 
-In this section you can select the audio source of your plug-in for the Main Input Audio Bus and for the Aux Input Audio Bus ([Side-chain](../Technical+Documentation/Change+History/3.0.0/Multiple+Dynamic+IO.html#what-is-a-side-chain): if available) between:
+In this section you can select the audio source of your plug-in for the *Main Input Audio Bus* and for the *Aux Input Audio Bus* ([Side-chain](../Technical+Documentation/Change+History/3.0.0/Multiple+Dynamic+IO.html#what-is-a-side-chain): if available) between:
 
 - A sine wave
 - Noise
@@ -101,11 +101,15 @@ In this section you can select the audio source of your plug-in for the Main Inp
 - ASIO Input (first stereo)
 - An Audio File (in this case use the browser (... button) to choose the file (wave, aiff))
 
+![what_if_45](../../resources/what_is_45.png)
+
 A Volume slider allows you to control the level of the source.
 
 ### Event Input
 
 This section simulates note events sent to the plug-in.
+
+![what_if_46](../../resources/what_is_46.png)
 
 - A pattern could be defined and initialized with randomized, chromatic or manual events. (for Chromatic choose the start note in the pattern and select Chromatic in the pop-up menu).
 - Active check box: enable/disable the playback of this pattern.
