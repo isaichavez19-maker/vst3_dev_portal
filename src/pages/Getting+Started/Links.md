@@ -22,7 +22,7 @@ You have 2 possibilities for getting the **VST 3 SDK:**
 | :-                                                                                        | :-:                   | :-: |
 | [VST 3 API](../Technical+Documentation/API+Documentation/Index.md)                        | ✔️                    | ✔️ |
 | [Helpers classes](../What+is+the+VST+3+SDK/Index.md)                                      | ✔️                    | ✔️ |
-| [AAX, AUv3, AU and VST 2 wrappers](../What+is+the+VST+3+SDK/Wrappers/Index.md)            | ✔️                    | ✔️ |
+| [AAX, AUv and AU wrappers](../What+is+the+VST+3+SDK/Wrappers/Index.md)                    | ✔️                    | ✔️ |
 | [iOS Inter-App Audio support](../What+is+the+VST+3+SDK/iOS+Inter-App+Audio+support.md)    | ✔️                    | ✔️ |
 | [VST 3 Plug-ins Examples](../What+is+the+VST+3+SDK/Plug-in+Examples.md)                   | ✔️                    | ✔️ |
 | [Validator command line](../What+is+the+VST+3+SDK/Index.md#validator-command-line)        | ✔️                    | ✔️ |

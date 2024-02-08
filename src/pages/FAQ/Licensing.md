@@ -16,15 +16,15 @@
 
 ## Q: I would like to distribute my VST 3 plug-in/host as freeware/shareware in binary form only.
 
-- You can distribute your **VST 3** plug-in/host in a binary form. This always requires that you to choose the "Proprietary Steinberg VST 3" license.
-- Even though you distribute your **VST 3** plug-in/host as freeware/shareware you need to adhere to the requirements of the "Proprietary Steinberg VST 3" license.
+- You can distribute your **VST 3** plug-in/host in a binary form. This always requires that you to choose the "**Proprietary Steinberg VST 3**" license.
+- Even though you distribute your **VST 3** plug-in/host as freeware/shareware you need to adhere to the requirements of the "**Proprietary Steinberg VST 3**" license.
 - Download the [license agreement](../VST+3+Licensing/What+are+the+licensing+options.md) (it is part of the [SDK](../Getting+Started/Links.md) too), sign it and return it to Steinberg.
 
 ---
 
 ## Q: I would like to sell my VST 3 plug-in/host in binary form only.
 
-If you work for-profit and distribute your **VST 3** plug-in/host in binary form, you need to choose the "Proprietary Steinberg VST 3" license.
+If you work for-profit and distribute your **VST 3** plug-in/host in binary form, you need to choose the "**Proprietary Steinberg VST 3**" license.
 Download the [license agreement](../VST+3+Licensing/What+are+the+licensing+options.md) (it is part of the [SDK](../Getting+Started/Links.md) too), sign it and return it to Steinberg.
 
 ---
@@ -32,7 +32,7 @@ Download the [license agreement](../VST+3+Licensing/What+are+the+licensing+optio
 ## Q: I would like to adapt the VST 3 SDK's sources to my VST 3 plug-in/host's needs.
 
 You can adapt and modify the **VST 3 SDK**'s source for your needs, but if you want to distribute these sources under [GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html) you have to distribute your **VST 3** plug-in/host's sources under [GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html) too.
-It is allowed to modify the **VST 3 SDK**'s when you distribute your **VST 3** plug-in/host in binary form and choose the "Proprietary Steinberg VST 3" license.
+It is allowed to modify the **VST 3 SDK**'s when you distribute your **VST 3** plug-in/host in binary form and choose the "**Proprietary Steinberg VST 3**" license.
 If you are of the opinion that we should include your changes in the SDK, please contact us (use the [sdk.steinberg.net](https://forums.steinberg.net/c/developer/103/none)).
 
 ---
@@ -47,13 +47,13 @@ Yes, but you have to make sure that your **VST 3** plug-in/host sources are unde
 
 - Yes, but you have to make sure that your **VST 3** plug-in/host sources are under [GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html) too!
 - Note that you have to follow the [Steinberg VST usage guidelines](../VST+3+Licensing/What+are+the+licensing+options.md).
-- If you do not want to be [GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html), you have to build your **VST 3** plug-in/host based on the original or any private modified version of the **VST 3 SDK** and choose the "Proprietary Steinberg VST 3" license.
+- If you do not want to be [GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html), you have to build your **VST 3** plug-in/host based on the original or any private modified version of the **VST 3 SDK** and choose the "**Proprietary Steinberg VST 3**" license.
 
 ---
 
 ## Q: I would like to sell my VST 3 plug-in/host in binary form which is based on a 3rd party SDK like JUCE.
 
-- If you work for-profit and distribute your plug-in/host in binary form, you need to choose the "Proprietary Steinberg VST 3" license.
+- If you work for-profit and distribute your plug-in/host in binary form, you need to choose the "**Proprietary Steinberg VST 3**" license.
 - Download the [license agreement](../VST+3+Licensing/What+are+the+licensing+options.md) (it is part of the [SDK](../Getting+Started/Links.md) too), sign it and return it to Steinberg.
 - Note that you have to follow the [Steinberg VST usage guidelines](../VST+3+Licensing/What+are+the+licensing+options.md).
 

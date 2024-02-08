@@ -9,7 +9,7 @@
 **Related pages:**
 
 - [VST 3 Plug-in Test Host](Plug-in+Test+Host.md)
-- [AAX, AUv3, AU and VST 2 Wrappers](Wrappers/Index.md)
+- [AAX, AUv3 and AU Wrappers](Wrappers/Index.md)
 - [Building the examples included in the SDK on Windows](../Tutorials/Building+the+examples/Building+the+examples+included+in+the+SDK+Windows.md)
 - [Building the examples included in the SDK on macOS](../Tutorials/Building+the+examples/Building+the+examples+included+in+the+SDK+macOS.md)
 - [Building the examples included in the SDK on Linux](../Tutorials/Building+the+examples/Building+the+examples+included+in+the+SDK+Linux.md)
