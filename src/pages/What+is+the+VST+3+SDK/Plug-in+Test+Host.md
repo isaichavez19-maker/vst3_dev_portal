@@ -30,10 +30,12 @@ Check the folder *"bin"* of the SDK!
 
 You could start **VST3PluginTestHost** with some options in the command line:
 
- - Speficy a folder where the app should scan VST 3 Plug-ins:
+ - Speficy a folder where the app should scan **VST 3** Plug-ins:
     - --pluginfolder "Folder to scan for plug-ins"
- - Rendering MIDI files into audio files for the first loaded instrument:
-    - --audioexport "MIDI Folder location" "Audio Output Folder"
+ - Rendering *MIDI* files into audio files for the first loaded instrument (samplerate and blocksize (size of audio block in samples) are optionals; if not provided, the current settings of the ASIO is used):
+    - --audioexport "MIDI Folder location" "Audio Output Folder" [samplerate] [blocksize]
+    - for example: 
+      - *VST3PluginTestHost.exe --audioexport "C:\Content\MIDI" "C:\Content\Audio Output" 48000 128*
 
 ### Menu Description
 
