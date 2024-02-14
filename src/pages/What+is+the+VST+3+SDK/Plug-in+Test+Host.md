@@ -32,9 +32,12 @@ You could start **VST3PluginTestHost** with some options in the command line:
 
  - Speficy a folder where the app should scan **VST 3** Plug-ins:
     - --pluginfolder "Folder to scan for plug-ins"
+    - for examples: 
+      - *VST3PluginTestHost.exe --pluginfolder "C:\Development\VST3"*
  - Rendering *MIDI* files into audio files for the first loaded instrument (samplerate and blocksize (size of audio block in samples) are optionals; if not provided, the current settings of the ASIO is used):
     - --audioexport "MIDI Folder location" "Audio Output Folder" [samplerate] [blocksize]
-    - for example: 
+    - for examples: 
+      - *VST3PluginTestHost.exe --audioexport "C:\Content\MIDI" "C:\Content\Audio Output"*
       - *VST3PluginTestHost.exe --audioexport "C:\Content\MIDI" "C:\Content\Audio Output" 48000 128*
 
 ### Menu Description
@@ -46,7 +49,7 @@ You could start **VST3PluginTestHost** with some options in the command line:
 - **File => Load Preset...**: Load a VST 3 Preset for the first loaded plug-in (first slot).
 - **File => Save Preset...**: Save a VST 3 Preset for the first loaded plug-in.
 ---
-- **File => Load MIDI File...**: Load a MIDI file which could be played by using the transport section, all loaded plug-ins will received the MIDI events.
+- **File => Load MIDI File...**: Load a MIDI file which could be played by using the transport section, all loaded plug-ins will received the MIDI events. It also sends MIDI program change messages when a MIDI file is loaded.
 ---
 - **File => Export Audio...**: this allows to choose a folder with MIDI files, loaded each of them and export the audio renderings of the first loaded plug-in.
 - **File => Export Audio for current loaded MIDI...**: this allows to use the current loaded MIDI file for exporting the audio renderings of the first loaded plug-in.
@@ -162,10 +165,30 @@ Right click on the opened plug-in opens a context menu which allows to trigger s
 
 ### Transport
 
+![what_if_21](../../resources/what_is_21.png)
+
 In this section you can:
 
-| • set the gain of the output audio<br> • toggle time format between Seconds and Bars and Beats<br> • set the gain of the output audio<br> • change the song position<br> • control the transport state (Loop/Start/Stop/Rewind)<br> • change the tempo and signature | ![what_if_21](../../resources/what_is_21.png) |
-| :- | - |
+ - Set the gain of the output audio
+ - Toggle time format between Time and Bars
+ - See the current time Display
+ - Control the transport state (Start/Stop/Rewind/Loop)
+   - Click Play to start playback of the MIDI file/Pattern.
+   - Click Stop to pause the MIDI file/Pattern at the current position.
+   - Click the button twice to reset the song position to the start.
+   - Activate Loop to play the entire MIDI file in a loop.
+ - See which MIDI file is currently loaded when hover over the info icon
+ - Change the song position
+   - The song position indicator shows the position of the transport cursor. Above the song position indicator, the position is displayed as a number.
+   - To move the transport cursor, drag the song position indicator to a new position.
+ - Change tempo and signature
+   - Tempo: 
+     - Set this parameter to Track to follow the original tempo of the MIDI file.
+With the Adjust Tempo parameter, you can scale the playback relatively to the original tempo of the MIDI file.
+     - Set this parameter to Fixed to enter the tempo manually.
+   - Time Signature:
+     - Determines the time signature. You can enter a new time signature in fractions of beats.
+
 
 ## VST 3 Plug-ins Tests Window
 
