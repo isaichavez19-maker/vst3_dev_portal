@@ -17,7 +17,7 @@
 
 ## Introduction
 
-The SDK includes some Plug-ins implementation examples. The Legendary **AGain** and **ADelay**, thanks Paul Kellet the Open-source **mda** Plug-ins, a basic "Note Expression Synth" supporting "**Note Expression Event**", an example of **pitchnames** support Plug-in, a **VST 3 Host Checker** which checks if a host is **VST 3** compliant and more...
+The SDK includes some Plug-ins implementation examples. The Legendary **AGain** and **ADelay**, thanks Paul Kellet the Open-source **mda** Plug-ins, a basic **Note Expression Synth** supporting "**Note Expression Event**", an example of **PitchNames** support Plug-in, a **VST 3 Host Checker** which checks if a host is **VST 3** compliant and more...
 
 >![what_if_2](../../resources/what_is_2.jpg)
 >
@@ -76,7 +76,7 @@ Simple plug-in showing how to achieve sample-accurate processing.
 
 Based Check the folder *"public.sdk/samples/vst/again_sampleaccurate"* of the SDK!
 
-## TestChannelContext
+## Test Channel Context
 
 Very simple plug-in:
 
@@ -87,7 +87,7 @@ Very simple plug-in:
 
 Check the folder *"public.sdk/samples/vst/channelcontext"* of the SDK!
 
-## DataExchange
+## Data Exchange
 
 This plug-in:
 
@@ -98,7 +98,7 @@ This plug-in:
 
 Check the folder *"public.sdk/samples/vst/dataexchange"* of the SDK!
 
-## HostChecker
+## VST3 Host Checker
 
 - Instrument, Panner and Fx plug-in checking the **VST 3** support of a host
 - It uses [**VSTGUI**](VSTGUI.md)
@@ -108,7 +108,7 @@ Check the folder *"public.sdk/samples/vst/dataexchange"* of the SDK!
 
 Check the folder *"public.sdk/samples/vst/hostchecker"* of the SDK!
 
-## TestLegacyMIDICCOut
+## Test Legacy MIDI CC Out
 
 Very simple plug-in:
 
@@ -258,7 +258,7 @@ Very simple delay plug-in:
 
 Check the folder *"public.sdk/samples/vst/syncdelay"* of the SDK!
 
-## UTF16Name
+## UTF16 Name
 
 Very simple plug-in:
 
