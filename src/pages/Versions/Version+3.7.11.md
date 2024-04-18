@@ -25,6 +25,9 @@
     - New [RemapParamID](../What+is+the+VST+3+SDK/Plug-in+Examples.md#remapparamid)...TODO
   - Rename project names for better readability.
   
+- Helpers classes:
+  - Avoid potential hang in connectionproxytest ([PR#66](https://github.com/steinbergmedia/vst3_public_sdk/pull/66)).
+
 - [Validator](../What+is+the+VST+3+SDK/Index.md#validator-command-line):
   
 - [VST3PluginTestHost](../What+is+the+VST+3+SDK/Plug-in+Test+Host.md) v3.7:
