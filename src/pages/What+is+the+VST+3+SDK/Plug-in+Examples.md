@@ -234,13 +234,6 @@ Very simple plug-in:
 
 Check the folder *"public.sdk/samples/vst/prefetchablesupport"* of the SDK!
 
-## Test Multiple Program Changes
-
-Very simple plug-in:
-
-- showing how to support multiple ProgramChange parameters: 16 slots with one associated program change parameter and a program list for each slot.
-- using a generic UI
-
 ## Test Program Change
 
 Very simple plug-in:
@@ -249,6 +242,20 @@ Very simple plug-in:
 - using a generic UI
 
 ![what_if_14](../../resources/what_is_14.jpg)
+
+## Test Multiple Program Changes
+
+Very simple plug-in:
+
+- showing how to support multiple ProgramChange parameters: 16 slots with one associated program change parameter and a program list for each slot.
+- using a generic UI
+
+## Test Remap ParamID
+
+Very simple plug-in:
+
+- demonstrating how a **VST 3** Plug-in could replace another one.
+- it could replace the [AGain](../What+is+the+VST+3+SDK/Plug-in+Examples.md?#again) plug-in when it is not available. It illustrates the use of the interface [IRemapParamID](../Technical+Documentation/Change+History/3.7.11/IRemapParamID.md) (for mapping [Test Remap ParamID](../What+is+the+VST+3+SDK/Plug-in+Examples.md?#test-remap-paramid) parameters to AGain plug-in parameters) and the [module info](../Technical+Documentation/VST+Module+Architecture/ModuleInfo-JSON.md) with its compatibility field.
 
 ## Sync Delay
 

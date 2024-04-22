@@ -215,7 +215,7 @@ This interface allows the host to get a parameter associated to a specific meani
 
 ## [\[3.7.0\] Progress Display](Change+History/3.7.0/IProgress.md)
 
-Allows the plug-in to ask the host to create a progress for specific tasks which take some time.
+This interface allows the plug-in to ask the host to create a progress for specific tasks which take some time.
 
 ## [\[3.7.0\] Process Context Requirements](Change+History/3.7.0/IProcessContextRequirements.md)
 
@@ -227,8 +227,12 @@ The [moduleinfo.json](VST+Module+Architecture/ModuleInfo-JSON.md) describes the 
 
 ## [\[3.7.9\] Get Current SystemTime](Change+History/3.7.9/IComponentHandlerSystemTime.md)
 
-Allows a plug-in to ask the host for the current system time.
+This interface allows a plug-in to ask the host for the current system time.
 
 ## [\[3.7.9\] Data Transfert Between Processor/Controller](Change+History/3.7.9/IDataExchangeHandler.md)
 
 These interfaces allow you to send data with a direct and thread-safe connection from the realtime audio context of the audio processor to the non-realtime audio context of the edit controller.
+
+## [\[3.7.11\] Remap Parameter ID](Change+History/3.7.11/IRemapParamID.md)
+
+This interface allows the plug-in to ask the host to remap some parameter ID if needed.

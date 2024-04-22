@@ -114,11 +114,12 @@
   - [\[3.7.5\] Module Info and Plug-in Compatibility](pages/Technical+Documentation/Change+History/3.7.5/ModuleInfo.md)
   - [\[3.7.9\] Get Current SystemTime](pages/Technical+Documentation/Change+History/3.7.9/IComponentHandlerSystemTime.md)
   - [\[3.7.9\] Data Transfert Between Processor/Controller](pages/Technical+Documentation/Change+History/3.7.9/IDataExchangeHandler.md)
+  - [\[3.7.11\] Remap Parameter ID](pages/Technical+Documentation/Change+History/3.7.11/IRemapParamID.md)
 
 # Additional Resources
 
 - [Change History](pages/Versions/Index.md)
-  - [Version 3.7.11 (2024/05/??)](pages/Versions/Version+3.7.11.md)
+  - [Version 3.7.11 (2024/04/22)](pages/Versions/Version+3.7.11.md)
   - [Version 3.7.10 (2024/01/18)](pages/Versions/Version+3.7.10.md)
   - [Version 3.7.9 (2023/10/09)](pages/Versions/Version+3.7.9.md)
   - [Version 3.7.8 (2023/05/15)](pages/Versions/Version+3.7.8.md)

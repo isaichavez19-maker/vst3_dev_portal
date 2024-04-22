@@ -1,36 +1,24 @@
 >/ [VST Home](../) / [Change History](./Index.md)
 >
-># Version 3.7.11 (2024/05/??)
+># Version 3.7.11 (2024/04/22)
 
-## Version 3.7.11 (2024/05/??)
+## Version 3.7.11 (2024/04/22)
 
 - Interface changes:
-  
-- [VSTGUI](../What+is+the+VST+3+SDK/VSTGUI.md) update [4.13.3](https://github.com/steinbergmedia/vstgui/releases/tag/vstgui4_13_3)
+  - New [Vst::IRemapParamID](../Technical+Documentation/Change+History/3.7.11/IRemapParamID.md): allows the plug-in to ask the host to remap some parameter ID if needed.
+
+- New Flags/Enums:
+  - New RestartFlags: [kParamIDMappingChanged](../Technical+Documentation/Change+History/3.7.11/IRemapParamID.md).
 
 - Documentation
-  
+  - new doc for [Vst::IRemapParamID](../Technical+Documentation/Change+History/3.7.11/IRemapParamID.md).
+
 - cmake
   - references to **VST 2** are removed from the SDK.
  
-  
 - [Plug-in Wrappers](../What+is+the+VST+3+SDK/Wrappers/Index.md):
   - **VST 2** Wrapper is removed from the SDK.
-  - **AAX** Wrapper: rename project aaxwrapper to aax_wrapper
-
-- Tools:
 
 - [Examples](../What+is+the+VST+3+SDK/Plug-in+Examples.md):
-  - New VST 3 plug-ins example:
-    - New [RemapParamID](../What+is+the+VST+3+SDK/Plug-in+Examples.md#remapparamid)...TODO
-  - Rename project names for better readability.
-  
-- Helpers classes:
-  - Avoid potential hang in connectionproxytest ([PR#66](https://github.com/steinbergmedia/vst3_public_sdk/pull/66)).
-
-- [Validator](../What+is+the+VST+3+SDK/Index.md#validator-command-line):
-  
-- [VST3PluginTestHost](../What+is+the+VST+3+SDK/Plug-in+Test+Host.md) v3.7:
-  
-- [VST3 Project Generator](../What+is+the+VST+3+SDK/Project+Generator.md) v2024.01:
-  
+  - New VST 3 plug-in example:
+    - New [RemapParamID](../What+is+the+VST+3+SDK/Plug-in+Examples.md#remapparamid) showing how a VST 3 plug-in could replace an another VST 3 plug-in (in this case AGain) and remap the parameters ID.
