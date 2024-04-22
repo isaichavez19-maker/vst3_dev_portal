@@ -62,7 +62,7 @@ Simple cross-platform (Win/macOS/Linux) host application, built with VSTGUI, whi
 
 This is a user interface toolkit mainly for audio plug-ins (VST, AudioUnit, etc). Based on the XML definition of the plug-in UI, **VSTGUI** includes an embedded editor (UIDescription Editor) which allows the developer to create a plug-in UI just by drag & drop of the UI element.
 
-## [AAX, AUv3, AU and VST 2 wrappers](../What+is+the+VST+3+SDK/Wrappers/Index.md)
+## [AAX, AUv3 and AU wrappers](../What+is+the+VST+3+SDK/Wrappers/Index.md)
 
 These wrappers allow you to create versions of your **VST 3** plug-in in other plug-in formats with minimum effort.
 
