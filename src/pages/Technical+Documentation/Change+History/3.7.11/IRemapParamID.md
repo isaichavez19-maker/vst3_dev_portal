@@ -37,7 +37,7 @@ In the second use case defined above, upon loading its state, the plug-in inform
 - \[plug imp\]
 - \[released: 3.7.11\]
 
-### Example
+## Example
 
 **In controller.h**:
 
@@ -51,6 +51,9 @@ public:
     tresult PLUGIN_API getCompatibleParamID (const TUID pluginToReplaceUID /*in*/,
                                          Vst::ParamID oldParamID /*in*/,
                                          Vst::ParamID& newParamID /*out*/) override;
+
+    //--- from EditController --------------------------------------------
+	tresult PLUGIN_API setComponentState (IBStream* state) override;
 
     //---Interface---------
     DEFINE_INTERFACES
@@ -90,4 +93,24 @@ tresult PLUGIN_API TestRemapParamIDController::getCompatibleParamID (const TUID 
 	//--- return kResultTrue if the mapping happens------------
 	return (newParamID == -1) ? kResultFalse : kResultTrue;
 }
-``` 
+
+//------------------------------------------------------------------------
+tresult PLUGIN_API TestRemapParamIDController::setComponentState (IBStream* state)
+{
+	//...
+    IBStreamer streamer (state, kLittleEndian);
+
+    // Read the state
+
+    bool remapNeeded = false;
+    // here if we decode that the state was from an older plug-in
+    //...
+
+    // then restartComponent
+    if (remapNeeded)
+        componentHandler->restartComponent (kParamIDMappingChanged);
+
+    return kResultOk;
+}
+
+```
