@@ -21,4 +21,4 @@
 
 - [Examples](../What+is+the+VST+3+SDK/Plug-in+Examples.md):
   - New VST 3 plug-in example:
-    - New [RemapParamID](../What+is+the+VST+3+SDK/Plug-in+Examples.md#remapparamid) showing how a VST 3 plug-in could replace an another VST 3 plug-in (in this case AGain) and remap the parameters ID.
+    - New [Test Remap ParamID](../What+is+the+VST+3+SDK/Plug-in+Examples.md#test-remap-paramid) showing how a VST 3 plug-in could replace an another VST 3 plug-in (in this case AGain) and remap the parameters ID.
