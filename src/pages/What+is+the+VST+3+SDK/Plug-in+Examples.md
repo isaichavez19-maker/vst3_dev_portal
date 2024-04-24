@@ -9,7 +9,7 @@
 **Related pages:**
 
 - [VST 3 Plug-in Test Host](Plug-in+Test+Host.md)
-- [AAX, AUv3, AU and VST 2 Wrappers](Wrappers/Index.md)
+- [AAX, AUv3 and AU Wrappers](Wrappers/Index.md)
 - [Building the examples included in the SDK on Windows](../Tutorials/Building+the+examples/Building+the+examples+included+in+the+SDK+Windows.md)
 - [Building the examples included in the SDK on macOS](../Tutorials/Building+the+examples/Building+the+examples+included+in+the+SDK+macOS.md)
 - [Building the examples included in the SDK on Linux](../Tutorials/Building+the+examples/Building+the+examples+included+in+the+SDK+Linux.md)
@@ -17,7 +17,7 @@
 
 ## Introduction
 
-The SDK includes some Plug-ins implementation examples. The Legendary **AGain** and **ADelay**, thanks Paul Kellet the Open-source **mda** Plug-ins, a basic "Note Expression Synth" supporting "**Note Expression Event**", an example of **pitchnames** support Plug-in, a **VST 3 Host Checker** which checks if a host is **VST 3** compliant and more...
+The SDK includes some Plug-ins implementation examples. The Legendary **AGain** and **ADelay**, thanks Paul Kellet the Open-source **mda** Plug-ins, a basic **Note Expression Synth** supporting "**Note Expression Event**", an example of **PitchNames** support Plug-in, a **VST 3 Host Checker** which checks if a host is **VST 3** compliant and more...
 
 >![what_if_2](../../resources/what_is_2.jpg)
 >
@@ -76,7 +76,7 @@ Simple plug-in showing how to achieve sample-accurate processing.
 
 Based Check the folder *"public.sdk/samples/vst/again_sampleaccurate"* of the SDK!
 
-## TestChannelContext
+## Test Channel Context
 
 Very simple plug-in:
 
@@ -87,7 +87,7 @@ Very simple plug-in:
 
 Check the folder *"public.sdk/samples/vst/channelcontext"* of the SDK!
 
-## DataExchange
+## Data Exchange
 
 This plug-in:
 
@@ -98,7 +98,7 @@ This plug-in:
 
 Check the folder *"public.sdk/samples/vst/dataexchange"* of the SDK!
 
-## HostChecker
+## VST3 Host Checker
 
 - Instrument, Panner and Fx plug-in checking the **VST 3** support of a host
 - It uses [**VSTGUI**](VSTGUI.md)
@@ -108,7 +108,7 @@ Check the folder *"public.sdk/samples/vst/dataexchange"* of the SDK!
 
 Check the folder *"public.sdk/samples/vst/hostchecker"* of the SDK!
 
-## TestLegacyMIDICCOut
+## Test Legacy MIDI CC Out
 
 Very simple plug-in:
 
@@ -227,19 +227,13 @@ Classes:
 ## Test Prefetchable Support
 
 Very simple plug-in:
+
 - showing how to use the [Steinberg::Vst::IPrefetchableSupport](../Technical+Documentation/Change+History/3.6.5/IPrefetchableSupport.md) interface
 - using a generic UI
 
 ![what_if_13](../../resources/what_is_13.jpg)
 
 Check the folder *"public.sdk/samples/vst/prefetchablesupport"* of the SDK!
-
-## Test Multiple Program Changes
-
-Very simple plug-in:
-
-- showing how to support multiple ProgramChange parameters: 16 slots with one associated program change parameter and a program list for each slot.
-- using a generic UI
 
 ## Test Program Change
 
@@ -250,6 +244,21 @@ Very simple plug-in:
 
 ![what_if_14](../../resources/what_is_14.jpg)
 
+## Test Multiple Program Changes
+
+Very simple plug-in:
+
+- showing how to support multiple ProgramChange parameters: 16 slots with one associated program change parameter and a program list for each slot.
+- using a generic UI
+
+## Test Remap ParamID
+
+Very simple plug-in:
+
+- demonstrating how a **VST 3** Plug-in could replace another one and remap parameters ID.
+- it could replace the [AGain](../What+is+the+VST+3+SDK/Plug-in+Examples.md?#again) plug-in when it is not available.
+- it illustrates the use of the interface [IRemapParamID](../Technical+Documentation/Change+History/3.7.11/IRemapParamID.md) (for mapping [Test Remap ParamID](../What+is+the+VST+3+SDK/Plug-in+Examples.md?#test-remap-paramid) parameters to AGain plug-in parameters) and the [module info](../Technical+Documentation/VST+Module+Architecture/ModuleInfo-JSON.md) with its compatibility field.
+
 ## Sync Delay
 
 Very simple delay plug-in:
@@ -258,7 +267,7 @@ Very simple delay plug-in:
 
 Check the folder *"public.sdk/samples/vst/syncdelay"* of the SDK!
 
-## UTF16Name
+## UTF16 Name
 
 Very simple plug-in:
 
