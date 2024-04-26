@@ -118,6 +118,7 @@
 # Additional Resources
 
 - [Change History](pages/Versions/Index.md)
+  - [Version 3.7.12 (2024/0?/??)](pages/Versions/Version+3.7.12.md)
   - [Version 3.7.11 (2024/04/22)](pages/Versions/Version+3.7.11.md)
   - [Version 3.7.10 (2024/01/18)](pages/Versions/Version+3.7.10.md)
   - [Version 3.7.9 (2023/10/09)](pages/Versions/Version+3.7.9.md)
