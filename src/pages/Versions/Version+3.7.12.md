@@ -22,7 +22,9 @@
 - [Examples](../What+is+the+VST+3+SDK/Plug-in+Examples.md):
   - Rename project names for better readability.
   - Temporary disable dataexchange example for linux due to missing linux implementation.
-  - Update **Hostchecker** plug-in with new host check: call of getLatency after setActive and before setProcessing or process.
+  - Update **Hostchecker** plug-in:
+    - with new host check: call of getLatency after setActive and before setProcessing or process.
+    - new parameters for Randomize + LowLatency + DryWet with [IParameterFunctionName](../Technical+Documentation/Change+History/3.7.0/IParameterFunctionName.md) support.
 
 - Helpers classes:
   - *hosting/test/connectionproxytest.cpp*: Avoid potential hang in connectionproxytest ([PR#66](https://github.com/steinbergmedia/vst3_public_sdk/pull/66)).
