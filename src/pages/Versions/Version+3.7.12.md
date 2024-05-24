@@ -18,6 +18,7 @@
 - [Plug-in Wrappers](../What+is+the+VST+3+SDK/Wrappers/Index.md):
   - **AAX** Wrapper: rename project aaxwrapper to aax_wrapper.
   - **AU Wrapper**: Fix Reference Counting Issue in VST3DynLibrary class.
+  - **AUv3 Wrapper**: Fix touch/gesture (begin/end edit).
 
 - [Examples](../What+is+the+VST+3+SDK/Plug-in+Examples.md):
   - Rename project names for better readability.
