@@ -21,6 +21,7 @@
   - **AUv3 Wrapper**: Fix touch/gesture (begin/end edit).
 
 - [Examples](../What+is+the+VST+3+SDK/Plug-in+Examples.md):
+  - README.md files added for each examples.
   - Rename project names for better readability.
   - Temporary disable dataexchange example for linux due to missing linux implementation.
   - Update **Hostchecker** plug-in:
