@@ -12,13 +12,19 @@
 - Documentation
   
 - cmake
-  
+  - Add changes to support the AudioUnit SDK.
+
 - Tools:
 
 - [Plug-in Wrappers](../What+is+the+VST+3+SDK/Wrappers/Index.md):
   - **AAX** Wrapper: rename project aaxwrapper to aax_wrapper.
-  - **AU Wrapper**: Fix Reference Counting Issue in VST3DynLibrary class.
-  - **AUv3 Wrapper**: Fix touch/gesture (begin/end edit).
+  - **AU/AUv3 Wrappers**:
+    - Add support for the old CoreAudio and new official AudioUnitSDK (version 1.1.0).
+  - **AU Wrapper**:
+    - Fix Reference Counting Issue in VST3DynLibrary class.
+    - Fix hanging notes.
+  - **AUv3 Wrapper**:
+    - Fix touch/gesture (begin/end edit).
 
 - [Examples](../What+is+the+VST+3+SDK/Plug-in+Examples.md):
   - README.md files added for each examples.
@@ -33,6 +39,7 @@
   - *hosting/module_mac.mm*: fix warning [-Wnullable-to-nonnull-conversion] ([PR#67](https://github.com/steinbergmedia/vst3_public_sdk/pull/67)).
   - *hosting/module_win32.cpp*: Add better failure report when loading library on Windows ([PR#68](https://github.com/steinbergmedia/vst3_public_sdk/pull/68)).
   - remove support for VSTGUI version 4.1 or older.
+  - *common/pluginview.cpp*: remove virtual function called from destructor ([Issue#79](https://github.com/steinbergmedia/vst3_public_sdk/issues/7)).
 
 - [Validator](../What+is+the+VST+3+SDK/Index.md#validator-command-line):
   
