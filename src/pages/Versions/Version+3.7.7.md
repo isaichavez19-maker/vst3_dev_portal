@@ -11,8 +11,8 @@
 - [VSTGUI](../What+is+the+VST+3+SDK/VSTGUI.md) update [4.12](https://github.com/steinbergmedia/vstgui/releases/tag/vstgui4_12)
   
 - Documentation
-  - New tutorial: [Creating a cmake plug-in project from scratch](../Tutorials/Creating+a+plug-in+from+scratch.md)
-  - New tutorial: [Switching to another VSTGUI submodule or branch](../Tutorials/Switching+to+another-VSTGUI+submodule+or+branch.md)
+  - New tutorial: [Creating a cmake plug-in project from scratch](../Tutorials/Creating+a+plug-in+from+scratch.md).
+  - New tutorial: [Switching to another VSTGUI submodule or branch](../Tutorials/Switching+to+another-VSTGUI+submodule+or+branch.md).
 
 - cmake
   - Adapting cmake for making possible to extract an example from the SDK.
@@ -25,8 +25,9 @@
 
 - [Plug-in Wrappers](../What+is+the+VST+3+SDK/Wrappers/Index.md):
   - Audio Unit:
-    - AUv3Wrapper: fix crash building parameter groups ([PR#43](https://github.com/steinbergmedia/vst3_public_sdk/pull/43)).
-    - AUv3Wrapper: fix crash for empty parameter groups ([PR#44](https://github.com/steinbergmedia/vst3_public_sdk/pull/44)).
+    - **AUv3Wrapper**: 
+      - fix crash building parameter groups ([PR#43](https://github.com/steinbergmedia/vst3_public_sdk/pull/43)).
+      - fix crash for empty parameter groups ([PR#44](https://github.com/steinbergmedia/vst3_public_sdk/pull/44)).
 
 - [VST3PluginTestHost](../What+is+the+VST+3+SDK/Plug-in+Test+Host.md) v3.4:
   - **MIDI 2** support on macOS with higher resolution for *Velocity On/Off*, *Aftertouch*, *Polypressure*, *ControlChange* and *PitchBend*.

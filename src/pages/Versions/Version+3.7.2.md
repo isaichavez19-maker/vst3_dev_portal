@@ -32,9 +32,9 @@
   - Fix link plug-in to common location on Windows
   - Fix: Failing unit test with validator results inplug-in resources/snapshots not being copied
 - [Plug-in Wrappers](../What+is+the+VST+3+SDK/Wrappers/Index.md):
-  - AAX Wrapper
+  - **AAX Wrapper**
     - Fix Export Symbols for AAX on macOS
-  - Audio Unit v2
+  - **AUv2 Wrapper**:
     - Fix AUv2 with Xcode 12
 - [Examples](../What+is+the+VST+3+SDK/Plug-in+Examples.md):
   - New VST 3 hosting example:

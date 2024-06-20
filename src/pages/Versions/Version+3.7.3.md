@@ -19,13 +19,13 @@
   - Fix wrong symbol visibility when project created via project generator
 - [New Tutorial for advanced techniques](../Tutorials/Advanced+VST+3+techniques.md)
 - [Plug-in Wrappers](../What+is+the+VST+3+SDK/Wrappers/Index.md):
-  - AAX Wrapper:
+  - **AAX Wrapper**:
     - Refactoring of initModule/DeInitModule
     - GetParameterIndex wrong index when read-only parameters used
-  - VST 2 Wrapper:
+  - **VST 2 Wrapper**:
     - Fix issue calling too many InitModule
     - Refactoring of initModule/DeInitModule
-  - Audio Unit v3:
+  - **AUv3 Wrapper**:
     - Support AUv3 in macOS 11
     - Simplify AUv3Wrapper code
     - Fix Logic/GarageBand not showing editor on macOS 11

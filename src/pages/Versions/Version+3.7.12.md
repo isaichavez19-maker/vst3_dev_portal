@@ -12,19 +12,20 @@
 - Documentation
   
 - cmake
-  - Add changes to support the AudioUnit SDK.
+  - Add changes to support the [Apple AudioUnit SDK](https://github.com/apple/AudioUnitSDK) for AU Wrapper.
 
 - Tools:
 
 - [Plug-in Wrappers](../What+is+the+VST+3+SDK/Wrappers/Index.md):
   - **AAX** Wrapper: rename project aaxwrapper to aax_wrapper.
-  - **AU/AUv3 Wrappers**:
-    - Add support for the old CoreAudio and new official AudioUnitSDK (version 1.1.0).
-  - **AU Wrapper**:
-    - Fix Reference Counting Issue in VST3DynLibrary class.
-    - Fix hanging notes.
-  - **AUv3 Wrapper**:
-    - Fix touch/gesture (begin/end edit).
+  - Audio Unit:
+    - **AU/AUv3 Wrappers**:
+      - Add support for the old CoreAudio and new official AudioUnitSDK (version 1.1.0).
+    - **AU Wrapper**:
+      - Fix Reference Counting Issue in VST3DynLibrary class.
+      - Fix hanging notes.
+    - **AUv3 Wrapper**:
+      - Fix touch/gesture (begin/end edit).
 
 - [Examples](../What+is+the+VST+3+SDK/Plug-in+Examples.md):
   - README.md files added for each examples.
