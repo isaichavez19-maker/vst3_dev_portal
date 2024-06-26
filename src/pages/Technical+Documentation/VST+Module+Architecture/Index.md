@@ -99,7 +99,7 @@ In addition to the **GetPluginFactory** function the plug-in may has to export a
 >**On Windows**\
 >On *Windows* the entry/exit functions are named **InitDll** / **ExitDll** and are ***optional!***
 >
->A Plug-In can export these functions and a host has to call the **InitDll** function directly after loading the plug-in via LoadLibrary and before calling **GetPluginFactory**. The **ExitDll** function must be called before the plug-in is unloaded via *FreeLibrary* or on program termination without *FreeLibrary*.
+>A Plug-in can export these functions and a host has to call the **InitDll** function directly after loading the plug-in via LoadLibrary and before calling **GetPluginFactory**. The **ExitDll** function must be called before the plug-in is unloaded via *FreeLibrary* or on program termination without *FreeLibrary*.
 >
 >As *Windows* already has this feature (see [DllMain](https://docs.microsoft.com/en-us/cpp/build/run-time-library-behavior?view=msvc-170) in Microsofts documentation) the above functions are optional.
 

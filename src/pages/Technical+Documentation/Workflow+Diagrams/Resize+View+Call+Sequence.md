@@ -8,7 +8,7 @@
 
 ---
 
-## Initiated from Plug-In
+## Initiated from Plug-in
 
 ```mermaid
 sequenceDiagram
@@ -69,7 +69,7 @@ sequenceDiagram
     H->>+P:             setContentScaleFactor(factor)
     P-->>-H:            return
     Note right of H:    From here, same sequence
-    Note right of H:    than "Initiated from Plug-In"
+    Note right of H:    than "Initiated from Plug-in"
     P->>+H:             resizeView(size)
     H-->>-P:            return
 ```
