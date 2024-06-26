@@ -37,7 +37,7 @@
 
 - Helpers classes:
   - *hosting/test/connectionproxytest.cpp*: Avoid potential hang in connectionproxytest ([PR#66](https://github.com/steinbergmedia/vst3_public_sdk/pull/66)).
-  - *hosting/module_mac.mm*: fix warning [-Wnullable-to-nonnull-conversion] ([PR#67](https://github.com/steinbergmedia/vst3_public_sdk/pull/67)).
+  - *hosting/module_mac.mm*: fix warning (-Wnullable-to-nonnull-conversion) ([PR#67](https://github.com/steinbergmedia/vst3_public_sdk/pull/67)).
   - *hosting/module_win32.cpp*: Add better failure report when loading library on Windows ([PR#68](https://github.com/steinbergmedia/vst3_public_sdk/pull/68)).
   - remove support for VSTGUI version 4.1 or older.
   - *common/pluginview.cpp*: remove virtual function called from destructor ([Issue#79](https://github.com/steinbergmedia/vst3_public_sdk/issues/7)).
