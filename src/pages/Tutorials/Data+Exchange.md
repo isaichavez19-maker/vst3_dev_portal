@@ -15,5 +15,3 @@
 >You'll find the source for this tutorial in the [tutorial repository](https://github.com/steinbergmedia/vst3_tutorials/blob/master/dataexchange-tutorial)
 
 {{#include ../../.vst3_tutorials/dataexchange-tutorial/README.md:31:}}
-
-
