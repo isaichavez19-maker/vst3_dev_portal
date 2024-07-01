@@ -29,7 +29,7 @@ You have the following possibilities to start a new project:
 
 ## Part 2: Using the [VST 3 plug-in **Project Generator** application](../What+is+the+VST+3+SDK/Project+Generator.md)
 
-The [**VST 3 Project Generator**](../What+is+the+VST+3+SDK/Project+Generator.md) application included in the **VST 3 SDK**  is available for Windows and for macOS.
+The [**VST3 Project Generator**](../What+is+the+VST+3+SDK/Project+Generator.md) application included in the **VST 3 SDK**  is available for Windows and for macOS.
 
 Start the application located in the *VST3_Project_Generator* folder of the **VST 3 SDK**.
 

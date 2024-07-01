@@ -10,10 +10,10 @@
 
 - Interfaces changes:
   - rename some defines:
-    - PLATFORM_64 => `SMTG_PLATFORM_64`
-    - WINDOWS => `SMTG_OS_WINDOWS`
-    - MAC => `SMTG_OS_MACOS`
-    - LINUX => `SMTG_OS_LINUX`
+    - PLATFORM_64 => SMTG_PLATFORM_64
+    - WINDOWS => SMTG_OS_WINDOWS
+    - MAC => SMTG_OS_MACOS
+    - LINUX => SMTG_OS_LINUX
   - extract Speaker Arrangement from vsttypes.h to vstspeaker.h.
   - new kNoParamId constant for uninitialized parameter id.
 
@@ -32,4 +32,4 @@
   - interappaudio: improvements, fixes, add cmake.
   
 - Helpers classes:
-  - New Ring Buffer class (ringbuffer.h).
+  - New Ring Buffer class (ringbuffer.h)

@@ -22,7 +22,7 @@
 - cmake:
   - minor refactoring (like renaming WIN to SMTG_WIN).
   - fix *WIN_ARCHITECTURE_NAME* for Windows 32bits.
-  - fix `SMTG_PACKAGE_ICON_PATH` selection.
+  - fix *SMTG_PACKAGE_ICON_PATH* selection.
   - split *WIN_PDB* into *WIN_PDB32* and *WIN_PDB64*.
 
 - [Examples](../What+is+the+VST+3+SDK/Plug-in+Examples.md):

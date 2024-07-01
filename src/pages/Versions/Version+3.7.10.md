@@ -35,7 +35,7 @@
   - Fix global buffer overflow (AddressSanitizer) issue.
   - On Windows "*Steinberg built-in Driver*" is used by default if present.
 
-- [VST 3 Project Generator](../What+is+the+VST+3+SDK/Project+Generator.md) v2024.01:
+- [VST3 Project Generator](../What+is+the+VST+3+SDK/Project+Generator.md) v2024.01:
   - Fix: ProjetGenerator should not allow new project inside the SDK folder.
   - Adapt template project: remove audio input for Instrument and add a default processing implementation as example.
   

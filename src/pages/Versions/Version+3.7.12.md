@@ -10,8 +10,7 @@
 - [VSTGUI](../What+is+the+VST+3+SDK/VSTGUI.md) update [4.13.3](https://github.com/steinbergmedia/vstgui/releases/tag/vstgui4_13_3)
 
 - Documentation
-  - New tutorial: [AudioUnit Tutorial - How to add AUv2 support to your VST 3 plug-in](../Tutorials/Audio+Unit.md).
-
+  
 - cmake
   - Add changes to support the [Apple AudioUnit SDK](https://github.com/apple/AudioUnitSDK) for AU Wrapper.
 
@@ -47,5 +46,5 @@
   
 - [VST3PluginTestHost](../What+is+the+VST+3+SDK/Plug-in+Test+Host.md) v3.7:
   
-- [VST 3 Project Generator](../What+is+the+VST+3+SDK/Project+Generator.md) v2024.01:
+- [VST3 Project Generator](../What+is+the+VST+3+SDK/Project+Generator.md) v2024.01:
   

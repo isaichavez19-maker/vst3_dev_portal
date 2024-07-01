@@ -150,7 +150,7 @@ Windows_x64\Resources\GenerateVST3Plugin.cmake
 ==================================================
 
  Steinberg Media Technologies GmbH
- VST 3 Project Generator
+ VST3 Project Generator
 
 ==================================================
 
@@ -227,7 +227,7 @@ That´s it!
 
 You can contribute to this project on <https://github.com/steinbergmedia/vst3projectgenerator>!
 
-## VST 3 Project Generator License
+## VST3 Project Generator License
 
 ``` text
 BSD style

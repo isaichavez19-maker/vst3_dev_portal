@@ -109,7 +109,7 @@ This is a simple Hello World **VST 3 SDK** plug-in to demonstrate how to use the
 
 Sometimes it is necessary to switch to another **VSTGUI** submodule or branch for testing purpose. This tutorial explains how to do that.
 
-## How to add AUv2 support to your VST 3 plug-in
+## How to add AUv2 support to your VST 3 plug-in.
 
 [Link](Audio+Unit.md)
 

@@ -59,5 +59,5 @@
 - [VST3PluginTestHost](../What+is+the+VST+3+SDK/Plug-in+Test+Host.md) v3.3.0:
   - The 32bits version of plugintesthost is not availble anymore.
   
-- [VS T3 Project Generator](../What+is+the+VST+3+SDK/Project+Generator.md) v2022.05:
+- [VST3 Project Generator](../What+is+the+VST+3+SDK/Project+Generator.md) v2022.05:
   - Adapt VST3 Inspector for Compatibility json file support.

@@ -34,7 +34,7 @@
   - Fix "Valid State Transition" test always fails a 64-bit-only plug-in #50.
   - Fix automation unit test.
   
-- [VST 3 Project Generator](../What+is+the+VST+3+SDK/Project+Generator.md) v2020.10:
+- [VST3 Project Generator](../What+is+the+VST+3+SDK/Project+Generator.md) v2020.10:
   - New support of [VSTGUI](../What+is+the+VST+3+SDK/VSTGUI.md)
   - Enable Symbolic link on Windows
   - Add VST3PluginTestHost.exe as Debugging->Command on Windows

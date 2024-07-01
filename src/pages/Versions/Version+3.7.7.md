@@ -32,7 +32,7 @@
 - [VST3PluginTestHost](../What+is+the+VST+3+SDK/Plug-in+Test+Host.md) v3.4:
   - **MIDI 2** support on macOS with higher resolution for *Velocity On/Off*, *Aftertouch*, *Polypressure*, *ControlChange* and *PitchBend*.
 
-- [VST 3 Project Generator](../What+is+the+VST+3+SDK/Project+Generator.md) v2022.11:
+- [VST3 Project Generator](../What+is+the+VST+3+SDK/Project+Generator.md) v2022.11:
   - Support of multiple namespaces for generated plug-in source code (XX::YY::ZZ), request **C++17** minimum.
   - Fix support of space character in paths.
   
