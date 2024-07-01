@@ -65,7 +65,7 @@ The next time you start the *Project Generator* application you will not asked t
 
 ## Setting the Preferences
 
-Before creating any plug-in project, you have to define some global preferences which will be automatically saved when closing the application.
+Before creating any plug-in project, you have to define some global preferences which will be automatically saved when closing the application. On Windows, these preferences are saved in the registry entry: *Computer\HKEY_CURRENT_USER\Software\com.steinberg.vst3sdk.projectgenerator*.
 
 Company Information
 
