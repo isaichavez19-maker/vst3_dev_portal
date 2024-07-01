@@ -24,10 +24,10 @@
 - cmake:
   - Code styling changed.
   - Each library defined which is the minimal requirementfor C++ version (11 for pluginterfaces) by usingtarget_compile_features.
-  - New flag: *SMTG_CXX_STANDARD* in order to overwrite thedefault used version of C++ (11).
-  - New flag: *SMTG_CUSTOM_BINARY_LOCATION*: Customize outputlocation for binaries.
-  - New flag: *SMTG_CXX_STANDARD*: C++ standard version usedfor plugins: 14, 17, 20.
-  - New flag: *SMTG_ENABLE_ADDRESS_SANITIZER*: Enable AddressSanitizer.
+  - New flag: `SMTG_CXX_STANDARD` in order to overwrite thedefault used version of C++ (11).
+  - New flag: `SMTG_CUSTOM_BINARY_LOCATION`: Customize outputlocation for binaries.
+  - New flag: `SMTG_CXX_STANDARD`: C++ standard version usedfor plugins: 14, 17, 20.
+  - New flag: `SMTG_ENABLE_ADDRESS_SANITIZER` Enable AddressSanitizer.
   - Add check for C11 atomic header.
   - Add support for enabling Sanitizer.
   - Add new file SMTG_SetDebugExecutable.cmake: allows topreconfigure the debug executable to run.

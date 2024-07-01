@@ -13,7 +13,7 @@ There are simple casting functions in *pluginterfaces/base/fstrdefs.h* (see **ws
 
 - Interface changes:
   - New [architecture folder for Windows Arm64EC and Arm64 Classic](../Technical+Documentation/Locations+Format/Plugin+Format.html#for-the-windows-platform)
-  - New macro **SMTG_HIDDEN_SYMBOL** in *pluginterfaces/base/fplatform.h*
+  - New macro `SMTG_HIDDEN_SYMBOL` in *pluginterfaces/base/fplatform.h*
   
 - [VSTGUI](../What+is+the+VST+3+SDK/VSTGUI.md) Bugfix update [4.11.1](https://github.com/steinbergmedia/vstgui/releases/tag/vstgui4_11_1)
   
@@ -52,5 +52,5 @@ There are simple casting functions in *pluginterfaces/base/fstrdefs.h* (see **ws
 - [VST3PluginTestHost](../What+is+the+VST+3+SDK/Plug-in+Test+Host.md) v3.3.10:
   - Support loading PACE protected plug-ins on macOS by using the required entitlement for the hardened runtime.
 
-- [VST3 Project Generator](../What+is+the+VST+3+SDK/Project+Generator.md) v2022.09:
+- [VST 3 Project Generator](../What+is+the+VST+3+SDK/Project+Generator.md) v2022.09:
   - Fix: Prevent crash when PATH contains empty substring [PR#3](https://github.com/steinbergmedia/vst3projectgenerator/pull/3).
