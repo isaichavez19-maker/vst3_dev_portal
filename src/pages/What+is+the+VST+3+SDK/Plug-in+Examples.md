@@ -94,7 +94,7 @@ This plug-in:
 - shows how to exchange data (waveform) between processor (in the realtime thread) and controller using the VST Data Exchange API: [Vst::IDataExchangeHandler](../Technical+Documentation/Data+Exchange/Index.md)
 - shows how easy it is to use [**VSTGUI**](VSTGUI.md)
 
-![what_if_38](../../resources/what_is_38.jpg)
+![what_if_38](../../resources/what_is_38.png)
 
 Check the folder *"public.sdk/samples/vst/dataexchange"* of the SDK!
 
