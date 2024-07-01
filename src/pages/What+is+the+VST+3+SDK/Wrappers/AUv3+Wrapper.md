@@ -1,4 +1,4 @@
->/ ... / [AAX, AUv3, AU and VST 2 Wrappers](Index.md)
+>/ ... / [AAX, AUv3 and AU Wrappers](Index.md)
 >
 ># VST 3 - AudioUnit v3 Wrapper
 
