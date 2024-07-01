@@ -2,14 +2,14 @@
 
 In this tutorial you will learn how to add AudioUnit Version 2 support to your **VST 3** plug-in.
 
-First of all, you need a **VST 3** plug-in project. For this tutorial we have generated one via the Project Generator from the SDK.
+First of all, you need a **VST 3** plug-in project. For this tutorial we have generated one via the [VST 3 Project Generator](https://steinbergmedia.github.io/vst3_dev_portal/pages/What+is+the+VST+3+SDK/Project+Generator.html) from the SDK.
 
 # Adding the AudioUnit Version 2 Target
 
 ## Obtaining the required AudioUnit SDK
 
 The *AudioUnit Version 2* target needs the official *AudioUnit SDK* from Apple.
-As of this writing you can find it on GitHub: [https://github.com/apple/AudioUnitSDK](https://github.com/apple/AudioUnitSDK).
+As of this writing you can find it on GitHub: [https://github.com/apple/AudioUnitSDK](https://github.com/apple/AudioUnitSDK)
 
 How you obtain and store the SDK is up to you, for the reproducibility of this tutorial, we will download it via *CMake* when generating the project.
 So we add the following text to the *CMakeLists.txt* directly before we include the **VST 3 SDK**.
@@ -28,7 +28,7 @@ FetchContent_GetProperties(
 )
 ```
 
-It is important to set the `SMTG_AUDIOUNIT_SDK_PATH` variable to tell the **VST 3 SDK** where to find the *AudioUnit SDK*.
+It is important to set the `SMTG_AUDIOUNIT_SDK_PATH` variable to tell the **VST 3 SDK** where to find the AudioUnit SDK.
 
 ## Creating the property list
 
