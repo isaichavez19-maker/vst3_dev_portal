@@ -55,5 +55,5 @@
   - Fix crashes when closing 2 or more instances of GUI of same plug-in in particular order
   - Fix support of SingleComponentEffect plug-ins that implement IMidiMapping
 
-- [VST3 Project Generator](../What+is+the+VST+3+SDK/Project+Generator.md) v1.0.0:
+- [VST 3 Project Generator](../What+is+the+VST+3+SDK/Project+Generator.md) v1.0.0:
   - New easy to use VST 3 Project Generator.

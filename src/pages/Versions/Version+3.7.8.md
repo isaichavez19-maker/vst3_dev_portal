@@ -19,9 +19,9 @@
   - Fix "When vst3sdk is a submodule, example plugins are not built - a switch to choose would be very useful" ([Issue#94](https://github.com/steinbergmedia/vst3sdk/issues/94)).
   - Fix CMake fails with bad $-escape ([Issue#100](https://github.com/steinbergmedia/vst3sdk/issues/100)).
   - **Breaking Change**: options renamed to more meaningful words:
-    - SMTG_ADD_VST3_HOSTING_SAMPLES => **SMTG_ENABLE_VST3_HOSTING_EXAMPLES**
-    - SMTG_ADD_VST3_PLUGINS_SAMPLES => **SMTG_ENABLE_VST3_PLUGIN_EXAMPLES**
-    - SMTG_ADD_VSTGUI => **SMTG_ENABLE_VSTGUI_SUPPORT**
+    - SMTG_ADD_VST3_HOSTING_SAMPLES => `SMTG_ENABLE_VST3_HOSTING_EXAMPLES`
+    - SMTG_ADD_VST3_PLUGINS_SAMPLES => `SMTG_ENABLE_VST3_PLUGIN_EXAMPLES`
+    - SMTG_ADD_VSTGUI => `SMTG_ENABLE_VSTGUI_SUPPORT`
 
 - [Plug-in Wrappers](../What+is+the+VST+3+SDK/Wrappers/Index.md):
   - Audio Unit:

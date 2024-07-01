@@ -50,6 +50,6 @@
 - [Validator](../What+is+the+VST+3+SDK/Index.md#validator-command-line):
   - Allow **moduleinfo.json** and **IPluginCompatibility** to coexist, not seen as error but warning (not recommanded!) [(Issue#63)](https://github.com/steinbergmedia/vst3_public_sdk/issues/63).
 
-- [VST3 Project Generator](../What+is+the+VST+3+SDK/Project+Generator.md) v2023.09:
-  - Rename SMTG_ADD_VSTGUI to **SMTG_ENABLE_VSTGUI_SUPPORT**.
+- [VST 3 Project Generator](../What+is+the+VST+3+SDK/Project+Generator.md) v2023.09:
+  - Rename SMTG_ADD_VSTGUI to `SMTG_ENABLE_VSTGUI_SUPPORT`.
   
