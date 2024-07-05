@@ -22,6 +22,7 @@
   - Audio Unit:
     - **AU/AUv3 Wrappers**:
       - Add support for the old CoreAudio and new official AudioUnitSDK (version 1.1.0).
+      - Add support of MIDI2 (higher-resolution for velocity and CC).
     - **AU Wrapper**:
       - Fix Reference Counting Issue in VST3DynLibrary class.
       - Fix hanging notes.
