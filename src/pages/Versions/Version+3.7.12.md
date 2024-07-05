@@ -47,6 +47,12 @@
 - [Validator](../What+is+the+VST+3+SDK/Index.md#validator-command-line):
   
 - [VST3PluginTestHost](../What+is+the+VST+3+SDK/Plug-in+Test+Host.md) v3.7:
+  - New features:
+    - [File => Export Audio...](../What+is+the+VST+3+SDK/Plug-in+Test+Host.md#menu-description)
+    - [File => Export Audio for current loaded MIDI...](../What+is+the+VST+3+SDK/Plug-in+Test+Host.md#menu-description)
+    - [Transport => Toggle time format between Time and Bars](../What+is+the+VST+3+SDK/Plug-in+Test+Host.md#transport-1)
+    - [Transport => Change the song position](../What+is+the+VST+3+SDK/Plug-in+Test+Host.md#transport-1)
+    - [Transport => Change tempo and signature](../What+is+the+VST+3+SDK/Plug-in+Test+Host.md#transport-1)
   
 - [VST 3 Project Generator](../What+is+the+VST+3+SDK/Project+Generator.md) v2024.01:
   

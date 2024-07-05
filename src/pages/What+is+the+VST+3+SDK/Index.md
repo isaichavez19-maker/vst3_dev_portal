@@ -36,7 +36,7 @@ The SDK includes some Plug-ins implementation examples.
 
 ## [VST 3 Plug-in Test Host](../What+is+the+VST+3+SDK/Plug-in+Test+Host.md)
 
-The SDK provides a test application called **VST3PluginTestHost** for Apple macOS X (x86_64/M1) and Microsoft Windows (64bits).
+The SDK provides a test application called **VST3PluginTestHost** for Apple macOS (Apple Silicon/Intel x86_64) and Microsoft Windows (x64 and Arm64EC).
 
 ## [VST 3 Project Generator](../What+is+the+VST+3+SDK/Project+Generator.md)
 
