@@ -13,7 +13,7 @@
   - New tutorial: [AudioUnit Tutorial - How to add AUv2 support to your VST 3 plug-in](../Tutorials/Audio+Unit.md).
 
 - cmake
-  - Add changes to support the [Apple AudioUnit SDK](https://github.com/apple/AudioUnitSDK) for AU Wrapper.
+  - Add changes to support the [Apple AudioUnit SDK](https://github.com/apple/AudioUnitSDK) for **AU Wrapper**.
 
 - Tools:
 
@@ -22,9 +22,9 @@
   - Audio Unit:
     - **AU/AUv3 Wrappers**:
       - Add support for the old CoreAudio and new official AudioUnitSDK (version 1.1.0).
-      - Add support of MIDI2 (higher-resolution for velocity and CC).
     - **AU Wrapper**:
-      - Fix Reference Counting Issue in VST3DynLibrary class.
+      - Add support of MIDI2 (higher-resolution for velocity and CC) using a helper for decoding UMP message (*public.sdk/source/vst/utility/ump.h*).
+      - Fix Reference Counting Issue in *VST3DynLibrary* class.
       - Fix hanging notes.
     - **AUv3 Wrapper**:
       - Fix touch/gesture (begin/end edit).
@@ -39,7 +39,7 @@
 
 - Helpers classes:
   - *hosting/test/connectionproxytest.cpp*: Avoid potential hang in connectionproxytest ([PR#66](https://github.com/steinbergmedia/vst3_public_sdk/pull/66)).
-  - *hosting/module_mac.mm*: fix warning (-Wnullable-to-nonnull-conversion) ([PR#67](https://github.com/steinbergmedia/vst3_public_sdk/pull/67)).
+  - *hosting/module_mac.mm*: fix warning (*-Wnullable-to-nonnull-conversion*) ([PR#67](https://github.com/steinbergmedia/vst3_public_sdk/pull/67)).
   - *hosting/module_win32.cpp*: Add better failure report when loading library on Windows ([PR#68](https://github.com/steinbergmedia/vst3_public_sdk/pull/68)).
   - remove support for VSTGUI version 4.1 or older.
   - *common/pluginview.cpp*: remove virtual function called from destructor ([Issue#79](https://github.com/steinbergmedia/vst3_public_sdk/issues/7)).
