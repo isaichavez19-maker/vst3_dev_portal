@@ -28,19 +28,16 @@ Allows the plug-in to ask the host to create a progress for specific tasks which
 // we are in the editcontroller:
 // as member: IProgress::ID mProgressID;
   
-FUnknownPtr<IProgress> progress (componentHandler);
-if (progress)
+if (auto progress = Steinberg::U::cast<IProgress> (componentHandler))
     progress->start (IProgress::ProgressType::UIBackgroundTask, STR ("Load Samples..."), mProgressID);
   
 // ...
 myProgressValue += incProgressStep;
-FUnknownPtr<IProgress> progress (componentHandler);
-if (progress)
+if (auto progress = Steinberg::U::cast<IProgress> (componentHandler))
     progress->update (mProgressID, myProgressValue);
   
 // ...
-FUnknownPtr<IProgress> progress (componentHandler);
-if (progress)
+if (auto progress = Steinberg::U::cast<IProgress> (componentHandler))
     progress->finish (mProgressID);
 ```
 

@@ -22,8 +22,7 @@ Here some code examples:
 #include "public.sdk/source/vst/utility/stringconvert.h"
 
 //...
-FUnknownPtr<IHostApplication> hostApp (hostContext);
-if (hostApp)
+if (auto hostApp = Steinberg::U::cast<IHostApplication> (hostContext))
 {
     Vst::String128 name;
     if (hostApp->getName (name) == kResultTrue)

@@ -28,8 +28,7 @@ See also [IComponentHandler](https://steinbergmedia.github.io/vst3_doc/vstinterf
 
 ``` c++
 // somewhere in your code when you need to inform the host to enable a specific Bus.
-FUnknownPtr<IComponentHandlerBusActivation> busActivation (componentHandler);
-if (busActivation)
+if (auto busActivation = Steinberg::U::cast<IComponentHandlerBusActivation> (componentHandler))
 {
     // here we want to activate our audio input Side-chain (the 2cd input bus: index 1)
     busActivation->requestBusActivation (kAudio, kInput, 1, true);
