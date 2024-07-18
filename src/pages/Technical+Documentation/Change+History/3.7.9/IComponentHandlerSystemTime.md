@@ -25,8 +25,7 @@
   
 int64 systemTime = 0;
 
-FUnknownPtr<IComponentHandlerSystemTime> handlerSystemTime (componentHandler);
-if (handlerSystemTime)
+if (auto handlerSystemTime = Steinberg::U::cast<IComponentHandlerSystemTime> (componentHandler))
     handlerSystemTime->getSystemTime (systemTime);
 
 ```
