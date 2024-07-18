@@ -52,6 +52,8 @@
   - Remove support for VSTGUI version 4.1 or older.
   - *common/pluginview.cpp*: remove virtual function called from destructor ([Issue#79](https://github.com/steinbergmedia/vst3_public_sdk/issues/7)).
   - Refactor *public.sdk/source/vst/utility/stringconvert.cpp* and extract a common base file: *public.sdk/source/common/commonstringconvert.cpp*.
+  - Replace "**FUnknownPtr\<XXX\> xxx (context);**" by "**auto xxx = Steinberg::U::cast\<XXX\> (context);**"
+    - It requires to include "*pluginterfaces/base/funknownimpl.h*".
 
 - [VST3PluginTestHost](../What+is+the+VST+3+SDK/Plug-in+Test+Host.md) v3.7:
   - New features:
