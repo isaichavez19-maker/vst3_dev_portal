@@ -81,8 +81,7 @@ IPlugView* PLUGIN_API MyEditController::createView (FIDString _name)
     ConstString name (_name);
     if (name == ViewType::kEditor)
     {
-        FUnknownPtr<IInterAppAudioHost> interAudioApp (getHostContext ());
-        if (interAudioApp)
+        if (auto interAudioApp = Steinberg::U::cast<IInterAppAudioHost> (getHostContext ()))
         {
             // create and return the view for iOS
         }

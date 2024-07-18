@@ -74,8 +74,7 @@ tresult PLUGIN_API MyController::getParameterIDFromFunctionName (UnitID unitID, 
 **Example of host implementation**
 
 ``` c++
-FUnknownPtr<Vst::IParameterFunctionName> functionName (mEditController->getIEditController ());
-if (functionName)
+if (auto functionName = Steinberg::U::cast<Vst::IParameterFunctionName> (mEditController->getIEditController ())
 {
     Vst::ParamID paramID;
     if (functionName->getParameterIDFromFunctionName (Vst::FunctionNameType::kCompGainReduction, paramID) == kResultTrue)

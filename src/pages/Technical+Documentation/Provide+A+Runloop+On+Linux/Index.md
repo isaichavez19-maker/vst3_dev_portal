@@ -20,8 +20,7 @@ The host application must provide the [Linux::IRunLoop](https://steinbergmedia.g
 tresult PLUGIN_API MyPlugView::setFrame (Steinberg::IPlugFrame* frame)
 {
     ...
-    Steinberg::FUnknownPtr<Steinberg::Linux::IRunLoop> runLoop (plugFrame);
-    if (runLoop)
+    if (auto runLoop = Steinberg::U::cast<Steinberg::Linux::IRunLoop> (plugFrame))
     {
         runLoop->registerEventHandler (...);
     }
@@ -44,8 +43,7 @@ The host application must call [Vst::IPlugFactory3::setHostContext (context)](ht
 tresult PLUGIN_API MyPlugFactory::setHostContext (FUnknown* context)
 {
     ...
-    Steinberg::FUnknownPtr<Steinberg::Linux::IRunLoop> runLoop (context);
-    if (runLoop)
+    if (auto runLoop = Steinberg::U::cast<Steinberg::Linux::IRunLoop> (context))
     {
         runLoop->registerTimer (...);
     }

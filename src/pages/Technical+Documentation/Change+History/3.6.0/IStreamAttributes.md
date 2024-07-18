@@ -28,8 +28,7 @@ Interface to access preset meta information from stream, used, for example, in [
  
 tresult PLUGIN_API MyPluginProcessor::setState (IBStream* state)
 {
-    FUnknownPtr<IStreamAttributes> stream (state);
-    if (stream)
+    if (auto stream = Steinberg::U::cast<IStreamAttributes> (state))
     {
         IAttributeList* list = stream->getAttributes ();
         if (list)

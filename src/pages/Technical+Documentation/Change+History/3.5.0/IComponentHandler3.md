@@ -81,11 +81,10 @@ void popupContextMenu (IComponentHandler* componentHandler, IPlugView* view, con
 {
     if (componentHandler == 0 || view == 0)
         return;
-    FUnknownPtr<IComponentHandler3> handler (componentHandler);
-    if (handler == 0)
+    auto handler = Steinberg::U::cast<IComponentHandler3> (componentHandler);
+    if (handler == nullptr)
         return;
-    IContextMenu* menu = handler->createContextMenu (view, paramID);
-    if (menu)
+    if (IContextMenu* menu = handler->createContextMenu (view, paramID))
     {
         // here, you can add your entries (optional)
         PluginContextMenuTarget* target = new PluginContextMenuTarget ();
