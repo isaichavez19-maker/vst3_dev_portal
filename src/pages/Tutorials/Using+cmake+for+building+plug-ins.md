@@ -131,12 +131,12 @@ cmake -DCMAKE_C_COMPILER=/usr/bin/gcc-DCMAKE_CXX_COMPILER=/usr/bin/g++
 ### Specific macOS/iOS
 
 - `SMTG_AUDIOUNIT_SDK_PATH`: Path to AudioUnit SDK
-- `SMTG_BUILD_INTERAPPAUDIO`: Enable building the iOS InterAppAudio examples (deprecated)
+- `SMTG_BUILD_INTERAPPAUDIO`: Enable building the iOS InterAppAudio examples (deprecated) (default OFF)
 - `SMTG_BUILD_UNIVERSAL_BINARY`: Build universal binary (32 & 64 bit)
 - `SMTG_CODE_SIGN_IDENTITY_IOS`: iOS Code Sign Identity
 - `SMTG_CODE_SIGN_IDENTITY_MAC`: macOS Code Sign Identity
 - `SMTG_COREAUDIO_SDK_PATH`: Here, you can define where the COREAUDIO SDK is located
-- `SMTG_DISABLE_CODE_SIGNING`: Disable Al Code Signing
+- `SMTG_DISABLE_CODE_SIGNING`: Disable Al Code Signing (default OFF)
 - `SMTG_ENABLE_IOS_TARGETS`: Enable building iOS targets (default OFF)
 - `SMTG_IOS_DEVELOPMENT_TEAM`: Needed for building the InterAppAudio and AUv3 examples for iOS
 - `SMTG_VSTSDK_GENERATE_MACOS_IOS_COLLECTION_TARGETS`: Create macOS and iOS collection targets (default OFF)
