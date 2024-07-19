@@ -27,10 +27,10 @@
   - Partially fix for Windows, create destination installation folders if they don't exist [(Issue#8)](https://github.com/steinbergmedia/vst3_cmake/issues/8).
 
 - [Plug-in Wrappers](../What+is+the+VST+3+SDK/Wrappers/Index.md):
-  - AAX Wrapper ([VST 3 - AAX Wrapper](../What+is+the+VST+3+SDK/Wrappers/AAX+Wrapper.md)):
+  - **AAX Wrapper** ([VST 3 - AAX Wrapper](../What+is+the+VST+3+SDK/Wrappers/AAX+Wrapper.md)):
     - fix some warnings
   - Audio Unit:
-    - AUv3Wrapper:
+    - **AUv3Wrapper**:
       - Fix iOS build errors ([PR#47](https://github.com/steinbergmedia/vst3_public_sdk/pull/47))
       - Make **AUv3** follow **VST3** threading model [(PR#62)](https://github.com/steinbergmedia/vst3_public_sdk/pull/62)
       - Fix "Missing field initializer" warnings in AUv3Wrapper [(Issue#55)](https://github.com/steinbergmedia/vst3_public_sdk/pull/55/commits/e2765e6d4365f1e81e719eb19e3e2a786f4281c8)
@@ -50,6 +50,6 @@
 - [Validator](../What+is+the+VST+3+SDK/Index.md#validator-command-line):
   - Allow **moduleinfo.json** and **IPluginCompatibility** to coexist, not seen as error but warning (not recommanded!) [(Issue#63)](https://github.com/steinbergmedia/vst3_public_sdk/issues/63).
 
-- [VST3 Project Generator](../What+is+the+VST+3+SDK/Project+Generator.md) v2023.09:
-  - Rename SMTG_ADD_VSTGUI to **SMTG_ENABLE_VSTGUI_SUPPORT**.
+- [VST 3 Project Generator](../What+is+the+VST+3+SDK/Project+Generator.md) v2023.09:
+  - Rename SMTG_ADD_VSTGUI to `SMTG_ENABLE_VSTGUI_SUPPORT`.
   

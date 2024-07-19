@@ -25,9 +25,11 @@
     - ITU 3+7+0 Sound System F
       - **k70_3** => L R C Ls Rs Sl Sr Tfl Tfr Trc
       - **k72_3** => L R C LFE Ls Rs Sl Sr Tfl Tfr Trc LFE2
+
 - Documentation
   - New tutorial explaining [How to use the silence flags](../Tutorials/how+to+use+the+silence+flags.md).
   - Move VST 3 documentation to md files.
+
 - cmake
   - Minimum cmake version is now 3.19.
   - New function *smtg_target_setup_as_vst3_example*.
@@ -36,21 +38,26 @@
   - use **VERSION** and **DESCRIPTION** with project() for generating automatically with cmake version file.
   - Change default to ON for SMTG_PLUGIN_TARGET_USER_PROGRAM_FILES_COMMON on Windows.
   - Fix https://github.com/steinbergmedia/vst3sdk/pull/91.
+
 - [Plug-in Wrappers](../What+is+the+VST+3+SDK/Wrappers/Index.md):
   - Audio Unit:
     - Fix AUv3 validation issue (https://github.com/steinbergmedia/vst3_public_sdk/issues/39).
+
 - [Examples](../What+is+the+VST+3+SDK/Plug-in+Examples.md):
   - New VST 3 plug-ins example:
     - New *multiple_programchanges* showing support of multiple program change parameters.
   - Add new *Processing Load* simulation parameter in **HostChecker** which allows to create a CPU load.
   - Refactoring the examples cmake for using the new versioning handling and *smtg_target_setup_as_vst3_example*.
+
 - [Validator](../What+is+the+VST+3+SDK/Index.md#validator-command-line):
   - Add test for *IPluginCompatibility* interface
 - Helpers classes:
   - New file in *public.sdk/samples/vst-utilities* for moduleinfo support.
   - New files in *public.sdk/source/vst/moduleinfo* for creating and parsing moduleinfo.
-  - Fix https://github.com/steinbergmedia/vst3_public_sdk/issues/37
+  - Fix https://github.com/steinbergmedia/vst3_public_sdk/issues/37.
+
 - [VST3PluginTestHost](../What+is+the+VST+3+SDK/Plug-in+Test+Host.md) v3.3.0:
   - The 32bits version of plugintesthost is not availble anymore.
-- [VST3 Project Generator](../What+is+the+VST+3+SDK/Project+Generator.md) v2022.05:
+  
+- [VS T3 Project Generator](../What+is+the+VST+3+SDK/Project+Generator.md) v2022.05:
   - Adapt VST3 Inspector for Compatibility json file support.

@@ -56,6 +56,9 @@ Browse the **VST 3 SDK**'s technical documentation. The full **VST 3 API** refer
 - [\[3.7.0\] Process Context Requirements](Change+History/3.7.0/IProcessContextRequirements.md)
 - [\[3.7.0\] Control Voltage Bus Flag](Change+History/3.7.0/Control+Voltage.md)
 - [\[3.7.5\] Module Info](Change+History/3.7.5/ModuleInfo.md)
+- [\[3.7.9\] Get Current SystemTime](Change+History/3.7.9/IComponentHandlerSystemTime.md)
+- [\[3.7.9\] Data Transfert Between Processor/Controller](Change+History/3.7.9/IDataExchangeHandler.md)
+- [\[3.7.11\] Remap Parameter ID](Change+History/3.7.11/IRemapParamID.md)
 
 ---
 

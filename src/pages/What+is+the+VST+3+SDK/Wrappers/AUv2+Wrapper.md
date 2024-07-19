@@ -8,7 +8,7 @@
 
 **Related pages:**
 
-- [Audio Unit v3 Plug-Ins | Apple Developer Documentation](https://developer.apple.com/documentation/audiotoolbox/audio_unit_v3_plug-ins?language=objc)
+- [Audio Unit v3 Plug-ins | Apple Developer Documentation](https://developer.apple.com/documentation/audiotoolbox/audio_unit_v3_plug-ins?language=objc)
 
 ---
 

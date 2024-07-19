@@ -69,9 +69,9 @@ This tutorial explains how to send data from the realtime process to the edit co
 
 In this tutorial, you will learn:
 
-- How to add nearly sample-accurate parameter changes to an audio effect
-- How to use C++ templates to write one algorithm supporting 32 bit and 64 bit audio processing
-- How to set the state of the audio effect in a thread safe manner
+- How to add nearly sample-accurate parameter changes to an audio effect.
+- How to use C++ templates to write one algorithm supporting 32 bit and 64 bit audio processing.
+- How to set the state of the audio effect in a thread safe manner.
 
 ## How to use the silence flags
 
@@ -109,7 +109,7 @@ This is a simple Hello World **VST 3 SDK** plug-in to demonstrate how to use the
 
 Sometimes it is necessary to switch to another **VSTGUI** submodule or branch for testing purpose. This tutorial explains how to do that.
 
-## How to add AUv2 support to your VST 3 plug-in.
+## How to add AUv2 support to your VST 3 plug-in
 
 [Link](Audio+Unit.md)
 

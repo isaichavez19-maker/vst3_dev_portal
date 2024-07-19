@@ -14,7 +14,7 @@
 
 ## Introduction
 
-The SDK provides a test application called **VST3PluginTestHost** for Apple macOS X (x86_64/Apple M1) and Microsoft Windows (x64 and Arm64EC).
+The SDK provides a test application called **VST3PluginTestHost** for Apple macOS X (Apple Silicon/Intel x86_64) and Microsoft Windows (x64 and Arm64EC).
 
 This application allows you to load a plug-in, simulates some inputs (Audio and Event) and acts like a small **VST 3** host application based on an **ASIO** driver.
 
@@ -35,7 +35,7 @@ You could start **VST3PluginTestHost** with some options in the command line:
     - for examples: 
       - *VST3PluginTestHost.exe --pluginfolder "C:\Development\VST3"*
  - Rendering *MIDI* files into audio files for the first loaded instrument (samplerate and blocksize (size of audio block in samples) are optionals; if not provided, the current settings of the ASIO is used):
-    - --audioexport "MIDI Folder location" "Audio Output Folder" [samplerate] [blocksize]
+    - --audioexport "MIDI Folder location" "Audio Output Folder" \[samplerate\] \[blocksize\]
     - for examples: 
       - *VST3PluginTestHost.exe --audioexport "C:\Content\MIDI" "C:\Content\Audio Output"*
       - *VST3PluginTestHost.exe --audioexport "C:\Content\MIDI" "C:\Content\Audio Output" 48000 128*

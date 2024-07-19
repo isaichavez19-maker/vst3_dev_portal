@@ -1,6 +1,6 @@
 #  Data Exchange Tutorial Plug-in
 
-This tutorial explains how to use the Data Exchange API via the backwards-compatible wrapper class, which either uses the API directly, if available, or an alternative IMessage based method to provide the same functionality for hosts not implementing the API.
+This tutorial shows how to use the *Data Exchange API* via the backwards compatible wrapper class which either uses the API directly if available or uses an alternative IMessage based method to provide the same functionality for hosts not implementing the API.
 
 In this example, the audio processor sends the samples it processes to the controller in chunks, each with a duration of one second.
 
@@ -30,7 +30,7 @@ In this example, the audio processor sends the samples it processes to the contr
 
 ## Tutorial - How to use the Data Exchange API
 
-In this tutorial, you learn how to use the Data Exchange API to send data from the realtime audio
+In this tutorial you learn how to use the *Data Exchange API* to send data from the realtime audio
 process method to the edit controller of your plug-in.
 
 ### Sending data from the audio processor
@@ -125,8 +125,8 @@ tresult PLUGIN_API DataExchangeProcessor::setActive (TBool state)
 }
 ```
 
-Now we prepare the data that we want to send to the controller. To make this a little bit easier, we
-define a struct that specifies what should look like and move this into its own header "dataexchange.h":
+Now we prepare the data that we want to send to the controller. To make this a little bit easier we
+define a struct how this data should look like and move this into its own header "*dataexchange.h*":
 
 ```c++
 // dataexchange.h
@@ -167,7 +167,7 @@ inline DataBlock* toDataBlock (const Vst::DataExchangeBlock& block)
 
 One thing remains to be done before we can start sending the data: We need a 
 member variable of the Vst::DataExchangeBlock struct where we store the actual block we work with
-while processing the audio. So we add this to our processor defintion:
+while processing the audio. So we add this to our processor definition:
 
 
 ```c++
