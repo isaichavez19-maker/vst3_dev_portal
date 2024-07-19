@@ -41,12 +41,12 @@ By using **VST 3 SDK** directly:
 - it includes the major plug-in format wrappers: **AAX**, **AUv3**, **AU**.
 - the included [Validator](../What+is+the+VST+3+SDK/Index.md#validator-command-line) allows you to check your plug-in's conformity to the **VST 3** standard.
 
-## Examples of VST 3 host applications (05/10/2023)
+## Examples of VST 3 host applications (19/07/2024)
 
 | **Name**                | **Companies**                     | **Link**                                      |
 | ----------------------- | --------------------------------- | --------------------------------------------- |
 | ACID Pro                | MAGIX Software GmbH               | <https://www.magix.com>                       |
-| Acoustica	              | Acon Digital                      | <https://acondigital.com>                     |
+| Acoustica               | Acon Digital                      | <https://acondigital.com>                     |
 | Ardour                  | Ardour Team                       | <https://ardour.org>                          |
 | ASAP                    | Ircam                             | <https://www.ircam.fr>                        |
 | Audacity                | Audacity Team                     | <https://www.audacityteam.org>                |
