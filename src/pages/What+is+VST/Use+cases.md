@@ -48,8 +48,9 @@ By using **VST 3 SDK** directly:
 | ACID Pro                | MAGIX Software GmbH               | <https://www.magix.com>                       |
 | Acoustica	              | Acon Digital                      | <https://acondigital.com>                     |
 | Ardour                  | Ardour Team                       | <https://ardour.org>                          |
+| ASAP                    | Ircam                             | <https://www.ircam.fr>                        |
 | Audacity                | Audacity Team                     | <https://www.audacityteam.org>                |
-| Audition                | Adobe                        	    | <https://www.adobe.com>                       |
+| Audition                | Adobe                             | <https://www.adobe.com>                       |
 | Bidule                  | Plogue Art et Technologie, Inc.   | <https://www.plogue.com>                      |
 | Bitwig                  | Bitwig GmbH                       | <https://www.bitwig.com>                      |
 | Camelot                 | Audio Modeling                    | <https://audiomodeling.com>                   |
@@ -71,6 +72,8 @@ By using **VST 3 SDK** directly:
 | Komplete Kontrol        | Vienna Symphonic Library GmbH     | <https://www.native-instruments.com>          |
 | KSHMR Chain             | Excite Audio                      | <https://www.excite-audio.com>                |
 | Live                    | Ableton AG                        | <https://www.ableton.com/en/live>             |
+| Lumit                   | Lumit Audio                       | <https://www.lumit-audio.com>                 |
+| Luna                    | Universal Audio                   | <https://www.uaudio.com>                      |
 | Maschine                | Native Instruments                | <https://www.native-instruments.com>          |
 | Max                     | Cycling 74                        | <https://cycling74.com>                       |
 | Metro                   | Sagan Technology                  | <https://sagantech.com>                       |
@@ -78,29 +81,40 @@ By using **VST 3 SDK** directly:
 | Mixcraft                | Acoustica                         | <https://acoustica.com>                       |
 | MultitrackStudio        | Bremmers Audio Design             | <https://www.multitrackstudio.com>            |
 | Music Maker Plus        | MAGIX Software GmbH               | <https://www.magix.com>                       |
-| Nuendo                  | Steinberg Media Technologies GmbH	| <https://new.steinberg.net/nuendo>            |
+| n-Track Studio          | n-Track Software                  | <https://www.ntrack.com>                      |
+| NA Nexus Subhost        | Nembrini Audio                    | <https://www.nembriniaudio.com>               |
+| NotBlock                | Blåfot-Produktion                 | <https://blafotproduktion.se>                 |
+| Nuendo                  | Steinberg Media Technologies GmbH | <https://new.steinberg.net/nuendo>            |
 | Orb Composer Pro        | Hexachords                        | <https://hexachords.com>                      |
 | Overture                | Sonic Scores                      | <https://sonicscores.com>                     |
 | OwlPlug                 | OwlPlug                           | <https://owlplug.com>                         |
+| Podcaster               | Digital Brain Instruments         | <https://www.digitalbrain-instruments.com/>   |
 | Qtractor                | rncbc                             | <https://qtractor.org>                        |
+| RapidComposer           | MusicDevelopments                 | <https://www.musicdevelopments.com>           |
+| Re:Cycle                | Digital Brain Instruments         | <https://www.digitalbrain-instruments.com>    |
 | Reaper                  | Reaper                            | <https://www.reaper.fm>                       |
 | Reason +                | Reason Studios                    | <https://reasonstudios.com>                   |
-| Re:Cycle                | Digital Brain Instruments         | <https://www.digitalbrain-instruments.com>    |
 | RipX DeepAudio          | Hit’n’Mix Ltd                     | <https://hitnmix.com>                         |
+| Samplab                 | Samplab                           | <https://samplab.com>                         |
 | Samplitude              | MAGIX Software GmbH               | <https://www.magix.com>                       |
 | Serato Studio 2         | Serato                            | <https://serato.com>                          |
 | Sonar                   | Bandlab/Cakewalk                  | <https://www.bandlab.com/products/cakewalk>   |
 | Sound Forge Audio Studio| MAGIX Software GmbH               | <https://www.magix.com>                       |
+| Sound it! 8 Basic       | INTERNET Co.                      | <https://internetmusicsoft.com>               |
 | Sound Trajectory 2      | TripinLab                         | <https://www.tripinlab.com>                   |
+| SoundBridge             | SoundBridge                       | <https://www.soundbridge.io>                  |
 | Soundop                 | Ivosight Software Inc.            | <https://ivosight.com>                        |
 | SpectraLayers           | Steinberg Media Technologies GmbH | <https://www.steinberg.net/spectralayers>     |
 | Studio One              | PreSonus Software Ltd             | <https://www.presonus.com/products/Studio-One>|
 | Superplugin             | DDMF                              | <https://ddmf.eu>                             |
 | TS2                     | Ircam Lab                         | <https://www.ircamlab.com>                    |
+| Unify                   | PlugInGuru                        | <https://www.pluginguru.com>                  |
 | Vienna MIR PRO 3D       | Vienna Symphonic Library GmbH     | <https://www.vsl.co.at>                       |
-| VoxPat Pro              | Digital Brain Instruments         | <https://www.digitalbrain-instruments.com/>   |
+| VoxPat Pro              | Digital Brain Instruments         | <https://www.digitalbrain-instruments.com>    |
+| vPlayer                 | Digital Brain Instruments         | <https://www.digitalbrain-instruments.com>    |
 | VST Live                | Steinberg Media Technologies GmbH | <https://www.steinberg.net/vst-live>          |
 | VST Rack Pro            | Yamaha Corporation                | <https://europe.yamaha.com/en/products/proaudio/software/vst_rack/index.html>|
 | Waveform                | Tracktion Software Corporation    | <https://www.tracktion.com>                   |
 | Wavelab                 | Steinberg Media Technologies GmbH | <https://new.steinberg.net/wavelab>           |
+| Wusik SQ200             | Wusik                             | <https://www.wusik.com>                       |
 | Zrythm DAW              | Zrythm                            | <https://www.zrythm.org>                      |
