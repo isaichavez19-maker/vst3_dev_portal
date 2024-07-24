@@ -54,6 +54,7 @@
   - Refactor *public.sdk/source/vst/utility/stringconvert.cpp* and extract a common base file: *public.sdk/source/common/commonstringconvert.cpp*.
   - Replace "**FUnknownPtr\<XXX\> xxx (context);**" by "**auto xxx = Steinberg::U::cast\<XXX\> (context);**"
     - It requires to include "*pluginterfaces/base/funknownimpl.h*".
+  - Fix loading of VST 2 preset: *tryVst2StateLoad* in *public.sdk\source\vst\utility\vst2persistence.cpp* ([PR#72](https://github.com/steinbergmedia/vst3_public_sdk/pull/72)).
 
 - [VST3PluginTestHost](../What+is+the+VST+3+SDK/Plug-in+Test+Host.md) v3.7:
   - New features:
