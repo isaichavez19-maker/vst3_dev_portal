@@ -50,6 +50,7 @@ You could start **VST3PluginTestHost** with some options in the command line:
 - **File => Save Preset...**: Save a VST 3 Preset for the first loaded plug-in.
 ---
 - **File => Load MIDI File...**: Load a MIDI file which could be played by using the transport section, all loaded plug-ins will received the MIDI events. It also sends MIDI program change messages when a MIDI file is loaded.
+- **File => Unload MIDI File**: Unload the previously loaded MIDI file.
 ---
 - **File => Export Audio...**: this allows to choose a folder with MIDI files, loaded each of them and export the audio renderings of the first loaded plug-in.
 - **File => Export Audio for current loaded MIDI...**: this allows to use the current loaded MIDI file for exporting the audio renderings of the first loaded plug-in.
