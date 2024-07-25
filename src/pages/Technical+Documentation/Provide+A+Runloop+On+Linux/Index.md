@@ -20,8 +20,7 @@ The host application must provide the [Linux::IRunLoop](https://steinbergmedia.g
 tresult PLUGIN_API MyPlugView::setFrame (Steinberg::IPlugFrame* frame)
 {
     ...
-    Steinberg::FUnknownPtr<Steinberg::Linux::IRunLoop> runLoop (plugFrame);
-    if (runLoop)
+    if (auto runLoop = Steinberg::U::cast<Steinberg::Linux::IRunLoop> (plugFrame))
     {
         runLoop->registerEventHandler (...);
     }
@@ -35,7 +34,7 @@ tresult PLUGIN_API MyPlugView::setFrame (Steinberg::IPlugFrame* frame)
 
 A plug-in also needs a way to query for an [Linux::IRunLoop](https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1Linux_1_1IRunLoop.html) without [IPlugFrame](https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPlugFrame.html). This allows to register timers in case the editor is closed or unavailable. 
 
-These timers can be used inside [Vst::IAudioProcessor](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IAudioProcessor.html) for extra computations or sending messages within the UI thread.
+These timers can be used inside [Vst::IAudioProcessor](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IAudioProcessor.html) for extra computations or sending messages within the UI thread, like any method of Edit Controller in UI Thread (see [Edit Controller Call Sequence](../Workflow+Diagrams/Edit+Controller+Call+Sequence.md)).
 
 The host application must call [Vst::IPlugFactory3::setHostContext (context)](https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPluginFactory3.html#a7fa0087a5cb612e3aeeefa4c91f638c7) for this and provide a ```context```. This ```context``` can be used to query an [Linux::IRunLoop](https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1Linux_1_1IRunLoop.html) interface.
 
@@ -44,8 +43,7 @@ The host application must call [Vst::IPlugFactory3::setHostContext (context)](ht
 tresult PLUGIN_API MyPlugFactory::setHostContext (FUnknown* context)
 {
     ...
-    Steinberg::FUnknownPtr<Steinberg::Linux::IRunLoop> runLoop (context);
-    if (runLoop)
+    if (auto runLoop = Steinberg::U::cast<Steinberg::Linux::IRunLoop> (context))
     {
         runLoop->registerTimer (...);
     }

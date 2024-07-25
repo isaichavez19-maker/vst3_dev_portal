@@ -26,8 +26,7 @@ This allows the plug-in to tell the host that its internal state is dirty or not
 ``` c++
 void MyPluginController::informHostAboutMyDirtyState (bool dirty)
 {
-    FUnknownPtr<IComponentHandler2> componentHandler2 (componentHandler);
-    if (componentHandler2)
+    if (auto componentHandler2 = Steinberg::U::cast<IComponentHandler2> (componentHandler))
         componentHandler2->setDirty (dirty);
 }
 ```
@@ -39,8 +38,7 @@ Requesting the host to open the plug-in´s editor the next time it's possible. Y
 ``` c++
 void MyPluginController::requestHostToOpenEditor()
 {
-    FUnknownPtr<IComponentHandler2> componentHandler2 (componentHandler);
-    if (componentHandler2)
+    if (auto componentHandler2 = Steinberg::U::cast<IComponentHandler2> (componentHandler))
         componentHandler2->requestOpenEditor ();
 }
 ```

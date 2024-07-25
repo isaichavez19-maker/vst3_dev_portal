@@ -25,8 +25,7 @@ Allows a plug-in to ask the host if a given plug-in interface is supported/used 
 tresult PLUGIN_API MyPluginController::initialize (FUnknown* context)
 {
     // ...
-    FUnknownPtr<IPlugInterfaceSupport> plugInterfaceSupport (context);
-    if (plugInterfaceSupport)
+    if (auto plugInterfaceSupport = Steinberg::U::cast<IPlugInterfaceSupport> (context)
     {
         if (plugInterfaceSupport->isPlugInterfaceSupported (IMidiMapping::iid) == kResultTrue)
             // IMidiMapping is used by the host

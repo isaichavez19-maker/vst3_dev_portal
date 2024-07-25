@@ -50,6 +50,7 @@
   - [Creating a cmake plug-in project from scratch](pages/Tutorials/Creating+a+plug-in+from+scratch.md)
   - [Creating a plug-in with VST 3 SDK as an external project](pages/Tutorials/Creating+a+plug-in+with+VST+3+SDK+as+an+external+project.md)
   - [Switching to another VSTGUI submodule or branch](pages/Tutorials/Switching+to+another-VSTGUI+submodule+or+branch.md)
+  - [How to add AUv2 support to your VST 3 plug-in](pages/Tutorials/Audio+Unit.md)
 - [Technical Documentation](pages/Technical+Documentation/Index.md)
   - [VST 3 API Documentation](pages/Technical+Documentation/API+Documentation/Index.md)
   - [VST Module Architecture](pages/Technical+Documentation/VST+Module+Architecture/Index.md)
@@ -118,6 +119,7 @@
 # Additional Resources
 
 - [Change History](pages/Versions/Index.md)
+  - [Version 3.7.12 (2024/07/23)](pages/Versions/Version+3.7.12.md)
   - [Version 3.7.11 (2024/04/22)](pages/Versions/Version+3.7.11.md)
   - [Version 3.7.10 (2024/01/18)](pages/Versions/Version+3.7.10.md)
   - [Version 3.7.9 (2023/10/09)](pages/Versions/Version+3.7.9.md)

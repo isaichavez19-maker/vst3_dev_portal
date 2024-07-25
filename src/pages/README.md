@@ -50,6 +50,7 @@ The **VST 3 SDK** (Virtual Studio Technology Software Development Kit) is a coll
 - [Creating a cmake plug-in project from scratch](Tutorials/Creating+a+plug-in+from+scratch.md)
 - [Creating a plug-in with VST 3 SDK as an external project](Tutorials/Creating+a+plug-in+with+VST+3+SDK+as+an+external+project.md)
 - [Switching to another VSTGUI submodule or branch](Tutorials/Switching+to+another-VSTGUI+submodule+or+branch.md)
+- [How to add AUv2 support to your VST 3 plug-in](Tutorials/Audio+Unit.md)
 
 ## [VST 3 Forum](Forum/Index.md)
 

@@ -10,7 +10,7 @@ project(advanced-techniques-tutorial
     # Version number symbols usable in C++ can be found in
     # source/version.h and ${PROJECT_BINARY_DIR}/projectversion.h.
     VERSION 1.0.0.0 
-    DESCRIPTION "advanced-techniques-tutorial VST 3 Plug-in"
+    DESCRIPTION "advanced-techniques-tutorial VST 3 plug-in"
 )
 
 set(SMTG_ENABLE_VST3_HOSTING_EXAMPLES 0)

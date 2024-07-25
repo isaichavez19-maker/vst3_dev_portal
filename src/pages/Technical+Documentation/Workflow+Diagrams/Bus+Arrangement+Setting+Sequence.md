@@ -8,7 +8,7 @@
 
 ---
 
-## Plug-In does accepts what the host wants as Bus Arrangements
+## Plug-in does accepts what the host wants as Bus Arrangements
 
 ```mermaid
 sequenceDiagram
@@ -34,7 +34,7 @@ sequenceDiagram
     P-->>-H:    return
 ```
 
-## Plug-In does not accept what the host wants as Bus Arrangements
+## Plug-in does not accept what the host wants as Bus Arrangements
 
 ```mermaid
 sequenceDiagram

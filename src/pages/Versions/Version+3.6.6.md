@@ -5,29 +5,36 @@
 ## Version 3.6.6 (2016/06/17)
 
 - Interface changes:
-  - New Steinberg::IPlugViewContentScaleSupport: plug-in view content scale support
+  - New Steinberg::IPlugViewContentScaleSupport: plug-in view content scale support.
+
 - New Flags/Enums:
-  - New RestartFlags: kRoutingInfoChanged informing the host that the Routing Info (IComponent) has changed
+  - New RestartFlags: kRoutingInfoChanged informing the host that the Routing Info (IComponent) has changed.
+
 - [Examples](../What+is+the+VST+3+SDK/Plug-in+Examples.md):
-  - New **VST 3 Plug-ins** examples:
-    - New **VST 3 Plug-in** Program Change showing how handling its own Program List is working
-  - Remove Visual Projects version 8 and 9
+  - New **VST 3 plug-ins** examples:
+    - New **VST 3 plug-in** Program Change showing how handling its own Program List is working.
+  - Remove Visual Projects version 8 and 9.
+
 - [Plug-in wrappers](../What+is+the+VST+3+SDK/Wrappers/index.md):
   - VST 3 - Audio Unit Wrapper:
-    - update to last Audio Core update
+    - update to last Audio Core update.
   - VST 3 - VST 2.x Wrapper:
-    - add support of version (VST 3 -> VST 2)
+    - add support of version (VST 3 -> VST 2).
+
 - Helpers classes:
-  - add support for bypass including delay compensation (vstbypassprocessor.h)
-  - add helpers for events/parameters iterator (vstaudioprocessoralgo.h)
+  - add support for bypass including delay compensation (vstbypassprocessor.h).
+  - add helpers for events/parameters iterator (vstaudioprocessoralgo.h).
   - add helpers for SpeakerArr:
-    - Speaker getSpeaker (const SpeakerArrangement& arr, int32 index)
-    - bool isSubsetOf (const SpeakerArrangement& arrSubSet, const SpeakerArrangement& arr)
-- VSTGUI 4.3
-  - update to VSTGUI 4.3.1 (available here too: <http://sourceforge.net/projects/vstgui/files/vstgui/VSTGUI%204.3/)>
-  - the [VSTGUI](../What+is+the+VST+3+SDK/VSTGUI.md) repository was moved to github: <https://github.com/steinbergmedia/vstgui>
-  - Please use github if you want to contribute to VSTGUI.
+    - Speaker getSpeaker (const SpeakerArrangement& arr, int32 index).
+    - bool isSubsetOf (const SpeakerArrangement& arrSubSet, const SpeakerArrangement& arr).
+
+- [VSTGUI](../What+is+the+VST+3+SDK/VSTGUI.md) 4.3
+  - update to VSTGUI 4.3.1 (available here too: <http://sourceforge.net/projects/vstgui/files/vstgui/VSTGUI%204.3/)>.
+  - the [VSTGUI](../What+is+the+VST+3+SDK/VSTGUI.md) repository was moved to github: <https://github.com/steinbergmedia/vstgui>.
+  - Please use github if you want to contribute to [VSTGUI github](https://github.com/steinbergmedia/vstgui).
+
 - [VST3PluginTestHost](../What+is+the+VST+3+SDK/Plug-in+Test+Host.md):
   - fix support of SingleComponent
+
 - new Developer Forum:
-  - finally, we get our VST forum at start, please check <https://sdk.steinberg.net> and use it as new communication platform, the VST mailing list will be kept as archive mailing list
+  - finally, we get our VST forum at start, please check <https://sdk.steinberg.net> and use it as new communication platform, the VST mailing list will be kept as archive mailing list.

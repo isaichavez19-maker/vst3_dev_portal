@@ -19,17 +19,17 @@
   - Fix "When vst3sdk is a submodule, example plugins are not built - a switch to choose would be very useful" ([Issue#94](https://github.com/steinbergmedia/vst3sdk/issues/94)).
   - Fix CMake fails with bad $-escape ([Issue#100](https://github.com/steinbergmedia/vst3sdk/issues/100)).
   - **Breaking Change**: options renamed to more meaningful words:
-    - SMTG_ADD_VST3_HOSTING_SAMPLES => **SMTG_ENABLE_VST3_HOSTING_EXAMPLES**
-    - SMTG_ADD_VST3_PLUGINS_SAMPLES => **SMTG_ENABLE_VST3_PLUGIN_EXAMPLES**
-    - SMTG_ADD_VSTGUI => **SMTG_ENABLE_VSTGUI_SUPPORT**
+    - SMTG_ADD_VST3_HOSTING_SAMPLES => `SMTG_ENABLE_VST3_HOSTING_EXAMPLES`
+    - SMTG_ADD_VST3_PLUGINS_SAMPLES => `SMTG_ENABLE_VST3_PLUGIN_EXAMPLES`
+    - SMTG_ADD_VSTGUI => `SMTG_ENABLE_VSTGUI_SUPPORT`
 
 - [Plug-in Wrappers](../What+is+the+VST+3+SDK/Wrappers/Index.md):
   - Audio Unit:
-    - AUv3Wrapper:
+    - **AUv3Wrapper**:
       - Remove duplicate -loadAudioFile: method declaration ([PR#46](https://github.com/steinbergmedia/vst3_public_sdk/pull/46)).
       - Fix iOS build errors ([PR#47](https://github.com/steinbergmedia/vst3_public_sdk/pull/46))
       - Fix resets all parameter values when restartComponent (kParamTitlesChanged) is called ([Issue#45](https://github.com/steinbergmedia/vst3_public_sdk/issues/45))
-    - AUv2Wrapper:
+    - **AUv2Wrapper**:
       - Fix "AUv2 editor does not always work" ([Issues#108](https://github.com/steinbergmedia/vst3sdk/issues/108))
       - Fix endless **SMTG_AUView setFrame** recursion call in AUv2 Wrapper
 

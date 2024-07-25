@@ -54,8 +54,7 @@ The context parameter passed to [Steinberg::IPluginBase::initialize](https://ste
 //-----------------------------------------------------------------------
 tresult PLUGIN_API MyPluginProcessor::initialize (FUnknown*context)
 {
-    FUnknownPtr<IHostApplication> hostApp (hostContext);
-    if (hostApp)
+    if (auto hostApp = Steinberg::U::cast<IHostApplication> (hostContext))
     {
         String128 name;
         if (hostApp->getName (name) == kResultTrue)
