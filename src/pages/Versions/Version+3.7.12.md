@@ -18,8 +18,6 @@
 - cmake
   - Add changes to support the [Apple AudioUnit SDK](https://github.com/apple/AudioUnitSDK) for **AU Wrapper**.
 
-- Tools:
-
 - [Plug-in Wrappers](../What+is+the+VST+3+SDK/Wrappers/Index.md):
   - **AAX** Wrapper: rename project aaxwrapper to aax_wrapper.
   - Audio Unit:
