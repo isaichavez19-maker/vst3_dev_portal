@@ -35,10 +35,10 @@ On the Windows platform, a **VST 3** plug-in is organized as a bundle-like packa
 | MyPlugin.vst3/Contents/Resources/moduleinfo.json      | the plug-in’s module info    |
 | MyPlugin.vst3/Contents/**x86-win**/MyPlugin.vst3      | folder contains the plug-in binary (32 bit dll for i386 architecture) |
 | MyPlugin.vst3/Contents/**x86_64-win**/MyPlugin.vst3   | folder contains the plug-in binary (64 bit dll for x86_64 architecture) |
-| MyPlugin.vst3/Contents/**arm64ec-win**/MyPlugin.vst3  | folder contains the plug-in binary (64 bit dll for Arm64EC architecture).<br> Could be loaded by <b>x64/Arm64EC</b> App on Windows on Arm. |
-| MyPlugin.vst3/Contents/**arm-win**/MyPlugin.vst3      | folder contains the plug-in binary (32 bit dll for Arm classic architecture) |
-| MyPlugin.vst3/Contents/**arm64-win**/MyPlugin.vst3    | folder contains the plug-in binary (64 bit dll for Arm64 classic architecture).<br> Could be loaded by <b>Arm64</b> App only on Windows on Arm. |
-| MyPlugin.vst3/Contents/**arm64x-win**/MyPlugin.vst3   | folder contains the plug-in binary for both Arm64 code and Arm64EC code together<br> (64 bit dll for Arm64 classic architecture).<br> Could be loaded by <b>x64/Arm64/Arm64EC</b> App on Windows on Arm.<br>Recommended archi for Windows on Arm! |
+| MyPlugin.vst3/Contents/**arm64ec-win**/MyPlugin.vst3  | folder contains the plug-in binary (64 bit dll for Arm64EC architecture). <br>On Windows on Arm, an <b>Arm64EC</b> or <b>x64</b> application can load this architecture. |
+| MyPlugin.vst3/Contents/**arm-win**/MyPlugin.vst3      | folder contains the plug-in binary (32 bit dll for Arm classic architecture) (deprecated) |
+| MyPlugin.vst3/Contents/**arm64-win**/MyPlugin.vst3    | folder contains the plug-in binary (64 bit dll for Arm64 classic architecture).<br> <br>On Windows on Arm, only an <b>Arm64</b> application can load this architecture. |
+| MyPlugin.vst3/Contents/**arm64x-win**/MyPlugin.vst3   | folder contains the plug-in binary for both Arm64 code and Arm64EC code together<br> (64 bit dll for Arm64 classic architecture).<br> <br>On Windows on Arm, an <b>Arm64EC</b> or an <b>Arm64</b> or <b>x64</b> application can load this architecture.<br>Recommended archi for Windows on Arm! |
 | MyPlugin.vst3/desktop.ini                             | used to set custom icon in Windows Explorer |
 | MyPlugin.vst3/Plugin.ico                              | customized plug-in icon                     |
 
