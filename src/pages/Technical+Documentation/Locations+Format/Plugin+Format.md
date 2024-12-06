@@ -38,14 +38,14 @@ On the Windows platform, a **VST 3** plug-in is organized as a bundle-like packa
 | MyPlugin.vst3/Contents/**arm64ec-win**/MyPlugin.vst3  | folder contains the plug-in binary (64 bit dll for Arm64EC architecture). <br>On Windows on Arm, an <b>Arm64EC</b> or <b>x64</b> application can load this architecture. |
 | MyPlugin.vst3/Contents/**arm-win**/MyPlugin.vst3      | folder contains the plug-in binary (32 bit dll for Arm classic architecture) (deprecated) |
 | MyPlugin.vst3/Contents/**arm64-win**/MyPlugin.vst3    | folder contains the plug-in binary (64 bit dll for Arm64 classic architecture).<br> <br>On Windows on Arm, only an <b>Arm64</b> application can load this architecture. |
-| MyPlugin.vst3/Contents/**arm64x-win**/MyPlugin.vst3   | folder contains the plug-in binary for both Arm64 code and Arm64EC code together<br> (64 bit dll for Arm64 classic architecture).<br> <br>On Windows on Arm, an <b>Arm64EC</b> or an <b>Arm64</b> or <b>x64</b> application can load this architecture.<br>Recommended archi for Windows on Arm! |
+| MyPlugin.vst3/Contents/**arm64x-win**/MyPlugin.vst3   | folder contains the plug-in binary for both Arm64 code and Arm64EC code together<br> (64 bit dll for Arm64 classic architecture).<br> <br>On Windows on Arm, an <b>Arm64EC</b> or an <b>Arm64</b> or <b>x64</b> application can load this architecture.<br>Recommended architecture for Windows on Arm! |
 | MyPlugin.vst3/desktop.ini                             | used to set custom icon in Windows Explorer |
 | MyPlugin.vst3/Plugin.ico                              | customized plug-in icon                     |
 
 >ⓘ **Note**\
 >In previous SDKs, the **VST 3** plug-in was defined as a single dll file with the **.vst3** extension. This has been deprecated since **VST 3.6.10**.
 >
->The folder (bundle) and the DLL should have the same name!
+>The folder (bundle) and the DLL (<b>.vst3</b>) file must have the same name!
 
 The file **desktop.ini** should contain:
 
@@ -97,7 +97,7 @@ On Linux, a **VST 3** plug-in is organized as a bundle-like package, its file ex
 | MyPlugin.vst3/Contents/XXX-linux       | with XXX the architecture name based on the output of command-line "uname -m" (machine hardware) + "-linux" for example: • armv3l-linux<br> • armv4b-linux<br> • armv4l-linux<br> • armv5tel-linux<br> • armv5tejl-linux<br> • armv6l-linux<br> • armv7l-linux<br> • armv8l-linux |
 
 >ⓘ **Note**\
->The folder (bundle) and the shared library (<b>.so</b>) file should have the same name!
+>The folder (bundle) and the shared library (<b>.so</b>) file must have the same name!
 
 ## Merged Bundle
 
