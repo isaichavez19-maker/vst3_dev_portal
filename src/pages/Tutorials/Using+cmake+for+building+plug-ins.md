@@ -136,12 +136,12 @@ cmake -DCMAKE_C_COMPILER=/usr/bin/gcc-DCMAKE_CXX_COMPILER=/usr/bin/g++
 - `SMTG_CODE_SIGN_IDENTITY_IOS`: iOS Code Sign Identity
 - `SMTG_CODE_SIGN_IDENTITY_MAC`: macOS Code Sign Identity
 - `SMTG_COREAUDIO_SDK_PATH`: Here, you can define where the COREAUDIO SDK is located
-- `SMTG_DISABLE_CODE_SIGNING`: Disable Al Code Signing (default OFF)
+- `SMTG_DISABLE_CODE_SIGNING`: Disable All Code Signing (default OFF)
 - `SMTG_ENABLE_IOS_TARGETS`: Enable building iOS targets (default OFF)
 - `SMTG_IOS_DEVELOPMENT_TEAM`: Needed for building the InterAppAudio and AUv3 examples for iOS
 - `SMTG_VSTSDK_GENERATE_MACOS_IOS_COLLECTION_TARGETS`: Create macOS and iOS collection targets (default OFF)
 - `SMTG_XCODE_MANUAL_CODE_SIGN_STYLE`: Manual Xcode sign style (default OFF)
-- `SMTG_XCODE_OTHER_CODE_SIGNING_FLAGS`: Other code signing floag [Xcode] (default --timestamp)
+- `SMTG_XCODE_OTHER_CODE_SIGNING_FLAGS`: Other code signing flags \[Xcode\] (default --timestamp)
 
 ---
 
