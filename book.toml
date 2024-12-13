@@ -4,6 +4,7 @@ language = "en"
 multilingual = false
 src = "src"
 title = "VST 3 Developer Portal"
+text-direction = "ltr"
 
 [build]
 build-dir = "book"
@@ -25,6 +26,10 @@ no-section-label = true
 default-theme = "steinberg-light"
 preferred-dark-theme = "steinberg-dark"
 additional-js = ["mermaid.min.js", "mermaid-init.js"]
+
+[output.html.print]
+enable = true    # include support for printable output
+page-break = true # insert page-break after each chapter
 
 [output.linkcheck]
 optional = true
