@@ -25,6 +25,9 @@ command = "mdbook-mermaid"
 no-section-label = true
 default-theme = "steinberg-light"
 preferred-dark-theme = "steinberg-dark"
+git-repository-url = "https://github.com/steinbergmedia/vst3_dev_portal/tree/deploy"
+git-repository-icon = "fa-github"
+#edit-url-template = "https://github.com/steinbergmedia/vst3_dev_portal/edit/deploy/{path}"
 additional-js = ["mermaid.min.js", "mermaid-init.js"]
 
 [output.html.print]
@@ -40,4 +43,3 @@ level = 0
 
 [output.html.redirect]
 "display/VST/Main+benefits+of+VST+3/index.html" = "../../../pages/Main+benefits+of+VST+3/index.html"
-
