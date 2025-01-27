@@ -155,7 +155,7 @@ If your plug-in always generates sound without need of any audio input, you can 
 
 ## Q: Can IComponent::getState()/setState() be called during processing?
 
-Yes, setState and getState are called normally from the UI Thread when the plug-in is used in a realtime context, in an offline context set/getState can be called in the same thread as the process call. Check the workflow diagram Audio Processor Call Sequence for more info about in which state which interfaces are called.
+Yes, setState and getState are called normally from the **UI Thread** when the plug-in is used in a realtime context, in an offline context set/getState can be called in the same thread as the process call. Check the workflow diagram Audio Processor Call Sequence for more info about in which state which interfaces are called.
 
 ---
 

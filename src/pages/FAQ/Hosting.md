@@ -112,9 +112,9 @@ You can only use these reference count no-ops for objects that are alive during 
 
 ---
 
-## Q: What should the host do if a plug-in does not call _ComponentHandler::restartComponent()_ from the main/UI thread?
+## Q: What should the host do if a plug-in does not call _ComponentHandler::restartComponent()_ from the UI Thread?
 
-You can report the wrong behavior of the plug-in to the developer. *restartComponent* has to be called from UI Thread. As a security fallback, the host could postpone this call in the UI Thread and handle it in the next UI idle phase.
+You can report the wrong behavior of the plug-in to the developer. *restartComponent* has to be called from **UI Thread**. As a security fallback, the host could postpone this call in the **UI Thread** and handle it in the next UI idle phase.
 
 ---
 

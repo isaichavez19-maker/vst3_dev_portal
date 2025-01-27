@@ -85,7 +85,7 @@ State4: IAudioProcessor->canProcessSampleSize
 State4: ------------------------------------------
 State4: IAudioPresentationLatency->setAudioPresentationLatency
 
-State5: ---[Processing Thread]-------------------------------
+State5: ---[Audio Thread]------------------------------------
 State5: IAudioProcessor->process
 State5: ---[UI Thread]---------------------------------------
 State5: IComponent->getBusCount
@@ -119,5 +119,5 @@ State5 --> State4: setProcessing(false)
 >⚠️ **Warning**\
 >Note about IAudioProcessor->setProcessing
 >- transition between Activated and Processing state
->- may be called from real-time Processing Thread (must be lock-free and without memory allocation!)
+>- may be called from real-time **Audio Thread** (must be lock-free and without memory allocation!)
 >- plug-in has to reset its inner processing state (for example to clean its delay buffers in order to have a defined state when the processing starts again).
