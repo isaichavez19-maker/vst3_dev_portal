@@ -9,7 +9,7 @@
   - Fix enabling/disabling warnings in public header files ([Issue#18](https://github.com/steinbergmedia/vst3_pluginterfaces/issues/18)).
   - Add the possibility to disable pragma warning on Windows (Visual Studio) with *SMTG_DISABLE_DEFAULT_DIAGNOSTICS*.
 
-- [VSTGUI](../What+is+the+VST+3+SDK/VSTGUI.md) update [4.14.0](https://github.com/steinbergmedia/vstgui/releases/tag/vstgui4_14_0)
+- [VSTGUI](../What+is+the+VST+3+SDK/VSTGUI.md) update [4.14.1](https://github.com/steinbergmedia/vstgui/releases/tag/vstgui4_14_1)
 
 - Documentation
   - Update doc about *pluginterfaces/gui/iplugview.h*. See https://forums.steinberg.net/t/iplugview-contentscalesupport-and-macos/930318
@@ -25,9 +25,9 @@
 
 - [Examples](../What+is+the+VST+3+SDK/Plug-in+Examples.md):
    - Update **Hostchecker** plug-in:
-    - Redesign the UI.
-    - Add check of COM correct behavior when calling queryInterface ().
-    - Add check for ProcessContext::systemtime of continuity.
+     - Redesign the UI.
+     - Add check of COM correct behavior when calling queryInterface ().
+     - Add check for ProcessContext::systemtime of continuity.
 
 - Helpers classes:
   - Fix in *openurl.cpp* openURLInDefaultApplication returns wrong result on macOS and Linux.
