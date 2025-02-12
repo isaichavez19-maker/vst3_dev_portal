@@ -12,22 +12,27 @@
 - [VSTGUI](../What+is+the+VST+3+SDK/VSTGUI.md) update [4.14.1](https://github.com/steinbergmedia/vstgui/releases/tag/vstgui4_14_1)
 
 - Documentation
-  - Update doc about *pluginterfaces/gui/iplugview.h*. See https://forums.steinberg.net/t/iplugview-contentscalesupport-and-macos/930318
+  - Update doc about *pluginterfaces/gui/iplugview.h*. See [VST3 forum](https://forums.steinberg.net/t/iplugview-contentscalesupport-and-macos/930318).
+  - Add more information for each VST 3 API function about threading and state context.
+
 - cmake
-  
+  - Fix linker warning on Mac ([PR#11](https://github.com/steinbergmedia/vst3_cmake/pull/11)).
+  - *smtg_target_add_plugin_resource* groups and strutures the resources files into the IDE.
+
 - [Plug-in Wrappers](../What+is+the+VST+3+SDK/Wrappers/Index.md):
-   - Audio Unit:
+  - Audio Unit:
     - **AU/AUv3 Wrappers**:
       - Fix crash running AGain AUv3 thru auval (*public.sdk/source/vst/auv3wrapper/Shared/AUv3Wrapper.mm*).
     - **AU Wrapper**:
-       - Fix auwrapper MIDI output bugs ([PR#76](https://github.com/steinbergmedia/vst3_public_sdk/pull/76)) (*public.sdk/ssource/vst/auwrapper/auwrapper.h*).
-       - Fix MIDI CC input in AU wrapper ([PR#74](https://github.com/steinbergmedia/vst3_public_sdk/pull/74/)). (*public.sdk/source/vst/auwrapper/auwrapper.mm*).
+      - Fix auwrapper MIDI output bugs ([PR#76](https://github.com/steinbergmedia/vst3_public_sdk/pull/76)) (*public.sdk/ssource/vst/auwrapper/auwrapper.h*).
+      - Fix MIDI CC input in AU wrapper ([PR#74](https://github.com/steinbergmedia/vst3_public_sdk/pull/74/)). (*public.sdk/source/vst/auwrapper/auwrapper.mm*).
 
 - [Examples](../What+is+the+VST+3+SDK/Plug-in+Examples.md):
-   - Update **Hostchecker** plug-in:
-     - Redesign the UI.
-     - Add check of COM correct behavior when calling queryInterface ().
-     - Add check for ProcessContext::systemtime of continuity.
+  - Add support of [Vst::IAudioProcessor::setProcessing](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IAudioProcessor.html#af252fd721b195b793f3a5dfffc069401) in most of the plug-ins, demonstrating how this function can be used (e.g., cleaning delay lines, killing voices, etc.).
+  - Update **Hostchecker** plug-in:
+    - Redesign the UI.
+    - Add check of COM correct behavior when calling queryInterface ().
+    - Add check for ProcessContext::systemtime of continuity.
 
 - Helpers classes:
   - Fix in *openurl.cpp* openURLInDefaultApplication returns wrong result on macOS and Linux.
