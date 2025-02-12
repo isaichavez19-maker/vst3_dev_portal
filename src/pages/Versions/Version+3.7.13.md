@@ -13,7 +13,7 @@
 
 - Documentation
   - Update doc about *pluginterfaces/gui/iplugview.h*. See [VST3 forum](https://forums.steinberg.net/t/iplugview-contentscalesupport-and-macos/930318).
-  - Add more information for each VST 3 API function about threading and state context.
+  - Add more information for each **VST 3** API function about threading and state context.
 
 - cmake
   - Fix linker warning on Mac ([PR#11](https://github.com/steinbergmedia/vst3_cmake/pull/11)).
