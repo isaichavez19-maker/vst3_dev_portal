@@ -152,7 +152,7 @@ After restoring a state, the host rescans the parameters (asking the controller)
 
 See also
 
-- [Steinberg::IBStream](https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IBStream.html)
+- [Steinberg:: IBStream](https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IBStream.html)
 - [VST 3 Interfaces to be implemented by the Plug-in](../Change+History/3.0.0/Plug+in+Interfaces.md)
 - [VST 3 Interfaces to be implemented by the Host](../Change+History/3.0.0/Host+Interfaces.md)
 
