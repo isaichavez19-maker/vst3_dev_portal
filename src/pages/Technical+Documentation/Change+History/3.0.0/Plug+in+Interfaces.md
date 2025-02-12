@@ -14,7 +14,7 @@
 
 List of interfaces supported/implemented by the plug-in in VST 3.0.0
 
-## [IComponent](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponent.html)
+## [Vst:: IComponent](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponent.html)
 
 Component base interface.
 
@@ -22,22 +22,22 @@ Component base interface.
 - \[released: 3.0.0\]
 - \[mandatory\]
 
-This is the basic interface for a VST component and must always be supported. It contains the common parts of any kind of processing class. The parts that are specific to a media type are defined in a separate interface. An implementation component must provide both the specific interface and [IComponent](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponent.html).
+This is the basic interface for a VST component and must always be supported. It contains the common parts of any kind of processing class. The parts that are specific to a media type are defined in a separate interface. An implementation component must provide both the specific interface and [Vst:: IComponent](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponent.html).
 
-See also [IPluginBase](https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPluginBase.html).
+See also [Steinberg:: IPluginBase](https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPluginBase.html).
 
-## [IAudioProcessor](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IAudioProcessor.html)
+## [Vst:: IAudioProcessor](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IAudioProcessor.html)
 
 Audio processing interface.
 
 - \[plug imp\]
-- [extends [IComponent](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponent.html)]
+- [extends [Vst:: IComponent](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponent.html)]
 - \[released: 3.0.0\]
 - \[mandatory\]
 
 This interface must always be supported by audio processing plug-ins.
 
-## [IEditController](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IEditController.html)
+## [Vst:: IEditController](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IEditController.html)
 
 Edit controller component interface.
 
@@ -47,9 +47,9 @@ Edit controller component interface.
 
 The controller part of an effect or instrument with parameter handling (export, definition, conversion...).
 
-See also [IComponent::getControllerClassId](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponent.html#a8aa65685068ad033af57b1497926b689), [IMidiMapping](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IMidiMapping.html).
+See also [Vst:: IComponent::getControllerClassId](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponent.html#a8aa65685068ad033af57b1497926b689), [Vst:: IMidiMapping](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IMidiMapping.html).
 
-## [IConnectionPoint](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IConnectionPoint.html)
+## [Vst:: IConnectionPoint](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IConnectionPoint.html)
 
 Connect a component with another one.
 
@@ -62,51 +62,51 @@ This interface is used for the communication of separate components. Note that s
 
 See also [Communication between the components](../../API+Documentation/Index.html#communication-between-the-components).
 
-## [IUnitInfo](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IUnitInfo.html)
+## [Vst:: IUnitInfo](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IUnitInfo.html)
 
 Edit controller extension to describe the plug-in structure.
 
 - \[plug imp\]
-- [extends [IEditController](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IEditController.html)]
+- [extends [Vst:: IEditController](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IEditController.html)]
 - \[released: 3.0.0\]
 - \[optional\]
 
-[IUnitInfo](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IUnitInfo.html) describes the internal structure of the plug-in.
+[Vst:: IUnitInfo](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IUnitInfo.html) describes the internal structure of the plug-in.
 
 - The root unit is the component itself, so getUnitCount must return 1 at least.
 - The root unit id has to be 0 (kRootUnitId).
 - Each unit can reference one program list - this reference must not change.
 - Each unit that uses a program list references one program of the list.
 
-See also [VST 3 Units](../../VST+3+Units/Index.md), [IUnitHandler](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IUnitHandler.html).
+See also [VST 3 Units](../../VST+3+Units/Index.md), [Vst:: IUnitHandler](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IUnitHandler.html).
 
-## [IProgramListData](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IProgramListData.html)
+## [Vst:: IProgramListData](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IProgramListData.html)
 
 Component extension to access program list data.
 
 - \[plug imp\]
-- [extends [IComponent](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponent.html)]
+- [extends [Vst:: IComponent](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponent.html)]
 - \[released: 3.0.0\]
 - \[optional\]
 
-A component can support program list data via this interface or/and unit preset data ([IUnitData](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IUnitData.html)).
+A component can support program list data via this interface or/and unit preset data ([Vst:: IUnitData](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IUnitData.html)).
 
-See also [IUnitData](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IUnitData.html), [Complex Plug-in Structures / Multi-timbral Instruments](../../Complex+Structures/Index.md).
+See also [Vst:: IUnitData](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IUnitData.html), [Complex Plug-in Structures / Multi-timbral Instruments](../../Complex+Structures/Index.md).
 
-## [IUnitData](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IUnitData.html)
+## [Vst:: IUnitData](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IUnitData.html)
 
 Component extension to access unit data.
 
 - \[plug imp\]
-- [extends [IComponent](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponent.html)]
+- [extends [Vst:: IComponent](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponent.html)]
 - \[released: 3.0.0\]
 - \[optional\]
 
-A component can support unit preset data via this interface or program list data ([IProgramListData](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IProgramListData.html)).
+A component can support unit preset data via this interface or program list data ([Vst:: IProgramListData](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IProgramListData.html)).
 
 See also [Presets & Program Lists](../../Presets+Program+Lists/Index.md).
 
-## [IPlugView](https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPlugView.html)
+## [Steinberg:: IPlugView](https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPlugView.html)
 
 Plug-in definition of a view.
 
@@ -135,10 +135,10 @@ Here the calling sequence:
 - host->plug-in (optional): IPlugView::getSize () returns the newSize
 
 >ⓘ **Note**\
->Please only resize the platform representation of the view when [IPlugView::onSize()](https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPlugView.html#a3e741e55c2c047a4cc10f102661f5654) is called.
+>Please only resize the platform representation of the view when [Steinberg:: IPlugView::onSize()](https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPlugView.html#a3e741e55c2c047a4cc10f102661f5654) is called.
 
 ### Keyboard handling
 
-The plug-in view receives keyboard events from the host. A view implementation must not handle keyboard events by the means of platform callbacks, but let the host pass them to the view. The host depends on a proper return value when [IPlugView::onKeyDown](https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPlugView.html#a759b576f046e699c84dc07d579600b1b) is called, otherwise the plug-in view may cause a malfunction of the host's key command handling.
+The plug-in view receives keyboard events from the host. A view implementation must not handle keyboard events by the means of platform callbacks, but let the host pass them to the view. The host depends on a proper return value when [Steinberg:: IPlugView::onKeyDown](https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPlugView.html#a759b576f046e699c84dc07d579600b1b) is called, otherwise the plug-in view may cause a malfunction of the host's key command handling.
 
-See also [IPlugFrame](https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPlugFrame.html), [Platform UI Types](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/group__platformUIType.html).
+See also [Steinberg:: IPlugFrame](https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPlugFrame.html), [Platform UI Types](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/group__platformUIType.html).

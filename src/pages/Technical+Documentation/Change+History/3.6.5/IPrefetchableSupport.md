@@ -10,10 +10,10 @@
 
 ## Introduction
 
-Indicates if the plug-in supports prefetch (dynamically): [Vst::IPrefetchableSupport](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IPrefetchableSupport.html).
+Indicates if the plug-in supports prefetch (dynamically): [Vst:: IPrefetchableSupport](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IPrefetchableSupport.html).
 
 - \[plug imp\]
-- [extends [IComponent](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponent.html)]
+- [extends [Vst:: IComponent](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponent.html)]
 - \[released: 3.6.5\]
 - \[optional\]
 

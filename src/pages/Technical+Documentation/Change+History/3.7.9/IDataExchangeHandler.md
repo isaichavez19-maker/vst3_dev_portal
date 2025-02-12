@@ -15,14 +15,14 @@
 
 ## Introduction
 
-Host Data Exchange handler interface: [IDataExchangeHandler](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IDataExchangeHandler.html).
+Host Data Exchange handler interface: [Vst:: IDataExchangeHandler](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IDataExchangeHandler.html).
 
 - \[host imp\]
 - \[context interface\]
 - \[released: 3.7.9\]
 - \[optional\]
 
-Data Exchange Receiver interface: [IDataExchangeReceiver](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IDataExchangeReceiver.html)
+Data Exchange Receiver interface: [Vst:: IDataExchangeReceiver](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IDataExchangeReceiver.html)
 
 - \[plug imp\]
 - \[released: 3.7.9\]

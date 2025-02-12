@@ -16,10 +16,10 @@
 
 Allows information exchange between the plug-in and the host about which key switches are currently used.
 
-Extended plug-in interface [IEditController](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IEditController.html) for key switches support: [Vst::IKeyswitchController](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IKeyswitchController.html)
+Extended plug-in interface [Vst:: IEditController](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IEditController.html) for key switches support: [Vst:: IKeyswitchController](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IKeyswitchController.html)
 
 - \[plug imp\]
-- [extends [IEditController](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IEditController.html)]
+- [extends [Vst:: IEditController](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IEditController.html)]
 - \[released: 3.5.0\]
 - \[optional\]
 
@@ -31,7 +31,7 @@ With [VST Expression Map](https://www.steinberg.net/de/technology/) (introduced 
 
 [![getting_started_vid_7](https://i.ytimg.com/vi/D5dj1v6EL2M/maxresdefault.jpg)](https://www.youtube.com/watch?v=D5dj1v6EL2M)
 
-In order to help the creation of such a map, VST 3.5 defines a new interface [Steinberg::Vst::IKeyswitchController](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IKeyswitchController.html). If an (instrument) plug-in supports such an interface, the host can get the current set of used key switches from the plug-in (megatrigg / articulation: [Steinberg::Vst::KeyswitchInfo](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/structSteinberg_1_1Vst_1_1KeyswitchInfo.html)) for a given channel of an event bus, and then automatically use them (like in **Cubase 6**) to create a [VST Expression Map](https://o.steinberg.net/en/support/content_and_accessories/expression_maps_for_vst_expression.html).
+In order to help the creation of such a map, VST 3.5 defines a new interface [Vst:: IKeyswitchController](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IKeyswitchController.html). If an (instrument) plug-in supports such an interface, the host can get the current set of used key switches from the plug-in (megatrigg / articulation: [Vst::KeyswitchInfo](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/structSteinberg_1_1Vst_1_1KeyswitchInfo.html)) for a given channel of an event bus, and then automatically use them (like in **Cubase 6**) to create a [VST Expression Map](https://o.steinberg.net/en/support/content_and_accessories/expression_maps_for_vst_expression.html).
 
 ## How does it work?
 
@@ -58,7 +58,7 @@ tresult PLUGIN_API MyExampleProcessor::initialize (FUnknown* context)
 }
 ```
 
-2. The controller should have the interface [Steinberg::Vst::IKeyswitchController](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IKeyswitchController.html), here in the class declaration:
+2. The controller should have the interface [Vst:: IKeyswitchController](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IKeyswitchController.html), here in the class declaration:
 
 ``` c++
 //------------------------------------------------------------------
@@ -81,7 +81,7 @@ public:
 };
 ```
 
-3. Now we have to implement the interface [Steinberg::Vst::IKeyswitchController](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IKeyswitchController.html) (only 2 functions), in our example [Steinberg::Vst::IKeyswitchController::getKeyswitchCount](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IKeyswitchController.html#aa98a707edb1b58d05da0c50e38983a4e) should return 2 (2 key switches):
+3. Now we have to implement the interface [Vst:: IKeyswitchController](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IKeyswitchController.html) (only 2 functions), in our example [Vst:: IKeyswitchController::getKeyswitchCount](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IKeyswitchController.html#aa98a707edb1b58d05da0c50e38983a4e) should return 2 (2 key switches):
 
 ``` c++
 //------------------------------------------------------------------
@@ -94,7 +94,7 @@ int32 MyExampleController::getKeyswitchCount (int32 busIndex, int16 channel)
 }
 ```
 
-4. Then, we have to implement [Steinberg::Vst::IKeyswitchController::getKeyswitchInfo](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IKeyswitchController.html#a8193190849039a70d08b084241d29e38), which allows to inform the host about what the plug-in supports:
+4. Then, we have to implement [Vst:: IKeyswitchController::getKeyswitchInfo](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IKeyswitchController.html#a8193190849039a70d08b084241d29e38), which allows to inform the host about what the plug-in supports:
 
 ``` c++
 //------------------------------------------------------------------

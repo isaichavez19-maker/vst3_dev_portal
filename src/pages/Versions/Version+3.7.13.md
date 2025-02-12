@@ -28,7 +28,7 @@
       - Fix MIDI CC input in AU wrapper ([PR#74](https://github.com/steinbergmedia/vst3_public_sdk/pull/74/)). (*public.sdk/source/vst/auwrapper/auwrapper.mm*).
 
 - [Examples](../What+is+the+VST+3+SDK/Plug-in+Examples.md):
-  - Add support of [Vst::IAudioProcessor::setProcessing](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IAudioProcessor.html#af252fd721b195b793f3a5dfffc069401) in most of the plug-ins, demonstrating how this function can be used (e.g., cleaning delay lines, killing voices, etc.).
+  - Add support of [Vst:: IAudioProcessor::setProcessing](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IAudioProcessor.html#af252fd721b195b793f3a5dfffc069401) in most of the plug-ins, demonstrating how this function can be used (e.g., cleaning delay lines, killing voices, etc.).
   - Update **Hostchecker** plug-in:
     - Redesign the UI.
     - Add check of COM correct behavior when calling queryInterface ().

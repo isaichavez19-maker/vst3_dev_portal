@@ -74,7 +74,7 @@ VstIntPtr Vst2Wrapper::vendorSpecific (VstInt32 lArg, VstIntPtr lArg2, void* ptr
 
 ## Q: How can I support projects which were saved with the VST 2 version of my plug-in?
 
-The host will call [IComponent::setState()](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponent.html#a77ac39bcc5c4b15818b1a87de2573805) and [IEditController::setComponentState()](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IEditController.html#a4c2e1cafd88143fda2767a9c7ba5d48f) with the complete FXB/FXP stream. You have to extract your old state from that, for this the SDK provides a helper function [VST3::tryVst2StateLoad](https://steinbergmedia.github.io/vst3_doc/vstsdk/namespaceVST3.html#aadc6b99109a9b056a0176f49f9220822).
+The host will call [Vst:: IComponent::setState()](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponent.html#a77ac39bcc5c4b15818b1a87de2573805) and [Vst:: IEditController::setComponentState()](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IEditController.html#a4c2e1cafd88143fda2767a9c7ba5d48f) with the complete FXB/FXP stream. You have to extract your old state from that, for this the SDK provides a helper function [VST3::tryVst2StateLoad](https://steinbergmedia.github.io/vst3_doc/vstsdk/namespaceVST3.html#aadc6b99109a9b056a0176f49f9220822).
 
 Here the code to add in the **VST 3** version when a **VST 3** plug-in replaces a **VST 2** plug-in in a Steinberg sequencer project:
 
@@ -108,7 +108,7 @@ For Automation compatibility, you have to ensure that **VST 3** parameter IDs ha
 You can use the compatibility array of the [moduleinfo.json](../Technical+Documentation/VST+Module+Architecture/ModuleInfo-JSON.md) file.
 There, you use the UID of your **VST 3** audio effect class as the "New" UID and put the UID of your **VST 2** plug-in in the "Old" array.
 
-If you cannot use the [moduleinfo.json](../Technical+Documentation/VST+Module+Architecture/ModuleInfo-JSON.md) file, you can create a class that implements the [IPluginCompatibility](../Technical+Documentation/Change+History/3.7.5/ModuleInfo.md) interface which you must provide to the host via your plug-in factory.
+If you cannot use the [moduleinfo.json](../Technical+Documentation/VST+Module+Architecture/ModuleInfo-JSON.md) file, you can create a class that implements the [Vst:: IPluginCompatibility](../Technical+Documentation/Change+History/3.7.5/ModuleInfo.md) interface which you must provide to the host via your plug-in factory.
 
 ---
 

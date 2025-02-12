@@ -32,7 +32,7 @@
 
 - [Plug-in Wrappers](../What+is+the+VST+3+SDK/Wrappers/Index.md):
   - Audio Unit v3 (AUv3) Wrapper (VST 3 - Audio Unit v3 Wrapper):
-    - out of the box MPE support. As MPE is a limited subset of the Note Expression feature, the three expressions are simply mapped to the note expressions returned via the [INoteExpressionPhysicalUIMapping](../Technical+Documentation/Change+History/3.6.11/INoteExpressionPhysicalUIMapping.md) interface.
+    - out of the box MPE support. As MPE is a limited subset of the Note Expression feature, the three expressions are simply mapped to the note expressions returned via the [Vst:: INoteExpressionPhysicalUIMapping](../Technical+Documentation/Change+History/3.6.11/INoteExpressionPhysicalUIMapping.md) interface.
     - note that you must have certificates to sign on macOS/iOS for AUv3.
     - complete folder restructuring for easy adaption.
   - AAX Wrapper ([VST 3 - AAX Wrapper](../What+is+the+VST+3+SDK/Wrappers/AAX+Wrapper.md)):

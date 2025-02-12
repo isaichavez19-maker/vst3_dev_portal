@@ -5,8 +5,8 @@
 ## Version 3.6.0 (2013/11/22)
 
 - Interface Changes:
-  - Preset meta information via Steinberg::Vst::IStreamAttributes
-  - New Event Types: Steinberg::Vst::ChordEvent, Steinberg::Vst::ScaleEvent
+  - Preset meta information via Vst::IStreamAttributes
+  - New Event Types: Vst::ChordEvent, Vst::ScaleEvent
 
 - [Plug-in Wrappers](../What+is+the+VST+3+SDK/Wrappers/Index.md):
   - \[3.6.0\] iOS Inter-App Audio support

@@ -10,10 +10,10 @@
 
 ## Introduction
 
-Extended host callback interface for an edit controller: [Vst::IComponentHandler3](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponentHandler3.html)
+Extended host callback interface for an edit controller: [Vst:: IComponentHandler3](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponentHandler3.html)
 
 - \[host imp\]
-- [extends [IComponentHandler](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponentHandler.html)]
+- [extends [Vst:: IComponentHandler](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponentHandler.html)]
 - \[released: 3.5.0\]
 - \[optional\]
 
@@ -21,13 +21,13 @@ A plug-in can ask the host to create a context menu for a given exported paramet
 The host may pre-fill this context menu with specific items regarding the parameter ID like "Show automation for parameter", "MIDI learn" etc...
 The plug-in can use the context menu in two ways:
 
-- add its own items to the menu via the [IContextMenu](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IContextMenu.html) interface and call [IContextMenu::popup(...)](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IContextMenu.html#a8d6e113be32dfccabcacca0c81ee6f10) to create the pop-up. See below for an example of how to use it.
+- add its own items to the menu via the [Vst:: IContextMenu](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IContextMenu.html) interface and call [Vst:: IContextMenu::popup(...)](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IContextMenu.html#a8d6e113be32dfccabcacca0c81ee6f10) to create the pop-up. See below for an example of how to use it.
 - extract the host menu items and add them to a context menu created by the plug-in.
 
 >ⓘ **Note**\
 >It is recommended to use this context menu interface, even if you do not add your own items to the menu as this is considered to be a big user value.
 
-See also [IContextMenu](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IContextMenu.html), [IContextMenuTarget](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IContextMenuTarget.html).
+See also [Vst:: IContextMenu](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IContextMenu.html), [Vst:: IContextMenuTarget](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IContextMenuTarget.html).
 
 ## Examples
 

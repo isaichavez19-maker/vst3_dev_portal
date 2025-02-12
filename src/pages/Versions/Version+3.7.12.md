@@ -25,7 +25,7 @@
       - Add support for the old CoreAudio and new official AudioUnitSDK (version 1.1.0).
     - **AU Wrapper**:
       - Add support of MIDI2 (higher-resolution for velocity and CC) using a helper for decoding UMP message (*public.sdk/source/vst/utility/ump.h*).
-      - Add support of MIDI Learn interface [Vst::IMidiLearn](../Technical+Documentation/Change+History/3.6.12/IMidiLearn.md).
+      - Add support of MIDI Learn interface [Vst:: IMidiLearn](../Technical+Documentation/Change+History/3.6.12/IMidiLearn.md).
       - Add cache program list infos so that the edit controller is not called in the process thread.
       - Add MIDI mapping cache instead of calling the IMidiMapping interface in the audio process thread.
       - Cleanup *public.sdk/source/vst/auwrapper/auwrapper.mm/auwrapper.h*.
@@ -40,8 +40,8 @@
   - Rename project names for better readability.
   - Temporary disable dataexchange example for linux due to missing linux implementation.
   - Update **Hostchecker** plug-in:
-    - with new host check: call of getLatency after setActive and before setProcessing or process.
-    - new parameters for Randomize + LowLatency + DryWet with [IParameterFunctionName](../Technical+Documentation/Change+History/3.7.0/IParameterFunctionName.md) support.
+    - with new host check: call of getLatency after setActive and before  [Vst:: IAudioProcessor::setProcessing](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IAudioProcessor.html#af252fd721b195b793f3a5dfffc069401) or process.
+    - new parameters for Randomize + LowLatency + DryWet with [Vst:: IParameterFunctionName](../Technical+Documentation/Change+History/3.7.0/IParameterFunctionName.md) support.
 
 - Helpers classes:
   - *hosting/test/connectionproxytest.cpp*: Avoid potential hang in connectionproxytest ([PR#66](https://github.com/steinbergmedia/vst3_public_sdk/pull/66)).
