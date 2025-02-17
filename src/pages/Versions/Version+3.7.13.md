@@ -16,8 +16,10 @@
   - Add more information for each **VST 3** API function about threading and state context.
 
 - cmake
+  - Update cmake_minimum_required to *3.25.0*
   - Fix linker warning on Mac ([PR#11](https://github.com/steinbergmedia/vst3_cmake/pull/11)).
   - *smtg_target_add_plugin_resource* groups and strutures the resources files into the IDE.
+  - Fix white space issue with resources [Forum](https://forums.steinberg.net/t/white-space-issue-with-resources-3-7-12/955129).
 
 - [Plug-in Wrappers](../What+is+the+VST+3+SDK/Wrappers/Index.md):
   - Audio Unit:
