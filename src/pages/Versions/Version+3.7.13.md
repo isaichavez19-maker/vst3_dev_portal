@@ -41,6 +41,7 @@
   - *vst3_public_sdk/source/vst/hosting/module_linux.cpp*: Linux: Plugin bundles with an extra dot in the name fail to load with the Hosting::Module class ([Issue#73](https://github.com/steinbergmedia/vst3_public_sdk/issues/73)).
   - Fix -Wundef warnings ([PR#75](https://github.com/steinbergmedia/vst3_public_sdk/pull/75)). 
   - Fix HostApplication::queryInterface -- mPlugInterfaceSupport Query Interface Should Use "_iid", not "iid"([Issue#131](https://github.com/steinbergmedia/vst3sdk/issues/131)).
+  - Fix seek to the end + add new function *take* allowing to take the memory out of the stream: *public.sdk/source/vst/utility/memoryibstream.h*.
 
 - [VST3PluginTestHost](../What+is+the+VST+3+SDK/Plug-in+Test+Host.md) v3.7:
   
