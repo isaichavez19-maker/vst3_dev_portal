@@ -54,8 +54,9 @@
     - It requires to include "*pluginterfaces/base/funknownimpl.h*".
   - Fix loading of VST 2 preset: *tryVst2StateLoad* in *public.sdk\source\vst\utility\vst2persistence.cpp* ([PR#72](https://github.com/steinbergmedia/vst3_public_sdk/pull/72)).
 
-- [VST3PluginTestHost](../What+is+the+VST+3+SDK/Plug-in+Test+Host.md) v3.7:
+- [VST3PluginTestHost](../What+is+the+VST+3+SDK/Plug-in+Test+Host.md) v3.8:
   - New features:
+    - [File => Unload MIDI File](../What+is+the+VST+3+SDK/Plug-in+Test+Host.md#menu-description)
     - [File => Export Audio...](../What+is+the+VST+3+SDK/Plug-in+Test+Host.md#menu-description)
     - [File => Export Audio for current loaded MIDI...](../What+is+the+VST+3+SDK/Plug-in+Test+Host.md#menu-description)
     - [Transport => Toggle time format between Time and Bars](../What+is+the+VST+3+SDK/Plug-in+Test+Host.md#transport-1)

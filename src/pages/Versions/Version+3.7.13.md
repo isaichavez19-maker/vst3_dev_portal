@@ -1,13 +1,13 @@
   >/ [VST Home](../) / [Change History](./Index.md)
 >
-># Version 3.7.13 (2025/02/??)
+># Version 3.7.13 (2025/02/27)
 
-## Version 3.7.13 (2025/02/??)
+## Version 3.7.13 (2025/02/27)
 
 - Interface changes:
   - Fix -Wundef warnings ([PR#17](https://github.com/steinbergmedia/vst3_public_sdk/pull/17)). 
   - Fix enabling/disabling warnings in public header files ([Issue#18](https://github.com/steinbergmedia/vst3_pluginterfaces/issues/18)).
-  - Add the possibility to disable pragma warning on Windows (Visual Studio) with *SMTG_DISABLE_DEFAULT_DIAGNOSTICS*.
+  - Add the possibility to disable #pragma warning on Windows (Visual Studio) with *SMTG_DISABLE_DEFAULT_DIAGNOSTICS*.
 
 - [VSTGUI](../What+is+the+VST+3+SDK/VSTGUI.md) update [4.14.1](https://github.com/steinbergmedia/vstgui/releases/tag/vstgui4_14_1)
 
@@ -18,7 +18,7 @@
 - cmake
   - Update cmake_minimum_required to *3.25.0*
   - Fix linker warning on Mac ([PR#11](https://github.com/steinbergmedia/vst3_cmake/pull/11)).
-  - *smtg_target_add_plugin_resource* groups and strutures the resources files into the IDE.
+  - *smtg_target_add_plugin_resource* groups and structures the resources files into the IDE.
   - Fix white space issue with resources [Forum](https://forums.steinberg.net/t/white-space-issue-with-resources-3-7-12/955129).
 
 - [Plug-in Wrappers](../What+is+the+VST+3+SDK/Wrappers/Index.md):
@@ -37,11 +37,8 @@
     - Add check for ProcessContext::systemtime of continuity.
 
 - Helpers classes:
-  - Fix in *openurl.cpp* openURLInDefaultApplication returns wrong result on macOS and Linux.
-  - *vst3_public_sdk/source/vst/hosting/module_linux.cpp*: Linux: Plugin bundles with an extra dot in the name fail to load with the Hosting::Module class ([Issue#73](https://github.com/steinbergmedia/vst3_public_sdk/issues/73)).
+  - Fix in *openurl.cpp* **openURLInDefaultApplication** returns wrong result on macOS and Linux.
+  - Fix *vst3_public_sdk/source/vst/hosting/module_linux.cpp*: Plug-in bundles with an extra dot in the name fail to load with the Hosting::Module class ([Issue#73](https://github.com/steinbergmedia/vst3_public_sdk/issues/73)).
   - Fix -Wundef warnings ([PR#75](https://github.com/steinbergmedia/vst3_public_sdk/pull/75)). 
-  - Fix HostApplication::queryInterface -- mPlugInterfaceSupport Query Interface Should Use "_iid", not "iid"([Issue#131](https://github.com/steinbergmedia/vst3sdk/issues/131)).
+  - Fix **HostApplication::queryInterface** -- mPlugInterfaceSupport Query Interface should use "_iid", not "iid"([Issue#131](https://github.com/steinbergmedia/vst3sdk/issues/131)).
   - Fix seek to the end + add new function *take* allowing to take the memory out of the stream: *public.sdk/source/vst/utility/memoryibstream.h*.
-
-- [VST3PluginTestHost](../What+is+the+VST+3+SDK/Plug-in+Test+Host.md) v3.7:
-  
