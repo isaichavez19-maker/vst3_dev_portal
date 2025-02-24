@@ -119,7 +119,7 @@
 # Additional Resources
 
 - [Change History](pages/Versions/Index.md)
-  - [Version 3.7.13 (2025/02/27)](pages/Versions/Version+3.7.13.md)
+  - [Version 3.7.13 (2025/02/28)](pages/Versions/Version+3.7.13.md)
   - [Version 3.7.12 (2024/07/23)](pages/Versions/Version+3.7.12.md)
   - [Version 3.7.11 (2024/04/22)](pages/Versions/Version+3.7.11.md)
   - [Version 3.7.10 (2024/01/18)](pages/Versions/Version+3.7.10.md)

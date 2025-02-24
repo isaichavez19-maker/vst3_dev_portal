@@ -1,8 +1,8 @@
   >/ [VST Home](../) / [Change History](./Index.md)
 >
-># Version 3.7.13 (2025/02/27)
+># Version 3.7.13 (2025/02/28)
 
-## Version 3.7.13 (2025/02/27)
+## Version 3.7.13 (2025/02/28)
 
 - Interface changes:
   - Fix -Wundef warnings ([PR#17](https://github.com/steinbergmedia/vst3_public_sdk/pull/17)). 
@@ -42,3 +42,6 @@
   - Fix -Wundef warnings ([PR#75](https://github.com/steinbergmedia/vst3_public_sdk/pull/75)). 
   - Fix **HostApplication::queryInterface** -- mPlugInterfaceSupport Query Interface should use "_iid", not "iid"([Issue#131](https://github.com/steinbergmedia/vst3sdk/issues/131)).
   - Fix seek to the end + add new function *take* allowing to take the memory out of the stream: *public.sdk/source/vst/utility/memoryibstream.h*.
+
+- [VST 3 Project Generator](../What+is+the+VST+3+SDK/Project+Generator.md) v2025.02:
+  - Fix: Only add SMTG_PREFIX_FOR_FILENAMES_CLI argument when not empty.
