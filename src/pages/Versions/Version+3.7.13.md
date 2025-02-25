@@ -42,6 +42,12 @@
   - Fix -Wundef warnings ([PR#75](https://github.com/steinbergmedia/vst3_public_sdk/pull/75)). 
   - Fix **HostApplication::queryInterface** -- mPlugInterfaceSupport Query Interface should use "_iid", not "iid"([Issue#131](https://github.com/steinbergmedia/vst3sdk/issues/131)).
   - Fix seek to the end + add new function *take* allowing to take the memory out of the stream: *public.sdk/source/vst/utility/memoryibstream.h*.
+  - Fix memory leak with timer in *public.sdk/source/vst/utility/dataexchange.cpp*.
+  - Add new validation function: **validateBundleStructure** in *public.sdk/source/vst/hosting/module_win32.cpp*, *public.sdk/source/vst/hosting/module_mac.cpp*, *public.sdk/source/vst/hosting/module_linux.cpp*.
 
 - [VST 3 Project Generator](../What+is+the+VST+3+SDK/Project+Generator.md) v2025.02:
   - Fix: Only add SMTG_PREFIX_FOR_FILENAMES_CLI argument when not empty.
+
+- [VST3PluginTestHost](../What+is+the+VST+3+SDK/Plug-in+Test+Host.md) v3.9:
+  - [update] add parameter changes to output parameter queue so that the edit controller will see the change.
+  - [fix] use parameter step count for program change calculation.
