@@ -16,9 +16,9 @@ This tutorial explains how to use silence flags.
 
 ## What about Silence flags?
 
-It is sometime useful for plug-ins processing to know if the audio inputs really contain audio or only silence (buffer filled with 0!), it is useful too for the host to know if the plug-in will produce silence audio outputs, for example in case of an instrument plug-in which has nothing to play (no input events are coming), then the host will be able to inform following plug-ins in the processing chain this information. This helps to reduce the amount of computing and improve overall performance.
+It is sometimes useful for plug-ins in process call to know if the audio inputs really contain audio or only silence (buffer filled with 0!. It is also useful for the host to know if the plug-in will produce silence audio outputs. For example, in case of an instrument plug-in that has nothing to play (no input events are coming), the host can inform subsequent plug-ins in the processing chain. This helps to reduce the amount of computing and improve overall performance.
 
-But how does it works? The following part will show you how to get this information in the process call and how to propagate it to the audio outputs of the plug-in.
+But how does it works? The following section will show you how to get this information in the process call and how to propagate it to the audio outputs of the plug-in.
 
 The silence flags is part of the [AudioBusBuffers](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/structSteinberg_1_1Vst_1_1AudioBusBuffers.html) ([silenceFlags](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/structSteinberg_1_1Vst_1_1AudioBusBuffers.html#a2c73b926e22ddb05193b6edd16a008f8)) passed from the host to the plug-in and back to the host in the process call.
 
