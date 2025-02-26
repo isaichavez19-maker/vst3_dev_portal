@@ -82,10 +82,7 @@ Please sign this **Steinberg VST 3 Plug-in SDK Licensing Agreement** if you want
 | Windows 8.1/10                    | x86, x86_64                   | MSVC 2019, MSVC 2022  |                                   |
 | macOS 10.13 - 15                  | x86, x86_64, Apple Silicon    | Xcode 10 - 15         |                                   |
 | iOS 13 - 15                       | arm64                         | Xcode 11 - 15         |                                   |
-| Linux - Raspberry Pi OS (Buster)  | arm32                         | GCC 8.3 and higher    | Visual Studio Code                |
-| Linux - Ubuntu 24.04 LTS          | x86, x86_64                   | GCC 13.3 and higher   | Visual Studio Code, Qt Creator    |
-| Linux - Ubuntu 22.04 LTS          | x86, x86_64                   | GCC 11.2 and higher   | Visual Studio Code, Qt Creator    |
-| Linux - Ubuntu 20.04 LTS          | x86, x86_64                   | GCC 8.3 and higher    | Visual Studio Code, Qt Creator    |
+| Linux - Ubuntu 24.04 LTS          | x86_64                        | GCC 13.3 and higher   | Visual Studio Code, Qt Creator    |
 
 ## [Download link](../Getting+Started/Links.md)
 
