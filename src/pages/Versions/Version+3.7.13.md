@@ -49,5 +49,5 @@
   - Fix: Only add SMTG_PREFIX_FOR_FILENAMES_CLI argument when not empty.
 
 - [VST3PluginTestHost](../What+is+the+VST+3+SDK/Plug-in+Test+Host.md) v3.9:
-  - [update] add parameter changes to output parameter queue so that the edit controller will see the change.
-  - [fix] use parameter step count for program change calculation.
+  - Fix add parameter changes to output parameter queue so that the edit controller will see the change.
+  - Fix use parameter step count for program change calculation.
