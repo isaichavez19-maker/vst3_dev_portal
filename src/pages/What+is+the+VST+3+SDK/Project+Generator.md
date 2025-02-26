@@ -123,7 +123,7 @@ class AGainController : public EditControllerEx1
 };
 ```
 
-- **Bundle ID**: this is the ID needed for example for the Info.plist of macOS: e.g. *"com.steinberg.again"*
+- **Bundle ID**: this is the ID needed, for example, for the Info.plist of macOS: e.g. *"com.steinberg.again"*
 - **Filename Prefix**: (optional) this will be added as file prefix to the created files: e.g. *"AGain"* => AGainProcessor.cpp / AGainController.h / ...
 - **Output Directory**: you define here in which folder your project will be created
 - **CMake Generator**: CMake tool required to define a generator in order to create configuration files for a specific build system: there are 2 kinds of generators: Command-Line and IDE. Choose the one you need for example:

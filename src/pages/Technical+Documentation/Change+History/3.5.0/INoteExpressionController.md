@@ -37,7 +37,7 @@ A major limitation of **MIDI** is the nature of controller information; controll
 
 Articulating each note in a chord individually creates a much more natural feel, just like multiple players playing the same instrument at the same time but each adding their own personality to the notes played.
 
-For example **Cubase 6** introduces the first **VST 3 Note Expression** compatible virtual instrument: **HALion Sonic SE**. **HALion Sonic SE** not only supports "standard" note expression control for Tuning (Pitch), Volume and Pan, it also offers additional custom pre-assigned note expression types of event ([kCustomStart](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/namespaceSteinberg_1_1Vst.html#a7d66c573aff27d890ec154f45b61f310a1c30475ef992f89f37c2fe0aafcc6283) in [Vst::NoteExpressionTypeIDs](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/namespaceSteinberg_1_1Vst.html#a7d66c573aff27d890ec154f45b61f310)).
+For example, **Cubase 6** introduces the first **VST 3 Note Expression** compatible virtual instrument: **HALion Sonic SE**. **HALion Sonic SE** not only supports "standard" note expression control for Tuning (Pitch), Volume and Pan, it also offers additional custom pre-assigned note expression types of event ([kCustomStart](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/namespaceSteinberg_1_1Vst.html#a7d66c573aff27d890ec154f45b61f310a1c30475ef992f89f37c2fe0aafcc6283) in [Vst::NoteExpressionTypeIDs](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/namespaceSteinberg_1_1Vst.html#a7d66c573aff27d890ec154f45b61f310)).
 
 ## How does it work?
 

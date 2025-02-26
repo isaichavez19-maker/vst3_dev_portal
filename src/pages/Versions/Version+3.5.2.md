@@ -35,4 +35,4 @@
   - [Vst:: IParameterFinder](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IParameterFinder.html): To enable important functionalities (like AI Knob) a recommendation to implement this interface was added.
   - The VST 3 plug-in locations priority has been changed: Application level should be scanned from host after Global level.
 
-- Licensing change for example source code files.
+- Licensing change, for example, source code files.

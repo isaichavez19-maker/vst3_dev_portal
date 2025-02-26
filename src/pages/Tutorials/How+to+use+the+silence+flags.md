@@ -34,7 +34,7 @@ tresult PLUGIN_API AGain::process (ProcessData& data)
 
     //---check if silence---------------
     // silence flags are a bitmask where each bit corresponds to one channel of a bus
-    // (for example L and R for stereo bus).
+    // (for example, L and R for stereo bus).
     // Here we check only if the whole first input is silent (in case of Stereo: the L and R are silent)
     if (data.inputs[0].silenceFlags != 0) // if flags is not zero => then it means that we have silent!
     {
@@ -77,7 +77,7 @@ tresult PLUGIN_API AGain::process (ProcessData& data)
 
 
     // under certain condition our output buffer could be silent:
-    // for example here our gain could be set to 0 or smaller than a threshold.
+    // for example, here our gain could be set to 0 or smaller than a threshold.
     // We have to inform the host that our output is silent too
     // this is done simply by setting the silenceFlags of the output bus:
     if (gain < 0.0000001)

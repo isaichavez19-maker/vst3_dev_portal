@@ -127,7 +127,7 @@ Yes and it is essential to support this for automation. For details, please see 
 
 ## Q: Does VST 3 include variable Input/Output processing like processVariableIo of VST 2?
 
-Not in version 3.1.0, we plan something in this direction later. (Note: this variableIO processing was for example for time stretching plug-ins).
+Not in version 3.1.0, we plan something in this direction later. (Note: this variableIO processing was, for example, for time stretching plug-ins).
 
 ---
 

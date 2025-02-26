@@ -24,7 +24,7 @@ The silence flags is part of the [AudioBusBuffers](https://steinbergmedia.github
 - for the inputs: check this flag: **data.inputs\[0\]silenceFlags**
 - for the outputs: set this when the plug-in generates or notsilence: **data.outputs\[0\].silenceFlags**
 
-The silence flags are a bitmask where each bit corresponds to one channel of a bus (for example L and R for stereo bus).
+The silence flags are a bitmask where each bit corresponds to one channel of a bus (for example, L and R for stereo bus).
 
 >ⓘ **Note**\
 >The host has the responsibility to clear the input buffers (set to something near zero, like 10e-7, to prevent de-normalization issue) when it enables the silence flags (the output silence flags will be set by the host to no silence (=0)), on the other side the plug-in, if it produces silence output, has the responsibility to clear (set to zero) its output buffers and to correctly set the output silence flags.

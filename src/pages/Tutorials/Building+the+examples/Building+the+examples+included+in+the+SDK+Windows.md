@@ -49,7 +49,7 @@ cmake.exe -G "Visual Studio 17 2022" -A x64 ../vst3sdk-DSMTG_CREATE_PLUGIN_LINK=
 
 ``` text
 msbuild.exe vstsdk.sln
-(or alternatively for example for release)
+(or alternatively, for example, for release)
 
 cmake --build . --config Release
 ```
@@ -63,7 +63,7 @@ cmake --build . --config Release
 - **Browse Source...**: select the folder VST3_SDK
 - **Browse Build...**: select a folder where the outputs (projects/...) will be created. Typically a folder named *build*
 - You can check the **SMTG Options**
-- Press **Configure** and choose the generator in the window that opens: for example "**Visual Studio 17 2022**"
+- Press **Configure** and choose the generator in the window that opens: for example, "**Visual Studio 17 2022**"
 
 ![tutorials_2](../../../resources/tutorials_2.png)
 

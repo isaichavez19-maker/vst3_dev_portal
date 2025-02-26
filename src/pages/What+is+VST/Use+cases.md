@@ -31,7 +31,7 @@ There are different use cases you can realize by using the **VST 3 SDK**:
 By using **VST 3 SDK** directly:
 
 - you are sure to be compliant with the **VST 3** format.
-- developing your plug-in based on the **VST 3** format allows you to support easily new **VST 3** features that improve the integration of these plug-ins inside a DAW. Some 3rd party SDKs use only a common layer between all plug-in formats, limiting in this way the possibility for a better integration, for example exclusive **VST 3** features:
+- developing your plug-in based on the **VST 3** format allows you to support easily new **VST 3** features that improve the integration of these plug-ins inside a DAW. Some 3rd party SDKs use only a common layer between all plug-in formats, limiting in this way the possibility for a better integration, for example, exclusive **VST 3** features:
   - [context menu](../Technical+Documentation/Change+History/3.5.0/IComponentHandler3.md)
   - [dirty state](../Technical+Documentation/Change+History/3.1.0/IComponentHandler2.md)
   - loading differentially a preset or a project

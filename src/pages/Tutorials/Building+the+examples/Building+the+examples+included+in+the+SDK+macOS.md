@@ -51,7 +51,7 @@ cmake -DCMAKE_BUILD_TYPE=Debug ../
 
 ``` c++
 xcodebuild
-(or alternatively for example for release)
+(or alternatively, for example, for release)
 
 cmake --build . --config Release
 ```
