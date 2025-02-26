@@ -80,7 +80,7 @@ Based Check the folder *"public.sdk/samples/vst/again_sampleaccurate"* of the SD
 
 Very simple plug-in:
 
-- showing how to use the [Steinberg::Vst::ChannelContext::IInfoListener](../Technical+Documentation/Change+History/3.6.5/IInfoListener.md) interface
+- showing how to use the [Vst::ChannelContext::IInfoListener](../Technical+Documentation/Change+History/3.6.5/IInfoListener.md) interface
 - using a generic UI
 
 ![what_if_10](../../resources/what_is_10.jpg)
@@ -91,7 +91,7 @@ Check the folder *"public.sdk/samples/vst/channelcontext"* of the SDK!
 
 This plug-in:
 
-- shows how to exchange data (waveform) between processor (in the realtime thread) and controller using the VST Data Exchange API: [Vst::IDataExchangeHandler](../Technical+Documentation/Data+Exchange/Index.md)
+- shows how to exchange data (waveform) between processor (in the realtime thread) and controller using the VST Data Exchange API: [Vst:: IDataExchangeHandler](../Technical+Documentation/Data+Exchange/Index.md)
 - shows how easy it is to use [**VSTGUI**](VSTGUI.md)
 
 ![what_if_38](../../resources/what_is_38.png)
@@ -228,7 +228,7 @@ Classes:
 
 Very simple plug-in:
 
-- showing how to use the [Steinberg::Vst::IPrefetchableSupport](../Technical+Documentation/Change+History/3.6.5/IPrefetchableSupport.md) interface
+- showing how to use the [Vst:: IPrefetchableSupport](../Technical+Documentation/Change+History/3.6.5/IPrefetchableSupport.md) interface
 - using a generic UI
 
 ![what_if_13](../../resources/what_is_13.jpg)
@@ -257,13 +257,13 @@ Very simple plug-in:
 
 - demonstrating how a **VST 3** Plug-in could replace another one and remap parameters ID.
 - it could replace the [AGain](../What+is+the+VST+3+SDK/Plug-in+Examples.md?#again) plug-in when it is not available.
-- it illustrates the use of the interface [IRemapParamID](../Technical+Documentation/Change+History/3.7.11/IRemapParamID.md) (for mapping [Test Remap ParamID](../What+is+the+VST+3+SDK/Plug-in+Examples.md?#test-remap-paramid) parameters to AGain plug-in parameters) and the [module info](../Technical+Documentation/VST+Module+Architecture/ModuleInfo-JSON.md) with its compatibility field.
+- it illustrates the use of the interface [Vst:: IRemapParamID](../Technical+Documentation/Change+History/3.7.11/IRemapParamID.md) (for mapping [Test Remap ParamID](../What+is+the+VST+3+SDK/Plug-in+Examples.md?#test-remap-paramid) parameters to AGain plug-in parameters) and the [module info](../Technical+Documentation/VST+Module+Architecture/ModuleInfo-JSON.md) with its compatibility field.
 
 ## Sync Delay
 
 Very simple delay plug-in:
 
-- showing how to support [IProcessContextRequirements](../Technical+Documentation/Change+History/3.7.0/IProcessContextRequirements.md)
+- showing how to support [Vst:: IProcessContextRequirements](../Technical+Documentation/Change+History/3.7.0/IProcessContextRequirements.md)
 
 Check the folder *"public.sdk/samples/vst/syncdelay"* of the SDK!
 

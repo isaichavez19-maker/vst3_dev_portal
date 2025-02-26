@@ -44,7 +44,7 @@ cmake ../vst3sdk
 
 ``` c++
 make
-(or alternatively for example for release)
+(or alternatively, for example, for release)
 
 cmake --build . --config Release
 ```

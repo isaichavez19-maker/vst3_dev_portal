@@ -5,13 +5,13 @@
 ## Version 3.7.11 (2024/04/22)
 
 - Interface changes:
-  - New [Vst::IRemapParamID](../Technical+Documentation/Change+History/3.7.11/IRemapParamID.md): allows the plug-in to ask the host to remap some parameter ID if needed.
+  - New [Vst:: IRemapParamID](../Technical+Documentation/Change+History/3.7.11/IRemapParamID.md): allows the plug-in to ask the host to remap some parameter ID if needed.
 
 - New Flags/Enums:
   - New RestartFlags: [kParamIDMappingChanged](../Technical+Documentation/Change+History/3.7.11/IRemapParamID.md).
 
 - Documentation
-  - new doc for [Vst::IRemapParamID](../Technical+Documentation/Change+History/3.7.11/IRemapParamID.md).
+  - new doc for [Vst:: IRemapParamID](../Technical+Documentation/Change+History/3.7.11/IRemapParamID.md).
 
 - cmake
   - references to **VST 2** are removed from the SDK.

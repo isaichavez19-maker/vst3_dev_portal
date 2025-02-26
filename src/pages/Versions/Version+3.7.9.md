@@ -5,9 +5,9 @@
 ## Version 3.7.9 (2023/10/09)
 
 - Interface changes:
-  - New [Vst::IDataExchangeHandler / Vst::IDataExchangeReceiver](../Technical+Documentation/Data+Exchange/Index.md): API to send data from the realtime processing function to the controller in a safe and efficient way.
-  - New [Vst::IComponentHandlerSystemTime](../Technical+Documentation/Change+History/3.7.9/IComponentHandlerSystemTime.md): API to query the system time from the controller.
-  - New on Linux: [Query IRunLoop from the host context of IPlugFactory3](../Technical+Documentation/Provide+A+Runloop+On+Linux/Index.md).
+  - New [Vst:: IDataExchangeHandler / Vst::IDataExchangeReceiver](../Technical+Documentation/Data+Exchange/Index.md): API to send data from the realtime processing function to the controller in a safe and efficient way.
+  - New [Vst:: IComponentHandlerSystemTime](../Technical+Documentation/Change+History/3.7.9/IComponentHandlerSystemTime.md): API to query the system time from the controller.
+  - New on Linux: [Query IRunLoop from the host context of IPluginFactory3](../Technical+Documentation/Provide+A+Runloop+On+Linux/Index.md).
   - New Flags/Enums:
     - New speakers: kSpeakerLw and kSpeakerRw for Left and Right Wide
     - New predefined 3D speaker arrangements (compatible Dolby Atmos):
@@ -37,11 +37,11 @@
 
 - [Examples](../What+is+the+VST+3+SDK/Plug-in+Examples.md):
   - New VST 3 plug-ins example **DataExchange** showing the use of the VST Data Exchange API: *public.sdk/samples/vst/dataexchange*.
-  - Update Hostchecker plug-in to check new interfaces: [Vst::IDataExchangeHandler / Vst::IDataExchangeReceiver](../Technical+Documentation/Data+Exchange/Index.md) / [Vst::IComponentHandlerSystemTime](../Technical+Documentation/Change+History/3.7.9/IComponentHandlerSystemTime.md).
+  - Update Hostchecker plug-in to check new interfaces: [Vst:: IDataExchangeHandler / Vst::IDataExchangeReceiver](../Technical+Documentation/Data+Exchange/Index.md) / [Vst:: IComponentHandlerSystemTime](../Technical+Documentation/Change+History/3.7.9/IComponentHandlerSystemTime.md).
 
 - Helpers classes:
   - New helper for system time *public.sdk/source/vst/utility/systemtime.cpp*.
-  - New VST Data Exchange API Helper implementing [Vst::IDataExchangeHandler](../Technical+Documentation/Data+Exchange/Index.md): *public.sdk/source/vst/utility/dataexchange.cpp*.
+  - New VST Data Exchange API Helper implementing [Vst:: IDataExchangeHandler](../Technical+Documentation/Data+Exchange/Index.md): *public.sdk/source/vst/utility/dataexchange.cpp*.
   - Fix "Missing field initializer" warning in vstparameters.h [(PR#60)](https://github.com/steinbergmedia/vst3_public_sdk/pull/60).
   - Fix buffer overflow/memory corruption ([Issue#15](https://github.com/steinbergmedia/vst3_pluginterfaces/issues/15)).
   - Fix undefined behavior - load of misaligned address ([Issue#64](https://github.com/steinbergmedia/vst3_pluginterfaces/issues/64)).

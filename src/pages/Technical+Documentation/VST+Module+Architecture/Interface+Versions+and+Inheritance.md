@@ -11,7 +11,7 @@
 
 Unlike C++ classes, **VST-MA** interfaces do not use inheritance to express specializations of objects. Usually all interfaces are derived from FUnknown. This is because interfaces must **never** change after they have been released. The VST Module Architecture Interfaces use inheritance only for versioning! All specializations will be modeled as separate interfaces!
 
-For example the C++ classes:
+For example, the C++ classes:
 
 ``` c++
 class Shape

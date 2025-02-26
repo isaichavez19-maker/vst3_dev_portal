@@ -18,10 +18,10 @@
 
 A new way to control / modify / change a specific played note during playback.
 
-Edit controller component interface extension: [Vst::INoteExpressionController](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1INoteExpressionController.html)
+Edit controller component interface extension: [Vst:: INoteExpressionController](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1INoteExpressionController.html)
 
 - \[plug imp\]
-- [extends [IEditController](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IEditController.html)]
+- [extends [Vst:: IEditController](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IEditController.html)]
 - \[released: 3.5.0\]
 - \[optional\]
 
@@ -37,7 +37,7 @@ A major limitation of **MIDI** is the nature of controller information; controll
 
 Articulating each note in a chord individually creates a much more natural feel, just like multiple players playing the same instrument at the same time but each adding their own personality to the notes played.
 
-For example **Cubase 6** introduces the first **VST 3 Note Expression** compatible virtual instrument: **HALion Sonic SE**. **HALion Sonic SE** not only supports "standard" note expression control for Tuning (Pitch), Volume and Pan, it also offers additional custom pre-assigned note expression types of event ([kCustomStart](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/namespaceSteinberg_1_1Vst.html#a7d66c573aff27d890ec154f45b61f310a1c30475ef992f89f37c2fe0aafcc6283) in [Steinberg::Vst::NoteExpressionTypeIDs](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/namespaceSteinberg_1_1Vst.html#a7d66c573aff27d890ec154f45b61f310)).
+For example, **Cubase 6** introduces the first **VST 3 Note Expression** compatible virtual instrument: **HALion Sonic SE**. **HALion Sonic SE** not only supports "standard" note expression control for Tuning (Pitch), Volume and Pan, it also offers additional custom pre-assigned note expression types of event ([kCustomStart](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/namespaceSteinberg_1_1Vst.html#a7d66c573aff27d890ec154f45b61f310a1c30475ef992f89f37c2fe0aafcc6283) in [Vst::NoteExpressionTypeIDs](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/namespaceSteinberg_1_1Vst.html#a7d66c573aff27d890ec154f45b61f310)).
 
 ## How does it work?
 
@@ -66,7 +66,7 @@ tresult PLUGIN_API MyExampleProcessor::initialize (FUnknown* context)
 }
 ```
 
-2. The controller must provide the [Vst::INoteExpressionController](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1INoteExpressionController.html) interface, like below:
+2. The controller must provide the [Vst:: INoteExpressionController](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1INoteExpressionController.html) interface, like below:
 
 ``` c++
 //------------------------------------------------------------------
@@ -91,7 +91,7 @@ public:
 };
 ```
 
-3. Now we have to implement the [Steinberg::Vst::INoteExpressionController](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1INoteExpressionController.html) interface, in our example [Steinberg::Vst::INoteExpressionController::getNoteExpressionCount](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1INoteExpressionController.html#a197a1b66cc45ba1935d9ce0894b1ee02) should return 1 as we only want to support tuning:
+3. Now we have to implement the [Vst:: INoteExpressionController](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1INoteExpressionController.html) interface, in our example [Vst:: INoteExpressionController::getNoteExpressionCount](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1INoteExpressionController.html#a197a1b66cc45ba1935d9ce0894b1ee02) should return 1 as we only want to support tuning:
 
 ``` c++
 //------------------------------------------------------------------
@@ -104,7 +104,7 @@ int32 PLUGIN_API MyExampleController::getNoteExpressionCount (int32 busIndex, in
 }
 ```
 
-4. Then we have to implement [Steinberg::Vst::INoteExpressionController::getNoteExpressionInfo](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1INoteExpressionController.html#ab12d543cbd83560a9f098ed4a5c76af8) which describes what note expression the plug-in supports:
+4. Then we have to implement [Vst:: INoteExpressionController::getNoteExpressionInfo](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1INoteExpressionController.html#ab12d543cbd83560a9f098ed4a5c76af8) which describes what note expression the plug-in supports:
 
 ``` c++
 //  ------------------------------------------------------------------
@@ -146,7 +146,7 @@ tresult PLUGIN_API MyExampleController::getNoteExpressionInfo (int32 busIndex, i
 ```
 
 5. For displaying note expression values, we have to implement the conversion functions:
-    - [Steinberg::Vst::INoteExpressionController::getNoteExpressionStringByValue](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1INoteExpressionController.html#a457f017fc3566d143914e44523425d23): normalized value -> string
+    - [Vst:: INoteExpressionController::getNoteExpressionStringByValue](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1INoteExpressionController.html#a457f017fc3566d143914e44523425d23): normalized value -> string
 
 ``` c++
 //------------------------------------------------------------------
@@ -168,7 +168,7 @@ tresult PLUGIN_API  MyExampleController::getNoteExpressionStringByValue (int32 b
 }
 ```
 
-    - [Steinberg::Vst::INoteExpressionController::getNoteExpressionValueByString](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1INoteExpressionController.html#ab79e988315e33b4c30c8f2bd47a0cffc): string -> normalized value
+    - [Vst:: INoteExpressionController::getNoteExpressionValueByString](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1INoteExpressionController.html#ab79e988315e33b4c30c8f2bd47a0cffc): string -> normalized value
 
 ``` c++
 //------------------------------------------------------------------
@@ -192,7 +192,7 @@ tresult PLUGIN_API  MyExampleController::getNoteExpressionValueByString (int32 b
 }
 ```
 
-6. Last step, in the processor component we have to adapt the process call to interpret the note expression event ([Steinberg::Vst::NoteExpressionValueEvent](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/structSteinberg_1_1Vst_1_1NoteExpressionValueEvent.html)) sent from the host to the plug-in:
+6. Last step, in the processor component we have to adapt the process call to interpret the note expression event ([Vst::NoteExpressionValueEvent](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/structSteinberg_1_1Vst_1_1NoteExpressionValueEvent.html)) sent from the host to the plug-in:
 
 ``` c++
 //------------------------------------------------------------------

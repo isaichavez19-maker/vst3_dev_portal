@@ -18,7 +18,7 @@ This tutorial explains how to use [**VSTGUI**](../What+is+the+VST+3+SDK/VSTGUI.m
 
 If you have created your project with the [VST 3 Project Generator](../What+is+the+VST+3+SDK/Project+Generator.md) and check the "**Use VSTGUI**" you can directly jump to [Part 2](#part-2-open-the-vstguiwyswyg-editor) of this tutorial.
 
-Before using the inline UI editor, you must make sure that you use the [Steinberg::Vst::EditController](https://steinbergmedia.github.io/vst3_doc/vstsdk/classSteinberg_1_1Vst_1_1EditController.html) class as a base of your own edit controller and that you have used the [Steinberg::Vst::Parameter](https://steinbergmedia.github.io/vst3_doc/vstsdk/classSteinberg_1_1Vst_1_1Parameter.html) class or any subclass of it for your parameters.
+Before using the inline UI editor, you must make sure that you use the [Vst::EditController](https://steinbergmedia.github.io/vst3_doc/vstsdk/classSteinberg_1_1Vst_1_1EditController.html) class as a base of your own edit controller and that you have used the [Vst::Parameter](https://steinbergmedia.github.io/vst3_doc/vstsdk/classSteinberg_1_1Vst_1_1Parameter.html) class or any subclass of it for your parameters.
 Otherwise the inline UI editor won't work properly.
 
 Next you have to add vstgui to your project. For *cmake* users, you can just add the vstgui_support library to your target:

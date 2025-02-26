@@ -11,17 +11,17 @@
   - Renaming Microsoft Visual Projects.
 
 - New Interfaces:
-  - Steinberg::Vst::IEditController2: support for setKnobMode/openHelp/openAboutBox.
-  - Steinberg::Vst::IComponentHandler2: support for parameter group editing from plug-in UI, dirty state and request host to open the plug-in editor.
-  - Steinberg::Vst::IAudioPresentationLatency: informs the plug-in about the Audio Presentation Latencies (in/out).
+  - Vst::IEditController2: support for setKnobMode/openHelp/openAboutBox.
+  - Vst::IComponentHandler2: support for parameter group editing from plug-in UI, dirty state and request host to open the plug-in editor.
+  - Vst::IAudioPresentationLatency: informs the plug-in about the Audio Presentation Latencies (in/out).
 
 - New Event Structure:
-  - Steinberg::Vst::PolyPressureEvent: Polypressure event support.
+  - Vst::PolyPressureEvent: Polypressure event support.
 
 - New Flags/Enums:
   - New plug-in Types used for subCategories: PlugType::kMono, PlugType::kStereo, PlugType::kSurround.
   - New parameter flag ParameterInfo::kIsList: flags the parameter as a list of discrete string values.
-  - New IoModes enum: Steinberg::Vst::IoModes::kOfflineProcessing used with setIoMode when the plug-in is used in an offline processing context.
+  - New IoModes enum: Vst::IoModes::kOfflineProcessing used with setIoMode when the plug-in is used in an offline processing context.
 
 - [Plug-in wrappers](../What+is+the+VST+3+SDK/Wrappers/index.md):
   - New VST 3 - VST 2.x Wrapper: by just adding small initializing code, you can provide a **VST 2.x** version of your **VST 3** plug-in

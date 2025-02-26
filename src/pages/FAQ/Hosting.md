@@ -92,7 +92,7 @@ When restartComponent is called with *kReloadComponent*, the whole structure sho
 
 ---
 
-## Q: IPlugViewContentScaleSupport - could / should this be used to set individual zoom levels for the GUI of specific plug-ins / instances, or should it only be used to convey OS scaling level (like in the editorhost example)?
+## Q: [IPlugViewContentScaleSupport](https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPlugViewContentScaleSupport.html) - could / should this be used to set individual zoom levels for the GUI of specific plug-ins / instances, or should it only be used to convey OS scaling level (like in the editorhost example)?
 
 Theoretically it is possible to use this for individual zoom levels, but most plug-ins won't work like this and on macOS many plug-ins don't implement this interface at all (or ignore it).
 
@@ -112,9 +112,9 @@ You can only use these reference count no-ops for objects that are alive during 
 
 ---
 
-## Q: What should the host do if a plug-in does not call _ComponentHandler::restartComponent()_ from the main/UI thread?
+## Q: What should the host do if a plug-in does not call _ComponentHandler::restartComponent()_ from the UI Thread?
 
-You can report the wrong behavior of the plug-in to the developer. *restartComponent* has to be called from UI Thread. As a security fallback, the host could postpone this call in the UI Thread and handle it in the next UI idle phase.
+You can report the wrong behavior of the plug-in to the developer. *restartComponent* has to be called from **UI Thread**. As a security fallback, the host could postpone this call in the **UI Thread** and handle it in the next UI idle phase.
 
 ---
 

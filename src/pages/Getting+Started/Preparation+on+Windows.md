@@ -28,7 +28,7 @@ In order to allow create these symbolic links on Windows you could edit the "**S
 
 ## Solution 4
 
-In order to allow create these symbolic links on Windows you have to adapt the [Group Policy of Windows](https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/how-to-configure-security-policy-settings) which is only available by default in **Windows Pro** but not in **Windows Home**. In **Windows Home** you have to install it before changing the right access to this folder (**C:\Program Files\Common Files\VST3**). For this there are some internet webpages showing you how to do this, for example this one: <https://www.itechtics.com/enable-gpedit-msc-windows-11>.
+In order to allow create these symbolic links on Windows you need to adapt the [Group Policy of Windows](https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/how-to-configure-security-policy-settings), which is only available by default in **Windows Pro** but not in **Windows Home**. In **Windows Home**, you have to install it before changing the right access to this folder (**C:\Program Files\Common Files\VST3**). There are some internet webpages showing you how to do this, for example, this one: <https://www.itechtics.com/enable-gpedit-msc-windows-11>.
 
 As soon as the group Policy editor is available you have to start it by:
 - Enter **run** in the Windows search field and start the run App and enter **gpedit.msc**

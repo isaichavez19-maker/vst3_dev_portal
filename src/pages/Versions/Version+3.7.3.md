@@ -5,7 +5,7 @@
 ## Version 3.7.3 (2021/08/10)
 
 - Interface changes:
-  - update documentation of IPlugViewContentScaleSupport.
+  - update documentation of [Steinberg:: IPlugViewContentScaleSupport](https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPlugViewContentScaleSupport.html).
 - [VSTGUI](../What+is+the+VST+3+SDK/VSTGUI.md) 4.10.1
   - different fixes.
 
