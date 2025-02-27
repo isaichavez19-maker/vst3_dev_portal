@@ -9,7 +9,7 @@
   - Fix enabling/disabling warnings in public header files ([Issue#18](https://github.com/steinbergmedia/vst3_pluginterfaces/issues/18)).
   - Add the possibility to disable #pragma warning on Windows (Visual Studio) with *SMTG_DISABLE_DEFAULT_DIAGNOSTICS*.
 
-- [VSTGUI](../What+is+the+VST+3+SDK/VSTGUI.md) update [4.14.1](https://github.com/steinbergmedia/vstgui/releases/tag/vstgui4_14_1)
+- [VSTGUI](../What+is+the+VST+3+SDK/VSTGUI.md) update [4.14.2](https://github.com/steinbergmedia/vstgui/releases/tag/vstgui4_14_2)
 
 - Documentation
   - Update doc about *pluginterfaces/gui/iplugview.h*. See [VST3 forum](https://forums.steinberg.net/t/iplugview-contentscalesupport-and-macos/930318).
