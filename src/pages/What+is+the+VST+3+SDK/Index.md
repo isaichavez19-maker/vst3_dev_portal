@@ -80,8 +80,8 @@ Please sign this **Steinberg VST 3 Plug-in SDK Licensing Agreement** if you want
 | :-------------------------------- | :---------------------------- | :-------------------- | :-------------------------------- |
 | Windows 11                        | x86, x86_64, arm64, arm64EC   | MSVC 2022             |                                   |
 | Windows 8.1/10                    | x86, x86_64                   | MSVC 2019, MSVC 2022  |                                   |
-| macOS 10.13 - 15                  | x86, x86_64, Apple Silicon    | Xcode 10 - 15         |                                   |
-| iOS 13 - 15                       | arm64                         | Xcode 11 - 15         |                                   |
+| macOS 10.13 - 15                  | x86, x86_64, Apple Silicon    | Xcode 10 - 16         |                                   |
+| iOS 13 - 18                       | arm64                         | Xcode 11 - 16         |                                   |
 | Linux - Ubuntu 24.04 LTS          | x86_64                        | GCC 13.3 and higher   | Visual Studio Code, Qt Creator    |
 
 ## [Download link](../Getting+Started/Links.md)
