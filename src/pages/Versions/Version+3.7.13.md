@@ -24,7 +24,7 @@
 - [Plug-in Wrappers](../What+is+the+VST+3+SDK/Wrappers/Index.md):
   - Audio Unit:
     - **AU/AUv3 Wrappers**:
-      - Fix crash running AGain AUv3 thru auval (*public.sdk/source/vst/auv3wrapper/Shared/AUv3Wrapper.mm*).
+      - Fix crash running AGain AUv3 when using auval (*public.sdk/source/vst/auv3wrapper/Shared/AUv3Wrapper.mm*).
     - **AU Wrapper**:
       - Fix auwrapper MIDI output bugs ([PR#76](https://github.com/steinbergmedia/vst3_public_sdk/pull/76)) (*public.sdk/ssource/vst/auwrapper/auwrapper.h*).
       - Fix MIDI CC input in AU wrapper ([PR#74](https://github.com/steinbergmedia/vst3_public_sdk/pull/74/)). (*public.sdk/source/vst/auwrapper/auwrapper.mm*).
