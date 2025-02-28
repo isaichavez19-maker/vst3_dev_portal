@@ -12,12 +12,12 @@
 
 How to better support remote devices/controllers (UI and hardware) for parameters.
 
-Since VST 3.5, a new interface is available: [Vst::IXmlRepresentationController](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IXmlRepresentationController.html)
+Since VST 3.5, a new interface is available: [Vst:: IXmlRepresentationController](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IXmlRepresentationController.html)
 
-Extended plug-in interface [IEditController](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IEditController.html) for a component: [Vst::IXmlRepresentationController](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IXmlRepresentationController.html)
+Extended plug-in interface [Vst:: IEditController](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IEditController.html) for a component: [Vst:: IXmlRepresentationController](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IXmlRepresentationController.html)
 
 - \[plug imp\]
-- [extends [IEditController](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IEditController.html)]
+- [extends [Vst:: IEditController](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IEditController.html)]
 - \[released: 3.5.0\]
 - \[optional\]
 
@@ -122,7 +122,7 @@ This representation is implemented as XML text following the Document Type Defin
 
 ## Example of implementation using helper class
 
-See [Steinberg::Vst::XmlRepresentationHelper](https://steinbergmedia.github.io/vst3_doc/vstsdk/classSteinberg_1_1Vst_1_1XmlRepresentationHelper.html).
+See [Vst:: XmlRepresentationHelper](https://steinbergmedia.github.io/vst3_doc/vstsdk/classSteinberg_1_1Vst_1_1XmlRepresentationHelper.html).
 
 ## Location table for VST XMLs representation
 

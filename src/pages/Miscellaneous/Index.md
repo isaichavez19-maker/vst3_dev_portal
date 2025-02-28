@@ -28,7 +28,7 @@ External Glossary: [AES - PAR - Pro Audio Reference:](https://www.aes.org/par/) 
 
 | Abbr.         | Meaning                       | Comment   |
 | :-            | :-                            | :-        |
-| **AAX**       | Avid Audio Extension          | <https://www.avid.com/alliance-partner-program/aax-connectivity-toolkit> |
+| **AAX**       | Avid Audio eXtension          | <https://www.avid.com/alliance-partner-program/aax-connectivity-toolkit> |
 | **ADC**       | Audio Developer Conference    | <https://juce.com/adc> |
 | **AES**       | Audio Engineering Society     | <https://www.aes.org> |
 | **AMBI**      | Ambisonics                    | <https://en.wikipedia.org/wiki/Ambisonics> |

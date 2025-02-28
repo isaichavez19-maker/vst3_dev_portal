@@ -16,10 +16,10 @@
 
 ## Introduction
 
-Wrapper **MPE** Support interface: [Vst::IVst3WrapperMPESupport](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IVst3WrapperMPESupport.html).
+Wrapper **MPE** Support interface: [Vst:: IVst3WrapperMPESupport](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IVst3WrapperMPESupport.html).
 
 - \[host imp\]
-- [passed as 'context' to [IPluginBase::initialize()](https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPluginBase.html#a3c81be4ff2e7bbb541d3527264f26eed)]
+- [passed as 'context' to [Steinberg:: IPluginBase::initialize()](https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPluginBase.html#a3c81be4ff2e7bbb541d3527264f26eed)]
 - \[released: 3.6.12\]
 - \[optional\]
 
@@ -29,4 +29,4 @@ Implemented on wrappers that support **MPE** ([MIDI Polyphonic Expression](https
 >By default, **MPE** input processing is enabled, the masterChannel will be zero, the memberBeginChannel will be one and the memberEndChannel will be 14.
 
 >ⓘ **Note**\
->As **MPE** is a subset of the VST 3 [Note Expression](../3.5.0/INoteExpressionController.md) feature, mapping from the three **MPE** expressions is handled via the [INoteExpressionPhysicalUIMapping](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1INoteExpressionPhysicalUIMapping.html) interface.
+>As **MPE** is a subset of the VST 3 [Note Expression](../3.5.0/INoteExpressionController.md) feature, mapping from the three **MPE** expressions is handled via the [Vst:: INoteExpressionPhysicalUIMapping](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1INoteExpressionPhysicalUIMapping.html) interface.

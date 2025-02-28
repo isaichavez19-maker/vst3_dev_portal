@@ -21,7 +21,7 @@
   - **AUv3 Wrapper**:
     - Add support of offline processing.
     - Fix output bus activation.
-    - Fix when the component is not loaded from UI-Thread.
+    - Fix when the component is not loaded from **UI Thread**.
 
 - Helpers classes:
   - GetPluginFactory() def-file vs. declspec.

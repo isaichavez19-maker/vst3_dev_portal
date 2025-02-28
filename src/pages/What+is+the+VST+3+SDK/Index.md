@@ -77,14 +77,12 @@ Please sign this **Steinberg VST 3 Plug-in SDK Licensing Agreement** if you want
 ## System requirements
 
 | Operating System                  | Architecture                  | Compiler              | Notes                             |
-| --------------------------------- | ----------------------------- | --------------------- | --------------------------------- |
-| Windows 11                        | x86, x86_64, arm64, arm64EC                   | MSVC 2022  |                                   |
-| Windows 8.1 -10                        | x86, x86_64                   | MSVC 2019, MSVC 2022  |                                   |
-| macOS 10.13 - 12                  | x86, x86_64, Apple Silicon    | Xcode 10 - 13.3       |                                   |
-| iOS 13 - 15                       | arm64                         | Xcode 11 - 13.3       |                                   |
-| Linux - Raspberry Pi OS (Buster)  | arm32                         | GCC 8.3 and higher    | Visual Studio Code                |
-| Linux - Ubuntu 22.04 LTS          | x86, x86_64                   | GCC 11.2 and higher   | Visual Studio Code, Qt Creator    |
-| Linux - Ubuntu 20.04 LTS          | x86, x86_64                   | GCC 8.3 and higher    | Visual Studio Code, Qt Creator    |
+| :-------------------------------- | :---------------------------- | :-------------------- | :-------------------------------- |
+| Windows 11                        | x86, x86_64, arm64, arm64EC   | MSVC 2022             |                                   |
+| Windows 8.1/10                    | x86, x86_64                   | MSVC 2019, MSVC 2022  |                                   |
+| macOS 10.13 - 15                  | x86, x86_64, Apple Silicon    | Xcode 10 - 16         |                                   |
+| iOS 13 - 18                       | arm64                         | Xcode 11 - 16         |                                   |
+| Linux - Ubuntu 24.04 LTS          | x86_64                        | GCC 13.3 and higher   | Visual Studio Code, Qt Creator    |
 
 ## [Download link](../Getting+Started/Links.md)
 

@@ -5,10 +5,10 @@
 ## Version 3.7.0 (2020/07/29)
 
 - Interface changes:
-  - New [IProcessContextRequirements](../Technical+Documentation/Change+History/3.7.0/IProcessContextRequirements.md) (implemented by plug-in).
+  - New [Vst:: IProcessContextRequirements](../Technical+Documentation/Change+History/3.7.0/IProcessContextRequirements.md) (implemented by plug-in).
     - This is a new required interface a plug-in needs to implement when building with VST SDK 3.7 or newer.
-  - New [IProgress](../Technical+Documentation/Change+History/3.7.0/IProgress.md) (implemented by host).
-  - New [IParameterFunctionName](../Technical+Documentation/Change+History/3.7.0/IParameterFunctionName.md) (implemented by plug-in).
+  - New [Vst:: IProgress](../Technical+Documentation/Change+History/3.7.0/IProgress.md) (implemented by host).
+  - New [Vst:: IParameterFunctionName](../Technical+Documentation/Change+History/3.7.0/IParameterFunctionName.md) (implemented by plug-in).
 
 - New Flags/Enums:
   - New kIsHidden flag. With this flag, the parameter should NOT be displayed by the host and cannot be changed from outside the plug-in.
@@ -31,12 +31,12 @@
 
 - [Examples](../What+is+the+VST+3+SDK/Plug-in+Examples.md):
   - New VST 3 plug-ins examples:
-    - SyncDelay using [Steinberg::Vst::IProcessContextRequirements](../Technical+Documentation/Change+History/3.7.0/IProcessContextRequirements.md).
+    - SyncDelay using [Vst:: IProcessContextRequirements](../Technical+Documentation/Change+History/3.7.0/IProcessContextRequirements.md).
     - Panner using PlugType::kSpatialFx as SubCategory, it shows how to build a Panner plug-in Mono to Stereo.
   - Added checks in HostChecker plug-in:
     - support of kIsHidden flag.
-    - support of [IProgress](../Technical+Documentation/Change+History/3.7.0/IProgress.md) (implemented by host).
-    - support of [IParameterFunctionName](../Technical+Documentation/Change+History/3.7.0/IParameterFunctionName.md).
+    - support of [Vst:: IProgress](../Technical+Documentation/Change+History/3.7.0/IProgress.md) (implemented by host).
+    - support of [Vst:: IParameterFunctionName](../Technical+Documentation/Change+History/3.7.0/IParameterFunctionName.md).
     - check if Silent flag for Main and [Side-chain](../Technical+Documentation/Change+History/3.0.0/Multiple+Dynamic+IO.html#what-is-a-side-chain) Inputs are used.
 
 - [Plug-in Wrappers](../What+is+the+VST+3+SDK/Wrappers/Index.md):

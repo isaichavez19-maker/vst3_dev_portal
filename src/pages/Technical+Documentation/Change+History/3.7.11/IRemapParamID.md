@@ -1,6 +1,6 @@
 >/ [VST Home](../../../) / [Technical Documentation](../../Index.md)
 >
-># \[3.7.11\] Remap Paramater ID
+># \[3.7.11\] Remap Parameter ID
 
 **On this page:**
 
