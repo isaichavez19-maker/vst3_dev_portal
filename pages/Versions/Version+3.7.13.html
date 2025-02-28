@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Version 3.0.1 (2008/03/19) - VST 3 Developer Portal</title>
+        <title>Version 3.7.13 (2025/02/28) - VST 3 Developer Portal</title>
 
 
         <!-- Custom HTML head -->
@@ -158,51 +158,93 @@
                     <main>
                         <blockquote>
 <p>/ <a href="../">VST Home</a> / <a href="./Index.html">Change History</a></p>
-<h1 id="version-301-20080319"><a class="header" href="#version-301-20080319">Version 3.0.1 (2008/03/19)</a></h1>
+<h1 id="version-3713-20250228"><a class="header" href="#version-3713-20250228">Version 3.7.13 (2025/02/28)</a></h1>
 </blockquote>
-<h2 id="version-301-20080319-1"><a class="header" href="#version-301-20080319-1">Version 3.0.1 (2008/03/19)</a></h2>
+<h2 id="version-3713-20250228-1"><a class="header" href="#version-3713-20250228-1">Version 3.7.13 (2025/02/28)</a></h2>
 <ul>
 <li>
-<p>Interface Changes:</p>
+<p>Interface changes:</p>
 <ul>
-<li><a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IMidiMapping.html">Vst:: IMidiMapping</a> : allowing to support MIDI Controllers and Pitchbend.</li>
+<li>Fix -Wundef warnings (<a href="https://github.com/steinbergmedia/vst3_public_sdk/pull/17">PR#17</a>).</li>
+<li>Fix enabling/disabling warnings in public header files (<a href="https://github.com/steinbergmedia/vst3_pluginterfaces/issues/18">Issue#18</a>).</li>
+<li>Add the possibility to disable #pragma warning on Windows (Visual Studio) with <em>SMTG_DISABLE_DEFAULT_DIAGNOSTICS</em>.</li>
 </ul>
 </li>
 <li>
-<p>New Flags/Enums:</p>
+<p><a href="../What+is+the+VST+3+SDK/VSTGUI.html">VSTGUI</a> update <a href="https://github.com/steinbergmedia/vstgui/releases/tag/vstgui4_14_2">4.14.2</a></p>
+</li>
+<li>
+<p>Documentation</p>
 <ul>
-<li>Add new restart flag: Vst::kMidiCCAssignmentChanged.</li>
+<li>Update doc about <em>pluginterfaces/gui/iplugview.h</em>. See <a href="https://forums.steinberg.net/t/iplugview-contentscalesupport-and-macos/930318">VST3 forum</a>.</li>
+<li>Add more information for each <strong>VST 3</strong> API function about threading and state context.</li>
 </ul>
 </li>
 <li>
-<p>Restructuring of the SDK:</p>
+<p>cmake</p>
 <ul>
-<li>Move RestartFlags from vstTypes.h to ivsteditcontroller.h.</li>
-<li>Restructured helper classes by adding new files vstbus.cpp and vstparameters.cpp.</li>
-<li>Change the default refcount implementation of Steinberg::FUnknown (IMPLEMENT_REFCOUNT) to use atomic operations.</li>
-<li>Change InitModule/ExitModule to be called from host and not in DllMain (Cubase 4.2 needed).</li>
-<li>Rename Vst::IUnitData to Vst::IProgramListData and introduce new interface Vst::IUnitData.</li>
+<li>Update cmake_minimum_required to <em>3.25.0</em></li>
+<li>Fix linker warning on Mac (<a href="https://github.com/steinbergmedia/vst3_cmake/pull/11">PR#11</a>).</li>
+<li><em>smtg_target_add_plugin_resource</em> groups and structures the resources files into the IDE.</li>
+<li>Fix white space issue with resources <a href="https://forums.steinberg.net/t/white-space-issue-with-resources-3-7-12/955129">Forum</a>.</li>
 </ul>
 </li>
 <li>
-<p>Helpers Classes:</p>
+<p><a href="../What+is+the+VST+3+SDK/Wrappers/Index.html">Plug-in Wrappers</a>:</p>
 <ul>
-<li>Add new helper class EditControllerEx1: extend of EditController with Unit support.</li>
-<li>Add new helper class Vst::SingleComponentEffect for single component effects.</li>
+<li>Audio Unit:
+<ul>
+<li><strong>AU/AUv3 Wrappers</strong>:
+<ul>
+<li>Fix crash running AGain AUv3 when using auval (<em>public.sdk/source/vst/auv3wrapper/Shared/AUv3Wrapper.mm</em>).</li>
+</ul>
+</li>
+<li><strong>AU Wrapper</strong>:
+<ul>
+<li>Fix auwrapper MIDI output bugs (<a href="https://github.com/steinbergmedia/vst3_public_sdk/pull/76">PR#76</a>) (<em>public.sdk/ssource/vst/auwrapper/auwrapper.h</em>).</li>
+<li>Fix MIDI CC input in AU wrapper (<a href="https://github.com/steinbergmedia/vst3_public_sdk/pull/74/">PR#74</a>). (<em>public.sdk/source/vst/auwrapper/auwrapper.mm</em>).</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>
 <p><a href="../What+is+the+VST+3+SDK/Plug-in+Examples.html">Examples</a>:</p>
 <ul>
-<li>AGain example has been extended: supports IMidiMapping, <a href="../Technical+Documentation/Change+History/3.0.0/Multiple+Dynamic+IO.html#what-is-a-side-chain">Side-chain</a> and Unit.</li>
-<li>Add Visual Studio 2008 solution.</li>
+<li>Add support of <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IAudioProcessor.html#af252fd721b195b793f3a5dfffc069401">Vst:: IAudioProcessor::setProcessing</a> in most of the plug-ins, demonstrating how this function can be used (e.g., cleaning delay lines, killing voices, etc.).</li>
+<li>Update <strong>Hostchecker</strong> plug-in:
+<ul>
+<li>Redesign the UI.</li>
+<li>Add check of COM correct behavior when calling queryInterface ().</li>
+<li>Add check for ProcessContext::systemtime of continuity.</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>
-<p>Documentation</p>
+<p>Helpers classes:</p>
 <ul>
-<li>Rework.</li>
-<li>Add some new FAQs.</li>
+<li>Fix in <em>openurl.cpp</em> <strong>openURLInDefaultApplication</strong> returns wrong result on macOS and Linux.</li>
+<li>Fix <em>vst3_public_sdk/source/vst/hosting/module_linux.cpp</em>: Plug-in bundles with an extra dot in the name fail to load with the Hosting::Module class (<a href="https://github.com/steinbergmedia/vst3_public_sdk/issues/73">Issue#73</a>).</li>
+<li>Fix -Wundef warnings (<a href="https://github.com/steinbergmedia/vst3_public_sdk/pull/75">PR#75</a>).</li>
+<li>Fix <strong>HostApplication::queryInterface</strong> -- mPlugInterfaceSupport Query Interface should use "_iid", not "iid"(<a href="https://github.com/steinbergmedia/vst3sdk/issues/131">Issue#131</a>).</li>
+<li>Fix seek to the end + add new function <em>take</em> allowing to take the memory out of the stream: <em>public.sdk/source/vst/utility/memoryibstream.h</em>.</li>
+<li>Fix memory leak with timer in <em>public.sdk/source/vst/utility/dataexchange.cpp</em>.</li>
+<li>Add new validation function: <strong>validateBundleStructure</strong> in <em>public.sdk/source/vst/hosting/module_win32.cpp</em>, <em>public.sdk/source/vst/hosting/module_mac.cpp</em>, <em>public.sdk/source/vst/hosting/module_linux.cpp</em>.</li>
+</ul>
+</li>
+<li>
+<p><a href="../What+is+the+VST+3+SDK/Project+Generator.html">VST 3 Project Generator</a> v2025.02:</p>
+<ul>
+<li>Fix: Only add SMTG_PREFIX_FOR_FILENAMES_CLI argument when not empty.</li>
+</ul>
+</li>
+<li>
+<p><a href="../What+is+the+VST+3+SDK/Plug-in+Test+Host.html">VST3PluginTestHost</a> v3.9:</p>
+<ul>
+<li>Fix add parameter changes to output parameter queue so that the edit controller will see the change.</li>
+<li>Fix use parameter step count for program change calculation.</li>
 </ul>
 </li>
 </ul>
@@ -211,11 +253,11 @@
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../../pages/Versions/Version+3.0.2.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../../pages/Versions/Index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../../pages/Versions/Version+3.0.0.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../../pages/Versions/Version+3.7.12.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -226,11 +268,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../../pages/Versions/Version+3.0.2.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../../pages/Versions/Index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../../pages/Versions/Version+3.0.0.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../../pages/Versions/Version+3.7.12.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

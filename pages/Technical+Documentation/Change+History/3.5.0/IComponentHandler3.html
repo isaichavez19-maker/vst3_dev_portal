@@ -172,10 +172,10 @@
 </ul>
 <hr />
 <h2 id="introduction"><a class="header" href="#introduction">Introduction</a></h2>
-<p>Extended host callback interface for an edit controller: <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponentHandler3.html">Vst::IComponentHandler3</a></p>
+<p>Extended host callback interface for an edit controller: <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponentHandler3.html">Vst:: IComponentHandler3</a></p>
 <ul>
 <li>[host imp]</li>
-<li>[extends <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponentHandler.html">IComponentHandler</a>]</li>
+<li>[extends <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponentHandler.html">Vst:: IComponentHandler</a>]</li>
 <li>[released: 3.5.0]</li>
 <li>[optional]</li>
 </ul>
@@ -183,14 +183,14 @@
 The host may pre-fill this context menu with specific items regarding the parameter ID like "Show automation for parameter", "MIDI learn" etc...
 The plug-in can use the context menu in two ways:</p>
 <ul>
-<li>add its own items to the menu via the <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IContextMenu.html">IContextMenu</a> interface and call <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IContextMenu.html#a8d6e113be32dfccabcacca0c81ee6f10">IContextMenu::popup(...)</a> to create the pop-up. See below for an example of how to use it.</li>
+<li>add its own items to the menu via the <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IContextMenu.html">Vst:: IContextMenu</a> interface and call <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IContextMenu.html#a8d6e113be32dfccabcacca0c81ee6f10">Vst:: IContextMenu::popup(...)</a> to create the pop-up. See below for an example of how to use it.</li>
 <li>extract the host menu items and add them to a context menu created by the plug-in.</li>
 </ul>
 <blockquote>
 <p>ⓘ <strong>Note</strong><br />
 It is recommended to use this context menu interface, even if you do not add your own items to the menu as this is considered to be a big user value.</p>
 </blockquote>
-<p>See also <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IContextMenu.html">IContextMenu</a>, <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IContextMenuTarget.html">IContextMenuTarget</a>.</p>
+<p>See also <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IContextMenu.html">Vst:: IContextMenu</a>, <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IContextMenuTarget.html">Vst:: IContextMenuTarget</a>.</p>
 <h2 id="examples"><a class="header" href="#examples">Examples</a></h2>
 <h3 id="from-the-host-perspective"><a class="header" href="#from-the-host-perspective">From the host perspective</a></h3>
 <p>For example, <strong>Cubase</strong> adds its owned entries in the context menu opened with right-click on an exported parameter when the plug-in uses <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponentHandler3.html#a0c91e0b43003a34a7f43d0c4b33aa604">createContextMenu</a>. The plug-in itself, in this example, only adds the "Open UIDescription Editor" entry.</p>
@@ -290,7 +290,7 @@ void popupContextMenu (IComponentHandler* componentHandler, IPlugView* view, con
             
             <div id="footer" class="footer">
                 <!-- Here comes the footer when available -->
-                © 2024 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
+                © 2025 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href="https://o.steinberg.net/en/extras/about.html" target="_blank">About</a> |
                 <a href="https://o.steinberg.net/en/extras/privacy_policy.html" target="_blank">Privacy Policy</a> |
                 <a href="https://o.steinberg.net/en/extras/terms_conditions.html" target="_blank">Legal Terms</a> 

@@ -203,34 +203,34 @@ the SDK contains a backwards compatibility layer that either uses the API direct
 an alternative method based on the IMessage API to emulate the API. See the
 <a href="../../Tutorials/Data+Exchange.html">tutorial</a> on how to use it.</p>
 <h2 id="the-data-exchange-api"><a class="header" href="#the-data-exchange-api">The Data Exchange API</a></h2>
-<p>The API consists of two interfaces, the <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IDataExchangeHandler.html">IDataExchangeHandler</a> which needs to be implemented by the
-host and the <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IDataExchangeReceiver.html">IDataExchangeReceiver</a> which needs to be implemented by the plug-in.</p>
+<p>The API consists of two interfaces, the <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IDataExchangeHandler.html">Vst:: IDataExchangeHandler</a> which needs to be implemented by the
+host and the <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IDataExchangeReceiver.html">Vst:: IDataExchangeReceiver</a> which needs to be implemented by the plug-in.</p>
 <h3 id="idataexchangehandler"><a class="header" href="#idataexchangehandler">IDataExchangeHandler</a></h3>
-<p>The <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IDataExchangeHandler.html">IDataExchangeHandler</a> implements a direct and thread-safe connection from the realtime
+<p>The <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IDataExchangeHandler.html">Vst:: IDataExchangeHandler</a> implements a direct and thread-safe connection from the realtime
 audio context of the audio processor to the non-realtime audio context of the edit controller.
 This should be used when the edit controller needs continuous data from the audio process for
 visualization or other "use-cases". To circumvent the bottleneck on the main thread, it is possible
 to configure the connection in a way that the calls to the edit controller happen on a
-background thread, see <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IDataExchangeReceiver.html">IDataExchangeReceiver</a> below.</p>
+background thread, see <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IDataExchangeReceiver.html">Vst:: IDataExchangeReceiver</a> below.</p>
 <h4 id="opening-a-queue"><a class="header" href="#opening-a-queue">Opening a queue</a></h4>
 <p>The main operation for a plug-in is to open a queue via the handler before the plug-in is activated
-(but it must be connected to the edit controller via the <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IConnectionPoint.html">IConnectionPoint</a> when the plug-in is using
+(but it must be connected to the edit controller via the <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IConnectionPoint.html">Vst:: IConnectionPoint</a> when the plug-in is using
 the recommended separation of edit controller and audio processor). The best place to do this is in
-the <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IAudioProcessor.html#aefb5731b94dbc899a4a7e9cd1c96e6a2">IAudioProcessor::setupProcessing</a> method, as this is also the place where the plug-in identifies the
+the <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IAudioProcessor.html#aefb5731b94dbc899a4a7e9cd1c96e6a2">Vst:: IAudioProcessor::setupProcessing</a> method, as this is also the place where the plug-in identifies the
 sample rate and maximum block size which the plug-in may need to calculate the queue block size.
 When a queue is opened, the edit controller is notified of this, and the controller can
 decide if it wishes to receive the data on the main thread or the background thread.</p>
 <h4 id="sending-data"><a class="header" href="#sending-data">Sending data</a></h4>
-<p>In the <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IAudioProcessor.html#a6b98eb31cf38ba96a28b303c13c64e13">IAudioProcessor::process</a> call, the plug-in can now lock a block from the handler and fill it. When done, it can free the block via the handler, which then sends the block to the edit controller. The edit
+<p>In the <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IAudioProcessor.html#a6b98eb31cf38ba96a28b303c13c64e13">Vst:: IAudioProcessor::process</a> call, the plug-in can now lock a block from the handler and fill it. When done, it can free the block via the handler, which then sends the block to the edit controller. The edit
 controller then receives the block either on the main thread or on a background thread depending on
 the setup of the queue.
 The host guarantees that all blocks are sent before the plug-in is deactivated.</p>
 <h4 id="closing-a-queue"><a class="header" href="#closing-a-queue">Closing a queue</a></h4>
-<p>The audio processor must close an open queue. This need to be done after deactivating the processor and prior to disconnecting it from the edit controller (see <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IConnectionPoint.html">IConnectionPoint</a>).</p>
+<p>The audio processor must close an open queue. This need to be done after deactivating the processor and prior to disconnecting it from the edit controller (see <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IConnectionPoint.html">Vst:: IConnectionPoint</a>).</p>
 <h4 id="what-to-do-when-the-queue-is-full-and-no-block-can-be-locked"><a class="header" href="#what-to-do-when-the-queue-is-full-and-no-block-can-be-locked">What to do when the queue is full and no block can be locked?</a></h4>
 <p>The plug-in needs to be prepared for this situation, as constraints in the overall system may cause the queue to fill up excessively. If you need to transfer the information to the controller, you can declare a hidden parameter, which you can set to a special value and send this parameter change in your audio process method.</p>
 <h3 id="idataexchangereceiver"><a class="header" href="#idataexchangereceiver">IDataExchangeReceiver</a></h3>
-<p>The <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IDataExchangeReceiver.html">IDataExchangeReceiver</a> interface must be implemented by the edit controller of the plug-in.
+<p>The <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IDataExchangeReceiver.html">Vst:: IDataExchangeReceiver</a> interface must be implemented by the edit controller of the plug-in.
 The host will call the <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IDataExchangeReceiver.html#a64d0de322b49fd27b815e10947d98f65">queueOpened</a> method when an exchange queue is opened by the processor. Later when the processor closes the queue, the host will call the <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IDataExchangeReceiver.html#a37b2181ff0ae9bdc0a6feee03b65df42">queueClosed</a> method.</p>
 <p>While the queue is open, the host will call the <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IDataExchangeReceiver.html#af8c495fafdf429794e5b58709a403eaf">onDataExchangeBlocksReceived</a> method whenever the processor has sent data.</p>
 <p>The edit controller can decide in the call to <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IDataExchangeReceiver.html#a64d0de322b49fd27b815e10947d98f65">queueOpened</a> if the host should deliver the data on a background thread or on the UI thread.</p>
@@ -265,7 +265,7 @@ The host will call the <a href="https://steinbergmedia.github.io/vst3_doc/vstint
             
             <div id="footer" class="footer">
                 <!-- Here comes the footer when available -->
-                © 2024 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
+                © 2025 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href="https://o.steinberg.net/en/extras/about.html" target="_blank">About</a> |
                 <a href="https://o.steinberg.net/en/extras/privacy_policy.html" target="_blank">Privacy Policy</a> |
                 <a href="https://o.steinberg.net/en/extras/terms_conditions.html" target="_blank">Legal Terms</a> 

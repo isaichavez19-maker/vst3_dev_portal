@@ -171,15 +171,15 @@
 </ul>
 <hr />
 <h2 id="introduction"><a class="header" href="#introduction">Introduction</a></h2>
-<p>Extended host callback interface for an edit controller: <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponentHandlerBusActivation.html">Vst::IComponentHandlerBusActivation</a>.</p>
+<p>Extended host callback interface for an edit controller: <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponentHandlerBusActivation.html">Vst:: IComponentHandlerBusActivation</a>.</p>
 <ul>
 <li>[host imp]</li>
-<li>[extends <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponentHandler.html">IComponentHandler</a>]</li>
+<li>[extends <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponentHandler.html">Vst:: IComponentHandler</a>]</li>
 <li>[released: 3.6.8]</li>
 <li>[optional]</li>
 </ul>
-<p>Allows the plug-in to request the host to activate or deactivate a specific bus. If the host accepts this request, it will call later on <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponent.html#a3ab7d06aaefe03da1fcd1819f1261050">IComponent::activateBus</a>. This is particularly useful for instruments with more than 1 outputs, where the user could request from the plug-in UI a given output bus activation.</p>
-<p>See also <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponentHandler.html">IComponentHandler</a>.</p>
+<p>Allows the plug-in to request the host to activate or deactivate a specific bus. If the host accepts this request, it will call later on <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponent.html#a3ab7d06aaefe03da1fcd1819f1261050">Vst:: IComponent::activateBus</a>. This is particularly useful for instruments with more than 1 outputs, where the user could request from the plug-in UI a given output bus activation.</p>
+<p>See also <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponentHandler.html">Vst:: IComponentHandler</a>.</p>
 <h2 id="example"><a class="header" href="#example">Example</a></h2>
 <pre><code class="language-c++">// somewhere in your code when you need to inform the host to enable a specific Bus.
 if (auto busActivation = Steinberg::U::cast&lt;IComponentHandlerBusActivation&gt; (componentHandler))
@@ -219,7 +219,7 @@ if (auto busActivation = Steinberg::U::cast&lt;IComponentHandlerBusActivation&gt
             
             <div id="footer" class="footer">
                 <!-- Here comes the footer when available -->
-                © 2024 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
+                © 2025 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href="https://o.steinberg.net/en/extras/about.html" target="_blank">About</a> |
                 <a href="https://o.steinberg.net/en/extras/privacy_policy.html" target="_blank">Privacy Policy</a> |
                 <a href="https://o.steinberg.net/en/extras/terms_conditions.html" target="_blank">Legal Terms</a> 

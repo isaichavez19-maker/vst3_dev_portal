@@ -174,10 +174,10 @@
 <hr />
 <h2 id="introduction"><a class="header" href="#introduction">Introduction</a></h2>
 <p>A new way to control / modify / change a specific played note during playback.</p>
-<p>Edit controller component interface extension: <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1INoteExpressionController.html">Vst::INoteExpressionController</a></p>
+<p>Edit controller component interface extension: <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1INoteExpressionController.html">Vst:: INoteExpressionController</a></p>
 <ul>
 <li>[plug imp]</li>
-<li>[extends <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IEditController.html">IEditController</a>]</li>
+<li>[extends <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IEditController.html">Vst:: IEditController</a>]</li>
 <li>[released: 3.5.0]</li>
 <li>[optional]</li>
 </ul>
@@ -187,7 +187,7 @@
 <p>With <strong>VST 3</strong> Note Expression, the plug-in is able to break free from the limitations of MIDI controller events by providing access to new <strong>VST 3</strong> controller events that provide articulation information for each individual note (event) in a polyphonic arrangement according to its noteId.</p>
 <p>A major limitation of <strong>MIDI</strong> is the nature of controller information; controllers are only channel messages (Pitchbend, Modulation, ...) and cannot be assigned to a specific playing note, with the exception of poly pressure (polyphonic aftertouch), which allows change only for a given pitch (not a given note!).</p>
 <p>Articulating each note in a chord individually creates a much more natural feel, just like multiple players playing the same instrument at the same time but each adding their own personality to the notes played.</p>
-<p>For example <strong>Cubase 6</strong> introduces the first <strong>VST 3 Note Expression</strong> compatible virtual instrument: <strong>HALion Sonic SE</strong>. <strong>HALion Sonic SE</strong> not only supports "standard" note expression control for Tuning (Pitch), Volume and Pan, it also offers additional custom pre-assigned note expression types of event (<a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/namespaceSteinberg_1_1Vst.html#a7d66c573aff27d890ec154f45b61f310a1c30475ef992f89f37c2fe0aafcc6283">kCustomStart</a> in <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/namespaceSteinberg_1_1Vst.html#a7d66c573aff27d890ec154f45b61f310">Steinberg::Vst::NoteExpressionTypeIDs</a>).</p>
+<p>For example, <strong>Cubase 6</strong> introduces the first <strong>VST 3 Note Expression</strong> compatible virtual instrument: <strong>HALion Sonic SE</strong>. <strong>HALion Sonic SE</strong> not only supports "standard" note expression control for Tuning (Pitch), Volume and Pan, it also offers additional custom pre-assigned note expression types of event (<a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/namespaceSteinberg_1_1Vst.html#a7d66c573aff27d890ec154f45b61f310a1c30475ef992f89f37c2fe0aafcc6283">kCustomStart</a> in <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/namespaceSteinberg_1_1Vst.html#a7d66c573aff27d890ec154f45b61f310">Vst::NoteExpressionTypeIDs</a>).</p>
 <h2 id="how-does-it-work"><a class="header" href="#how-does-it-work">How does it work?</a></h2>
 <p>The best way to understand how to support note expression from the plug-in side is to check out the step by step implementation example below. For more details, check out the <em>Note Expression Synth</em> example included in the SDK.</p>
 <p>Step by Step:
@@ -212,7 +212,7 @@ tresult PLUGIN_API MyExampleProcessor::initialize (FUnknown* context)
 }
 </code></pre>
 <ol start="2">
-<li>The controller must provide the <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1INoteExpressionController.html">Vst::INoteExpressionController</a> interface, like below:</li>
+<li>The controller must provide the <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1INoteExpressionController.html">Vst:: INoteExpressionController</a> interface, like below:</li>
 </ol>
 <pre><code class="language-c++">//------------------------------------------------------------------
 class MyExampleController: public EditController, public INoteExpressionController
@@ -236,7 +236,7 @@ public:
 };
 </code></pre>
 <ol start="3">
-<li>Now we have to implement the <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1INoteExpressionController.html">Steinberg::Vst::INoteExpressionController</a> interface, in our example <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1INoteExpressionController.html#a197a1b66cc45ba1935d9ce0894b1ee02">Steinberg::Vst::INoteExpressionController::getNoteExpressionCount</a> should return 1 as we only want to support tuning:</li>
+<li>Now we have to implement the <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1INoteExpressionController.html">Vst:: INoteExpressionController</a> interface, in our example <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1INoteExpressionController.html#a197a1b66cc45ba1935d9ce0894b1ee02">Vst:: INoteExpressionController::getNoteExpressionCount</a> should return 1 as we only want to support tuning:</li>
 </ol>
 <pre><code class="language-c++">//------------------------------------------------------------------
 int32 PLUGIN_API MyExampleController::getNoteExpressionCount (int32 busIndex, int16 channel)
@@ -248,7 +248,7 @@ int32 PLUGIN_API MyExampleController::getNoteExpressionCount (int32 busIndex, in
 }
 </code></pre>
 <ol start="4">
-<li>Then we have to implement <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1INoteExpressionController.html#ab12d543cbd83560a9f098ed4a5c76af8">Steinberg::Vst::INoteExpressionController::getNoteExpressionInfo</a> which describes what note expression the plug-in supports:</li>
+<li>Then we have to implement <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1INoteExpressionController.html#ab12d543cbd83560a9f098ed4a5c76af8">Vst:: INoteExpressionController::getNoteExpressionInfo</a> which describes what note expression the plug-in supports:</li>
 </ol>
 <pre><code class="language-c++">//  ------------------------------------------------------------------
 tresult PLUGIN_API MyExampleController::getNoteExpressionInfo (int32 busIndex, int16 channel, int32 noteExpressionIndex,
@@ -290,7 +290,7 @@ tresult PLUGIN_API MyExampleController::getNoteExpressionInfo (int32 busIndex, i
 <ol start="5">
 <li>For displaying note expression values, we have to implement the conversion functions:
 <ul>
-<li><a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1INoteExpressionController.html#a457f017fc3566d143914e44523425d23">Steinberg::Vst::INoteExpressionController::getNoteExpressionStringByValue</a>: normalized value -&gt; string</li>
+<li><a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1INoteExpressionController.html#a457f017fc3566d143914e44523425d23">Vst:: INoteExpressionController::getNoteExpressionStringByValue</a>: normalized value -&gt; string</li>
 </ul>
 </li>
 </ol>
@@ -312,7 +312,7 @@ tresult PLUGIN_API  MyExampleController::getNoteExpressionStringByValue (int32 b
     return kResultFalse;
 }
 </code></pre>
-<pre><code>- [Steinberg::Vst::INoteExpressionController::getNoteExpressionValueByString](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1INoteExpressionController.html#ab79e988315e33b4c30c8f2bd47a0cffc): string -&gt; normalized value
+<pre><code>- [Vst:: INoteExpressionController::getNoteExpressionValueByString](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1INoteExpressionController.html#ab79e988315e33b4c30c8f2bd47a0cffc): string -&gt; normalized value
 </code></pre>
 <pre><code class="language-c++">//------------------------------------------------------------------
 tresult PLUGIN_API  MyExampleController::getNoteExpressionValueByString (int32 busIndex, int16 channel, NoteExpressionTypeID id,
@@ -335,7 +335,7 @@ tresult PLUGIN_API  MyExampleController::getNoteExpressionValueByString (int32 b
 }
 </code></pre>
 <ol start="6">
-<li>Last step, in the processor component we have to adapt the process call to interpret the note expression event (<a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/structSteinberg_1_1Vst_1_1NoteExpressionValueEvent.html">Steinberg::Vst::NoteExpressionValueEvent</a>) sent from the host to the plug-in:</li>
+<li>Last step, in the processor component we have to adapt the process call to interpret the note expression event (<a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/structSteinberg_1_1Vst_1_1NoteExpressionValueEvent.html">Vst::NoteExpressionValueEvent</a>) sent from the host to the plug-in:</li>
 </ol>
 <pre><code class="language-c++">//------------------------------------------------------------------
 tresult MyExampleProcessor::process (ProcessData&amp; data)
@@ -427,7 +427,7 @@ tresult MyExampleProcessor::process (ProcessData&amp; data)
             
             <div id="footer" class="footer">
                 <!-- Here comes the footer when available -->
-                © 2024 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
+                © 2025 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href="https://o.steinberg.net/en/extras/about.html" target="_blank">About</a> |
                 <a href="https://o.steinberg.net/en/extras/privacy_policy.html" target="_blank">Privacy Policy</a> |
                 <a href="https://o.steinberg.net/en/extras/terms_conditions.html" target="_blank">Legal Terms</a> 

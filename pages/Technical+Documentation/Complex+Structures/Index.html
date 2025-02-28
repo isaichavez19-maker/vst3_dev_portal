@@ -194,7 +194,7 @@
 <h2 id="the-simple-mode"><a class="header" href="#the-simple-mode">The Simple Mode</a></h2>
 <p>The 'VST 3 simple mode' has the (selfish) background to support the so-called "simple instrument tracks" of Cubase. These tracks combine a MIDI track and VST audio channel (without the need to make any further assignments such as the choice of a MIDI output port or a MIDI channel). This mode is defined as 'only one input and only one output'. In 'simple mode', only MIDI channel 0 is used. Therefore, an instrument has to be mono-timbral.</p>
 <p>The host will now work with multiple instances of the plug-in rather than using the same instance in a way that it contains multiple internal sections of the same kind. The <strong>VST-MA</strong> component model supports shared resources between multiple instances of a plug-in because usually the same module instance (dll/bundle) is used for each plug-in instance.</p>
-<p>Yet, a plug-in has the option to support both the simple and the advanced mode with the same implementation. The host tests the general ability to support the 'simple mode' by checking the processor's class flags (<a href="https://steinbergmedia.github.io/vst3_doc/base/structSteinberg_1_1PClassInfo2.html#ab5ab9135185421caad5ad8ae1d758409">Steinberg::PClassInfo2::classFlags</a>) for the <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/namespaceSteinberg_1_1Vst.html#a626a070dcd2e025250f41b9c3f9817cdabc2edc9bb281cebe9cc6dc00a7cac0ea">Steinberg::Vst::kSimpleModeSupported</a> flag. If the plug-in is to be used in an instrument track (or whenever a host regards it more suitable) the <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponent.html#a4618e7358890d549f990010bea4a4137">Steinberg::Vst::IComponent::setIoMode</a> method is called (before any other call!) to configure the plug-in. A mono-timbral plug-in should set this flag as well and does not need to take into account the <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponent.html#a4618e7358890d549f990010bea4a4137">setIoMode</a> call.</p>
+<p>Yet, a plug-in has the option to support both the simple and the advanced mode with the same implementation. The host tests the general ability to support the 'simple mode' by checking the processor's class flags (<a href="https://steinbergmedia.github.io/vst3_doc/base/structSteinberg_1_1PClassInfo2.html#ab5ab9135185421caad5ad8ae1d758409">Steinberg::PClassInfo2::classFlags</a>) for the <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/namespaceSteinberg_1_1Vst.html#a626a070dcd2e025250f41b9c3f9817cdabc2edc9bb281cebe9cc6dc00a7cac0ea">Vst::kSimpleModeSupported</a> flag. If the plug-in is to be used in an instrument track (or whenever a host regards it more suitable) the <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponent.html#a4618e7358890d549f990010bea4a4137">Vst:: IComponent::setIoMode</a> method is called (before any other call!) to configure the plug-in. A mono-timbral plug-in should set this flag as well and does not need to take into account the <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponent.html#a4618e7358890d549f990010bea4a4137">setIoMode</a> call.</p>
 <h2 id="multi-timbral-program-lists"><a class="header" href="#multi-timbral-program-lists">Multi-timbral Program Lists</a></h2>
 <p>For a multi-timbral instrument plug-in, preset handling can be a lot more complex. In this case:</p>
 <ul>
@@ -208,7 +208,7 @@
 <p>Each unit that uses a program list references one list item.</p>
 </li>
 <li>
-<p>For each unit referencing a program list, a program selection parameter has to be exported (<a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/structSteinberg_1_1Vst_1_1ParameterInfo.html#ae3a5143ca8d0e271dbc259645a4ae645a517665185bca1f4f3d77ce0a6468b8e3">Steinberg::Vst::ParameterInfo::kIsProgramChange</a>).</p>
+<p>For each unit referencing a program list, a program selection parameter has to be exported (<a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/structSteinberg_1_1Vst_1_1ParameterInfo.html#ae3a5143ca8d0e271dbc259645a4ae645a517665185bca1f4f3d77ce0a6468b8e3">Vst:: ParameterInfo::kIsProgramChange</a>).</p>
 </li>
 <li>
 <p>The plug-in can provide GUI for the selection of programs, but it must synchronize the corresponding program selection parameter.</p>
@@ -217,48 +217,48 @@
 <p>A host may want to show the program list of the active unit in the same way as it shows the presets of a simple plug-in (usually in a separate control area at the top or the bottom of the window). The host must be able to display the correct list and the correct program name for the unit that has got the focus in the plug-in GUI.</p>
 </li>
 </ul>
-<p>To make this all work correctly, the plug-in must supply a valid implementation of <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IUnitInfo.html">Steinberg::Vst::IUnitInfo</a> and it must operate the callback interface <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IUnitHandler.html">Steinberg::Vst::IUnitHandler</a> accordingly.</p>
+<p>To make this all work correctly, the plug-in must supply a valid implementation of <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IUnitInfo.html">Vst:: IUnitInfo</a> and it must operate the callback interface <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IUnitHandler.html">Vst:: IUnitHandler</a> accordingly.</p>
 <p>Similar to the simple case, the host may want to save and load preset files. The component state of the plug-in is not useful here. A preset of a complex plug-in can be:</p>
 <ul>
 <li>
 <p>The state of a plug-in unit</p>
 <ul>
-<li>To support this, the plug-in must implement the <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IUnitData.html">Steinberg::Vst::IUnitData</a> interface in its component part.</li>
+<li>To support this, the plug-in must implement the <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IUnitData.html">Vst:: IUnitData</a> interface in its component part.</li>
 </ul>
 </li>
 <li>
 <p>The contents of an item in the program list</p>
 <ul>
-<li>To support this, the plug-in must implement the <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IUnitData.html">Steinberg::Vst::IProgramListData</a> interface in its component part.</li>
+<li>To support this, the plug-in must implement the <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IUnitData.html">Vst:: IProgramListData</a> interface in its component part.</li>
 </ul>
 </li>
 </ul>
 <p>A plug-in can support unit presets and program list presets.</p>
 <p><img src="../../../resources/tech_doc_19.jpg" alt="Tech_doc_19" /></p>
-<p>See also <a href="../Presets+Program+Lists/Index.html">Presets &amp; Program Lists</a>, <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IUnitData.html">Steinberg::Vst::IProgramListData</a>, <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IUnitData.html">Steinberg::Vst::IUnitData</a>.</p>
+<p>See also <a href="../Presets+Program+Lists/Index.html">Presets &amp; Program Lists</a>, <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IUnitData.html">Vst:: IProgramListData</a>, <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IUnitData.html">Vst:: IUnitData</a>.</p>
 <h2 id="units-and-tracks"><a class="header" href="#units-and-tracks">Units and Tracks</a></h2>
 <p>A unit can be associated with busses (or channels of busses). In particular, a unit can have a fixed and unique connection to an input MIDI channel. For a host, it might be useful to know about this connection and which unit can be associated with a specific MIDI track as a result of this. Often, the GUI of a multi-timbral plug-in does not show the settings of all similar units at the same time. Instead, there is some kind of unit selection. The idea is to be able to synchronize the selection of units in a plug-in to the selection of tracks in the host (in both ways).</p>
 <p>When a plug-in GUI is organized in the described way, it should support the described behavior by implementing</p>
 <ul>
 <li>
-<p><a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IUnitInfo.html#a718fa905d04d7d559bc89c7ca761413b">Steinberg::Vst::IUnitInfo::getUnitByBus</a>: find out the track - unit relations</p>
+<p><a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IUnitInfo.html#a718fa905d04d7d559bc89c7ca761413b">Vst:: IUnitInfo::getUnitByBus</a>: find out the track - unit relations</p>
 </li>
 <li>
-<p><a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IUnitInfo.html#a6f1b43425ba894764f35b7d492e81c53">Steinberg::Vst::IUnitInfo::getSelectedUnit</a>: let the host know which track to select</p>
+<p><a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IUnitInfo.html#a6f1b43425ba894764f35b7d492e81c53">Vst:: IUnitInfo::getSelectedUnit</a>: let the host know which track to select</p>
 </li>
 <li>
-<p><a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IUnitInfo.html#a2504c2bb3c57742102577f34cb58e257">Steinberg::Vst::IUnitInfo::selectUnit</a>: cause the plug-in to select its unit</p>
+<p><a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IUnitInfo.html#a2504c2bb3c57742102577f34cb58e257">Vst:: IUnitInfo::selectUnit</a>: cause the plug-in to select its unit</p>
 </li>
 </ul>
 <p>and by calling</p>
 <ul>
-<li><a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IUnitHandler.html#ab05a9a8dcca888caeabdb8ed74766bc6">Steinberg::Vst::IUnitHandler::notifyUnitSelection</a>: trigger the host to synchronize its GUI</li>
+<li><a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IUnitHandler.html#ab05a9a8dcca888caeabdb8ed74766bc6">Vst:: IUnitHandler::notifyUnitSelection</a>: trigger the host to synchronize its GUI</li>
 </ul>
 <h2 id="routing"><a class="header" href="#routing">Routing</a></h2>
 <p>For a host, it may be interesting to know which VSTi channel in the mixer is the output of a specific MIDI track if the plug-in defines multiple audio output busses (represented as VSTi mixer channels in the host).
 In general, the host needs to know about any input to output routing of the plug-in. So if an unambiguous relation exists between a plug-in input and an output, the following method should be implemented:</p>
 <ul>
-<li><a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponent.html#aa0ffeccad3c44364a199ce56365a4c12">Steinberg::Vst::IComponent::getRoutingInfo</a>: find out the output of a given input</li>
+<li><a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponent.html#aa0ffeccad3c44364a199ce56365a4c12">Vst:: IComponent::getRoutingInfo</a>: find out the output of a given input</li>
 </ul>
 <p><img src="../../../resources/tech_doc_20.jpg" alt="Tech_doc_20" /></p>
 
@@ -292,7 +292,7 @@ In general, the host needs to know about any input to output routing of the plug
             
             <div id="footer" class="footer">
                 <!-- Here comes the footer when available -->
-                © 2024 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
+                © 2025 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href="https://o.steinberg.net/en/extras/about.html" target="_blank">About</a> |
                 <a href="https://o.steinberg.net/en/extras/privacy_policy.html" target="_blank">Privacy Policy</a> |
                 <a href="https://o.steinberg.net/en/extras/terms_conditions.html" target="_blank">Legal Terms</a> 

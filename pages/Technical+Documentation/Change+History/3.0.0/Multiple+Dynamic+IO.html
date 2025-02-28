@@ -246,7 +246,7 @@ tresult PLUGIN_API MyPlugin::initialize (FUnknown* context)
 }
 </code></pre>
 <h2 id="information-about-busses"><a class="header" href="#information-about-busses">Information about busses</a></h2>
-<p>In order to get the number and information about busses exported by the plug-in, the host uses this interface <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponent.html">IComponent</a> with these functions:</p>
+<p>In order to get the number and information about busses exported by the plug-in, the host uses this interface <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponent.html">Vst:: IComponent</a> with these functions:</p>
 <pre><code class="language-c++">/** Called after the plug-in is initialized. */
 virtual int32 PLUGIN_API getBusCount (MediaType type, BusDirection dir) = 0;
  
@@ -277,7 +277,7 @@ virtual tresult PLUGIN_API getBusInfo (MediaType type, BusDirection dir, int32 i
 <pre><code class="language-c++">// here default activation is wanted (but not guaranteed)
 addAudioInput (STR16 ("SideChain"), SpeakerArr::kStereo, kAux, BusInfo::kDefaultActive);
 </code></pre>
-<p>In order to be use each Input bus and Output bus have to be activated, this is done by the host by using this interface implemented by the plug-in (<a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponent.html">IComponent</a>):</p>
+<p>In order to be use each Input bus and Output bus have to be activated, this is done by the host by using this interface implemented by the plug-in (<a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponent.html">Vst:: IComponent</a>):</p>
 <pre><code class="language-c++">//------------------------------------------------------------------------
 tresult PLUGIN_API Component::activateBus (MediaType type, BusDirection dir, int32 index, TBool state)
 {
@@ -327,15 +327,15 @@ addAudioInput (USTRING ("Aux In"), SpeakerArr::kStereo, kAux, 0); // 0 here mean
 <pre><code class="language-c++">addAudioInput (USTRING ("Surround In"), SpeakerArr::k51);
 addAudioOutput (USTRING ("Surround Out"), SpeakerArr::k51);
 </code></pre>
-<p>But when the host calls <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IAudioProcessor.html#ad3bc7bac3fd3b194122669be2a1ecc42">Vst::IAudioProcessor::setBusArrangements</a> the host is informing your plug-in of the current speaker arrangement of the track it was selected in. You should return <strong>kResultOk</strong>, in the case you accept this arrangement, or <strong>kResultFalse</strong>, in case you do not.</p>
+<p>But when the host calls <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IAudioProcessor.html#ad3bc7bac3fd3b194122669be2a1ecc42">Vst:: IAudioProcessor::setBusArrangements</a> the host is informing your plug-in of the current speaker arrangement of the track it was selected in. You should return <strong>kResultOk</strong>, in the case you accept this arrangement, or <strong>kResultFalse</strong>, in case you do not.</p>
 <blockquote>
 <p>ⓘ <strong>Note</strong><br />
-If you reject a <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IAudioProcessor.html#ad3bc7bac3fd3b194122669be2a1ecc42">Vst::IAudioProcessor::setBusArrangements</a> by returning <strong>kResultFalse</strong>, the host calls <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IAudioProcessor.html#adac76e90d4a18622d818c8204f937f94">Vst::IAudioProcessor::getBusArrangement</a> where you have the chance to give the parameter 'arrangement' the value of the speaker arrangement your plug-in does accept for this given bus.</p>
-<p>Afterward the host can recall <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IAudioProcessor.html#ad3bc7bac3fd3b194122669be2a1ecc42">Vst::IAudioProcessor::setBusArrangements</a> with the plug-in wanted Arrangements then the plug-in should return <strong>kResultOk</strong>.</p>
+If you reject a <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IAudioProcessor.html#ad3bc7bac3fd3b194122669be2a1ecc42">Vst:: IAudioProcessor::setBusArrangements</a> by returning <strong>kResultFalse</strong>, the host calls <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IAudioProcessor.html#adac76e90d4a18622d818c8204f937f94">Vst:: IAudioProcessor::getBusArrangement</a> where you have the chance to give the parameter 'arrangement' the value of the speaker arrangement your plug-in does accept for this given bus.</p>
+<p>Afterward the host can recall <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IAudioProcessor.html#ad3bc7bac3fd3b194122669be2a1ecc42">Vst:: IAudioProcessor::setBusArrangements</a> with the plug-in wanted Arrangements then the plug-in should return <strong>kResultOk</strong>.</p>
 </blockquote>
 <h3 id="how-are-speaker-arrangement-settings-handled-for-fx-plug-ins"><a class="header" href="#how-are-speaker-arrangement-settings-handled-for-fx-plug-ins">How are speaker arrangement settings handled for FX plug-ins?</a></h3>
-<p>After instantiation of the plug-in, the host calls <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IAudioProcessor.html#ad3bc7bac3fd3b194122669be2a1ecc42">Vst::IAudioProcessor::setBusArrangements</a> with a default configuration (depending on the current channel configuration), if the plug-in accepts it (by returning <strong>kResultOK</strong>), it will continue with this configuration.
-If not (by returning <strong>kResultFalse</strong>), the host asks the plug-in for its wanted configuration by calling <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IAudioProcessor.html#adac76e90d4a18622d818c8204f937f94">Vst::IAudioProcessor::getBusArrangement</a> (for Input and Output) and then recall <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IAudioProcessor.html#ad3bc7bac3fd3b194122669be2a1ecc42">Vst::IAudioProcessor::setBusArrangements</a> with the final wanted configuration. Check <a href="../../Workflow+Diagrams/Bus+Arrangement+Setting+Sequence.html">Bus Arrangement Setting Sequences</a> workflow.</p>
+<p>After instantiation of the plug-in, the host calls <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IAudioProcessor.html#ad3bc7bac3fd3b194122669be2a1ecc42">Vst:: IAudioProcessor::setBusArrangements</a> with a default configuration (depending on the current channel configuration), if the plug-in accepts it (by returning <strong>kResultOK</strong>), it will continue with this configuration.
+If not (by returning <strong>kResultFalse</strong>), the host asks the plug-in for its wanted configuration by calling <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IAudioProcessor.html#adac76e90d4a18622d818c8204f937f94">Vst:: IAudioProcessor::getBusArrangement</a> (for Input and Output) and then recall <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IAudioProcessor.html#ad3bc7bac3fd3b194122669be2a1ecc42">Vst:: IAudioProcessor::setBusArrangements</a> with the final wanted configuration. Check <a href="../../Workflow+Diagrams/Bus+Arrangement+Setting+Sequence.html">Bus Arrangement Setting Sequences</a> workflow.</p>
 <pre><code class="language-c++">// Example of a Plug-in supporting only symmetric Input-Output Arrangements:
 
 host -&gt; plug-in: setBusArrangements (monoIN, stereoOUT)
@@ -403,7 +403,7 @@ plug-in return: kResultOk
 <p>When loading a preset or with an user interaction, the plug-in wants to change its IO configuration. In this case the plug-in should call from the editController its component handler with flag kIoChanged:</p>
 <pre><code class="language-c++">componentHandler-&gt;restartComponent (kIoChanged);
 </code></pre>
-<p>The host will call <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IAudioProcessor.html#adac76e90d4a18622d818c8204f937f94">Vst::IAudioProcessor::getBusArrangement</a> (for Input and Output) in order to check the new requested arrangement and then the host will call <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IAudioProcessor.html#ad3bc7bac3fd3b194122669be2a1ecc42">Vst::IAudioProcessor::setBusArrangements</a> (called in suspend state: <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponent.html#a0a840e8077eb74ec429b8007c7b83517">setActive</a> (false)) to confirm the requested arrangement.</p>
+<p>The host will call <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IAudioProcessor.html#adac76e90d4a18622d818c8204f937f94">Vst:: IAudioProcessor::getBusArrangement</a> (for Input and Output) in order to check the new requested arrangement and then the host will call <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IAudioProcessor.html#ad3bc7bac3fd3b194122669be2a1ecc42">Vst:: IAudioProcessor::setBusArrangements</a> (called in suspend state: <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponent.html#a0a840e8077eb74ec429b8007c7b83517">setActive</a> (false)) to confirm the requested arrangement.</p>
 <h3 id="my-plug-in-has-mono-input-and-stereo-output-how-does-vst-3-handle-this"><a class="header" href="#my-plug-in-has-mono-input-and-stereo-output-how-does-vst-3-handle-this">My plug-in has mono input and stereo output. How does VST 3 handle this?</a></h3>
 <p>There are two ways to instantiate a plug-in in the following way:</p>
 <ul>
@@ -477,7 +477,7 @@ tresult PLUGIN_API AGain::initialize (FUnknown* context)
             
             <div id="footer" class="footer">
                 <!-- Here comes the footer when available -->
-                © 2024 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
+                © 2025 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href="https://o.steinberg.net/en/extras/about.html" target="_blank">About</a> |
                 <a href="https://o.steinberg.net/en/extras/privacy_policy.html" target="_blank">Privacy Policy</a> |
                 <a href="https://o.steinberg.net/en/extras/terms_conditions.html" target="_blank">Legal Terms</a> 

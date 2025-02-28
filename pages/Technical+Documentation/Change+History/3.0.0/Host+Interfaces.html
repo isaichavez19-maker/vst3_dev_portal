@@ -162,15 +162,15 @@
 </blockquote>
 <p><strong>On this page:</strong></p>
 <ul>
-<li><a href="#iattributelist">IAttributeList</a></li>
-<li><a href="#icomponenthandler">IComponentHandler</a></li>
-<li><a href="#ieventlist">IEventList</a></li>
-<li><a href="#iunithandler">IUnitHandler</a></li>
-<li><a href="#ihostapplication">IHostApplication</a></li>
-<li><a href="#imessage">IMessage</a></li>
-<li><a href="#iparamvaluequeue">IParamValueQueue</a></li>
-<li><a href="#iparameterchanges">IParameterChanges</a></li>
-<li><a href="#iplugframe">IPlugFrame</a></li>
+<li><a href="#vst-iattributelist">Vst:: IAttributeList</a></li>
+<li><a href="#vst-icomponenthandler">Vst:: IComponentHandler</a></li>
+<li><a href="#vst-ieventlist">Vst:: IEventList</a></li>
+<li><a href="#vst-iunithandler">Vst:: IUnitHandler</a></li>
+<li><a href="#vst-ihostapplication">Vst:: IHostApplication</a></li>
+<li><a href="#vst-imessage">Vst:: IMessage</a></li>
+<li><a href="#vst-iparamvaluequeue">Vst:: IParamValueQueue</a></li>
+<li><a href="#vst-iparameterchanges">Vst:: IParameterChanges</a></li>
+<li><a href="#steinberg-iplugframe">Steinberg:: IPlugFrame</a></li>
 </ul>
 <p><strong>Related pages</strong></p>
 <ul>
@@ -178,15 +178,15 @@
 </ul>
 <hr />
 <p>List of interfaces supported/implemented by the host in VST 3.0.0</p>
-<h2 id="iattributelist"><a class="header" href="#iattributelist"><a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IAttributeList.html">IAttributeList</a></a></h2>
-<p>Attribute list used in <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IMessage.html">IMessage</a> and <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IStreamAttributes.html">IStreamAttributes</a>.</p>
+<h2 id="vst-iattributelist"><a class="header" href="#vst-iattributelist"><a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IAttributeList.html">Vst:: IAttributeList</a></a></h2>
+<p>Attribute list used in <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IMessage.html">Vst:: IMessage</a> and <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IStreamAttributes.html">Vst:: IStreamAttributes</a>.</p>
 <ul>
 <li>[host imp]</li>
 <li>[released: 3.0.0]</li>
 <li>[mandatory]</li>
 </ul>
 <p>An attribute list associates values with a key (id: some predefined keys can be found in <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/group__presetAttributes.html">Predefined Preset Attributes</a>).</p>
-<h2 id="icomponenthandler"><a class="header" href="#icomponenthandler"><a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponentHandler.html">IComponentHandler</a></a></h2>
+<h2 id="vst-icomponenthandler"><a class="header" href="#vst-icomponenthandler"><a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponentHandler.html">Vst:: IComponentHandler</a></a></h2>
 <p>Host callback interface for an edit controller.</p>
 <ul>
 <li>[host imp]</li>
@@ -194,8 +194,8 @@
 <li>[mandatory]</li>
 </ul>
 <p>Allow transfer of parameter editing to component (processor) via host and support automation. Cause the host to react on configuration changes (restartComponent).</p>
-<p>See also <em><a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IEditController.html">IEditController</a></em>.</p>
-<h2 id="ieventlist"><a class="header" href="#ieventlist"><a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IEventList.html">IEventList</a></a></h2>
+<p>See also <em><a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IEditController.html">Vst:: IEditController</a></em>.</p>
+<h2 id="vst-ieventlist"><a class="header" href="#vst-ieventlist"><a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IEventList.html">Vst:: IEventList</a></a></h2>
 <p>List of events to process.</p>
 <ul>
 <li>[host imp]</li>
@@ -203,36 +203,36 @@
 <li>[mandatory]</li>
 </ul>
 <p>See also <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/structSteinberg_1_1Vst_1_1ProcessData.html">ProcessData</a>, Event.</p>
-<h2 id="iunithandler"><a class="header" href="#iunithandler"><a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IUnitHandler.html">IUnitHandler</a></a></h2>
+<h2 id="vst-iunithandler"><a class="header" href="#vst-iunithandler"><a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IUnitHandler.html">Vst:: IUnitHandler</a></a></h2>
 <p>Host callback for unit support.</p>
 <ul>
 <li>[host imp]</li>
-<li>[extends <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponentHandler.html">IComponentHandler</a>]</li>
+<li>[extends <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponentHandler.html">Vst:: IComponentHandler</a>]</li>
 <li>[released: 3.0.0]</li>
 <li>[optional]</li>
 </ul>
-<p>Host callback interface, used with <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IUnitInfo.html">IUnitInfo</a>. Retrieve via queryInterface from <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponentHandler.html">IComponentHandler</a>.</p>
-<p>See also <a href="../../VST+3+Units/Index.html">VST 3 Units</a>, <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IUnitInfo.html">IUnitInfo</a>.</p>
-<h2 id="ihostapplication"><a class="header" href="#ihostapplication"><a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IHostApplication.html">IHostApplication</a></a></h2>
+<p>Host callback interface, used with <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IUnitInfo.html">Vst:: IUnitInfo</a>. Retrieve via queryInterface from <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponentHandler.html">Vst:: IComponentHandler</a>.</p>
+<p>See also <a href="../../VST+3+Units/Index.html">VST 3 Units</a>, <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IUnitInfo.html">Vst:: IUnitInfo</a>.</p>
+<h2 id="vst-ihostapplication"><a class="header" href="#vst-ihostapplication"><a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IHostApplication.html">Vst:: IHostApplication</a></a></h2>
 <p>Basic host callback interface.</p>
 <ul>
 <li>[host imp]</li>
-<li>[passed as 'context' in to <a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPluginBase.html#a3c81be4ff2e7bbb541d3527264f26eed%5D">IPluginBase::initialize</a>]</li>
+<li>[passed as 'context' in to <a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPluginBase.html#a3c81be4ff2e7bbb541d3527264f26eed%5D">Steinberg:: IPluginBase::initialize</a>]</li>
 <li>[released: 3.0.0]</li>
 <li>[mandatory]</li>
 </ul>
 <p>Basic VST host application interface.</p>
-<h2 id="imessage"><a class="header" href="#imessage"><a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IMessage.html">IMessage</a></a></h2>
+<h2 id="vst-imessage"><a class="header" href="#vst-imessage"><a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IMessage.html">Vst:: IMessage</a></a></h2>
 <p>Private plug-in message.</p>
 <ul>
 <li>[host imp]</li>
-<li>[create via <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IHostApplication.html#a931e5a2ff8867bd8dfdbae1e42b78106">IHostApplication::createInstance</a>]</li>
+<li>[create via <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IHostApplication.html#a931e5a2ff8867bd8dfdbae1e42b78106">Vst:: IHostApplication::createInstance</a>]</li>
 <li>[released: 3.0.0]</li>
 <li>[mandatory]</li>
 </ul>
 <p>Messages are sent from the processor component to then controller component and vice versa.</p>
-<p>See also <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IAttributeList.html">IAttributeList</a>, <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IConnectionPoint.html">IConnectionPoint</a>, <a href="../../API+Documentation/Index.html#communication-between-the-components">Communication between the components</a>.</p>
-<h2 id="iparamvaluequeue"><a class="header" href="#iparamvaluequeue"><a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IParamValueQueue.html">IParamValueQueue</a></a></h2>
+<p>See also <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IAttributeList.html">Vst:: IAttributeList</a>, <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IConnectionPoint.html">Vst:: IConnectionPoint</a>, <a href="../../API+Documentation/Index.html#communication-between-the-components">Communication between the components</a>.</p>
+<h2 id="vst-iparamvaluequeue"><a class="header" href="#vst-iparamvaluequeue"><a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IParamValueQueue.html">Vst:: IParamValueQueue</a></a></h2>
 <p>Queue of changes for a specific parameter.</p>
 <ul>
 <li>[host imp]</li>
@@ -268,18 +268,18 @@ double curveValue = (slope * bufferTime) + offset; // bufferTime is any position
 <p><strong>Jumps</strong>:<br />
 A jump in the automation curve has to be transmitted as two points: one with the old value and one with the new value at the next sample position.</p>
 <p><img src="../../../../resources/tech_doc_29.jpg" alt="Tech_doc_29" /></p>
-<p>See also <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IParameterChanges.html">IParameterChanges</a>, <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/structSteinberg_1_1Vst_1_1ProcessData.html">ProcessData</a>.</p>
-<h2 id="iparameterchanges"><a class="header" href="#iparameterchanges"><a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IParameterChanges.html">IParameterChanges</a></a></h2>
+<p>See also <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IParameterChanges.html">Vst:: IParameterChanges</a>, <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/structSteinberg_1_1Vst_1_1ProcessData.html">ProcessData</a>.</p>
+<h2 id="vst-iparameterchanges"><a class="header" href="#vst-iparameterchanges"><a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IParameterChanges.html">Vst:: IParameterChanges</a></a></h2>
 <p>All parameter changes of a processing block.</p>
 <ul>
 <li>[host imp]</li>
 <li>[released: 3.0.0]</li>
 <li>[mandatory]</li>
 </ul>
-<p>This interface is used to transmit any changes to be applied to parameters in the current processing block. A change can be caused by GUI interaction as well as automation. Changes are transmitted as a list of queues (<a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IParamValueQueue.html">IParamValueQueue</a>) containing only queues for parameters that actually did change.</p>
-<p>See <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IParamValueQueue.html">IParamValueQueue</a>, <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/structSteinberg_1_1Vst_1_1ProcessData.html">ProcessData</a>.</p>
-<h2 id="iplugframe"><a class="header" href="#iplugframe"><a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPlugFrame.html">IPlugFrame</a></a></h2>
-<p>Callback interface passed to <a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPlugView.html">IPlugView</a>.</p>
+<p>This interface is used to transmit any changes to be applied to parameters in the current processing block. A change can be caused by GUI interaction as well as automation. Changes are transmitted as a list of queues (<a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IParamValueQueue.html">Vst:: IParamValueQueue</a>) containing only queues for parameters that actually did change.</p>
+<p>See <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IParamValueQueue.html">Vst:: IParamValueQueue</a>, <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/structSteinberg_1_1Vst_1_1ProcessData.html">ProcessData</a>.</p>
+<h2 id="steinberg-iplugframe"><a class="header" href="#steinberg-iplugframe"><a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPlugFrame.html">Steinberg:: IPlugFrame</a></a></h2>
+<p>Callback interface passed to <a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPlugView.html">Steinberg:: IPlugView</a>.</p>
 <ul>
 <li>[host imp]</li>
 <li>[released: 3.0.0]</li>
@@ -317,7 +317,7 @@ A jump in the automation curve has to be transmitted as two points: one with the
             
             <div id="footer" class="footer">
                 <!-- Here comes the footer when available -->
-                © 2024 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
+                © 2025 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href="https://o.steinberg.net/en/extras/about.html" target="_blank">About</a> |
                 <a href="https://o.steinberg.net/en/extras/privacy_policy.html" target="_blank">Privacy Policy</a> |
                 <a href="https://o.steinberg.net/en/extras/terms_conditions.html" target="_blank">Legal Terms</a> 

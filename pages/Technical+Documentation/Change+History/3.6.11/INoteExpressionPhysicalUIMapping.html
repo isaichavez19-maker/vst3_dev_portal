@@ -171,14 +171,14 @@
 </ul>
 <hr />
 <h2 id="introduction"><a class="header" href="#introduction">Introduction</a></h2>
-<p>Extended plug-in interface <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IEditController.html">IEditController</a> for note expression event support: <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1INoteExpressionPhysicalUIMapping.html">Vst::INoteExpressionPhysicalUIMapping</a>.</p>
+<p>Extended plug-in interface <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IEditController.html">Vst:: IEditController</a> for note expression event support: <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1INoteExpressionPhysicalUIMapping.html">Vst:: INoteExpressionPhysicalUIMapping</a>.</p>
 <ul>
 <li>[plug imp]</li>
-<li>[extends <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IEditController.html">IEditController</a>]</li>
+<li>[extends <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IEditController.html">Vst:: IEditController</a>]</li>
 <li>[released: 3.6.11]</li>
 <li>[optional]</li>
 </ul>
-<p>With this plug-in interface, the host can retrieve the preferred physical mapping associated to note expression supported by the plug-in. When the mapping changes (for example, when switching presets), the plug-in needs to inform the host about it via <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponentHandler.html#a1f283573728cf0807224c5ebdf3ec3a6">IComponentHandler::restartComponent</a> (<a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/namespaceSteinberg_1_1Vst.html#a17867782006f9fdb2b72c16b0420bed5aa11fe6e24349c6d2f7e0035dbc01c10b">kNoteExpressionChanged</a>).</p>
+<p>With this plug-in interface, the host can retrieve the preferred physical mapping associated to note expression supported by the plug-in. When the mapping changes (for example, when switching presets), the plug-in needs to inform the host about it via <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponentHandler.html#a1f283573728cf0807224c5ebdf3ec3a6">Vst:: IComponentHandler::restartComponent</a> (<a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/namespaceSteinberg_1_1Vst.html#a17867782006f9fdb2b72c16b0420bed5aa11fe6e24349c6d2f7e0035dbc01c10b">kNoteExpressionChanged</a>).</p>
 <h2 id="example"><a class="header" href="#example">Example</a></h2>
 <p><strong>In mycontroller.h</strong></p>
 <pre><code class="language-c++">//------------------------------------------------------------------------
@@ -259,7 +259,7 @@ tresult PLUGIN_API MyController::getPhysicalUIMapping (int32 busIndex, int16 cha
             
             <div id="footer" class="footer">
                 <!-- Here comes the footer when available -->
-                © 2024 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
+                © 2025 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href="https://o.steinberg.net/en/extras/about.html" target="_blank">About</a> |
                 <a href="https://o.steinberg.net/en/extras/privacy_policy.html" target="_blank">Privacy Policy</a> |
                 <a href="https://o.steinberg.net/en/extras/terms_conditions.html" target="_blank">Legal Terms</a> 

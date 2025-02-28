@@ -206,7 +206,7 @@
 <li><strong>AU Wrapper</strong>:
 <ul>
 <li>Add support of MIDI2 (higher-resolution for velocity and CC) using a helper for decoding UMP message (<em>public.sdk/source/vst/utility/ump.h</em>).</li>
-<li>Add support of MIDI Learn interface <a href="../Technical+Documentation/Change+History/3.6.12/IMidiLearn.html">Vst::IMidiLearn</a>.</li>
+<li>Add support of MIDI Learn interface <a href="../Technical+Documentation/Change+History/3.6.12/IMidiLearn.html">Vst:: IMidiLearn</a>.</li>
 <li>Add cache program list infos so that the edit controller is not called in the process thread.</li>
 <li>Add MIDI mapping cache instead of calling the IMidiMapping interface in the audio process thread.</li>
 <li>Cleanup <em>public.sdk/source/vst/auwrapper/auwrapper.mm/auwrapper.h</em>.</li>
@@ -232,8 +232,8 @@
 <li>Temporary disable dataexchange example for linux due to missing linux implementation.</li>
 <li>Update <strong>Hostchecker</strong> plug-in:
 <ul>
-<li>with new host check: call of getLatency after setActive and before setProcessing or process.</li>
-<li>new parameters for Randomize + LowLatency + DryWet with <a href="../Technical+Documentation/Change+History/3.7.0/IParameterFunctionName.html">IParameterFunctionName</a> support.</li>
+<li>with new host check: call of getLatency after setActive and before  <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IAudioProcessor.html#af252fd721b195b793f3a5dfffc069401">Vst:: IAudioProcessor::setProcessing</a> or process.</li>
+<li>new parameters for Randomize + LowLatency + DryWet with <a href="../Technical+Documentation/Change+History/3.7.0/IParameterFunctionName.html">Vst:: IParameterFunctionName</a> support.</li>
 </ul>
 </li>
 </ul>
@@ -256,10 +256,11 @@
 </ul>
 </li>
 <li>
-<p><a href="../What+is+the+VST+3+SDK/Plug-in+Test+Host.html">VST3PluginTestHost</a> v3.7:</p>
+<p><a href="../What+is+the+VST+3+SDK/Plug-in+Test+Host.html">VST3PluginTestHost</a> v3.8:</p>
 <ul>
 <li>New features:
 <ul>
+<li><a href="../What+is+the+VST+3+SDK/Plug-in+Test+Host.html#menu-description">File =&gt; Unload MIDI File</a></li>
 <li><a href="../What+is+the+VST+3+SDK/Plug-in+Test+Host.html#menu-description">File =&gt; Export Audio...</a></li>
 <li><a href="../What+is+the+VST+3+SDK/Plug-in+Test+Host.html#menu-description">File =&gt; Export Audio for current loaded MIDI...</a></li>
 <li><a href="../What+is+the+VST+3+SDK/Plug-in+Test+Host.html#transport-1">Transport =&gt; Toggle time format between Time and Bars</a></li>
@@ -275,7 +276,7 @@
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../../pages/Versions/Index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../../pages/Versions/Version+3.7.13.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
@@ -290,7 +291,7 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../../pages/Versions/Index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../../pages/Versions/Version+3.7.13.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
@@ -301,7 +302,7 @@
             
             <div id="footer" class="footer">
                 <!-- Here comes the footer when available -->
-                © 2024 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
+                © 2025 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href="https://o.steinberg.net/en/extras/about.html" target="_blank">About</a> |
                 <a href="https://o.steinberg.net/en/extras/privacy_policy.html" target="_blank">Privacy Policy</a> |
                 <a href="https://o.steinberg.net/en/extras/terms_conditions.html" target="_blank">Legal Terms</a> 

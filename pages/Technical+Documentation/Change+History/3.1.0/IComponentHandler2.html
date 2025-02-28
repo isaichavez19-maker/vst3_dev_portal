@@ -174,10 +174,10 @@
 <hr />
 <h2 id="introduction"><a class="header" href="#introduction">Introduction</a></h2>
 <p>Improvement of the plug-in's integration in the host (dirty state, request Open Editor, group editing).</p>
-<p>Extended host callback interface <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponentHandler2.html">Vst::IComponentHandler2</a> for an edit controller.</p>
+<p>Extended host callback interface <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponentHandler2.html">Vst:: IComponentHandler2</a> for an edit controller.</p>
 <ul>
 <li>[host imp]</li>
-<li>[extends <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponentHandler.html">IComponentHandler</a>]</li>
+<li>[extends <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponentHandler.html">Vst:: IComponentHandler</a>]</li>
 <li>[released: 3.1.0]</li>
 <li>[optional]</li>
 </ul>
@@ -200,11 +200,11 @@
 <h2 id="ui-group-editing"><a class="header" href="#ui-group-editing">UI Group Editing</a></h2>
 <p>This part handles parameter group editing from the plug-in UI. It wraps a set of:</p>
 <ul>
-<li><a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponentHandler.html#a8456ad739430267a12dda11a53fe9223">Steinberg::Vst::IComponentHandler::beginEdit</a></li>
-<li><a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponentHandler.html#a135d4e76355ef0ba0a4162a0546d5f93">Steinberg::Vst::IComponentHandler::performEdit</a></li>
-<li><a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponentHandler.html#ae380206486b11f000cad7c0d9b6e877c">Steinberg::Vst::IComponentHandler::endEdit</a></li>
+<li><a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponentHandler.html#a8456ad739430267a12dda11a53fe9223">Vst:: IComponentHandler::beginEdit</a></li>
+<li><a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponentHandler.html#a135d4e76355ef0ba0a4162a0546d5f93">Vst:: IComponentHandler::performEdit</a></li>
+<li><a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponentHandler.html#ae380206486b11f000cad7c0d9b6e877c">Vst:: IComponentHandler::endEdit</a></li>
 </ul>
-<p>functions (see <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponentHandler.html">IComponentHandler</a>) which should use the same timestamp in the host when writing automation. This allows for better synchronizing of multiple parameter changes at once.</p>
+<p>functions (see <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponentHandler.html">Vst:: IComponentHandler</a>) which should use the same timestamp in the host when writing automation. This allows for better synchronizing of multiple parameter changes at once.</p>
 <h3 id="examples-of-different-use-cases"><a class="header" href="#examples-of-different-use-cases">Examples of different use cases</a></h3>
 <pre><code class="language-c++">//--------------------------------------
 // we are in the editcontroller...
@@ -242,7 +242,7 @@ hostHandler-&gt;endEdit (1);
 hostHandler-&gt;endEdit (3);
 hostHandler2-&gt;finishGroupEdit ();
 </code></pre>
-<p>See also <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponentHandler.html">IComponentHandler</a>, <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IEditController.html">IEditController</a>.</p>
+<p>See also <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponentHandler.html">Vst:: IComponentHandler</a>, <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IEditController.html">Vst:: IEditController</a>.</p>
 
                     </main>
 
@@ -274,7 +274,7 @@ hostHandler2-&gt;finishGroupEdit ();
             
             <div id="footer" class="footer">
                 <!-- Here comes the footer when available -->
-                © 2024 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
+                © 2025 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href="https://o.steinberg.net/en/extras/about.html" target="_blank">About</a> |
                 <a href="https://o.steinberg.net/en/extras/privacy_policy.html" target="_blank">Privacy Policy</a> |
                 <a href="https://o.steinberg.net/en/extras/terms_conditions.html" target="_blank">Legal Terms</a> 

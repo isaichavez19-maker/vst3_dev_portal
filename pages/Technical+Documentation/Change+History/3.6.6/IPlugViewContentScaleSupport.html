@@ -168,10 +168,10 @@
 <p><a href="../../Workflow+Diagrams/Resize+View+Call+Sequence.html">Resize View Call Sequence</a></p>
 <hr />
 <h2 id="introduction"><a class="header" href="#introduction">Introduction</a></h2>
-<p>Plug-in view content scale support: <a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPlugViewContentScaleSupport.html">Vst::IPlugViewContentScaleSupport</a>.</p>
+<p>Plug-in view content scale support: <a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPlugViewContentScaleSupport.html">Steinberg:: IPlugViewContentScaleSupport</a>.</p>
 <ul>
 <li>[plug impl]</li>
-<li>[extends <a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPlugView.html">IPlugView</a>]</li>
+<li>[extends <a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPlugView.html">Steinberg:: IPlugView</a>]</li>
 <li>[released: 3.6.6]</li>
 <li>[optional]</li>
 </ul>
@@ -179,11 +179,11 @@
 <p>The host calls <a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPlugViewContentScaleSupport.html#af5b0fea85beba3cdcfeb8de66779f478">setContentScaleFactor</a>
 directly before or after the plug-in view is attached and when the scale factor changes while the view is attached (system change or window moved to another screen with different scaling settings).</p>
 <p>The host may call <a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPlugViewContentScaleSupport.html#af5b0fea85beba3cdcfeb8de66779f478">setContentScaleFactor</a> in a different context, for example: scaling the plug-in editor for better readability.</p>
-<p>When a plug-in handles this (by returning kResultTrue), it needs to scale the width and height of its view by the scale factor and inform the host via a <a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPlugFrame.html#a94f218315acd695606fff41166294d56">IPlugFrame::resizeView()</a>, the host will then call <a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPlugView.html#a3e741e55c2c047a4cc10f102661f5654">IPlugView::onSize()</a>.
+<p>When a plug-in handles this (by returning kResultTrue), it needs to scale the width and height of its view by the scale factor and inform the host via a <a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPlugFrame.html#a94f218315acd695606fff41166294d56">Steinberg:: IPlugFrame::resizeView()</a>, the host will then call <a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPlugView.html#a3e741e55c2c047a4cc10f102661f5654">Steinberg:: IPlugView::onSize()</a>.
 The host will then call IPlugView::onSize().</p>
 <blockquote>
 <p>ⓘ <strong>Note</strong><br />
-Note that the host is allowed to call <a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPlugViewContentScaleSupport.html#af5b0fea85beba3cdcfeb8de66779f478">setContentScaleFactor()</a> at any time the <a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPlugView.html">IPlugView</a> is valid.</p>
+Note that the host is allowed to call <a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPlugViewContentScaleSupport.html#af5b0fea85beba3cdcfeb8de66779f478">setContentScaleFactor()</a> at any time the <a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPlugView.html">Steinberg:: IPlugView</a> is valid.</p>
 </blockquote>
 
                     </main>
@@ -216,7 +216,7 @@ Note that the host is allowed to call <a href="https://steinbergmedia.github.io/
             
             <div id="footer" class="footer">
                 <!-- Here comes the footer when available -->
-                © 2024 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
+                © 2025 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href="https://o.steinberg.net/en/extras/about.html" target="_blank">About</a> |
                 <a href="https://o.steinberg.net/en/extras/privacy_policy.html" target="_blank">Privacy Policy</a> |
                 <a href="https://o.steinberg.net/en/extras/terms_conditions.html" target="_blank">Legal Terms</a> 

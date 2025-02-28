@@ -171,16 +171,32 @@
 <p>The <strong>VST 3 SDK</strong> comes with a helper class which wraps one <strong>VST 3</strong> audio processor and edit controller to an <strong>AAX</strong> plug-in.</p>
 <h2 id="how-does-it-work"><a class="header" href="#how-does-it-work">How does it work?</a></h2>
 <ul>
-<li>Check the AGainAAX example</li>
-<li>AAX SDK 2.3 or higher is expected in folder external.avid.aax (located at the same level as the folder public.sdk)</li>
-<li>Here is the step based on the AgainAAX example:
+<li>
+<p>Check the AGainAAX example.</p>
+</li>
+<li>
+<p>For more information on how to get the AAX SDK, you can visit the <a href="https://developer.avid.com/aax">Avid Technology AAX SDK page</a>.</p>
+</li>
+<li>
+<p>AAX SDK 2.7 or higher is expected in folder <em>external.avid.aax</em> (located at the same level as the folder <em>public.sdk</em>).</p>
+</li>
+<li>
+<p>Here is the step based on the AGainAAX example:</p>
 <ul>
-<li>In the cpp file againaax.cpp, you can define the plug-in properties: IO audio, product ID, ...</li>
-<li>On Windows, copy built linker output again_aax.aaxplugin to "c:\Program Files\Common Files\Avid\Audio\Plug-Ins\again_aax.aaxplugin\Contents\x64" (the debug build does this automatically, but needs appropriate access rights (Administrator rights of your visual))</li>
-<li>On OSX, copy built bundle build/Debug/again.aaxplugin to "/Library/Application Support/Avid/Audio/Plug-Ins"</li>
+<li>In the cpp file <em>againaax.cpp</em>, you can define the plug-in properties: IO audio, product ID, ...</li>
+<li>On Windows, copy built linker output again_aax.aaxplugin to "<em>C:\Program Files\Common Files\Avid\Audio\Plug-Ins\again_aax.aaxplugin\Contents\x64</em>" (the debug build does this automatically, but needs appropriate access rights (Administrator rights of your visual)).</li>
+<li>On OSX, copy built bundle <em>build/Debug/again.aaxplugin</em> to "<em>/Library/Application Support/Avid/Audio/Plug-Ins</em>".</li>
 </ul>
 </li>
-<li>A developer version of Pro Tools is needed to load the plug-in, the release version of Pro Tools requires plug-ins to be Pace-signed (PACE Anti-Piracy Inc.: <a href="https://www.ilok.com">https://www.ilok.com</a>)</li>
+<li>
+<p>AAX plug-ins must be digitally signed with PACE Anti-Piracy's signing tools before they can be used in a commercial version of Pro Tools.</p>
+</li>
+<li>
+<p>To test the plug-in without signing it, you can use a special version of Pro Tools: <strong>Pro Tools Developer</strong>, which could requested here: https://developer.avid.com/aax.</p>
+</li>
+<li>
+<p>A <a href="https://www.ilok.com">iLok</a> as an <a href="https://my.avid.com">Avid</a> account is required for running Pro Tools and have access to the AAX SDK.</p>
+</li>
 </ul>
 
                     </main>
@@ -213,7 +229,7 @@
             
             <div id="footer" class="footer">
                 <!-- Here comes the footer when available -->
-                © 2024 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
+                © 2025 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href="https://o.steinberg.net/en/extras/about.html" target="_blank">About</a> |
                 <a href="https://o.steinberg.net/en/extras/privacy_policy.html" target="_blank">Privacy Policy</a> |
                 <a href="https://o.steinberg.net/en/extras/terms_conditions.html" target="_blank">Legal Terms</a> 

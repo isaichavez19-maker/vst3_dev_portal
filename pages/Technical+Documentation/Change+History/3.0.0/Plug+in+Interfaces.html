@@ -162,14 +162,14 @@
 </blockquote>
 <p><strong>On this page:</strong></p>
 <ul>
-<li><a href="#icomponent">IComponent</a></li>
-<li><a href="#iaudioprocessor">IAudioProcessor</a></li>
-<li><a href="#ieditcontroller">IEditController</a></li>
-<li><a href="#iconnectionpoint">IConnectionPoint</a></li>
-<li><a href="#iunitinfo">IUnitInfo</a></li>
-<li><a href="#iprogramlistdata">IProgramListData</a></li>
-<li><a href="#iunitdata">IUnitData</a></li>
-<li><a href="#iplugview">IPlugView</a>
+<li><a href="#vst-icomponent">Vst:: IComponent</a></li>
+<li><a href="#vst-iaudioprocessor">Vst:: IAudioProcessor</a></li>
+<li><a href="#vst-ieditcontroller">Vst:: IEditController</a></li>
+<li><a href="#vst-iconnectionpoint">Vst:: IConnectionPoint</a></li>
+<li><a href="#vst-iunitinfo">Vst:: IUnitInfo</a></li>
+<li><a href="#vst-iprogramlistdata">Vst:: IProgramListData</a></li>
+<li><a href="#vst-iunitdata">Vst:: IUnitData</a></li>
+<li><a href="#steinberg-iplugview">Steinberg:: IPlugView</a>
 <ul>
 <li><a href="#sizing-of-a-view">Sizing of a view</a></li>
 <li><a href="#keyboard-handling">Keyboard handling</a></li>
@@ -182,25 +182,25 @@
 </ul>
 <hr />
 <p>List of interfaces supported/implemented by the plug-in in VST 3.0.0</p>
-<h2 id="icomponent"><a class="header" href="#icomponent"><a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponent.html">IComponent</a></a></h2>
+<h2 id="vst-icomponent"><a class="header" href="#vst-icomponent"><a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponent.html">Vst:: IComponent</a></a></h2>
 <p>Component base interface.</p>
 <ul>
 <li>[plug imp]</li>
 <li>[released: 3.0.0]</li>
 <li>[mandatory]</li>
 </ul>
-<p>This is the basic interface for a VST component and must always be supported. It contains the common parts of any kind of processing class. The parts that are specific to a media type are defined in a separate interface. An implementation component must provide both the specific interface and <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponent.html">IComponent</a>.</p>
-<p>See also <a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPluginBase.html">IPluginBase</a>.</p>
-<h2 id="iaudioprocessor"><a class="header" href="#iaudioprocessor"><a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IAudioProcessor.html">IAudioProcessor</a></a></h2>
+<p>This is the basic interface for a VST component and must always be supported. It contains the common parts of any kind of processing class. The parts that are specific to a media type are defined in a separate interface. An implementation component must provide both the specific interface and <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponent.html">Vst:: IComponent</a>.</p>
+<p>See also <a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPluginBase.html">Steinberg:: IPluginBase</a>.</p>
+<h2 id="vst-iaudioprocessor"><a class="header" href="#vst-iaudioprocessor"><a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IAudioProcessor.html">Vst:: IAudioProcessor</a></a></h2>
 <p>Audio processing interface.</p>
 <ul>
 <li>[plug imp]</li>
-<li>[extends <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponent.html">IComponent</a>]</li>
+<li>[extends <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponent.html">Vst:: IComponent</a>]</li>
 <li>[released: 3.0.0]</li>
 <li>[mandatory]</li>
 </ul>
 <p>This interface must always be supported by audio processing plug-ins.</p>
-<h2 id="ieditcontroller"><a class="header" href="#ieditcontroller"><a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IEditController.html">IEditController</a></a></h2>
+<h2 id="vst-ieditcontroller"><a class="header" href="#vst-ieditcontroller"><a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IEditController.html">Vst:: IEditController</a></a></h2>
 <p>Edit controller component interface.</p>
 <ul>
 <li>[plug imp]</li>
@@ -208,8 +208,8 @@
 <li>[mandatory]</li>
 </ul>
 <p>The controller part of an effect or instrument with parameter handling (export, definition, conversion...).</p>
-<p>See also <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponent.html#a8aa65685068ad033af57b1497926b689">IComponent::getControllerClassId</a>, <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IMidiMapping.html">IMidiMapping</a>.</p>
-<h2 id="iconnectionpoint"><a class="header" href="#iconnectionpoint"><a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IConnectionPoint.html">IConnectionPoint</a></a></h2>
+<p>See also <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponent.html#a8aa65685068ad033af57b1497926b689">Vst:: IComponent::getControllerClassId</a>, <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IMidiMapping.html">Vst:: IMidiMapping</a>.</p>
+<h2 id="vst-iconnectionpoint"><a class="header" href="#vst-iconnectionpoint"><a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IConnectionPoint.html">Vst:: IConnectionPoint</a></a></h2>
 <p>Connect a component with another one.</p>
 <ul>
 <li>[plug imp]</li>
@@ -219,43 +219,43 @@
 </ul>
 <p>This interface is used for the communication of separate components. Note that some hosts will place a proxy object between the components so that they are not directly connected.</p>
 <p>See also <a href="../../API+Documentation/Index.html#communication-between-the-components">Communication between the components</a>.</p>
-<h2 id="iunitinfo"><a class="header" href="#iunitinfo"><a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IUnitInfo.html">IUnitInfo</a></a></h2>
+<h2 id="vst-iunitinfo"><a class="header" href="#vst-iunitinfo"><a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IUnitInfo.html">Vst:: IUnitInfo</a></a></h2>
 <p>Edit controller extension to describe the plug-in structure.</p>
 <ul>
 <li>[plug imp]</li>
-<li>[extends <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IEditController.html">IEditController</a>]</li>
+<li>[extends <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IEditController.html">Vst:: IEditController</a>]</li>
 <li>[released: 3.0.0]</li>
 <li>[optional]</li>
 </ul>
-<p><a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IUnitInfo.html">IUnitInfo</a> describes the internal structure of the plug-in.</p>
+<p><a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IUnitInfo.html">Vst:: IUnitInfo</a> describes the internal structure of the plug-in.</p>
 <ul>
 <li>The root unit is the component itself, so getUnitCount must return 1 at least.</li>
 <li>The root unit id has to be 0 (kRootUnitId).</li>
 <li>Each unit can reference one program list - this reference must not change.</li>
 <li>Each unit that uses a program list references one program of the list.</li>
 </ul>
-<p>See also <a href="../../VST+3+Units/Index.html">VST 3 Units</a>, <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IUnitHandler.html">IUnitHandler</a>.</p>
-<h2 id="iprogramlistdata"><a class="header" href="#iprogramlistdata"><a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IProgramListData.html">IProgramListData</a></a></h2>
+<p>See also <a href="../../VST+3+Units/Index.html">VST 3 Units</a>, <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IUnitHandler.html">Vst:: IUnitHandler</a>.</p>
+<h2 id="vst-iprogramlistdata"><a class="header" href="#vst-iprogramlistdata"><a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IProgramListData.html">Vst:: IProgramListData</a></a></h2>
 <p>Component extension to access program list data.</p>
 <ul>
 <li>[plug imp]</li>
-<li>[extends <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponent.html">IComponent</a>]</li>
+<li>[extends <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponent.html">Vst:: IComponent</a>]</li>
 <li>[released: 3.0.0]</li>
 <li>[optional]</li>
 </ul>
-<p>A component can support program list data via this interface or/and unit preset data (<a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IUnitData.html">IUnitData</a>).</p>
-<p>See also <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IUnitData.html">IUnitData</a>, <a href="../../Complex+Structures/Index.html">Complex Plug-in Structures / Multi-timbral Instruments</a>.</p>
-<h2 id="iunitdata"><a class="header" href="#iunitdata"><a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IUnitData.html">IUnitData</a></a></h2>
+<p>A component can support program list data via this interface or/and unit preset data (<a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IUnitData.html">Vst:: IUnitData</a>).</p>
+<p>See also <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IUnitData.html">Vst:: IUnitData</a>, <a href="../../Complex+Structures/Index.html">Complex Plug-in Structures / Multi-timbral Instruments</a>.</p>
+<h2 id="vst-iunitdata"><a class="header" href="#vst-iunitdata"><a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IUnitData.html">Vst:: IUnitData</a></a></h2>
 <p>Component extension to access unit data.</p>
 <ul>
 <li>[plug imp]</li>
-<li>[extends <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponent.html">IComponent</a>]</li>
+<li>[extends <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponent.html">Vst:: IComponent</a>]</li>
 <li>[released: 3.0.0]</li>
 <li>[optional]</li>
 </ul>
-<p>A component can support unit preset data via this interface or program list data (<a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IProgramListData.html">IProgramListData</a>).</p>
+<p>A component can support unit preset data via this interface or program list data (<a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IProgramListData.html">Vst:: IProgramListData</a>).</p>
 <p>See also <a href="../../Presets+Program+Lists/Index.html">Presets &amp; Program Lists</a>.</p>
-<h2 id="iplugview"><a class="header" href="#iplugview"><a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPlugView.html">IPlugView</a></a></h2>
+<h2 id="steinberg-iplugview"><a class="header" href="#steinberg-iplugview"><a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPlugView.html">Steinberg:: IPlugView</a></a></h2>
 <p>Plug-in definition of a view.</p>
 <ul>
 <li>[plug imp]</li>
@@ -286,11 +286,11 @@ Note that if the host calls IPlugView::getSize () before calling IPlugView::onSi
 </ul>
 <blockquote>
 <p>ⓘ <strong>Note</strong><br />
-Please only resize the platform representation of the view when <a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPlugView.html#a3e741e55c2c047a4cc10f102661f5654">IPlugView::onSize()</a> is called.</p>
+Please only resize the platform representation of the view when <a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPlugView.html#a3e741e55c2c047a4cc10f102661f5654">Steinberg:: IPlugView::onSize()</a> is called.</p>
 </blockquote>
 <h3 id="keyboard-handling"><a class="header" href="#keyboard-handling">Keyboard handling</a></h3>
-<p>The plug-in view receives keyboard events from the host. A view implementation must not handle keyboard events by the means of platform callbacks, but let the host pass them to the view. The host depends on a proper return value when <a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPlugView.html#a759b576f046e699c84dc07d579600b1b">IPlugView::onKeyDown</a> is called, otherwise the plug-in view may cause a malfunction of the host's key command handling.</p>
-<p>See also <a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPlugFrame.html">IPlugFrame</a>, <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/group__platformUIType.html">Platform UI Types</a>.</p>
+<p>The plug-in view receives keyboard events from the host. A view implementation must not handle keyboard events by the means of platform callbacks, but let the host pass them to the view. The host depends on a proper return value when <a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPlugView.html#a759b576f046e699c84dc07d579600b1b">Steinberg:: IPlugView::onKeyDown</a> is called, otherwise the plug-in view may cause a malfunction of the host's key command handling.</p>
+<p>See also <a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPlugFrame.html">Steinberg:: IPlugFrame</a>, <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/group__platformUIType.html">Platform UI Types</a>.</p>
 
                     </main>
 
@@ -322,7 +322,7 @@ Please only resize the platform representation of the view when <a href="https:/
             
             <div id="footer" class="footer">
                 <!-- Here comes the footer when available -->
-                © 2024 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
+                © 2025 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href="https://o.steinberg.net/en/extras/about.html" target="_blank">About</a> |
                 <a href="https://o.steinberg.net/en/extras/privacy_policy.html" target="_blank">Privacy Policy</a> |
                 <a href="https://o.steinberg.net/en/extras/terms_conditions.html" target="_blank">Legal Terms</a> 

@@ -201,10 +201,10 @@ The purposes of units are:</p>
 <p>The root unit of this hierarchy is always present (explicit or implicit) and has ID '<strong>0</strong>'. A plug-in that does not define any further units simply consist of unit '<strong>0</strong>'.</p>
 </li>
 <li>
-<p>The plug-in has to assign a unique ID to each further unit it defines and must provide a suitable name for it to be shown in the GUI (<a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IUnitInfo.html">Steinberg::Vst::UnitInfo</a>).</p>
+<p>The plug-in has to assign a unique ID to each further unit it defines and must provide a suitable name for it to be shown in the GUI (<a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IUnitInfo.html">Vst::UnitInfo</a>).</p>
 </li>
 <li>
-<p>Each unit can 'contain' parameters. All parameters of the plug-in are managed and published by the <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IEditController.html">Steinberg::Vst::IEditController</a>, but each parameter can be associated with a unit. (<a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/structSteinberg_1_1Vst_1_1ParameterInfo.html#a4d2e0574df0f6d36f26fae1ad759a14f">Steinberg::Vst::ParameterInfo::unitId</a>). A host can organize the list of parameters in a tree view reflecting the unit hierarchy as nodes.</p>
+<p>Each unit can 'contain' parameters. All parameters of the plug-in are managed and published by the <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IEditController.html">Vst:: IEditController</a>, but each parameter can be associated with a unit. (<a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/structSteinberg_1_1Vst_1_1ParameterInfo.html#a4d2e0574df0f6d36f26fae1ad759a14f">Vst:: ParameterInfo::unitId</a>). A host can organize the list of parameters in a tree view reflecting the unit hierarchy as nodes.</p>
 </li>
 <li>
 <p>Each unit can be associated with a program list. (See <a href="../Complex+Structures/Index.html">Complex Plug-in Structures / Multi-timbral Instruments</a>)</p>
@@ -214,8 +214,8 @@ The purposes of units are:</p>
 </li>
 </ul>
 <p><img src="../../../resources/tech_doc_13.png" alt="Tech_doc_13" /></p>
-<p>Most things of interest in regard to units are GUI related, so the access interface <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IUnitInfo.html">Steinberg::Vst::IUnitInfo</a> needs to be implemented as extension of the edit controller.</p>
-<p>See also <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IUnitInfo.html">Steinberg::Vst::IUnitInfo</a>, <a href="../Presets+Program+Lists/Index.html">Presets &amp; Program Lists</a>.</p>
+<p>Most things of interest in regard to units are GUI related, so the access interface <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IUnitInfo.html">Vst:: IUnitInfo</a> needs to be implemented as extension of the edit controller.</p>
+<p>See also <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IUnitInfo.html">Vst:: IUnitInfo</a>, <a href="../Presets+Program+Lists/Index.html">Presets &amp; Program Lists</a>.</p>
 <h2 id="examples"><a class="header" href="#examples">Examples</a></h2>
 <ul>
 <li>
@@ -262,7 +262,7 @@ The purposes of units are:</p>
             
             <div id="footer" class="footer">
                 <!-- Here comes the footer when available -->
-                © 2024 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
+                © 2025 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href="https://o.steinberg.net/en/extras/about.html" target="_blank">About</a> |
                 <a href="https://o.steinberg.net/en/extras/privacy_policy.html" target="_blank">Privacy Policy</a> |
                 <a href="https://o.steinberg.net/en/extras/terms_conditions.html" target="_blank">Legal Terms</a> 

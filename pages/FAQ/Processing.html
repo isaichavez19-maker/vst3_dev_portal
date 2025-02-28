@@ -173,7 +173,7 @@
 <li><a href="#q-how-does-it-work-with-silence-flags">Q: How does it work with silence flags?</a></li>
 <li><a href="#q-how-report-to-the-host-that-the-plug-in-latency-has-changed">Q: How report to the host that the plug-in latency has changed?</a></li>
 <li><a href="#q-how-report-to-the-host-that-the-plug-in-arrangement-has-changed">Q: How report to the host that the plug-in arrangement has changed?</a></li>
-<li><a href="#q-can-iaudioprocessorsetprocessing-be-called-without-any-iaudioprocessorprocess-call">Q: Can IAudioProcessor::setProcessing be called without any IAudioProcessor::process call?</a></li>
+<li><a href="#q-can-vst-iaudioprocessorsetprocessing-be-called-without-any-vst-iaudioprocessorprocess-call">Q: Can Vst:: IAudioProcessor::setProcessing be called without any Vst:: IAudioProcessor::process call?</a></li>
 <li><a href="#q-how-to-make-sure-that-a-plug-in-is-always-processed">Q: How to make sure that a plug-in is always processed?</a></li>
 <li><a href="#q-can-icomponentgetstatesetstate-be-called-during-processing">Q: Can IComponent::getState()/setState() be called during processing?</a></li>
 <li><a href="#q-how-can-a-plug-in-be-informed-that-it-is-currently-processed-in-offline-processing">Q: How can a plug-in be informed that it is currently processed in offline processing?</a></li>
@@ -181,9 +181,9 @@
 </ul>
 <hr />
 <h2 id="q-how-does-audio-processing-bypass-work"><a class="header" href="#q-how-does-audio-processing-bypass-work">Q: How does Audio Processing Bypass work?</a></h2>
-<p>In order to implement audio process bypassing, the plug-in can export a parameter which is additionally and exclusively flagged as having the attribute kIsBypass. When the user activates the plug-in bypass in the host, like all parameter changes, this is sent as part of the parameter data passed to the <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IAudioProcessor.html#a6b98eb31cf38ba96a28b303c13c64e13">IAudioProcessor::process</a> method.</p>
+<p>In order to implement audio process bypassing, the plug-in can export a parameter which is additionally and exclusively flagged as having the attribute kIsBypass. When the user activates the plug-in bypass in the host, like all parameter changes, this is sent as part of the parameter data passed to the <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IAudioProcessor.html#a6b98eb31cf38ba96a28b303c13c64e13">Vst:: IAudioProcessor::process</a> method.</p>
 <p>The implementation of the bypass feature is entirely the responsibility of the plug-in:</p>
-<p>The <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IAudioProcessor.html#a6b98eb31cf38ba96a28b303c13c64e13">IIAudioProcessor::process</a> method will continue to be called. The plug-in must take care of artifact-free switching (ramping/fade-in/fade-out, parallel processing or algorithm changes) and must also provide a delayed action if the plug-in has a latency and be sure that the output buffers are providing a copy of the input buffers (eventually delayed). No need to copy the input buffers to the output buffers when the pointers are the same and the plug-in has no latency!</p>
+<p>The <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IAudioProcessor.html#a6b98eb31cf38ba96a28b303c13c64e13">Vst:: IAudioProcessor::process</a> method will continue to be called. The plug-in must take care of artifact-free switching (ramping/fade-in/fade-out, parallel processing or algorithm changes) and must also provide a delayed action if the plug-in has a latency and be sure that the output buffers are providing a copy of the input buffers (eventually delayed). No need to copy the input buffers to the output buffers when the pointers are the same and the plug-in has no latency!</p>
 <p>This is the choice of the plug-in to handle/process the bypass (like any other parameters) sample-accurate (by using the sampleOffset of the parameter change) or audio block based (not recommended when the audio block length is too large &gt; 1024).</p>
 <p>During bypass the process is still called, but if not, for some reason, the host may call a flush (using process call with null audio buffer).</p>
 <blockquote>
@@ -225,7 +225,7 @@ Vst::IAudioProcessor::process (...);
 <p>No. Same as <a href="#q-can-the-maximum-sample-block-size-change-while-the-plug-in-is-processing">Q: Can the maximum sample block size change while the plug-in is processing?</a></p>
 <hr />
 <h2 id="q-can-the-host-call-the-process-function-without-audio-buffers"><a class="header" href="#q-can-the-host-call-the-process-function-without-audio-buffers">Q: Can the host call the process function without Audio buffers?</a></h2>
-<p>Yes, the host can call <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IAudioProcessor.html#a6b98eb31cf38ba96a28b303c13c64e13">IAudioProcessor::process</a> without buffers (numInputs and numOutputs are zeroed), in order to flush parameters (from host to plug-in).</p>
+<p>Yes, the host can call <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IAudioProcessor.html#a6b98eb31cf38ba96a28b303c13c64e13">Vst:: IAudioProcessor::process</a> without buffers (numInputs and numOutputs are zeroed), in order to flush parameters (from host to plug-in).</p>
 <hr />
 <h2 id="q-what-is-a-side-chain"><a class="header" href="#q-what-is-a-side-chain">Q: What is a Side-Chain?</a></h2>
 <p>See <a href="../Technical+Documentation/Change+History/3.0.0/Multiple+Dynamic+IO.html">[3.0.0] Multiple Dynamic I/O Support</a></p>
@@ -249,12 +249,12 @@ Vst::IAudioProcessor::process (...);
 <p>The plug-in should call from the editController its component handler <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponentHandler.html#a1f283573728cf0807224c5ebdf3ec3a6">restartComponent</a> function with flag kLatencyChanged:</p>
 <pre><code class="language-c++">componentHandler-&gt;restartComponent (kLatencyChanged);
 </code></pre>
-<p>The host will call <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IAudioProcessor.html#af8884671ccefe68e0a86e72413a0fcf8">Vst::IAudioProcessor-&gt;getLatencySamples()</a> in order to check the new latency and adapt its latency compensation if supported.</p>
+<p>The host will call <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IAudioProcessor.html#af8884671ccefe68e0a86e72413a0fcf8">Vst:: IAudioProcessor::getLatencySamples()</a> in order to check the new latency and adapt its latency compensation if supported.</p>
 <hr />
 <h2 id="q-how-report-to-the-host-that-the-plug-in-arrangement-has-changed"><a class="header" href="#q-how-report-to-the-host-that-the-plug-in-arrangement-has-changed">Q: How report to the host that the plug-in arrangement has changed?</a></h2>
 <p>See <a href="../Technical+Documentation/Change+History/3.0.0/Multiple+Dynamic+IO.html">[3.0.0] Multiple Dynamic I/O Support</a></p>
 <hr />
-<h2 id="q-can-iaudioprocessorsetprocessing-be-called-without-any-iaudioprocessorprocess-call"><a class="header" href="#q-can-iaudioprocessorsetprocessing-be-called-without-any-iaudioprocessorprocess-call">Q: Can IAudioProcessor::setProcessing be called without any IAudioProcessor::process call?</a></h2>
+<h2 id="q-can-vst-iaudioprocessorsetprocessing-be-called-without-any-vst-iaudioprocessorprocess-call"><a class="header" href="#q-can-vst-iaudioprocessorsetprocessing-be-called-without-any-vst-iaudioprocessorprocess-call">Q: Can <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IAudioProcessor.html#af252fd721b195b793f3a5dfffc069401">Vst:: IAudioProcessor::setProcessing</a> be called without any <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IAudioProcessor.html#a6b98eb31cf38ba96a28b303c13c64e13">Vst:: IAudioProcessor::process</a> call?</a></h2>
 <p>Yes, it depends how the DAW is supporting its processing, the following call sequence is legal:</p>
 <pre><code class="language-c++">Vst::IAudioProcessor::process (...);
 Vst::IAudioProcessor::setProcessing (false);
@@ -266,19 +266,19 @@ Vst::IAudioProcessor::process (...);
 </code></pre>
 <hr />
 <h2 id="q-how-to-make-sure-that-a-plug-in-is-always-processed"><a class="header" href="#q-how-to-make-sure-that-a-plug-in-is-always-processed">Q: How to make sure that a plug-in is always processed?</a></h2>
-<p>If your plug-in always generates sound without need of any audio input, you can add the category "Generator" as subCategories (for example use <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/group__plugType.html#ga09060af560cf34b87e14d5dbd839ad52">kFxGenerator</a>) or you can return kInfiniteTail in the function <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IAudioProcessor.html#abb6b16a66b2356a4038a778b815dbbf3">IAudioProcessor::getTailSamples</a></p>
+<p>If your plug-in always generates sound without need of any audio input, you can add the category "Generator" as subCategories (for example, use <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/group__plugType.html#ga09060af560cf34b87e14d5dbd839ad52">kFxGenerator</a>) or you can return kInfiniteTail in the function <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IAudioProcessor.html#abb6b16a66b2356a4038a778b815dbbf3">Vst:: IAudioProcessor::getTailSamples</a></p>
 <hr />
 <h2 id="q-can-icomponentgetstatesetstate-be-called-during-processing"><a class="header" href="#q-can-icomponentgetstatesetstate-be-called-during-processing">Q: Can IComponent::getState()/setState() be called during processing?</a></h2>
-<p>Yes, setState and getState are called normally from the UI Thread when the plug-in is used in a realtime context, in an offline context set/getState can be called in the same thread as the process call. Check the workflow diagram Audio Processor Call Sequence for more info about in which state which interfaces are called.</p>
+<p>Yes, setState and getState are called normally from the <strong>UI Thread</strong> when the plug-in is used in a realtime context, in an offline context set/getState can be called in the same thread as the process call. Check the workflow diagram Audio Processor Call Sequence for more info about in which state which interfaces are called.</p>
 <hr />
 <h2 id="q-how-can-a-plug-in-be-informed-that-it-is-currently-processed-in-offline-processing"><a class="header" href="#q-how-can-a-plug-in-be-informed-that-it-is-currently-processed-in-offline-processing">Q: How can a plug-in be informed that it is currently processed in offline processing?</a></h2>
-<p>When a plug-in is used in an offline processing context (which is the case with Cubase 9.5/Nuendo 8 feature: Direct Offline Processing), its component will be initialized with <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponent.html#a4618e7358890d549f990010bea4a4137">IComponent::setIoMode</a> (Vst::kOfflineProcessing) (see The Simple Mode).
+<p>When a plug-in is used in an offline processing context (which is the case with Cubase 9.5/Nuendo 8 feature: Direct Offline Processing), its component will be initialized with <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponent.html#a4618e7358890d549f990010bea4a4137">Vst:: IComponent::setIoMode</a> (Vst::kOfflineProcessing) (see The Simple Mode).
 The offline processing mode (passed in the process call) is used when:</p>
 <ul>
 <li>the user exports audio (downmix)</li>
 <li>direct offline processing feature</li>
 </ul>
-<p>With <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponent.html#a4618e7358890d549f990010bea4a4137">IComponent::setIoMode</a> (Vst::kOfflineProcessing) you are able to differentiate between export and DOP (Direct Offline Processing).</p>
+<p>With <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponent.html#a4618e7358890d549f990010bea4a4137">Vst:: IComponent::setIoMode</a> (Vst::kOfflineProcessing) you are able to differentiate between export and DOP (Direct Offline Processing).</p>
 <p><a href="https://www.youtube.com/watch?v=62yMkHRfd2I"><img src="https://i.ytimg.com/vi/62yMkHRfd2I/maxresdefault.jpg" alt="getting_started_vid_1" /></a></p>
 <p>Direct Offline Processing since Cubase 9.5</p>
 <hr />
@@ -315,7 +315,7 @@ The offline processing mode (passed in the process call) is used when:</p>
             
             <div id="footer" class="footer">
                 <!-- Here comes the footer when available -->
-                © 2024 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
+                © 2025 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href="https://o.steinberg.net/en/extras/about.html" target="_blank">About</a> |
                 <a href="https://o.steinberg.net/en/extras/privacy_policy.html" target="_blank">Privacy Policy</a> |
                 <a href="https://o.steinberg.net/en/extras/terms_conditions.html" target="_blank">Legal Terms</a> 

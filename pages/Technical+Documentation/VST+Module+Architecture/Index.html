@@ -225,7 +225,7 @@ So a lot of different classes (with different class identifiers) can implement t
 </ul>
 <p>When neither of these is specified, the interface can be used in both ways.</p>
 <h3 id="versioning-and-inheritance"><a class="header" href="#versioning-and-inheritance">Versioning and inheritance</a></h3>
-<p>Unlike C++ classes, interfaces do not use inheritance to express specializations of objects. Inheritance is used for versioning only. One of the strict rules is that once an interface has been released, it must never change again. Adding new functionality to an interface requires a new version (usually an ordinal number is added to its name in this case, for example <a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPluginFactory3.html">IPluginFactory3</a> adds new features to <a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPluginFactory2.html">IPluginFactory2</a>).<br />
+<p>Unlike C++ classes, interfaces do not use inheritance to express specializations of objects. Inheritance is used for versioning only. One of the strict rules is that once an interface has been released, it must never change again. Adding new functionality to an interface requires a new version (usually an ordinal number is added to its name in this case, for example, <a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPluginFactory3.html">Steinberg:: IPluginFactory3</a> adds new features to <a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPluginFactory2.html">Steinberg:: IPluginFactory2</a>).<br />
 A new version inherits the old version(s) of the interface, so the old and the new methods are combined in one interface. This is why specializations need to be modeled as separate interfaces! If a specialized interface were to inherit from the basic interface as well, an implementation class that needs to implement all of these interfaces would inherit the base interface twice, causing the compiler to run into ambiguities. So the specialization relation to a basic interface can only be expressed in the documentation.</p>
 <blockquote>
 <ul>
@@ -241,8 +241,8 @@ A new version inherits the old version(s) of the interface, so the old and the n
 <p>Basic Interfaces</p>
 <ul>
 <li><a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1FUnknown.html">Steinberg::FUnknown</a></li>
-<li><a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPluginBase.html">Steinberg::IPluginBase</a></li>
-<li><a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPluginFactory.html">Steinberg::IPluginFactory</a></li>
+<li><a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPluginBase.html">Steinberg:: IPluginBase</a></li>
+<li><a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPluginFactory.html">Steinberg:: IPluginFactory</a></li>
 </ul>
 <p>Helper Classes</p>
 <ul>
@@ -253,7 +253,7 @@ A new version inherits the old version(s) of the interface, so the old and the n
 <h2 id="plug-ins"><a class="header" href="#plug-ins">Plug-ins</a></h2>
 <h3 id="module-factory"><a class="header" href="#module-factory">Module Factory</a></h3>
 <p>A module (Windows: Dynamic Link Library, macOS: Mach-O Bundle, Linux: package) contains the implementation of one or more components (e.g. VST 3 effects). A <strong>VST-MA</strong> module must contain a class factory where meta-data and create-methods for the components are registered.<br />
-The host has access to this factory through the <a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPluginFactory.html">Steinberg::IPluginFactory</a> interface. This is the anchor point for the module and it is realized as a C-style export function named <a href="https://steinbergmedia.github.io/vst3_doc/base/group__pluginBase.html#ga843ac97a36dfc717dadaa7192c7e8330">GetPluginFactory</a>. You can find an export definition file in the SDK - <em>public.sdk/source/main/winexport.def</em>  (<em>public.sdk/source/main/macexport.exp</em>) which can be used to export this function or you could use the macro SMTG_EXPORT_SYMBOL directly in cpp file (check <em>public.sdk/source/main/dllmain.cpp</em> for example).<br />
+The host has access to this factory through the <a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPluginFactory.html">Steinberg:: IPluginFactory</a> interface. This is the anchor point for the module and it is realized as a C-style export function named <a href="https://steinbergmedia.github.io/vst3_doc/base/group__pluginBase.html#ga843ac97a36dfc717dadaa7192c7e8330">GetPluginFactory</a>. You can find an export definition file in the SDK - <em>public.sdk/source/main/winexport.def</em>  (<em>public.sdk/source/main/macexport.exp</em>) which can be used to export this function or you could use the macro SMTG_EXPORT_SYMBOL directly in cpp file (check <em>public.sdk/source/main/dllmain.cpp</em> for example).<br />
 <a href="https://steinbergmedia.github.io/vst3_doc/base/group__pluginBase.html#ga843ac97a36dfc717dadaa7192c7e8330">GetPluginFactory</a> is declared as follows:</p>
 <pre><code class="language-c++">SMTG_EXPORT_SYMBOL IPluginFactory* PLUGIN_API GetPluginFactory ();
 </code></pre>
@@ -313,7 +313,7 @@ A class is also described with a name and it has a unique id.</p>
 <li>Since the factory can create any number of classes, one component library can contain multiple components of any type.</li>
 </ul>
 <h3 id="ipluginbase"><a class="header" href="#ipluginbase">IPluginBase</a></h3>
-<p>The entry-point interface for any component class is <a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPluginBase.html">Steinberg::IPluginBase</a>. The host uses this interface to initialize and to terminate the plug-in component. When the host initializes the plug-in, it <strong>has to pass</strong> a so called context. This context contains any interface to the host that the plug-in will need to work.</p>
+<p>The entry-point interface for any component class is <a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPluginBase.html">Steinberg:: IPluginBase</a>. The host uses this interface to initialize and to terminate the plug-in component. When the host initializes the plug-in, it <strong>has to pass</strong> a so called context. This context contains any interface to the host that the plug-in will need to work.</p>
 <h3 id="purpose-specific-interfaces"><a class="header" href="#purpose-specific-interfaces">Purpose-specific interfaces</a></h3>
 <p>Each plug-in category (VST 3 Effects, Project import/export Filters, Audio Codecs, etc...) defines its own set of purpose-specific interfaces. These are not part of the basic <strong>VST-MA</strong> layer.</p>
 <h3 id="unicode"><a class="header" href="#unicode">Unicode</a></h3>
@@ -369,7 +369,7 @@ When undefining Unicode, the class IDs also revert to the old ones.</p>
             
             <div id="footer" class="footer">
                 <!-- Here comes the footer when available -->
-                © 2024 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
+                © 2025 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href="https://o.steinberg.net/en/extras/about.html" target="_blank">About</a> |
                 <a href="https://o.steinberg.net/en/extras/privacy_policy.html" target="_blank">Privacy Policy</a> |
                 <a href="https://o.steinberg.net/en/extras/terms_conditions.html" target="_blank">Legal Terms</a> 

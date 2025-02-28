@@ -354,7 +354,7 @@ if (data.inputs[0].silenceFlags != 0)
 }
 </code></pre>
 <h3 id="add-storerestore-state"><a class="header" href="#add-storerestore-state">Add store/restore state</a></h3>
-<p>The <em>Processor</em> part represents the state of the plug-in, so it is its job to implement the <strong>getState</strong>/<strong>setState</strong> method used by the host to save/load projects and presets. The <em>Controller</em> part gets the <em>Processor</em> state too in its <strong>setComponentState</strong> method which allows to synchronize its parameters too (used for example by the UI).</p>
+<p>The <em>Processor</em> part represents the state of the plug-in, so it is its job to implement the <strong>getState</strong>/<strong>setState</strong> method used by the host to save/load projects and presets. The <em>Controller</em> part gets the <em>Processor</em> state too in its <strong>setComponentState</strong> method which allows to synchronize its parameters too (for example, used by the UI).</p>
 <ol>
 <li>In the file <em>plugprocessor.cpp</em>, add the <strong>mGain</strong> value to the state stream given by the host in the <strong>getState</strong> method which will save it as a project or preset.<br />
 The helper class <strong>IBStreamer</strong> could be used for handling the <strong>IBStream</strong> given by the host.</li>
@@ -711,7 +711,7 @@ tresult PLUGIN_API PlugProcessor::process (ProcessData&amp; data)
             
             <div id="footer" class="footer">
                 <!-- Here comes the footer when available -->
-                © 2024 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
+                © 2025 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href="https://o.steinberg.net/en/extras/about.html" target="_blank">About</a> |
                 <a href="https://o.steinberg.net/en/extras/privacy_policy.html" target="_blank">Privacy Policy</a> |
                 <a href="https://o.steinberg.net/en/extras/terms_conditions.html" target="_blank">Legal Terms</a> 

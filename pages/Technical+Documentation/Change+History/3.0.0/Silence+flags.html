@@ -171,14 +171,14 @@
 <hr />
 <h2 id="introduction"><a class="header" href="#introduction">Introduction</a></h2>
 <p>Managing large plug-in sets and multiple virtual instruments on typical studio computer systems can often be difficult because of CPU performance limits. <strong>VST 3</strong> helps to improve overall performance by applying processing to plug-ins only when audio signals are present on their respective inputs. Instead of always processing input signals, <strong>VST 3</strong> plug-ins can apply their processing economically and only when it is needed.</p>
-<p>The feature is supported by the <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IAudioProcessor.html">IAudioProcessor</a> interface of the plug-in.</p>
+<p>The feature is supported by the <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IAudioProcessor.html">Vst:: IAudioProcessor</a> interface of the plug-in.</p>
 <p>The silence flags is part of the <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/structSteinberg_1_1Vst_1_1AudioBusBuffers.html">AudioBusBuffers</a> (<a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/structSteinberg_1_1Vst_1_1AudioBusBuffers.html#a2c73b926e22ddb05193b6edd16a008f8">silenceFlags</a>) passed from the host to the plug-in and back to the host in the process call:</p>
 <ul>
 <li>MyPluginProcessor::process (ProcessData&amp; data)</li>
 <li>for the inputs: check this flag: <strong>data.inputs[0]silenceFlags</strong></li>
 <li>for the outputs: set this when the plug-in generates or notsilence: <strong>data.outputs[0].silenceFlags</strong></li>
 </ul>
-<p>The silence flags are a bitmask where each bit corresponds to one channel of a bus (for example L and R for stereo bus).</p>
+<p>The silence flags are a bitmask where each bit corresponds to one channel of a bus (for example, L and R for stereo bus).</p>
 <blockquote>
 <p>ⓘ <strong>Note</strong><br />
 The host has the responsibility to clear the input buffers (set to something near zero, like 10e-7, to prevent de-normalization issue) when it enables the silence flags (the output silence flags will be set by the host to no silence (=0)), on the other side the plug-in, if it produces silence output, has the responsibility to clear (set to zero) its output buffers and to correctly set the output silence flags.</p>
@@ -215,7 +215,7 @@ The host has the responsibility to clear the input buffers (set to something nea
             
             <div id="footer" class="footer">
                 <!-- Here comes the footer when available -->
-                © 2024 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
+                © 2025 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href="https://o.steinberg.net/en/extras/about.html" target="_blank">About</a> |
                 <a href="https://o.steinberg.net/en/extras/privacy_policy.html" target="_blank">Privacy Policy</a> |
                 <a href="https://o.steinberg.net/en/extras/terms_conditions.html" target="_blank">Legal Terms</a> 

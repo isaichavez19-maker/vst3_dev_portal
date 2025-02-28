@@ -165,9 +165,9 @@
 <li>
 <p>Interface changes:</p>
 <ul>
-<li>New <a href="../Technical+Documentation/Data+Exchange/Index.html">Vst::IDataExchangeHandler / Vst::IDataExchangeReceiver</a>: API to send data from the realtime processing function to the controller in a safe and efficient way.</li>
-<li>New <a href="../Technical+Documentation/Change+History/3.7.9/IComponentHandlerSystemTime.html">Vst::IComponentHandlerSystemTime</a>: API to query the system time from the controller.</li>
-<li>New on Linux: <a href="../Technical+Documentation/Provide+A+Runloop+On+Linux/Index.html">Query IRunLoop from the host context of IPlugFactory3</a>.</li>
+<li>New <a href="../Technical+Documentation/Data+Exchange/Index.html">Vst:: IDataExchangeHandler / Vst::IDataExchangeReceiver</a>: API to send data from the realtime processing function to the controller in a safe and efficient way.</li>
+<li>New <a href="../Technical+Documentation/Change+History/3.7.9/IComponentHandlerSystemTime.html">Vst:: IComponentHandlerSystemTime</a>: API to query the system time from the controller.</li>
+<li>New on Linux: <a href="../Technical+Documentation/Provide+A+Runloop+On+Linux/Index.html">Query IRunLoop from the host context of IPluginFactory3</a>.</li>
 <li>New Flags/Enums:
 <ul>
 <li>New speakers: kSpeakerLw and kSpeakerRw for Left and Right Wide</li>
@@ -225,14 +225,14 @@
 <p><a href="../What+is+the+VST+3+SDK/Plug-in+Examples.html">Examples</a>:</p>
 <ul>
 <li>New VST 3 plug-ins example <strong>DataExchange</strong> showing the use of the VST Data Exchange API: <em>public.sdk/samples/vst/dataexchange</em>.</li>
-<li>Update Hostchecker plug-in to check new interfaces: <a href="../Technical+Documentation/Data+Exchange/Index.html">Vst::IDataExchangeHandler / Vst::IDataExchangeReceiver</a> / <a href="../Technical+Documentation/Change+History/3.7.9/IComponentHandlerSystemTime.html">Vst::IComponentHandlerSystemTime</a>.</li>
+<li>Update Hostchecker plug-in to check new interfaces: <a href="../Technical+Documentation/Data+Exchange/Index.html">Vst:: IDataExchangeHandler / Vst::IDataExchangeReceiver</a> / <a href="../Technical+Documentation/Change+History/3.7.9/IComponentHandlerSystemTime.html">Vst:: IComponentHandlerSystemTime</a>.</li>
 </ul>
 </li>
 <li>
 <p>Helpers classes:</p>
 <ul>
 <li>New helper for system time <em>public.sdk/source/vst/utility/systemtime.cpp</em>.</li>
-<li>New VST Data Exchange API Helper implementing <a href="../Technical+Documentation/Data+Exchange/Index.html">Vst::IDataExchangeHandler</a>: <em>public.sdk/source/vst/utility/dataexchange.cpp</em>.</li>
+<li>New VST Data Exchange API Helper implementing <a href="../Technical+Documentation/Data+Exchange/Index.html">Vst:: IDataExchangeHandler</a>: <em>public.sdk/source/vst/utility/dataexchange.cpp</em>.</li>
 <li>Fix "Missing field initializer" warning in vstparameters.h <a href="https://github.com/steinbergmedia/vst3_public_sdk/pull/60">(PR#60)</a>.</li>
 <li>Fix buffer overflow/memory corruption (<a href="https://github.com/steinbergmedia/vst3_pluginterfaces/issues/15">Issue#15</a>).</li>
 <li>Fix undefined behavior - load of misaligned address (<a href="https://github.com/steinbergmedia/vst3_pluginterfaces/issues/64">Issue#64</a>).</li>
@@ -283,7 +283,7 @@
             
             <div id="footer" class="footer">
                 <!-- Here comes the footer when available -->
-                © 2024 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
+                © 2025 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href="https://o.steinberg.net/en/extras/about.html" target="_blank">About</a> |
                 <a href="https://o.steinberg.net/en/extras/privacy_policy.html" target="_blank">Privacy Policy</a> |
                 <a href="https://o.steinberg.net/en/extras/terms_conditions.html" target="_blank">Legal Terms</a> 

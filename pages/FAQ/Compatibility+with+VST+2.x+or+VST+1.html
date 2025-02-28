@@ -229,7 +229,7 @@ VstIntPtr Vst2Wrapper::vendorSpecific (VstInt32 lArg, VstIntPtr lArg2, void* ptr
 </code></pre>
 <hr />
 <h2 id="q-how-can-i-support-projects-which-were-saved-with-the-vst-2-version-of-my-plug-in"><a class="header" href="#q-how-can-i-support-projects-which-were-saved-with-the-vst-2-version-of-my-plug-in">Q: How can I support projects which were saved with the VST 2 version of my plug-in?</a></h2>
-<p>The host will call <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponent.html#a77ac39bcc5c4b15818b1a87de2573805">IComponent::setState()</a> and <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IEditController.html#a4c2e1cafd88143fda2767a9c7ba5d48f">IEditController::setComponentState()</a> with the complete FXB/FXP stream. You have to extract your old state from that, for this the SDK provides a helper function <a href="https://steinbergmedia.github.io/vst3_doc/vstsdk/namespaceVST3.html#aadc6b99109a9b056a0176f49f9220822">VST3::tryVst2StateLoad</a>.</p>
+<p>The host will call <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IComponent.html#a77ac39bcc5c4b15818b1a87de2573805">Vst:: IComponent::setState()</a> and <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IEditController.html#a4c2e1cafd88143fda2767a9c7ba5d48f">Vst:: IEditController::setComponentState()</a> with the complete FXB/FXP stream. You have to extract your old state from that, for this the SDK provides a helper function <a href="https://steinbergmedia.github.io/vst3_doc/vstsdk/namespaceVST3.html#aadc6b99109a9b056a0176f49f9220822">VST3::tryVst2StateLoad</a>.</p>
 <p>Here the code to add in the <strong>VST 3</strong> version when a <strong>VST 3</strong> plug-in replaces a <strong>VST 2</strong> plug-in in a Steinberg sequencer project:</p>
 <pre><code class="language-c++">#include "public.sdk/source/vst/utility/vst2persistence.h"
  
@@ -254,7 +254,7 @@ tresult <em>PLUGIN_API Processor::setState (IBStream</em> state)* in the file <e
 <h2 id="q-ive-already-released-a-vst-3-plug-in-with-a-different-uid-than-its-vst-2-equivalent-how-can-i-declare-that-the-vst-3-plug-in-can-replace-its-vst-2-plug-in-counterpart"><a class="header" href="#q-ive-already-released-a-vst-3-plug-in-with-a-different-uid-than-its-vst-2-equivalent-how-can-i-declare-that-the-vst-3-plug-in-can-replace-its-vst-2-plug-in-counterpart">Q: I've already released a VST 3 plug-in with a different UID than its VST 2 equivalent. How can I declare that the VST 3 plug-in can replace its VST 2 plug-in counterpart?</a></h2>
 <p>You can use the compatibility array of the <a href="../Technical+Documentation/VST+Module+Architecture/ModuleInfo-JSON.html">moduleinfo.json</a> file.
 There, you use the UID of your <strong>VST 3</strong> audio effect class as the "New" UID and put the UID of your <strong>VST 2</strong> plug-in in the "Old" array.</p>
-<p>If you cannot use the <a href="../Technical+Documentation/VST+Module+Architecture/ModuleInfo-JSON.html">moduleinfo.json</a> file, you can create a class that implements the <a href="../Technical+Documentation/Change+History/3.7.5/ModuleInfo.html">IPluginCompatibility</a> interface which you must provide to the host via your plug-in factory.</p>
+<p>If you cannot use the <a href="../Technical+Documentation/VST+Module+Architecture/ModuleInfo-JSON.html">moduleinfo.json</a> file, you can create a class that implements the <a href="../Technical+Documentation/Change+History/3.7.5/ModuleInfo.html">Vst:: IPluginCompatibility</a> interface which you must provide to the host via your plug-in factory.</p>
 <hr />
 <h2 id="q-in-vst-2-the-editor-was-able-to-access-the-processing-part-named-effect-directly-how-can-i-do-this-in-vst-3"><a class="header" href="#q-in-vst-2-the-editor-was-able-to-access-the-processing-part-named-effect-directly-how-can-i-do-this-in-vst-3">Q: In VST 2 the editor was able to access the processing part, named effect, directly. How can I do this in VST 3?</a></h2>
 <p>You cannot and more importantly must not do this. The processing part and user interface part communicate via a messaging system.<br />
@@ -264,7 +264,7 @@ See <a href="#q-how-should-i-communicate-between-the-processing-and-the-user-int
 <p>Yes and it is essential to support this for automation. For details, please see <a href="../Technical+Documentation/Parameters+Automation/Index.html">Parameters and Automation</a></p>
 <hr />
 <h2 id="q-does-vst-3-include-variable-inputoutput-processing-like-processvariableio-of-vst-2"><a class="header" href="#q-does-vst-3-include-variable-inputoutput-processing-like-processvariableio-of-vst-2">Q: Does VST 3 include variable Input/Output processing like processVariableIo of VST 2?</a></h2>
-<p>Not in version 3.1.0, we plan something in this direction later. (Note: this variableIO processing was for example for time stretching plug-ins).</p>
+<p>Not in version 3.1.0, we plan something in this direction later. (Note: this variableIO processing was, for example, for time stretching plug-ins).</p>
 <hr />
 <h2 id="q-what-is-the-equivalent-to-the-vst-2-kplugcategofflineprocess"><a class="header" href="#q-what-is-the-equivalent-to-the-vst-2-kplugcategofflineprocess">Q: What is the equivalent to the VST 2 kPlugCategOfflineProcess?</a></h2>
 <p><strong>VST 3</strong> doesn't support offline processing like it did in <strong>VST 2</strong> (this interface was exclusively used by <strong>WaveLab</strong>). But it is possible to use <strong>VST 3</strong> plug-ins in an offline context (this means that the process function can be called faster than real time: for example, during an export or a batch processing). If the plug-in doesn't support faster than realtime, it should add <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/group__plugType.html#gae58eb0aafa16197f12c1a61428fd5584">kOnlyRealTime</a> to its category.</p>
@@ -299,7 +299,7 @@ See <a href="#q-how-should-i-communicate-between-the-processing-and-the-user-int
             
             <div id="footer" class="footer">
                 <!-- Here comes the footer when available -->
-                © 2024 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
+                © 2025 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href="https://o.steinberg.net/en/extras/about.html" target="_blank">About</a> |
                 <a href="https://o.steinberg.net/en/extras/privacy_policy.html" target="_blank">Privacy Policy</a> |
                 <a href="https://o.steinberg.net/en/extras/terms_conditions.html" target="_blank">Legal Terms</a> 

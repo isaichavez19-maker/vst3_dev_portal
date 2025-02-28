@@ -175,7 +175,7 @@
 <hr />
 <h2 id="part-1-preparation"><a class="header" href="#part-1-preparation">Part 1: Preparation</a></h2>
 <p>If you have created your project with the <a href="../What+is+the+VST+3+SDK/Project+Generator.html">VST 3 Project Generator</a> and check the "<strong>Use VSTGUI</strong>" you can directly jump to <a href="#part-2-open-the-vstguiwyswyg-editor">Part 2</a> of this tutorial.</p>
-<p>Before using the inline UI editor, you must make sure that you use the <a href="https://steinbergmedia.github.io/vst3_doc/vstsdk/classSteinberg_1_1Vst_1_1EditController.html">Steinberg::Vst::EditController</a> class as a base of your own edit controller and that you have used the <a href="https://steinbergmedia.github.io/vst3_doc/vstsdk/classSteinberg_1_1Vst_1_1Parameter.html">Steinberg::Vst::Parameter</a> class or any subclass of it for your parameters.
+<p>Before using the inline UI editor, you must make sure that you use the <a href="https://steinbergmedia.github.io/vst3_doc/vstsdk/classSteinberg_1_1Vst_1_1EditController.html">Vst::EditController</a> class as a base of your own edit controller and that you have used the <a href="https://steinbergmedia.github.io/vst3_doc/vstsdk/classSteinberg_1_1Vst_1_1Parameter.html">Vst::Parameter</a> class or any subclass of it for your parameters.
 Otherwise the inline UI editor won't work properly.</p>
 <p>Next you have to add vstgui to your project. For <em>cmake</em> users, you can just add the vstgui_support library to your target:</p>
 <pre><code class="language-c++">target_link_libraries(${target} PRIVATE vstgui_support)
@@ -257,7 +257,7 @@ IPlugView* PLUGIN_API MyEditController::createView (FIDStringname)
             
             <div id="footer" class="footer">
                 <!-- Here comes the footer when available -->
-                © 2024 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
+                © 2025 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href="https://o.steinberg.net/en/extras/about.html" target="_blank">About</a> |
                 <a href="https://o.steinberg.net/en/extras/privacy_policy.html" target="_blank">Privacy Policy</a> |
                 <a href="https://o.steinberg.net/en/extras/terms_conditions.html" target="_blank">Legal Terms</a> 

@@ -163,12 +163,12 @@
 <p><strong>On this page:</strong></p>
 <ul>
 <li><a href="#query-irunloop-from-iplugframe">Query IRunLoop from IPlugFrame</a></li>
-<li><a href="#query-irunloop-from-the-host-context-of-iplugfactory3">Query IRunLoop from the host context of IPlugFactory3</a></li>
+<li><a href="#query-irunloop-from-the-host-context-of-ipluginfactory3">Query IRunLoop from the host context of IPluginFactory3</a></li>
 </ul>
 <hr />
 <p>On <em>Linux</em>, there is no global event run loop like on <em>Windows</em> and <em>macOS</em>. For this reason, the plug-in can query for an <a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1Linux_1_1IRunLoop.html">Linux::IRunLoop</a> which must be provided by the host application in two different ways.</p>
 <h2 id="query-irunloop-from-iplugframe"><a class="header" href="#query-irunloop-from-iplugframe">Query IRunLoop from IPlugFrame</a></h2>
-<p>The host application must provide the <a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1Linux_1_1IRunLoop.html">Linux::IRunLoop</a> via <a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPlugFrame.html">IPlugFrame</a> (by calling <a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPlugView.html#ab0f059918bbf55ce110fc410240de423">IPlugView::setFrame</a>).</p>
+<p>The host application must provide the <a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1Linux_1_1IRunLoop.html">Linux::IRunLoop</a> via <a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPlugFrame.html">Steinberg:: IPlugFrame</a> (by calling <a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPlugView.html#ab0f059918bbf55ce110fc410240de423">Steinberg:: IPlugView::setFrame</a>).</p>
 <pre><code class="language-cpp">// Plug-in implementation
 tresult PLUGIN_API MyPlugView::setFrame (Steinberg::IPlugFrame* frame)
 {
@@ -180,10 +180,10 @@ tresult PLUGIN_API MyPlugView::setFrame (Steinberg::IPlugFrame* frame)
     ...
 }
 </code></pre>
-<h2 id="query-irunloop-from-the-host-context-of-iplugfactory3"><a class="header" href="#query-irunloop-from-the-host-context-of-iplugfactory3">Query IRunLoop from the host context of IPlugFactory3</a></h2>
-<p>A plug-in also needs a way to query for an <a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1Linux_1_1IRunLoop.html">Linux::IRunLoop</a> without <a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPlugFrame.html">IPlugFrame</a>. This allows to register timers in case the editor is closed or unavailable.</p>
-<p>These timers can be used inside <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IAudioProcessor.html">Vst::IAudioProcessor</a> for extra computations or sending messages within the UI thread, like any method of Edit Controller in UI Thread (see <a href="../Workflow+Diagrams/Edit+Controller+Call+Sequence.html">Edit Controller Call Sequence</a>).</p>
-<p>The host application must call <a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPluginFactory3.html#a7fa0087a5cb612e3aeeefa4c91f638c7">Vst::IPlugFactory3::setHostContext (context)</a> for this and provide a <code>context</code>. This <code>context</code> can be used to query an <a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1Linux_1_1IRunLoop.html">Linux::IRunLoop</a> interface.</p>
+<h2 id="query-irunloop-from-the-host-context-of-ipluginfactory3"><a class="header" href="#query-irunloop-from-the-host-context-of-ipluginfactory3">Query IRunLoop from the host context of IPluginFactory3</a></h2>
+<p>A plug-in also needs a way to query for an <a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1Linux_1_1IRunLoop.html">Linux::IRunLoop</a> without <a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPlugFrame.html">Steinberg:: IPlugFrame</a>. This allows to register timers in case the editor is closed or unavailable.</p>
+<p>These timers can be used inside <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IAudioProcessor.html">Vst:: IAudioProcessor</a> for extra computations or sending messages within the UI thread, like any method of Edit Controller in UI Thread (see <a href="../Workflow+Diagrams/Edit+Controller+Call+Sequence.html">Edit Controller Call Sequence</a>).</p>
+<p>The host application must call <a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1IPluginFactory3.html#a7fa0087a5cb612e3aeeefa4c91f638c7">Steinberg:: IPluginFactory3::setHostContext (context)</a> for this and provide a <code>context</code>. This <code>context</code> can be used to query an <a href="https://steinbergmedia.github.io/vst3_doc/base/classSteinberg_1_1Linux_1_1IRunLoop.html">Linux::IRunLoop</a> interface.</p>
 <pre><code class="language-cpp">// Plug-in implementation
 tresult PLUGIN_API MyPlugFactory::setHostContext (FUnknown* context)
 {
@@ -226,7 +226,7 @@ tresult PLUGIN_API MyPlugFactory::setHostContext (FUnknown* context)
             
             <div id="footer" class="footer">
                 <!-- Here comes the footer when available -->
-                © 2024 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
+                © 2025 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href="https://o.steinberg.net/en/extras/about.html" target="_blank">About</a> |
                 <a href="https://o.steinberg.net/en/extras/privacy_policy.html" target="_blank">Privacy Policy</a> |
                 <a href="https://o.steinberg.net/en/extras/terms_conditions.html" target="_blank">Legal Terms</a> 

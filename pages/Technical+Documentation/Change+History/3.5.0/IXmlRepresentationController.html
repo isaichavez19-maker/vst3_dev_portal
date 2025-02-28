@@ -177,11 +177,11 @@
 <hr />
 <h2 id="introduction"><a class="header" href="#introduction">Introduction</a></h2>
 <p>How to better support remote devices/controllers (UI and hardware) for parameters.</p>
-<p>Since VST 3.5, a new interface is available: <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IXmlRepresentationController.html">Vst::IXmlRepresentationController</a></p>
-<p>Extended plug-in interface <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IEditController.html">IEditController</a> for a component: <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IXmlRepresentationController.html">Vst::IXmlRepresentationController</a></p>
+<p>Since VST 3.5, a new interface is available: <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IXmlRepresentationController.html">Vst:: IXmlRepresentationController</a></p>
+<p>Extended plug-in interface <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IEditController.html">Vst:: IEditController</a> for a component: <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IXmlRepresentationController.html">Vst:: IXmlRepresentationController</a></p>
 <ul>
 <li>[plug imp]</li>
-<li>[extends <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IEditController.html">IEditController</a>]</li>
+<li>[extends <a href="https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IEditController.html">Vst:: IEditController</a>]</li>
 <li>[released: 3.5.0]</li>
 <li>[optional]</li>
 </ul>
@@ -281,7 +281,7 @@ It allows to describe each parameter more precisely (what is the best matching t
 <h2 id="graphical-overview"><a class="header" href="#graphical-overview">Graphical overview</a></h2>
 <p><img src="../../../../resources/tech_doc_32.jpg" alt="ech_doc_32" /></p>
 <h2 id="example-of-implementation-using-helper-class"><a class="header" href="#example-of-implementation-using-helper-class">Example of implementation using helper class</a></h2>
-<p>See <a href="https://steinbergmedia.github.io/vst3_doc/vstsdk/classSteinberg_1_1Vst_1_1XmlRepresentationHelper.html">Steinberg::Vst::XmlRepresentationHelper</a>.</p>
+<p>See <a href="https://steinbergmedia.github.io/vst3_doc/vstsdk/classSteinberg_1_1Vst_1_1XmlRepresentationHelper.html">Vst:: XmlRepresentationHelper</a>.</p>
 <h2 id="location-table-for-vst-xmls-representation"><a class="header" href="#location-table-for-vst-xmls-representation">Location table for VST XMLs representation</a></h2>
 <p>When a host needs to use a VST XMLs representation (for internal use, like quick control assignments, to get the most important parameters sorted per page of a plug-in), the host will check the presence in a specific location for a given remote and for this given plug-in a representation XML file with the remote name as filename (check below about how the path is defined). If this is not found, the host will ask the plug-in by using Steinberg::Vst::IXmlRepresentationController (if implemented).</p>
 <p>Explanation:</p>
@@ -379,7 +379,7 @@ It allows to describe each parameter more precisely (what is the best matching t
             
             <div id="footer" class="footer">
                 <!-- Here comes the footer when available -->
-                © 2024 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
+                © 2025 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href="https://o.steinberg.net/en/extras/about.html" target="_blank">About</a> |
                 <a href="https://o.steinberg.net/en/extras/privacy_policy.html" target="_blank">Privacy Policy</a> |
                 <a href="https://o.steinberg.net/en/extras/terms_conditions.html" target="_blank">Legal Terms</a> 
