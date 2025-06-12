@@ -19,6 +19,6 @@
     - fix initial signal latency.
     - fix indexing of parameter, conflicting with VST 2.
 
-- Helpers classes:
+- Helper Classes:
   - fix activateBus issue in class SingleComponentEffect.
   - fix Ring Buffer class issue.

@@ -37,7 +37,7 @@
   - Improve silence flag handling in some plug-ins examples.
   - **Hello World VST 3** plug-in example is moved to [github](https://github.com/steinbergmedia/vst3_example_plugin_hello_world)!
 
-- Helpers classes:
+- Helper Classes:
   - Fix Build error on Linux with gcc 12 (moduleinfoparser.cpp) ([PR#49](https://github.com/steinbergmedia/vst3_public_sdk/pull/49)).
   - Fix cannot fully build on linux due to missing Steinberg::SystemClipboard::copyTextToClipboard() implementation ([Issue#102](https://github.com/steinbergmedia/vst3sdk/issues/102)).
   - Fix Controller CID output from validator cut on non-Windows platform ([Issue#109](https://github.com/steinbergmedia/vst3sdk/issues/109)).

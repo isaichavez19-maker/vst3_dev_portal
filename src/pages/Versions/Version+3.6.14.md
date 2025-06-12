@@ -27,7 +27,7 @@
   - AAX Wrapper ([VST 3 - AAX Wrapper](../What+is+the+VST+3+SDK/Wrappers/AAX+Wrapper.md)):
     - add SMPTE support.
 
-- Helpers classes:
+- Helper Classes:
   - clear programLists, programIndexMap and units in EditControllerEx1 when terminating
 - [VST3PluginTestHost](../What+is+the+VST+3+SDK/Plug-in+Test+Host.md) v2.8.10.
   - menu change on Windows.

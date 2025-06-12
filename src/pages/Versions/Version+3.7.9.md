@@ -39,7 +39,7 @@
   - New VST 3 plug-ins example **DataExchange** showing the use of the VST Data Exchange API: *public.sdk/samples/vst/dataexchange*.
   - Update Hostchecker plug-in to check new interfaces: [Vst:: IDataExchangeHandler / Vst::IDataExchangeReceiver](../Technical+Documentation/Data+Exchange/Index.md) / [Vst:: IComponentHandlerSystemTime](../Technical+Documentation/Change+History/3.7.9/IComponentHandlerSystemTime.md).
 
-- Helpers classes:
+- Helper Classes:
   - New helper for system time *public.sdk/source/vst/utility/systemtime.cpp*.
   - New VST Data Exchange API Helper implementing [Vst:: IDataExchangeHandler](../Technical+Documentation/Data+Exchange/Index.md): *public.sdk/source/vst/utility/dataexchange.cpp*.
   - Fix "Missing field initializer" warning in vstparameters.h [(PR#60)](https://github.com/steinbergmedia/vst3_public_sdk/pull/60).

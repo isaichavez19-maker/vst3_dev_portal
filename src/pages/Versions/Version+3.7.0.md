@@ -42,7 +42,7 @@
 - [Plug-in Wrappers](../What+is+the+VST+3+SDK/Wrappers/Index.md):
   - Fix for AAX/VST 2 BaseWrapper setChunk attribute Vst::StateType::kProject was not set for component.
 
-- Helpers classes:
+- Helper Classes:
   - Added functions to load FXB/FXP states and to write FXB states for compatibility with **VST 2.x** (see public.sdk/source/vst/utility/vst2persistence.h).
   - Fix compilation with MinGW-w64 GCC compiler.
   - New helper: openurl.h allowing to open a URL in the default associated application.

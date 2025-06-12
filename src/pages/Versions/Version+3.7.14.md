@@ -18,7 +18,7 @@
   - Fix mda plug-in: mdaPianoController.cpp incorrectly implements 4 presets instead of 7 ([Issue#133](https://github.com/steinbergmedia/vst3sdk/issues/133)).
   - Add variable program count support to *Test Multiple Program Changes* Plug-in.
 
-- Helpers classes:
+- Helper Classes:
   - Fix missing implementation of FUID::generate() for Windows on Arm ([Issue#20](https://github.com/steinbergmedia/vst3_pluginterfaces/issues/20)).
 
 - [VST3PluginTestHost](../What+is+the+VST+3+SDK/Plug-in+Test+Host.md) v3.10:

@@ -34,7 +34,7 @@
   - Add to validator self-tests.
   - Add to validator a new function addErrorWarningTextToOutput.
 
-- Helpers classes:
+- Helper Classes:
   - New file pluginterfaces/base/funknownimpl.h (C++11 required): it provides classes for working with FUnknown.
   - Add Unitests for all hosting helpers classes.
   - Show example const_exp (C++17) in plug-in factory: public.sdk/source/main/pluginfactory_constexpr.h.

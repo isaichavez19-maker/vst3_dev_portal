@@ -14,7 +14,7 @@
 - New Flags/Enums:
   - Add new restart flag: Vst::kIoTitlesChanged: informing the host about titles changes of busses.
 
-- Helpers Classes:
+- Helper Classes:
   - New Vst::XmlRepresentationHelper: helper for constructing a remote representation (xml based). See [\[3.5.0\] Remote Representation of Parameters Support](../Technical+Documentation/Change+History/3.5.0/IXmlRepresentationController.md).
   - Vst::EditControllerEx1: support of ProgramPitchNames added.
 

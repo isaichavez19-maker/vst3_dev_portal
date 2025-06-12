@@ -31,5 +31,5 @@
   - AAX Wrapper ([VST 3 - AAX Wrapper](../What+is+the+VST+3+SDK/Wrappers/AAX+Wrapper.md)): add bypass and VU parameter support.
   - interappaudio: improvements, fixes, add cmake.
   
-- Helpers classes:
+- Helper Classes:
   - New Ring Buffer class (ringbuffer.h).
