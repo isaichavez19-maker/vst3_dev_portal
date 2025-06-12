@@ -8,7 +8,6 @@
 
 - Documentation
   - Updated Doxygen version
-  - Added: Each function specifies the thread context and execution state required for it to be called validly.
 
 - cmake
   - Fix createlink does not work on macOS 15.4. 
