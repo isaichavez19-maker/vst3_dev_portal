@@ -7,7 +7,8 @@
 - [VSTGUI](../What+is+the+VST+3+SDK/VSTGUI.md) update [4.14.3](https://github.com/steinbergmedia/vstgui/releases/tag/vstgui4_14_3)
 
 - Documentation
-  - Updated Doxygen version
+  - Updated Doxygen version.
+  - Fix tutorial dataexchange example.
 
 - cmake
   - Fix createlink does not work on macOS 15.4. 
