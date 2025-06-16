@@ -20,7 +20,7 @@
 - New Flags/Enums:
   - New predefined 3D Speaker Arrangements: k81MPEG3D, k222.
 
-- Helpers Classes:
+- Helper Classes:
   - fix compilation for UNICODE_OFF enable.
 
 - [Examples](../What+is+the+VST+3+SDK/Plug-in+Examples.md):

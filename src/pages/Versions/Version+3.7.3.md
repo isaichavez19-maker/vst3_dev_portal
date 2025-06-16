@@ -50,7 +50,7 @@
   - Fix warnings for mda plug-ins.
   - Fix the build with gcc 11.
   
-- Helpers classes:
+- Helper Classes:
   - New utility files:
     - audiobuffers.h
     - processdataslicer.h

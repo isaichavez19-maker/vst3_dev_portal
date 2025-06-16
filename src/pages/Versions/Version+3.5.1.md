@@ -7,7 +7,7 @@
 - Interface Changes:
   - due to a missing calling convention in IContextMenu interfaces, we had to generate new iids for this set of interfaces, Steinberg hosts will be updated (from 6.0.5) in order to support correctly this interface set. The old interfaces when already used will continue to be supported in Steinberg hosts. Sorry for this issue...
 
-- Helpers Classes:
+- Helper Classes:
   - EditController is now one of the base classes of SingleComponentEffect.
     - If you have used the SingleComponentEffect before, make sure that you must exclude vsteditcontroller.cpp now if it was in your project.
   - EditControllerEx1 has a new function: setProgramName.

@@ -44,7 +44,7 @@ There are simple casting functions in *pluginterfaces/base/fstrdefs.h* (see **ws
 - [Validator](../What+is+the+VST+3+SDK/Index.md#validator-command-line):
   - Fix validator output on Windows, cout was not flushed in case of crash.
 
-- Helpers classes:
+- Helper Classes:
   - Refactoring by using IPtr in *public.sdk/source/vst/vsteditcontroller.h* and *public.sdk/source/common/pluginview.h*.
   - Fix crash in module_win32.cpp when loading failed and the error code could not be printed.
   - Prevent the pluginfactory_constexpr on Linux to export symbols in debug mode which may be shared between modules.

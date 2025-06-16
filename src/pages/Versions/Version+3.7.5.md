@@ -51,7 +51,7 @@
 
 - [Validator](../What+is+the+VST+3+SDK/Index.md#validator-command-line):
   - Add test for *IPluginCompatibility* interface
-- Helpers classes:
+- Helper Classes:
   - New file in *public.sdk/samples/vst-utilities* for moduleinfo support.
   - New files in *public.sdk/source/vst/moduleinfo* for creating and parsing moduleinfo.
   - Fix https://github.com/steinbergmedia/vst3_public_sdk/issues/37.

@@ -40,5 +40,5 @@
   - VST 2 Wrapper:
     - fix double release of editor.
 
-- Helpers classes:
+- Helper Classes:
   - New file with some helpers for event: vsteventshelper.h.

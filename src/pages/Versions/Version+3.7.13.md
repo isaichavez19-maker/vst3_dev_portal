@@ -36,7 +36,7 @@
     - Add check of COM correct behavior when calling queryInterface ().
     - Add check for ProcessContext::systemtime of continuity.
 
-- Helpers classes:
+- Helper Classes:
   - Fix in *openurl.cpp* **openURLInDefaultApplication** returns wrong result on macOS and Linux.
   - Fix *vst3_public_sdk/source/vst/hosting/module_linux.cpp*: Plug-in bundles with an extra dot in the name fail to load with the Hosting::Module class ([Issue#73](https://github.com/steinbergmedia/vst3_public_sdk/issues/73)).
   - Fix -Wundef warnings ([PR#75](https://github.com/steinbergmedia/vst3_public_sdk/pull/75)). 

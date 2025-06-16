@@ -46,7 +46,7 @@
     - [VST 3 Inspector app](../What+is+the+VST+3+SDK/Index.md): example showing how to parse the available **VST 3** plug-ins factories, using VSTGUI.
   - C++14 minimum requirements for validator, audiohost, editorhost, Inspector app.
 
-- Helpers classes:
+- Helper Classes:
   - New file handling module initialization: public.sdk\source\main\moduleinit.cpp, public.sdk\source\main\moduleinit.h.
   - #include <windows.h> instead of #include <Windows.h>.
   - Fix incorrect string copy regression in HostAttributeList::getString.
