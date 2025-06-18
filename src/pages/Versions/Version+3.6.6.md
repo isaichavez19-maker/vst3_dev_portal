@@ -21,7 +21,7 @@
   - VST 3 - VST 2.x Wrapper:
     - add support of version (VST 3 -> VST 2).
 
-- Helpers classes:
+- Helper Classes:
   - add support for bypass including delay compensation (vstbypassprocessor.h).
   - add helpers for events/parameters iterator (vstaudioprocessoralgo.h).
   - add helpers for SpeakerArr:

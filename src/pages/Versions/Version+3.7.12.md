@@ -43,7 +43,7 @@
     - with new host check: call of getLatency after setActive and before  [Vst:: IAudioProcessor::setProcessing](https://steinbergmedia.github.io/vst3_doc/vstinterfaces/classSteinberg_1_1Vst_1_1IAudioProcessor.html#af252fd721b195b793f3a5dfffc069401) or process.
     - new parameters for Randomize + LowLatency + DryWet with [Vst:: IParameterFunctionName](../Technical+Documentation/Change+History/3.7.0/IParameterFunctionName.md) support.
 
-- Helpers classes:
+- Helper Classes:
   - *hosting/test/connectionproxytest.cpp*: Avoid potential hang in connectionproxytest ([PR#66](https://github.com/steinbergmedia/vst3_public_sdk/pull/66)).
   - *hosting/module_mac.mm*: fix warning (*-Wnullable-to-nonnull-conversion*) ([PR#67](https://github.com/steinbergmedia/vst3_public_sdk/pull/67)).
   - *hosting/module_win32.cpp*: Add better failure report when loading library on Windows ([PR#68](https://github.com/steinbergmedia/vst3_public_sdk/pull/68)).

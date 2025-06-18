@@ -29,5 +29,5 @@
   - VST 2 Wrapper:
     - fix for instruments which were not visible as instrument.
 
-- Helpers classes:
+- Helper Classes:
   - make virtual some functions of class parameter (set/getUnitID, getInfo, set/getPrecision).

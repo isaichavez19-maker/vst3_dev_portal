@@ -17,7 +17,7 @@
   - Change InitModule/ExitModule to be called from host and not in DllMain (Cubase 4.2 needed).
   - Rename Vst::IUnitData to Vst::IProgramListData and introduce new interface Vst::IUnitData.
 
-- Helpers Classes:
+- Helper Classes:
   - Add new helper class EditControllerEx1: extend of EditController with Unit support.
   - Add new helper class Vst::SingleComponentEffect for single component effects.
 

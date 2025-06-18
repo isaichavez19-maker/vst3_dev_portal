@@ -23,7 +23,7 @@
     - Fix output bus activation.
     - Fix when the component is not loaded from **UI Thread**.
 
-- Helpers classes:
+- Helper Classes:
   - GetPluginFactory() def-file vs. declspec.
 
 - [VST3PluginTestHost](../What+is+the+VST+3+SDK/Plug-in+Test+Host.md) v3.0:
