@@ -9527,6 +9527,7 @@ tresult PLUGIN_API TestRemapParamIDController::setComponentState (IBStream* stat
 <h2 id="versions"><a class="header" href="#versions">Versions</a></h2>
 <p>All released versions of the <strong>VST 3 SDK</strong> with changes and dates:</p>
 <ul>
+<li><a href="pages/Versions/Version+3.7.14.html">Version 3.7.14 (2025/06/23)</a></li>
 <li><a href="pages/Versions/Version+3.7.13.html">Version 3.7.13 (2025/02/28)</a></li>
 <li><a href="pages/Versions/Version+3.7.12.html">Version 3.7.12 (2024/07/23)</a></li>
 <li><a href="pages/Versions/Version+3.7.11.html">Version 3.7.11 (2024/04/22)</a></li>
@@ -9559,6 +9560,49 @@ tresult PLUGIN_API TestRemapParamIDController::setComponentState (IBStream* stat
 <li><a href="pages/Versions/Version+3.0.2.html">Version 3.0.2 (2009/01/15)</a></li>
 <li><a href="pages/Versions/Version+3.0.1.html">Version 3.0.1 (2008/03/19)</a></li>
 <li><a href="pages/Versions/Version+3.0.0.html">Version 3.0.0 (2008/01/17)</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><blockquote>
+<p>/ <a href="pages/Versions/../">VST Home</a> / <a href="pages/Versions/./Index.html">Change History</a></p>
+<h1 id="version-3714-20250623"><a class="header" href="#version-3714-20250623">Version 3.7.14 (2025/06/23)</a></h1>
+</blockquote>
+<h2 id="version-3714-20250623-1"><a class="header" href="#version-3714-20250623-1">Version 3.7.14 (2025/06/23)</a></h2>
+<ul>
+<li>
+<p><a href="pages/Versions/../What+is+the+VST+3+SDK/VSTGUI.html">VSTGUI</a> update <a href="https://github.com/steinbergmedia/vstgui/releases/tag/vstgui4_14_3">4.14.3</a></p>
+</li>
+<li>
+<p>Documentation</p>
+<ul>
+<li>Updated Doxygen version.</li>
+<li>Fix tutorial dataexchange example.</li>
+</ul>
+</li>
+<li>
+<p>cmake</p>
+<ul>
+<li>Fix createlink does not work on macOS 15.4.</li>
+</ul>
+</li>
+<li>
+<p><a href="pages/Versions/../What+is+the+VST+3+SDK/Plug-in+Examples.html">Examples</a>:</p>
+<ul>
+<li>Fix mda plug-ins: mda Synthesizers should convert % parameter strings using 0 to 100, not 0 to 1 (<a href="https://github.com/steinbergmedia/vst3sdk/issues/135">Issue#135</a>).</li>
+<li>Fix mda plug-in: mdaPianoController.cpp incorrectly implements 4 presets instead of 7 (<a href="https://github.com/steinbergmedia/vst3sdk/issues/133">Issue#133</a>).</li>
+<li>Add variable program count support to <em>Test Multiple Program Changes</em> Plug-in.</li>
+</ul>
+</li>
+<li>
+<p>Helper Classes:</p>
+<ul>
+<li>Fix missing implementation of FUID::generate() for Windows on Arm (<a href="https://github.com/steinbergmedia/vst3_pluginterfaces/issues/20">Issue#20</a>).</li>
+</ul>
+</li>
+<li>
+<p><a href="pages/Versions/../What+is+the+VST+3+SDK/Plug-in+Test+Host.html">VST3PluginTestHost</a> v3.10:</p>
+<ul>
+<li>Fix support of parameters with UTF16 characters (not only ASCII).</li>
+</ul>
+</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><blockquote>
 <p>/ <a href="pages/Versions/../">VST Home</a> / <a href="pages/Versions/./Index.html">Change History</a></p>
@@ -9627,7 +9671,7 @@ tresult PLUGIN_API TestRemapParamIDController::setComponentState (IBStream* stat
 </ul>
 </li>
 <li>
-<p>Helpers classes:</p>
+<p>Helper Classes:</p>
 <ul>
 <li>Fix in <em>openurl.cpp</em> <strong>openURLInDefaultApplication</strong> returns wrong result on macOS and Linux.</li>
 <li>Fix <em>vst3_public_sdk/source/vst/hosting/module_linux.cpp</em>: Plug-in bundles with an extra dot in the name fail to load with the Hosting::Module class (<a href="https://github.com/steinbergmedia/vst3_public_sdk/issues/73">Issue#73</a>).</li>
@@ -9735,7 +9779,7 @@ tresult PLUGIN_API TestRemapParamIDController::setComponentState (IBStream* stat
 </ul>
 </li>
 <li>
-<p>Helpers classes:</p>
+<p>Helper Classes:</p>
 <ul>
 <li><em>hosting/test/connectionproxytest.cpp</em>: Avoid potential hang in connectionproxytest (<a href="https://github.com/steinbergmedia/vst3_public_sdk/pull/66">PR#66</a>).</li>
 <li><em>hosting/module_mac.mm</em>: fix warning (<em>-Wnullable-to-nonnull-conversion</em>) (<a href="https://github.com/steinbergmedia/vst3_public_sdk/pull/67">PR#67</a>).</li>
@@ -9960,7 +10004,7 @@ tresult PLUGIN_API TestRemapParamIDController::setComponentState (IBStream* stat
 </ul>
 </li>
 <li>
-<p>Helpers classes:</p>
+<p>Helper Classes:</p>
 <ul>
 <li>New helper for system time <em>public.sdk/source/vst/utility/systemtime.cpp</em>.</li>
 <li>New VST Data Exchange API Helper implementing <a href="pages/Versions/../Technical+Documentation/Data+Exchange/Index.html">Vst:: IDataExchangeHandler</a>: <em>public.sdk/source/vst/utility/dataexchange.cpp</em>.</li>
@@ -10054,7 +10098,7 @@ tresult PLUGIN_API TestRemapParamIDController::setComponentState (IBStream* stat
 </ul>
 </li>
 <li>
-<p>Helpers classes:</p>
+<p>Helper Classes:</p>
 <ul>
 <li>Fix Build error on Linux with gcc 12 (moduleinfoparser.cpp) (<a href="https://github.com/steinbergmedia/vst3_public_sdk/pull/49">PR#49</a>).</li>
 <li>Fix cannot fully build on linux due to missing Steinberg::SystemClipboard::copyTextToClipboard() implementation (<a href="https://github.com/steinbergmedia/vst3sdk/issues/102">Issue#102</a>).</li>
@@ -10224,7 +10268,7 @@ There are simple casting functions in <em>pluginterfaces/base/fstrdefs.h</em> (s
 </ul>
 </li>
 <li>
-<p>Helpers classes:</p>
+<p>Helper Classes:</p>
 <ul>
 <li>Refactoring by using IPtr in <em>public.sdk/source/vst/vsteditcontroller.h</em> and <em>public.sdk/source/common/pluginview.h</em>.</li>
 <li>Fix crash in module_win32.cpp when loading failed and the error code could not be printed.</li>
@@ -10340,7 +10384,7 @@ There are simple casting functions in <em>pluginterfaces/base/fstrdefs.h</em> (s
 </ul>
 </li>
 <li>
-<p>Helpers classes:</p>
+<p>Helper Classes:</p>
 <ul>
 <li>New file in <em>public.sdk/samples/vst-utilities</em> for moduleinfo support.</li>
 <li>New files in <em>public.sdk/source/vst/moduleinfo</em> for creating and parsing moduleinfo.</li>
@@ -10419,7 +10463,7 @@ There are simple casting functions in <em>pluginterfaces/base/fstrdefs.h</em> (s
 </ul>
 </li>
 <li>
-<p>Helpers classes:</p>
+<p>Helper Classes:</p>
 <ul>
 <li>New file pluginterfaces/base/funknownimpl.h (C++11 required): it provides classes for working with FUnknown.</li>
 <li>Add Unitests for all hosting helpers classes.</li>
@@ -10531,7 +10575,7 @@ There are simple casting functions in <em>pluginterfaces/base/fstrdefs.h</em> (s
 </ul>
 </li>
 <li>
-<p>Helpers classes:</p>
+<p>Helper Classes:</p>
 <ul>
 <li>New utility files:
 <ul>
@@ -10625,7 +10669,7 @@ There are simple casting functions in <em>pluginterfaces/base/fstrdefs.h</em> (s
 </ul>
 </li>
 <li>
-<p>Helpers classes:</p>
+<p>Helper Classes:</p>
 <ul>
 <li>New file handling module initialization: public.sdk\source\main\moduleinit.cpp, public.sdk\source\main\moduleinit.h.</li>
 <li>#include &lt;windows.h&gt; instead of #include &lt;Windows.h&gt;.</li>
@@ -10692,7 +10736,7 @@ There are simple casting functions in <em>pluginterfaces/base/fstrdefs.h</em> (s
 </ul>
 </li>
 <li>
-<p>Helpers classes:</p>
+<p>Helper Classes:</p>
 <ul>
 <li>GetPluginFactory() def-file vs. declspec.</li>
 </ul>
@@ -10800,7 +10844,7 @@ There are simple casting functions in <em>pluginterfaces/base/fstrdefs.h</em> (s
 </ul>
 </li>
 <li>
-<p>Helpers classes:</p>
+<p>Helper Classes:</p>
 <ul>
 <li>Added functions to load FXB/FXP states and to write FXB states for compatibility with <strong>VST 2.x</strong> (see public.sdk/source/vst/utility/vst2persistence.h).</li>
 <li>Fix compilation with MinGW-w64 GCC compiler.</li>
@@ -10876,7 +10920,7 @@ There are simple casting functions in <em>pluginterfaces/base/fstrdefs.h</em> (s
 </ul>
 </li>
 <li>
-<p>Helpers classes:</p>
+<p>Helper Classes:</p>
 <ul>
 <li>clear programLists, programIndexMap and units in EditControllerEx1 when terminating</li>
 </ul>
@@ -11007,7 +11051,7 @@ There are simple casting functions in <em>pluginterfaces/base/fstrdefs.h</em> (s
 </ul>
 </li>
 <li>
-<p>Helpers classes:</p>
+<p>Helper Classes:</p>
 <ul>
 <li>New file with some helpers for event: vsteventshelper.h.</li>
 </ul>
@@ -11064,7 +11108,7 @@ There are simple casting functions in <em>pluginterfaces/base/fstrdefs.h</em> (s
 </ul>
 </li>
 <li>
-<p>Helpers classes:</p>
+<p>Helper Classes:</p>
 <ul>
 <li>make virtual some functions of class parameter (set/getUnitID, getInfo, set/getPrecision).</li>
 </ul>
@@ -11103,7 +11147,7 @@ There are simple casting functions in <em>pluginterfaces/base/fstrdefs.h</em> (s
 </ul>
 </li>
 <li>
-<p>Helpers classes:</p>
+<p>Helper Classes:</p>
 <ul>
 <li>fix activateBus issue in class SingleComponentEffect.</li>
 <li>fix Ring Buffer class issue.</li>
@@ -11162,7 +11206,7 @@ There are simple casting functions in <em>pluginterfaces/base/fstrdefs.h</em> (s
 </ul>
 </li>
 <li>
-<p>Helpers classes:</p>
+<p>Helper Classes:</p>
 <ul>
 <li>New Ring Buffer class (ringbuffer.h).</li>
 </ul>
@@ -11322,7 +11366,7 @@ There are simple casting functions in <em>pluginterfaces/base/fstrdefs.h</em> (s
 </ul>
 </li>
 <li>
-<p>Helpers classes:</p>
+<p>Helper Classes:</p>
 <ul>
 <li>add support for bypass including delay compensation (vstbypassprocessor.h).</li>
 <li>add helpers for events/parameters iterator (vstaudioprocessoralgo.h).</li>
@@ -11446,7 +11490,7 @@ There are simple casting functions in <em>pluginterfaces/base/fstrdefs.h</em> (s
 </ul>
 </li>
 <li>
-<p>Helpers Classes:</p>
+<p>Helper Classes:</p>
 <ul>
 <li>fix compilation for UNICODE_OFF enable.</li>
 </ul>
@@ -11523,7 +11567,7 @@ There are simple casting functions in <em>pluginterfaces/base/fstrdefs.h</em> (s
 </ul>
 </li>
 <li>
-<p>Helpers Classes:</p>
+<p>Helper Classes:</p>
 <ul>
 <li>New in Base:
 <ul>
@@ -11558,7 +11602,7 @@ There are simple casting functions in <em>pluginterfaces/base/fstrdefs.h</em> (s
 </ul>
 </li>
 <li>
-<p>Helpers Classes:</p>
+<p>Helper Classes:</p>
 <ul>
 <li>EditController is now one of the base classes of SingleComponentEffect.
 <ul>
@@ -11629,7 +11673,7 @@ There are simple casting functions in <em>pluginterfaces/base/fstrdefs.h</em> (s
 </ul>
 </li>
 <li>
-<p>Helpers Classes:</p>
+<p>Helper Classes:</p>
 <ul>
 <li>New Vst::XmlRepresentationHelper: helper for constructing a remote representation (xml based). See <a href="pages/Versions/../Technical+Documentation/Change+History/3.5.0/IXmlRepresentationController.html">[3.5.0] Remote Representation of Parameters Support</a>.</li>
 <li>Vst::EditControllerEx1: support of ProgramPitchNames added.</li>
@@ -11787,7 +11831,7 @@ There are simple casting functions in <em>pluginterfaces/base/fstrdefs.h</em> (s
 </ul>
 </li>
 <li>
-<p>Helpers Classes:</p>
+<p>Helper Classes:</p>
 <ul>
 <li>Add new helper class EditControllerEx1: extend of EditController with Unit support.</li>
 <li>Add new helper class Vst::SingleComponentEffect for single component effects.</li>

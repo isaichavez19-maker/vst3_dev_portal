@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Version 3.5.0 (2011/02/04) - VST 3 Developer Portal</title>
+        <title>Version 3.7.14 (2025/06/23) - VST 3 Developer Portal</title>
 
 
         <!-- Custom HTML head -->
@@ -158,65 +158,45 @@
                     <main>
                         <blockquote>
 <p>/ <a href="../">VST Home</a> / <a href="./Index.html">Change History</a></p>
-<h1 id="version-350-20110204"><a class="header" href="#version-350-20110204">Version 3.5.0 (2011/02/04)</a></h1>
+<h1 id="version-3714-20250623"><a class="header" href="#version-3714-20250623">Version 3.7.14 (2025/06/23)</a></h1>
 </blockquote>
-<h2 id="version-350-20110204-1"><a class="header" href="#version-350-20110204-1">Version 3.5.0 (2011/02/04)</a></h2>
+<h2 id="version-3714-20250623-1"><a class="header" href="#version-3714-20250623-1">Version 3.7.14 (2025/06/23)</a></h2>
 <ul>
 <li>
-<p>Interface Changes:</p>
+<p><a href="../What+is+the+VST+3+SDK/VSTGUI.html">VSTGUI</a> update <a href="https://github.com/steinbergmedia/vstgui/releases/tag/vstgui4_14_3">4.14.3</a></p>
+</li>
+<li>
+<p>Documentation</p>
 <ul>
-<li>Vst::INoteExpressionController: <a href="../Technical+Documentation/Change+History/3.5.0/INoteExpressionController.html">[3.5.0] Note Expression</a> Support.</li>
-<li>Vst::IKeyswitchController: <a href="../Technical+Documentation/Change+History/3.5.0/IKeyswitchController.html">[3.5.0] Key Switch Support</a> (used for building VST Expression Map in Cubase 6 for example).</li>
-<li>Vst::IXmlRepresentationController: <a href="../Technical+Documentation/Change+History/3.5.0/IXmlRepresentationController.html">[3.5.0] Remote Representation</a> of Parameters Support (allows to define different parameter mappings for different remotes device).</li>
-<li>Vst::IEditControllerHostEditing: Parameter editing from host/remote control (better support of linked parameters when editing from remote control)</li>
-<li>Vst::IComponentHandler3 / Vst::IContextMenu / Vst::IContextMenuTarget: <a href="../Technical+Documentation/Change+History/3.5.0/IComponentHandler3.html">[3.5.0] Context Menu Support</a> (allows the plug-in to create a context menu for a given parameter, partially filled by the host).</li>
+<li>Updated Doxygen version.</li>
+<li>Fix tutorial dataexchange example.</li>
 </ul>
 </li>
 <li>
-<p>New Flags/Enums:</p>
+<p>cmake</p>
 <ul>
-<li>Add new restart flag: Vst::kIoTitlesChanged: informing the host about titles changes of busses.</li>
-</ul>
-</li>
-<li>
-<p>Helper Classes:</p>
-<ul>
-<li>New Vst::XmlRepresentationHelper: helper for constructing a remote representation (xml based). See <a href="../Technical+Documentation/Change+History/3.5.0/IXmlRepresentationController.html">[3.5.0] Remote Representation of Parameters Support</a>.</li>
-<li>Vst::EditControllerEx1: support of ProgramPitchNames added.</li>
+<li>Fix createlink does not work on macOS 15.4.</li>
 </ul>
 </li>
 <li>
 <p><a href="../What+is+the+VST+3+SDK/Plug-in+Examples.html">Examples</a>:</p>
 <ul>
-<li>New VST 3 instrument examples:
-<ul>
-<li>Instrument "Note Expression Synth" supporting Note Expression Events.</li>
-<li>Effect showing support of pitchnames (ProgramPitchNames).</li>
-</ul>
-</li>
+<li>Fix mda plug-ins: mda Synthesizers should convert % parameter strings using 0 to 100, not 0 to 1 (<a href="https://github.com/steinbergmedia/vst3sdk/issues/135">Issue#135</a>).</li>
+<li>Fix mda plug-in: mdaPianoController.cpp incorrectly implements 4 presets instead of 7 (<a href="https://github.com/steinbergmedia/vst3sdk/issues/133">Issue#133</a>).</li>
+<li>Add variable program count support to <em>Test Multiple Program Changes</em> Plug-in.</li>
 </ul>
 </li>
 <li>
-<p><a href="../What+is+the+VST+3+SDK/Index.html#validator-command-line">Validator</a>:</p>
+<p>Helper Classes:</p>
 <ul>
-<li>More command line options.</li>
-<li>Possibility to add custom tests by the plug-in.</li>
+<li>Fix missing implementation of FUID::generate() for Windows on Arm (<a href="https://github.com/steinbergmedia/vst3_pluginterfaces/issues/20">Issue#20</a>).</li>
 </ul>
 </li>
 <li>
-<p><a href="../What+is+the+VST+3+SDK/VSTGUI.html">VSTGUI</a> 4.0</p>
+<p><a href="../What+is+the+VST+3+SDK/Plug-in+Test+Host.html">VST3PluginTestHost</a> v3.10:</p>
 <ul>
-<li>preview version of VSTGUI with optimal <strong>VST 3</strong> support.</li>
+<li>Fix support of parameters with UTF16 characters (not only ASCII).</li>
 </ul>
-</li>
-<li>
-<p><a href="../What+is+the+VST+3+SDK/Wrappers/Index.html">Plug-in Wrappers</a>:</p>
-<ul>
-<li>VST 3 - Audio Unit Wrapper fixes and support of Program changes.</li>
-</ul>
-</li>
-<li>
-<p>Some documentation changes.</p>
 </li>
 </ul>
 
@@ -224,11 +204,11 @@
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../../pages/Versions/Version+3.5.1.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../../pages/Versions/Index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../../pages/Versions/Version+3.1.0.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../../pages/Versions/Version+3.7.13.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -239,11 +219,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../../pages/Versions/Version+3.5.1.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../../pages/Versions/Index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../../pages/Versions/Version+3.1.0.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../../pages/Versions/Version+3.7.13.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
