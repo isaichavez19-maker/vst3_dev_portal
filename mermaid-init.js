@@ -7,4 +7,5 @@ if (browsertheme == 'steinberg-dark') {
 else {
     theme = 'default'
 }
-mermaid.initialize({startOnLoad:true, 'theme': theme});
+mermaid.initialize({ 'theme': theme });
+mermaid.run();
