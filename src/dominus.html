@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Arquitecto Dominus">
+    <title>DOMINUS UMBREA | Omni-Terminal v1.0 [LIVE]</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- ESTÉTICA NEURO-LINK --- */
+        :root { --neon-cyan: #06b6d4; --neon-rose: #f43f5e; --void-bg: #020202; }
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background-color: var(--void-bg);
+            color: #e2e8f0;
+            overflow: hidden;
+            /* Aberración Cromática Sutil en bordes */
+            box-shadow: inset 0 0 150px rgba(0,0,0,0.9);
+        }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+
+        /* SCROLLBAR PERSONALIZADO */
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #0a0a0a; }
+        ::-webkit-scrollbar-thumb { background: var(--neon-cyan); border-radius: 2px; }
+
+        /* --- CRT FX & GLITCH --- */
+        .scanlines {
+            background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0) 50%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.2));
+            background-size: 100% 4px;
+            position: absolute; inset: 0; pointer-events: none; z-index: 50;
+            opacity: 0.6; animation: scrollLines 8s linear infinite;
+        }
+        .scanlines::before {
+            content: " "; display: block; position: absolute; inset: 0;
+            background: rgba(18, 16, 16, 0.1); opacity: 0; z-index: 2;
+            animation: flicker 0.15s infinite;
+        }
+        @keyframes scrollLines { 0% { background-position: 0 0; } 100% { background-position: 0 100%; } }
+        @keyframes flicker { 0% { opacity: 0.02; } 50% { opacity: 0.05; } 100% { opacity: 0.02; } }
+
+        /* TEXT BLOOM (RESPLANDOR DE FÓSFORO) */
+        .neon-text { text-shadow: 0 0 5px rgba(6, 182, 212, 0.7), 0 0 10px rgba(6, 182, 212, 0.3); }
+        .alert-text { text-shadow: 0 0 5px rgba(244, 63, 94, 0.7); }
+
+        /* UI ELEMENTS */
+        .glass-panel { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(8px); border: 1px solid rgba(6, 182, 212, 0.2); }
+        .tab-active { border-bottom: 2px solid var(--neon-cyan); color: var(--neon-cyan); background: rgba(6, 182, 212, 0.05); text-shadow: 0 0 8px rgba(6,182,212,0.5); }
+
+        #forge-image { transition: filter 0.2s ease-out, opacity 0.5s ease; }
+    </style>
+</head>
+<body class="h-screen flex flex-col selection:bg-cyan-500 selection:text-black">
+
+    <div class="scanlines"></div>
+
+    <header class="h-14 bg-[#050505] border-b border-gray-800 flex items-center justify-between px-6 z-40 relative">
+        <div class="flex items-center gap-3">
+            <div class="relative">
+                <i data-lucide="cpu" class="text-cyan-500 w-5 h-5 neon-text"></i>
+                <div class="absolute -top-1 -right-1 w-2 h-2 bg-green-500 rounded-full animate-pulse shadow-[0_0_8px_#22c55e]"></div>
+            </div>
+            <div>
+                <h1 class="font-bold text-lg tracking-[0.2em] text-white leading-none">DOMINUS<span class="text-cyan-500 neon-text">_OS</span></h1>
+                <p class="text-[9px] text-gray-500 mono leading-none mt-1">CONEXIÓN: <span id="conn-status" class="text-yellow-500">ESPERANDO</span></p>
+            </div>
+        </div>
+
+        <div class="flex gap-4">
+            <button onclick="switchTab('visual')" id="tab-visual" class="tab-active px-6 py-2 text-xs font-bold mono tracking-wider transition-all flex items-center gap-2">
+                <i data-lucide="eye" class="w-3 h-3"></i> FORJA VISUAL
+            </button>
+            <button onclick="switchTab('audio')" id="tab-audio" class="px-6 py-2 text-xs font-bold mono tracking-wider text-gray-500 hover:text-white transition-all flex items-center gap-2">
+                <i data-lucide="mic-2" class="w-3 h-3"></i> CÓRTEX AUDITIVO
+            </button>
+        </div>
+
+        <div class="hidden md:flex items-center gap-6 text-[10px] mono">
+            <div class="flex flex-col items-end">
+                <span class="text-gray-500">LATENCIA NEURONAL</span>
+                <span class="text-cyan-400 font-bold neon-text">12ms</span>
+            </div>
+            <div class="h-6 w-px bg-gray-800"></div>
+            <div class="flex flex-col items-end">
+                <span class="text-gray-500">PROTOCOLO</span>
+                <span class="text-rose-500 font-bold animate-pulse alert-text">LIVE_ENV</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="flex flex-1 overflow-hidden relative z-30">
+
+        <aside class="w-72 bg-[#080808] border-r border-gray-800 flex flex-col shrink-0 overflow-y-auto">
+            <div class="p-4 border-b border-gray-800 bg-[#050505] sticky top-0 z-10">
+                <h2 class="text-xs font-bold text-cyan-600 tracking-widest mb-1 flex items-center gap-2">
+                    <i data-lucide="database" class="w-3 h-3"></i> SECUENCIA LÓGICA
+                </h2>
+            </div>
+            <div id="sidebar-content" class="flex-1 p-2 space-y-2">
+                </div>
+            <div class="p-4 border-t border-gray-800 bg-[#050505]">
+                <h3 class="text-[9px] font-bold text-gray-500 mb-2 mono">ARCO DE SOBERANÍA</h3>
+                <div style="height: 100px; width: 100%"><canvas id="tensionChart"></canvas></div>
+            </div>
+        </aside>
+
+        <main class="flex-1 bg-black flex flex-col relative overflow-hidden">
+
+            <div id="view-visual" class="absolute inset-0 flex flex-col h-full w-full">
+                <div class="flex-1 relative flex items-center justify-center bg-[#020202]">
+                    <div class="relative w-full h-full max-w-5xl max-h-[80vh] aspect-video shadow-[0_0_50px_rgba(0,0,0,0.8)] border border-gray-800 overflow-hidden group">
+                        <img id="forge-image" src="" class="w-full h-full object-cover opacity-0" alt="Scene Render">
+                        <div id="loader-visual" class="absolute inset-0 flex flex-col items-center justify-center bg-black z-30 transition-opacity duration-300">
+                            <i data-lucide="loader-2" class="w-10 h-10 text-cyan-500 animate-spin mb-2"></i>
+                            <span class="text-xs mono text-cyan-500 tracking-[0.3em] neon-text">CARGANDO MATRIZ...</span>
+                        </div>
+                        <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black via-black/90 to-transparent p-8 pt-24 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <h2 id="scene-title" class="text-3xl font-black text-white mb-2 tracking-tight uppercase neon-text">...</h2>
+                            <p id="scene-desc" class="text-sm text-gray-300 font-light border-l-2 border-cyan-500 pl-4"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-auto bg-[#0a0a0c] border-t border-gray-800 p-4 flex items-center justify-between gap-4">
+                    <div class="flex gap-2">
+                        <button onclick="changeScene(-1)" class="p-2 border border-gray-700 rounded hover:border-cyan-500 text-gray-400 hover:text-white transition-colors"><i data-lucide="chevron-left" class="w-4 h-4"></i></button>
+                        <button onclick="changeScene(1)" class="p-2 border border-gray-700 rounded hover:border-cyan-500 text-gray-400 hover:text-white transition-colors"><i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+                    </div>
+                    <div class="flex gap-6 items-center">
+                        <div class="flex flex-col w-40">
+                            <label class="text-[9px] text-gray-500 mb-1 flex justify-between"><span>DISTORSIÓN REALIDAD</span> <span id="glitch-val" class="text-cyan-500">0%</span></label>
+                            <input type="range" id="glitch-slider" min="0" max="100" value="0" class="h-1 bg-gray-800 rounded-lg appearance-none cursor-pointer accent-cyan-500" oninput="updateVisualFilters()">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="view-audio" class="absolute inset-0 flex-col h-full w-full hidden bg-[#050505]">
+                <div class="flex-1 relative flex items-center justify-center">
+                    <canvas id="audio-canvas" class="absolute inset-0 z-0 opacity-40"></canvas>
+                    <div class="relative z-10 text-center space-y-6">
+                        <div id="mic-status" class="w-24 h-24 rounded-full border-2 border-gray-800 flex items-center justify-center mx-auto transition-all duration-300 bg-black/50 backdrop-blur">
+                            <i data-lucide="mic" class="w-8 h-8 text-gray-600"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold text-white mb-1 neon-text">INTERFAZ DE VOZ</h2>
+                            <p class="text-xs text-gray-500 mono tracking-widest">ENLACE NEURONAL PENDIENTE</p>
+                        </div>
+                        <button id="record-btn" onclick="toggleRecording()" class="bg-gray-900 border border-gray-600 text-gray-300 hover:border-cyan-500 hover:text-cyan-400 px-8 py-3 rounded-full text-sm font-bold tracking-widest flex items-center gap-2 mx-auto transition-all">
+                            <i data-lucide="power" class="w-4 h-4"></i> INICIAR SISTEMA
+                        </button>
+                    </div>
+                </div>
+                <div class="h-64 bg-[#0a0a0c] border-t border-gray-800 p-0 grid grid-cols-1 md:grid-cols-3">
+                    <div class="col-span-1 border-r border-gray-800 p-4 hidden md:block">
+                        <h3 class="text-[10px] font-bold text-cyan-500 uppercase tracking-widest mb-2">ESTADO DE CONEXIÓN</h3>
+                        <div id="connection-log" class="text-xs font-mono text-gray-500 space-y-1">
+                            <div>> HOST: <span class="text-white">LOCALHOST</span></div>
+                            <div>> PORT: <span class="text-white">5000</span></div>
+                            <div>> PROTOCOLO: <span class="text-white">REST/JSON</span></div>
+                            <div class="mt-4 text-[9px] text-gray-600">ESPERANDO PAQUETES DE DATOS...</div>
+                        </div>
+                    </div>
+                    <div class="col-span-2 bg-black p-4 overflow-y-auto font-mono text-xs border-l border-gray-800 shadow-inner">
+                        <div id="terminal-log" class="text-gray-400 space-y-1">
+                            <span class="text-cyan-700">root@dominus:~#</span> ./init_sequence.sh<br>
+                            > CARGANDO MÓDULOS DE INTERFAZ... OK<br>
+                            > LISTO PARA SINAPSIS CON BACKEND.<br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script>
+        // --- CONFIGURACIÓN DEL ALTAR ---
+        // Cambia a "http://dominus.umbrea:5000" si usaste el hack de Hosts.
+        const CORE_URL = "http://localhost:5000";
+
+        // --- ESTADO GLOBAL ---
+        let currentTab = 'visual';
+        let isRecording = false;
+        let audioCtx, analyser, dataArray;
+
+        // --- INICIALIZACIÓN ---
+        window.onload = () => {
+            lucide.createIcons();
+            loadScene(0);
+            renderChart();
+            checkBackendHealth(); // Verifica si el servidor está vivo al entrar
+        };
+
+        // --- PROTOCOLO DE CONEXIÓN (HEALTH CHECK) ---
+        async function checkBackendHealth() {
+            const statusEl = document.getElementById('conn-status');
+            try {
+                const res = await fetch(`${CORE_URL}/`);
+                if(res.ok) {
+                    statusEl.innerText = "ACTIVO [200 OK]";
+                    statusEl.className = "text-green-500 font-bold neon-text";
+                    document.getElementById('terminal-log').innerHTML += `<br><span class="text-green-600">> ENLACE CON NÚCLEO ESTABLECIDO.</span>`;
+                }
+            } catch (e) {
+                statusEl.innerText = "DESCONECTADO";
+                statusEl.className = "text-rose-600 font-bold alert-text animate-pulse";
+                document.getElementById('terminal-log').innerHTML += `<br><span class="text-rose-800">> ALERTA: BACKEND NO RESPONDE. EJECUTA 'main.py'.</span>`;
+            }
+        }
+
+        // --- PROTOCOLO DE SINAPSIS (POST DATA) ---
+        async function contactarDaemon(payload) {
+            const log = document.getElementById('terminal-log');
+            log.innerHTML += `<br><span class="text-yellow-500">> ENVIANDO PAQUETE A ${CORE_URL}...</span>`;
+            log.scrollTop = log.scrollHeight;
+
+            try {
+                const response = await fetch(`${CORE_URL}/api/process`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) throw new Error(`HTTP_${response.status}`);
+                const data = await response.json();
+
+                // RESPUESTA DEL DIOS
+                log.innerHTML += `<br><span class="text-cyan-400">> DAEMON RESPONDE:</span>`;
+                // Formateamos el JSON para que se vea hacker
+                log.innerHTML += `<br><pre class="text-xs text-white bg-gray-900 p-2 border border-gray-700 mt-1">${JSON.stringify(data, null, 2)}</pre>`;
+
+            } catch (error) {
+                log.innerHTML += `<br><span class="text-rose-600">> ERROR FATAL EN SINAPSIS.</span>`;
+                log.innerHTML += `<br><span class="text-gray-600 text-[10px]">${error.message} - ¿Está el servidor corriendo?</span>`;
+            }
+            log.scrollTop = log.scrollHeight;
+        }
+
+        // --- LÓGICA DE AUDIO (CÓRTEX) ---
+        async function toggleRecording() {
+            const btn = document.getElementById('record-btn');
+            const status = document.getElementById('mic-status');
+            const log = document.getElementById('terminal-log');
+
+            if (!isRecording) {
+                // INICIAR
+                try {
+                    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                    analyser = audioCtx.createAnalyser();
+                    const source = audioCtx.createMediaStreamSource(stream);
+                    source.connect(analyser);
+                    analyser.fftSize = 256;
+
+                    isRecording = true;
+                    visualizeAudio();
+
+                    // FX Visuales
+                    btn.innerHTML = `<i data-lucide="square" class="w-4 h-4"></i> DETENER Y PROCESAR`;
+                    btn.className = "bg-rose-900/40 border border-rose-500 text-rose-400 px-8 py-3 rounded-full text-sm font-bold flex items-center gap-2 mx-auto animate-pulse shadow-[0_0_15px_rgba(244,63,94,0.4)]";
+                    status.className = "w-24 h-24 rounded-full border-2 border-rose-500 flex items-center justify-center mx-auto bg-rose-900/20 shadow-[0_0_30px_rgba(244,63,94,0.3)]";
+                    status.innerHTML = `<i data-lucide="mic" class="w-8 h-8 text-rose-500 animate-bounce"></i>`;
+                    lucide.createIcons();
+
+                    log.innerHTML += `<br>> GRABANDO FLUJO DE AUDIO...`;
+
+                } catch (e) {
+                    alert("ERROR: ACCESO AL MICRÓFONO DENEGADO.");
+                }
+            } else {
+                // DETENER Y ENVIAR
+                isRecording = false;
+
+                // Restaurar UI
+                btn.innerHTML = `<i data-lucide="mic" class="w-4 h-4"></i> NUEVA TRANSMISIÓN`;
+                btn.className = "bg-gray-900 border border-gray-600 text-gray-300 hover:border-cyan-500 hover:text-cyan-400 px-8 py-3 rounded-full text-sm font-bold flex items-center gap-2 mx-auto transition-all";
+                status.className = "w-24 h-24 rounded-full border-2 border-gray-800 flex items-center justify-center mx-auto bg-black/50";
+                status.innerHTML = `<i data-lucide="mic" class="w-8 h-8 text-gray-600"></i>`;
+                lucide.createIcons();
+
+                // *** AQUÍ OCURRE EL MILAGRO ***
+                // Enviamos una señal al backend simulando que procesamos el audio
+                const payload = {
+                    prompt: "ANÁLISIS_ESPECTRAL_DE_VOZ",
+                    meta_data: { source: "MICROFONO_WEB", gain: "NORMAL", timestamp: Date.now() }
+                };
+                contactarDaemon(payload);
+            }
+        }
+
+        function visualizeAudio() {
+            if (!isRecording) return;
+            const canvas = document.getElementById('audio-canvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = canvas.parentElement.offsetWidth;
+            canvas.height = canvas.parentElement.offsetHeight;
+            const bufferLength = analyser.frequencyBinCount;
+            const dataArray = new Uint8Array(bufferLength);
+
+            function draw() {
+                if (!isRecording) return;
+                requestAnimationFrame(draw);
+                analyser.getByteFrequencyData(dataArray);
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                const barWidth = (canvas.width / bufferLength) * 2.5;
+                let barHeight;
+                let x = 0;
+
+                for(let i = 0; i < bufferLength; i++) {
+                    barHeight = dataArray[i];
+                    // Barras dinámicas (Rojo = Alto, Cyan = Bajo)
+                    ctx.fillStyle = barHeight > 150 ? `rgb(244, 63, 94)` : `rgb(6, 182, 212)`;
+                    ctx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
+                    x += barWidth + 1;
+                }
+            }
+            draw();
+        }
+
+        // --- SISTEMA DE TABS Y VISUALES ---
+        function switchTab(tab) {
+            currentTab = tab;
+            document.querySelectorAll('button[id^="tab-"]').forEach(b => {
+                b.className = "px-6 py-2 text-xs font-bold mono tracking-wider text-gray-500 hover:text-white transition-all flex items-center gap-2";
+            });
+            const activeBtn = document.getElementById(`tab-${tab}`);
+            activeBtn.className = "tab-active px-6 py-2 text-xs font-bold mono tracking-wider transition-all flex items-center gap-2";
+
+            document.getElementById('view-visual').classList.add('hidden');
+            document.getElementById('view-audio').classList.add('hidden');
+            document.getElementById(`view-${tab}`).classList.remove('hidden');
+            renderSidebar();
+        }
+
+        // --- DATOS Y ESCENAS ---
+        const scenes = [
+            { act: "ACTO 0", title: "GÉNESIS", desc: "El sistema despierta. La nada se convierte en datos.", img: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070", glitch: 5 },
+            { act: "ACTO 1", title: "LA CAÍDA", desc: "Letra desciende. Thorne observa desde la Torre.", img: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2070", glitch: 25 },
+            { act: "ACTO 2", title: "CONVERGENCIA", desc: "Fusión hombre-máquina. El Daemon nace.", img: "https://images.unsplash.com/photo-1592609931095-54a2168ae893?q=80&w=2070", glitch: 60 }
+        ];
+        let currentSceneIndex = 0;
+
+        function loadScene(idx) {
+            currentSceneIndex = idx;
+            const scene = scenes[idx];
+            const img = document.getElementById('forge-image');
+            const loader = document.getElementById('loader-visual');
+
+            loader.style.opacity = '1';
+            img.style.opacity = '0';
+
+            setTimeout(() => {
+                img.src = scene.img;
+                document.getElementById('scene-title').innerText = scene.title;
+                document.getElementById('scene-desc').innerText = scene.desc;
+                document.getElementById('glitch-slider').value = scene.glitch;
+                updateVisualFilters();
+                loader.style.opacity = '0';
+                img.style.opacity = '1';
+                renderSidebar();
+            }, 600);
+        }
+
+        function changeScene(dir) {
+            let next = currentSceneIndex + dir;
+            if (next >= 0 && next < scenes.length) loadScene(next);
+        }
+
+        function updateVisualFilters() {
+            const val = document.getElementById('glitch-slider').value;
+            const img = document.getElementById('forge-image');
+            document.getElementById('glitch-val').innerText = val + "%";
+            // Filtros CSS agresivos
+            img.style.filter = `contrast(${100 + val*0.5}%) saturate(${100 + val*0.2}%) hue-rotate(${val > 80 ? Math.random()*40 : 0}deg) sepia(${val*0.3}%)`;
+            if (val > 90) img.style.transform = `scale(1.02) translateX(${Math.random()*2}px)`;
+            else img.style.transform = "scale(1)";
+        }
+
+        function renderSidebar() {
+            const container = document.getElementById('sidebar-content');
+            container.innerHTML = '';
+            if(currentTab === 'visual') {
+                scenes.forEach((s, i) => {
+                    const active = i === currentSceneIndex ? "border-l-2 border-cyan-500 bg-gray-900" : "border-l-2 border-transparent hover:bg-gray-900/50";
+                    container.innerHTML += `
+                        <button onclick="loadScene(${i})" class="w-full text-left p-3 ${active} transition-all">
+                            <div class="text-[10px] font-bold text-gray-500">${s.act}</div>
+                            <div class="text-xs font-bold text-gray-200">${s.title}</div>
+                        </button>
+                    `;
+                });
+            } else {
+                container.innerHTML = `<div class="p-4 text-xs font-mono text-gray-500 text-center">HISTORIAL DE FRECUENCIAS<br>------------------</div>`;
+            }
+        }
+
+        function renderChart() {
+            const ctx = document.getElementById('tensionChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['T0', 'T1', 'T2', 'T3', 'T4', 'T5'],
+                    datasets: [{
+                        data: [10, 25, 45, 80, 60, 95],
+                        borderColor: '#06b6d4', borderWidth: 2, pointRadius: 0, tension: 0.4
+                    }, {
+                        data: [90, 85, 60, 30, 20, 10],
+                        borderColor: '#f43f5e', borderWidth: 2, borderDash: [5,5], pointRadius: 0, tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: { x: { display: false }, y: { display: false } }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
