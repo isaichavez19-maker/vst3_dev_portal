@@ -3,6 +3,14 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
+        <!--
+        Content Security Policy
+
+        This policy enhances security by restricting the sources of content (scripts, styles, etc.).
+        'unsafe-inline' is temporarily required for script-src and style-src due to existing inline code
+        in this template. A future refactor could eliminate this need by moving all code to external files.
+        -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://i.ytimg.com; object-src 'none'; frame-ancestors 'self'; connect-src 'self' ws:;">
         <title>{{ title }}</title>
         {{#if is_print }}
         <meta name="robots" content="noindex" />
