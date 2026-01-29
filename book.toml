@@ -1,7 +1,6 @@
 [book]
 authors = ["ascheffler", "nzorn", "ygrabit"]
 language = "en"
-multilingual = false
 src = "src"
 title = "VST 3 Developer Portal"
 
@@ -33,5 +32,5 @@ level = 0
 [output.html.redirect]
 "display/VST/Main+benefits+of+VST+3/index.html" = "../../../pages/Main+benefits+of+VST+3/index.html"
 
-[output.linkcheck]
-optional = true
+# [output.linkcheck]
+# optional = true
