@@ -1,0 +1,4 @@
+## 2025-05-14 - [CSP Consolidation and Build Fragility]
+**Vulnerability:** Duplicated Content Security Policy (CSP) meta tags with conflicting directives and external scripts without SRI.
+**Learning:** Multiple CSPs are enforced by taking the most restrictive intersection. A second CSP that is less complete than the first can accidentally block legitimate resources (like data: images or fonts) that were allowed in the first. Also, the build environment for this repo is extremely fragile and depends on outdated mdbook versions; fixing it for local verification can introduce regressions if not reverted before submission.
+**Prevention:** Always consolidate CSP directives into a single comprehensive tag. Use SRI for all external CDNs. Be cautious about bundling environment/build fixes with security patches to maintain atomicity and avoid regressions.
