@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Nodo Alfa :: Soberanía Visualizada</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #000;
+        }
+        #tesseract-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 5;
+            pointer-events: none;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+    <div id="tesseract-container"></div>
+    <script src="lib/three.min.js"></script>
+    <script>
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.getElementById('tesseract-container').appendChild(renderer.domElement);
+
+        // Geometría del Nodo Alfa (Tesseracto simplificado)
+        const geometry = new THREE.BoxGeometry(2, 2, 2);
+        const wireframe = new THREE.EdgesGeometry(geometry);
+        const material = new THREE.LineBasicMaterial({ color: 0x06b6d4, linewidth: 2 });
+        const tesseract = new THREE.LineSegments(wireframe, material);
+        scene.add(tesseract);
+
+        const innerGeometry = new THREE.BoxGeometry(1, 1, 1);
+        const innerWireframe = new THREE.EdgesGeometry(innerGeometry);
+        const innerMaterial = new THREE.LineBasicMaterial({ color: 0x581c87 });
+        const innerCube = new THREE.LineSegments(innerWireframe, innerMaterial);
+        scene.add(innerCube);
+
+        camera.position.z = 5;
+
+        function animateTesseract() {
+            requestAnimationFrame(animateTesseract);
+
+            // Sincronización con el dQE y VNM
+            // Si la coherencia es alta, la rotación es armónica.
+            // Si hay disonancia, el cubo sufre micro-glitches.
+            tesseract.rotation.x += 0.005;
+            tesseract.rotation.y += 0.01;
+            innerCube.rotation.x -= 0.01;
+            innerCube.rotation.z += 0.01;
+
+            // Factor de escala basado en la "Métrica de Ascensión"
+            let scale = 1 + (Math.sin(Date.now() * 0.002) * 0.05);
+            tesseract.scale.set(scale, scale, scale);
+
+            renderer.render(scene, camera);
+        }
+        animateTesseract();
+
+        // Re-ajuste al cambiar ventana
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+    </script>
+</body>
+</html>
