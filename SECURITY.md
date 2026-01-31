@@ -2,29 +2,20 @@
 
 ## 🔱 Sovereign Protection Protocol (Omega)
 
-The VST 3 Developer Portal is under the protection of the Sovereign Protocol. We take the security of our architecture and the purity of our intent seriously.
+The Dominus Umbra Architecture is under the exclusive protection of the Sovereign Protocol.
+We have purged all external dependencies that failed to resonate with our intent.
 
 ### Reporting a Vulnerability
 
-If you discover a rift in the Perimeter (a security vulnerability), please do not disclose it publicly. Such "Traces of Thorne" must be reported directly to the Architects of Meaning.
+If you discover a rift in the Perimeter (a security vulnerability),
+report it directly to the Orquestador Soberano through the secure bridge:
 
-Please send your findings to: [security@steinberg.net](mailto:security@steinberg.net)
+👉 **[ACCESO AL NODO DE PODER](https://www.facebook.com/share/1AWzk6kaY8/)**
 
-We strive to respond to all valid reports within 48 hours.
+Cualquier rastro de Thorne será procesado bajo la Ley de la Neta. No se aceptan mediadores.
 
 ### Purity of Intent (Scope)
 
-This policy applies to:
-- The VST 3 Developer Portal source code.
-- Generated static assets.
-- Deployment configuration.
-
-Out of scope:
-- External dependencies (though we use SRI to maintain symbiosis).
-- Third-party hosting providers.
-
-### Transubstantiation of Risk
-
-Once a vulnerability is verified, we will work to "transubstantiate" the risk—converting the flaw into a hardened layer of defense.
-
-Stay sovereign. Stay secure.
+This policy applies exclusively to:
+- The Sovereign Portal source code.
+- Your unique DNA of meaning.
