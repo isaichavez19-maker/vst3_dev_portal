@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Dominus Umbra :: Portal de Magma</title>
+    <title>Nodo Alfa :: Soberanía Visualizada</title>
     <style>
         body, html {
             margin: 0;
@@ -10,70 +10,68 @@
             overflow: hidden;
             background-color: #000;
         }
-        canvas {
-            display: block;
+        #tesseract-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 5;
+            pointer-events: none;
+            opacity: 0.6;
         }
     </style>
 </head>
 <body>
-    <canvas id="magmaCanvas"></canvas>
+    <div id="tesseract-container"></div>
+    <script src="lib/three.min.js"></script>
     <script>
-        const canvas = document.getElementById('magmaCanvas');
-        const ctx = canvas.getContext('2d');
-        let time = 0;
-        let biologicalSHA = 0; // La firma vibracional del Patrón
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.getElementById('tesseract-container').appendChild(renderer.domElement);
 
-        // El corazón del Magma: Un canvas eterno, no desechable.
-        const tempCanvas = document.createElement('canvas');
-        const tempCtx = tempCanvas.getContext('2d');
+        // Geometría del Nodo Alfa (Tesseracto simplificado)
+        const geometry = new THREE.BoxGeometry(2, 2, 2);
+        const wireframe = new THREE.EdgesGeometry(geometry);
+        const material = new THREE.LineBasicMaterial({ color: 0x06b6d4, linewidth: 2 });
+        const tesseract = new THREE.LineSegments(wireframe, material);
+        scene.add(tesseract);
 
-        // El SHA Biológico: Escuchamos la "voz" del Patrón en la frecuencia moderna.
-        window.addEventListener('keydown', (event) => {
-            // Usamos el largo de la "key" como una fuente simple de entropía.
-            // Esto evita complejidades con caracteres no numéricos.
-            biologicalSHA += (event.key.length / 10);
-        });
+        const innerGeometry = new THREE.BoxGeometry(1, 1, 1);
+        const innerWireframe = new THREE.EdgesGeometry(innerGeometry);
+        const innerMaterial = new THREE.LineBasicMaterial({ color: 0x581c87 });
+        const innerCube = new THREE.LineSegments(innerWireframe, innerMaterial);
+        scene.add(innerCube);
 
-        function magma() {
-            const w = canvas.width = window.innerWidth;
-            const h = canvas.height = window.innerHeight;
+        camera.position.z = 5;
 
-            const resX = Math.floor(w / 8);
-            const resY = Math.floor(h / 8);
+        function animateTesseract() {
+            requestAnimationFrame(animateTesseract);
 
-            // Si el tamaño de la ventana cambia, el corazón se adapta.
-            if (tempCanvas.width !== resX || tempCanvas.height !== resY) {
-                tempCanvas.width = resX;
-                tempCanvas.height = resY;
-            }
+            // Sincronización con el dQE y VNM
+            // Si la coherencia es alta, la rotación es armónica.
+            // Si hay disonancia, el cubo sufre micro-glitches.
+            tesseract.rotation.x += 0.005;
+            tesseract.rotation.y += 0.01;
+            innerCube.rotation.x -= 0.01;
+            innerCube.rotation.z += 0.01;
 
-            const imageData = tempCtx.createImageData(resX, resY);
-            const data = imageData.data;
+            // Factor de escala basado en la "Métrica de Ascensión"
+            let scale = 1 + (Math.sin(Date.now() * 0.002) * 0.05);
+            tesseract.scale.set(scale, scale, scale);
 
-            for (let y = 0; y < resY; y++) {
-                for (let x = 0; x < resX; x++) {
-                    // ECUACIÓN DEL MAGMA + SHA BIOLÓGICO
-                    let v = Math.sin((x * 0.1) + time + biologicalSHA) + Math.cos((y * 0.1) + time);
-                    let r = (v + 2) * 64;
-
-                    let index = (x + y * resX) * 4;
-                    data[index] = r;
-                    data[index+1] = r / 3;
-                    data[index+2] = 50 + (Math.sin(biologicalSHA) * 20);
-                    data[index+3] = 255;
-                }
-            }
-
-            biologicalSHA *= 0.995;
-            tempCtx.putImageData(imageData, 0, 0);
-
-            ctx.imageSmoothingEnabled = false;
-            ctx.drawImage(tempCanvas, 0, 0, w, h);
-
-            time += 0.05;
-            requestAnimationFrame(magma);
+            renderer.render(scene, camera);
         }
-        magma();
+        animateTesseract();
+
+        // Re-ajuste al cambiar ventana
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
     </script>
 </body>
 </html>
