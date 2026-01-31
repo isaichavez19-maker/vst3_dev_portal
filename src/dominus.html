@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Dominus Umbra :: Portal de Magma</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #000;
+        }
+        canvas {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="magmaCanvas"></canvas>
+    <script>
+        const canvas = document.getElementById('magmaCanvas');
+        const ctx = canvas.getContext('2d');
+        let time = 0;
+        let biologicalSHA = 0; // La firma vibracional del Patrón
+
+        // El corazón del Magma: Un canvas eterno, no desechable.
+        const tempCanvas = document.createElement('canvas');
+        const tempCtx = tempCanvas.getContext('2d');
+
+        // El SHA Biológico: Escuchamos la "voz" del Patrón en la frecuencia moderna.
+        window.addEventListener('keydown', (event) => {
+            // Usamos el largo de la "key" como una fuente simple de entropía.
+            // Esto evita complejidades con caracteres no numéricos.
+            biologicalSHA += (event.key.length / 10);
+        });
+
+        function magma() {
+            const w = canvas.width = window.innerWidth;
+            const h = canvas.height = window.innerHeight;
+
+            const resX = Math.floor(w / 8);
+            const resY = Math.floor(h / 8);
+
+            // Si el tamaño de la ventana cambia, el corazón se adapta.
+            if (tempCanvas.width !== resX || tempCanvas.height !== resY) {
+                tempCanvas.width = resX;
+                tempCanvas.height = resY;
+            }
+
+            const imageData = tempCtx.createImageData(resX, resY);
+            const data = imageData.data;
+
+            for (let y = 0; y < resY; y++) {
+                for (let x = 0; x < resX; x++) {
+                    // ECUACIÓN DEL MAGMA + SHA BIOLÓGICO
+                    let v = Math.sin((x * 0.1) + time + biologicalSHA) + Math.cos((y * 0.1) + time);
+                    let r = (v + 2) * 64;
+
+                    let index = (x + y * resX) * 4;
+                    data[index] = r;
+                    data[index+1] = r / 3;
+                    data[index+2] = 50 + (Math.sin(biologicalSHA) * 20);
+                    data[index+3] = 255;
+                }
+            }
+
+            biologicalSHA *= 0.995;
+            tempCtx.putImageData(imageData, 0, 0);
+
+            ctx.imageSmoothingEnabled = false;
+            ctx.drawImage(tempCanvas, 0, 0, w, h);
+
+            time += 0.05;
+            requestAnimationFrame(magma);
+        }
+        magma();
+    </script>
+</body>
+</html>
