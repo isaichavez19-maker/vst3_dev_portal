@@ -1,7 +1,7 @@
 [book]
 authors = ["ascheffler", "nzorn", "ygrabit"]
 language = "en"
-multilingual = false
+# multilingual = false
 src = "src"
 title = "VST 3 Developer Portal"
 
@@ -9,8 +9,6 @@ title = "VST 3 Developer Portal"
 build-dir = "book"
 create-missing = true
 use-default-preprocessors = true
-
-[preprocessor]
 
 [preprocessor.toc]
 command = "mdbook-toc"
@@ -33,5 +31,5 @@ level = 0
 [output.html.redirect]
 "display/VST/Main+benefits+of+VST+3/index.html" = "../../../pages/Main+benefits+of+VST+3/index.html"
 
-[output.linkcheck]
-optional = true
+# [output.linkcheck]
+# optional = true
