@@ -147,8 +147,8 @@
                             <i class="fa fa-paint-brush"></i>
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="steinberg-light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="steinberg-dark">Dark</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="sovereign-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="sovereign-dark">Dark</button></li>
                         </ul>
                         {{#if search_enabled}}
                         <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
@@ -298,7 +298,13 @@
 
         <!-- Custom JS scripts -->
         {{#each additional_js}}
+        {{#if (eq this "mermaid.min.js")}}
+        <script type="text/javascript" src="{{ ../path_to_root }}{{this}}" integrity="sha256-CKxSBRqXGuVPfVul2J8thhvr2SlJuKiVBRbbme4eofI=" crossorigin="anonymous"></script>
+        {{else if (eq this "mermaid-init.js")}}
+        <script type="text/javascript" src="{{ ../path_to_root }}{{this}}" integrity="sha256-vSXvPiLu6uuFRESAKJ8TYpnTZ16b+mHFJ7yZCWpIxpc=" crossorigin="anonymous"></script>
+        {{else}}
         <script type="text/javascript" src="{{ ../path_to_root }}{{this}}"></script>
+        {{/if}}
         {{/each}}
 
         {{#if is_print}}

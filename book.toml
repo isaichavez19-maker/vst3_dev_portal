@@ -1,8 +1,8 @@
 [book]
-authors = ["ascheffler", "nzorn", "ygrabit"]
+authors = ["Orquestador Soberano"]
 language = "en"
 src = "src"
-title = "VST 3 Developer Portal"
+title = "Sovereign Developer Portal"
 
 [build]
 build-dir = "book"
@@ -21,8 +21,8 @@ command = "mdbook-mermaid"
 
 [output.html]
 no-section-label = true
-default-theme = "steinberg-light"
-preferred-dark-theme = "steinberg-dark"
+default-theme = "sovereign-light"
+preferred-dark-theme = "sovereign-dark"
 additional-js = ["mermaid.min.js", "mermaid-init.js"]
 
 [output.html.fold]
