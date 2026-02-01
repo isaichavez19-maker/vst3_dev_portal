@@ -1,10 +1,8 @@
-># VST Home
+># ACTO I: La Invocación
 
-## Welcome to the world of VST 3
+![INVOK3](../acto-1/assets/invok3.jpeg)
 
-![VST Logo](../resources/VST_logo_white.png)
-
-This part of the [Steinberg Developer Resource](https://developer.steinberg.help/display/SDH/Steinberg+Developer+Resource) is a portal dedicated to developers of **VST 3** plug-ins and **VST 3** hosts. Almost everything you need for developing **VST 3** plug-ins is explained in the sections below.
+La soberanía digital es un acto de creación.
 
 ## [What is VST?](What+is+VST/Index.md)
 
