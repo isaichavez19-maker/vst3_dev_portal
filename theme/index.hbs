@@ -3,16 +3,9 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <!-- 🛡️ Sentinel: WARNING - 'unsafe-inline' is used in the CSP. This is a temporary measure to avoid breaking existing functionality. A future effort should be made to remove all inline scripts and this directive. -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; object-src 'none'; frame-ancestors 'self';">
-        <title>{{ title }}</title>
-        <!--
-            Content Security Policy:
-            - 'unsafe-inline' is used here to allow existing inline scripts to function.
-              For enhanced security, these scripts should be refactored into separate files
-              and this directive should be removed.
-        -->
+        <!-- 🛡️ Sentinel: Consolidated CSP tags into a single comprehensive policy to ensure consistent enforcement. -->
         <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; object-src 'none'; frame-ancestors 'self';">
+        <title>{{ title }}</title>
         {{#if is_print }}
         <meta name="robots" content="noindex" />
         {{/if}}
