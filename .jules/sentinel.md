@@ -1,0 +1,4 @@
+## 2025-05-22 - CSP Consolidation and Build Environment Hardening
+**Vulnerability:** Redundant and under-specified Content Security Policy (CSP) meta tags in `theme/index.hbs`. One tag lacked `font-src` and `img-src` while both included `frame-ancestors` (ignored in meta tags) and lacked `connect-src`. Also found external links in footer missing `rel="noopener noreferrer"` and MathJax loading without SRI.
+**Learning:** Consolidating CSP tags prevents browser confusion (browsers enforce the intersection of all policies). Updating static site templates in this repo often requires addressing legacy `mdbook` syntax (like `{{#previous}}` vs `{{#if previous}}`) that is incompatible with modern `mdbook` versions (v0.5.x).
+**Prevention:** Always use a single comprehensive CSP meta tag. Use SRI for all CDN-hosted resources. Ensure all `target="_blank"` links include `rel="noopener noreferrer"`.
