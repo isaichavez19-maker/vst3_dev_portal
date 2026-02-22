@@ -3,16 +3,9 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <!-- 🛡️ Sentinel: WARNING - 'unsafe-inline' is used in the CSP. This is a temporary measure to avoid breaking existing functionality. A future effort should be made to remove all inline scripts and this directive. -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; object-src 'none'; frame-ancestors 'self';">
         <title>{{ title }}</title>
-        <!--
-            Content Security Policy:
-            - 'unsafe-inline' is used here to allow existing inline scripts to function.
-              For enhanced security, these scripts should be refactored into separate files
-              and this directive should be removed.
-        -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; object-src 'none'; frame-ancestors 'self';">
+        <!-- 🛡️ Sentinel: Consolidated CSP with connect-src for playground and analytics. -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self' https://play.rust-lang.org https://www.google-analytics.com; object-src 'none'; frame-ancestors 'self';">
         {{#if is_print }}
         <meta name="robots" content="noindex" />
         {{/if}}
@@ -65,7 +58,7 @@
 
         {{#if mathjax_support}}
         <!-- MathJax -->
-        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-Ra6zh6uYMmH5ydwCqqMoykyf1T/+ZcnOQfFPhDrp2kI4OIxadnhsvvA2vv9A7xYv" crossorigin="anonymous"></script>
         {{/if}}
     </head>
     <body>
@@ -217,10 +210,10 @@
 
             <div id="footer" class="footer">
                 <!-- Here comes the footer when available			 -->                
-                © 2022 <a href="https://www.steinberg.net" target="_blank">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="https://o.steinberg.net/en/extras/about.html" target="_blank">About</a> |
-                <a href="https://o.steinberg.net/en/extras/privacy_policy.html" target="_blank">Privacy Policy</a> |
-                <a href="https://o.steinberg.net/en/extras/terms_conditions.html" target="_blank">Legal Terms</a> 
+                © 2022 <a href="https://www.steinberg.net" target="_blank" rel="noopener noreferrer">Steinberg Media Technologies GmbH</a>.&nbsp; All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="https://o.steinberg.net/en/extras/about.html" target="_blank" rel="noopener noreferrer">About</a> |
+                <a href="https://o.steinberg.net/en/extras/privacy_policy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a> |
+                <a href="https://o.steinberg.net/en/extras/terms_conditions.html" target="_blank" rel="noopener noreferrer">Legal Terms</a>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
@@ -304,6 +297,10 @@
         <script src="{{ path_to_root }}clipboard.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="{{ path_to_root }}highlight.js" type="text/javascript" charset="utf-8"></script>
         <script src="{{ path_to_root }}book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Vendored Scripts with SRI -->
+        <script type="text/javascript" src="{{ path_to_root }}mermaid.min.js" integrity="sha384-pwVVmXeULvf+sAosA7rYPSdvjwFXpFOffwWI7E0so+pLz2ry3JHc6VPn5B4ETRzA"></script>
+        <script type="text/javascript" src="{{ path_to_root }}mermaid-init.js" integrity="sha384-+MIKbMKlXtWfvT/JzEhOKWXNCbnZASzePwwK8lmCT0ki9in0SffMOBIDUOey0UG3"></script>
 
         <!-- Custom JS scripts -->
         {{#each additional_js}}
