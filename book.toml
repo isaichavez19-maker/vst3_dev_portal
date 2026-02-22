@@ -1,7 +1,6 @@
 [book]
 authors = ["ascheffler", "nzorn", "ygrabit"]
 language = "en"
-multilingual = false
 src = "src"
 title = "VST 3 Developer Portal"
 
@@ -21,10 +20,10 @@ marker = "[[_TOC_]]"
 command = "mdbook-mermaid"
 
 [output.html]
+mathjax-support = true
 no-section-label = true
 default-theme = "steinberg-light"
 preferred-dark-theme = "steinberg-dark"
-additional-js = ["mermaid.min.js", "mermaid-init.js"]
 
 [output.html.fold]
 enable = true
