@@ -1,0 +1,4 @@
+## 2026-02-23 - CSP Consolidation and SRI Implementation in mdBook
+**Vulnerability:** Redundant Content-Security-Policy meta tags in `theme/index.hbs` caused inconsistent policy enforcement and over-restriction. Additionally, vendored and external scripts (MathJax, Mermaid) were missing Subresource Integrity (SRI) protection.
+**Learning:** mdBook's `additional-js` configuration in `book.toml` does not support SRI attributes. To secure vendored scripts, they must be manually included in the Handlebars template with the `integrity` attribute. Multiple CSP meta tags are handled as an intersection by browsers, so they must be consolidated for predictable behavior.
+**Prevention:** Always consolidate security headers into a single directive and use manual template inclusion for scripts that require SRI verification.
