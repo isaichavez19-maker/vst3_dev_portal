@@ -1,0 +1,4 @@
+## 2026-02-24 - Consolidated CSP and implemented SRI for MathJax
+**Vulnerability:** Redundant and slightly inconsistent Content-Security-Policy meta tags could lead to browser confusion and unintended resource blocking. Additionally, external scripts like MathJax were loaded without integrity verification, posing a supply chain risk.
+**Learning:** Browsers enforce the most restrictive intersection of multiple CSP policies. Consolidating them into a single comprehensive tag ensures predictable behavior. Whitelisting specific domains like `https://play.rust-lang.org` in `connect-src` is necessary for `mdbook` features like the playground.
+**Prevention:** Always use a single consolidated CSP meta tag. Implement Subresource Integrity (SRI) for all external scripts to protect against CDN compromises.
