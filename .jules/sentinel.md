@@ -1,0 +1,4 @@
+## 2026-02-27 - [Template Security Hardening and Regression Prevention]
+**Vulnerability:** Redundant and inconsistent Content-Security-Policy (CSP) meta tags, missing Subresource Integrity (SRI) for external scripts, and potential reverse tabnabbing on footer links.
+**Learning:** Consolidation of CSP meta tags is essential for consistent browser enforcement. When adding SRI to scripts in a generic template like mdBook's `index.hbs`, it is critical to preserve the `additional_js` loop to avoid breaking user-defined script loading. Manual script tags with SRI should only be used for known, static external resources.
+**Prevention:** Always consolidate CSP directives into a single comprehensive tag. Use SRI for all external CDN resources. Ensure that template modifications do not remove core functional logic like script iteration blocks. Hardening external links with `rel="noopener noreferrer"` is a simple but effective defense against tabnabbing.
