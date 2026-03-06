@@ -1,0 +1,4 @@
+## 2024-05-23 - CSP Consolidation and SRI Implementation
+**Vulnerability:** Redundant and potentially conflicting CSP meta tags can lead to inconsistent browser enforcement and security gaps. Missing SRI on external scripts (like MathJax) exposes the site to supply chain attacks.
+**Learning:** Consolidating CSP into a single comprehensive tag ensures a predictable security policy. Using SRI for all external resources is a critical defense-in-depth measure. Whitelisting necessary domains like play.rust-lang.org in both script-src and connect-src is essential for mdBook playground features.
+**Prevention:** Always use a single CSP meta tag and enforce SRI for any script or stylesheet loaded from a third-party CDN. Regularly audit CSP to ensure it matches the application's resource requirements.
