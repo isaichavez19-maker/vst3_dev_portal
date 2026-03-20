@@ -24,6 +24,7 @@ command = "mdbook-mermaid"
 no-section-label = true
 default-theme = "steinberg-light"
 preferred-dark-theme = "steinberg-dark"
+mathjax-support = true
 additional-js = ["mermaid.min.js", "mermaid-init.js"]
 
 [output.html.fold]
