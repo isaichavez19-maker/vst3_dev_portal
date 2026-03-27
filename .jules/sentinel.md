@@ -1,0 +1,4 @@
+## 2026-03-27 - Redundant CSP Meta Tags and Missing Directives
+**Vulnerability:** The presence of two separate `Content-Security-Policy` meta tags in `theme/index.hbs`.
+**Learning:** Browsers may handle multiple CSP tags by enforcing the intersection of all policies. This can lead to unexpected breakages if one tag is more restrictive than intended, or it can provide a false sense of security if the policies are not properly synchronized. Additionally, missing `connect-src` and `font-src` directives were preventing legitimate features (like the Rust Playground) from functioning under a strict policy.
+**Prevention:** Consolidate all CSP directives into a single, comprehensive meta tag or HTTP header. Ensure all external domains required by the application's functionality (e.g., CDNs, telemetry, playgrounds) are explicitly whitelisted in the appropriate directives.
