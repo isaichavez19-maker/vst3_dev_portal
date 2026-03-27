@@ -21,6 +21,7 @@ marker = "[[_TOC_]]"
 command = "mdbook-mermaid"
 
 [output.html]
+mathjax-support = true
 no-section-label = true
 default-theme = "steinberg-light"
 preferred-dark-theme = "steinberg-dark"
