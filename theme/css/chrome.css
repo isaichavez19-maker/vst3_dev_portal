@@ -347,7 +347,7 @@ ul#searchresults span.teaser em {
 .sidebar-image {
 	width:100%;
 	height:1.5em;
-	background-image:url(../resources/Steinberg_logo.png);
+	background-image: none;
 	background-position: left;
 	background-repeat: no-repeat;
 	background-size: contain;
