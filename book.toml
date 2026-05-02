@@ -12,14 +12,6 @@ use-default-preprocessors = true
 
 [preprocessor]
 
-[preprocessor.toc]
-command = "mdbook-toc"
-renderer = ["html"]
-marker = "[[_TOC_]]"
-
-[preprocessor.mermaid]
-command = "mdbook-mermaid"
-
 [output.html]
 no-section-label = true
 default-theme = "steinberg-light"
@@ -32,6 +24,3 @@ level = 0
 
 [output.html.redirect]
 "display/VST/Main+benefits+of+VST+3/index.html" = "../../../pages/Main+benefits+of+VST+3/index.html"
-
-[output.linkcheck]
-optional = true

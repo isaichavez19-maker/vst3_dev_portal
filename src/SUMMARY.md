@@ -1,6 +1,6 @@
 # Summary
 
-[VST](pages/README.md)
+[VST](README.md)
 
 - [What is VST?](pages/What+is+VST/Index.md)
   - [Use cases](pages/What+is+VST/Use+cases.md)
