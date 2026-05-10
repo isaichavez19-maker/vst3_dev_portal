@@ -10,17 +10,18 @@ build-dir = "book"
 create-missing = true
 use-default-preprocessors = true
 
-[preprocessor]
+#[preprocessor]
 
-[preprocessor.toc]
-command = "mdbook-toc"
+#[preprocessor.toc]
+ #command = "mdbook-toc"
 renderer = ["html"]
 marker = "[[_TOC_]]"
 
-[preprocessor.mermaid]
-command = "mdbook-mermaid"
+#[preprocessor.mermaid]
+ #command = "mdbook-mermaid"
 
 [output.html]
+mathjax-support = true
 no-section-label = true
 default-theme = "steinberg-light"
 preferred-dark-theme = "steinberg-dark"
