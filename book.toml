@@ -34,4 +34,4 @@ level = 0
 "display/VST/Main+benefits+of+VST+3/index.html" = "../../../pages/Main+benefits+of+VST+3/index.html"
 
 [output.linkcheck]
-optional = true
+optional = false
