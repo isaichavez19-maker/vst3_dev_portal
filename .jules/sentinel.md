@@ -1,0 +1,4 @@
+## 2026-05-26 - Content Security Policy and Link Security Hardening
+**Vulnerability:** Redundant and overlapping Content-Security-Policy meta tags, missing Subresource Integrity (SRI) for external scripts (MathJax), and missing `rel="noopener noreferrer"` on external links.
+**Learning:** Browsers enforce the intersection of multiple CSP policies, which can lead to unexpected blocking. 'frame-ancestors' is ignored in meta tags but still commonly included as a fallback or for consistency. Dynamic scripts from providers like Google Analytics shouldn't use SRI in templates because updates will break the site.
+**Prevention:** Consolidate CSP into a single well-defined meta tag. Always use SRI for versioned external assets like MathJax. Ensure all `target="_blank"` links have `rel="noopener noreferrer"` to prevent tabnabbing.
