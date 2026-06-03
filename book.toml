@@ -25,6 +25,7 @@ no-section-label = true
 default-theme = "steinberg-light"
 preferred-dark-theme = "steinberg-dark"
 additional-js = ["mermaid.min.js", "mermaid-init.js"]
+mathjax-support = false
 
 [output.html.fold]
 enable = true
