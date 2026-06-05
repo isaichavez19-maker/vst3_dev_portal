@@ -187,7 +187,12 @@ function playground_text(playground) {
 
         var buttons = document.createElement('div');
         buttons.className = 'buttons';
-        buttons.innerHTML = "<button class=\"fa fa-eye\" title=\"Show hidden lines\" aria-label=\"Show hidden lines\"></button>";
+
+        var showHiddenButton = document.createElement('button');
+        showHiddenButton.className = 'fa fa-eye';
+        showHiddenButton.title = 'Show hidden lines';
+        showHiddenButton.setAttribute('aria-label', showHiddenButton.title);
+        buttons.appendChild(showHiddenButton);
 
         // add expand button
         var pre_block = block.parentNode;
@@ -227,7 +232,10 @@ function playground_text(playground) {
                 clipButton.className = 'fa fa-copy clip-button';
                 clipButton.title = 'Copy to clipboard';
                 clipButton.setAttribute('aria-label', clipButton.title);
-                clipButton.innerHTML = '<i class=\"tooltiptext\"></i>';
+
+                var tooltip = document.createElement('i');
+                tooltip.className = 'tooltiptext';
+                clipButton.appendChild(tooltip);
 
                 buttons.insertBefore(clipButton, buttons.firstChild);
             }
@@ -258,9 +266,12 @@ function playground_text(playground) {
         if (window.playground_copyable) {
             var copyCodeClipboardButton = document.createElement('button');
             copyCodeClipboardButton.className = 'fa fa-copy clip-button';
-            copyCodeClipboardButton.innerHTML = '<i class="tooltiptext"></i>';
             copyCodeClipboardButton.title = 'Copy to clipboard';
             copyCodeClipboardButton.setAttribute('aria-label', copyCodeClipboardButton.title);
+
+            var tooltip = document.createElement('i');
+            tooltip.className = 'tooltiptext';
+            copyCodeClipboardButton.appendChild(tooltip);
 
             buttons.insertBefore(copyCodeClipboardButton, buttons.firstChild);
         }
