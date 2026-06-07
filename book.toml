@@ -12,13 +12,13 @@ use-default-preprocessors = true
 
 [preprocessor]
 
-[preprocessor.toc]
-command = "mdbook-toc"
+#[preprocessor.toc]
+#command = "mdbook-toc"
 renderer = ["html"]
 marker = "[[_TOC_]]"
 
-[preprocessor.mermaid]
-command = "mdbook-mermaid"
+#[preprocessor.mermaid]
+#command = "mdbook-mermaid"
 
 [output.html]
 no-section-label = true
