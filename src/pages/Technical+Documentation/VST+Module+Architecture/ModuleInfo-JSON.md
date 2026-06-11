@@ -5,7 +5,7 @@
 An optional moduleinfo.json file can be part of the [module file package](../Locations+Format/Plugin+Format.md).
 
 The file contains the same information as the [Module Factory](Index.md#module-factory), plus an optional list of compatible classes.
-The file is encoded in [json5](http://json5.org) format.
+The file is encoded in [json5](https://json5.org) format.
 
 The Compatibility json array is used to declare a class to be treated as a replacement for another class or classes.
 
@@ -31,7 +31,7 @@ An example moduleinfo.json looks like this:
   "Version": "3.7.5.0",
   "Factory Info": {
     "Vendor": "Steinberg Media Technologies",
-    "URL": "http://www.steinberg.net",
+    "URL": "https://www.steinberg.net",
     "E-Mail": "mailto:info@steinberg.de",
     "Flags": {
       "Unicode": true,

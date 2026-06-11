@@ -33,7 +33,7 @@ It allows to describe each parameter more precisely (what is the best matching t
   - link which allows to jump directly to a subpage (on another page)
   - more... See Vst::LayerType
 
-This representation is implemented as XML text following the Document Type Definition (DTD): http://dtd.steinberg.net/VST-Remote-1.1.dtd
+This representation is implemented as XML text following the Document Type Definition (DTD): https://dtd.steinberg.net/VST-Remote-1.1.dtd
 
 ## Example
 
@@ -41,7 +41,7 @@ This representation is implemented as XML text following the Document Type Defin
 
 ``` xml
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE vstXML PUBLIC "-//Steinberg//DTD VST Remote 1.1//EN" "http://dtd.steinberg.net/VST-Remote-1.1.dtd">
+<!DOCTYPE vstXML PUBLIC "-//Steinberg//DTD VST Remote 1.1//EN" "https://dtd.steinberg.net/VST-Remote-1.1.dtd">
 <vstXML version="1.0">
     <plugin classID="341FC5898AAA46A7A506BC0799E882AE" name="Chorus" vendor="Steinberg Media Technologies" />
     <originator>My name</originator>
