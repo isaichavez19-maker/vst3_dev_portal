@@ -151,7 +151,7 @@ Classes:
   - JX10 : The plug-in is designed for high quality (lower aliasing than most soft synths) and low processor usage
   - Piano : Not designed to be the best sounding piano in the world, but boasts extremely low CPU and memory usage.
 
-Based on the OpenSource mda plug-ins (<http://mda.smartelectronix.com/>), this set of plug-ins demonstrates how wrap DS- code in a **VST 3** Plug-in.
+Based on the OpenSource mda plug-ins (<https://mda.smartelectronix.com/>), this set of plug-ins demonstrates how wrap DS- code in a **VST 3** Plug-in.
 
 Check the folder *"public.sdk/samples/vst/mda-vst3"* of the SDK!
 
