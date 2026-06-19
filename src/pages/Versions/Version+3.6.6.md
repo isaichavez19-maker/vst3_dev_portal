@@ -24,7 +24,7 @@
     - Speaker getSpeaker (const SpeakerArrangement& arr, int32 index)
     - bool isSubsetOf (const SpeakerArrangement& arrSubSet, const SpeakerArrangement& arr)
 - VSTGUI 4.3
-  - update to VSTGUI 4.3.1 (available here too: <http://sourceforge.net/projects/vstgui/files/vstgui/VSTGUI%204.3/)>
+  - update to VSTGUI 4.3.1 (available here too: <https://sourceforge.net/projects/vstgui/files/vstgui/VSTGUI%204.3/)>
   - the [VSTGUI](../What+is+the+VST+3+SDK/VSTGUI.md) repository was moved to github: <https://github.com/steinbergmedia/vstgui>
   - Please use github if you want to contribute to VSTGUI.
 - VST3PluginTestHost: VST 3 Plug-in Test Host

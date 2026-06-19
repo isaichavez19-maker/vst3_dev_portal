@@ -13,7 +13,7 @@
 ---
 
 These wrappers allow you to create versions of your **VST 3** plug-in in other plug-in formats with minimum effort:
-- **[AAX](http://apps.avid.com/aax-portal/)** format used by Pro Tools®
+- **[AAX](https://apps.avid.com/aax-portal/)** format used by Pro Tools®
 - **[AUv3](https://developer.apple.com/documentation/audiotoolbox)** and **AU** (Audio Unit) on Apple platform
 - **VST 2** (deprecated)
 
