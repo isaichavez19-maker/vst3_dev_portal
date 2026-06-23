@@ -45,7 +45,7 @@ For more information about [GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html)
 //----------------------------------------------------------------------------
 This license applies only to files referencing this license,
 for other files of the Software Development Kit therespective embedded license text
-is applicable. The license can be found at: <http://www.steinberg.net/sdklicenses_vst3>
+is applicable. The license can be found at: <https://www.steinberg.net/sdklicenses_vst3>
 
 This Software Development Kit is licensed under the terms ofthe Steinberg VST 3 License,
 or alternatively under the terms of the General PublicLicense (GPL) Version 3.
@@ -64,7 +64,7 @@ software without specific prior written permission.
 Before publishing a software under the proprietary license, you need to obtain a copy
 of the License Agreement signed by Steinberg MediaTechnologies GmbH.
 The Steinberg VST SDK License Agreement can be found at:
-<http://www.steinberg.net/en/company/developers.html>
+<https://www.steinberg.net/en/company/developers.html>
 
 THE SDK IS PROVIDED BY STEINBERG MEDIA TECHNOLOGIES GMBH "ASIS" AND
 ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITEDTO, THE IMPLIED
@@ -78,6 +78,6 @@ OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THISSOFTWARE, EVEN IF ADVISED
 OF THE POSSIBILITY OF SUCH DAMAGE.
 
 b) General Public License (GPL) Version 3
-Details of these licenses can be found at: <http://www.gnu.orglicenses/gpl-3.0.html>
+Details of these licenses can be found at: <https://www.gnu.org/licenses/gpl-3.0.html>
 //---------------------------------------------------------------------------------
 ```
