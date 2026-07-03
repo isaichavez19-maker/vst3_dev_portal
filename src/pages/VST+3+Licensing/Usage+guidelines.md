@@ -85,7 +85,7 @@ It is allowed to use “**VST**” in the title of a video or in a video, e.g. a
 
 ## 12. Use in category
 
-It is allowed to use **VST** in a category or in a related URL outside of the domain, e.g. in [www.myreviews.com/VSTplugins/](http://www.myreviews.com/VSTplugins/), if such category is of generic meaning, and if under such category only forms of use and/or products in line with the SDK agreement are listed.
+It is allowed to use **VST** in a category or in a related URL outside of the domain, e.g. in [www.myreviews.com/VSTplugins/](https://www.myreviews.com/VSTplugins/), if such category is of generic meaning, and if under such category only forms of use and/or products in line with the SDK agreement are listed.
 
 ## 13. Use in combination or composition
 
