@@ -24,7 +24,7 @@
 
 ## Glossary
 
-External Glossary: [AES - PAR - Pro Audio Reference:](https://www.aes.org/par/) <http://www.aes.org/par/>
+External Glossary: [AES - PAR - Pro Audio Reference:](https://www.aes.org/par/) <https://www.aes.org/par/>
 
 | Abbr.         | Meaning                       | Comment   |
 | :-            | :-                            | :-        |
